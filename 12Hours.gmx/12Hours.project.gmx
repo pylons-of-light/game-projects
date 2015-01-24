@@ -10,6 +10,16 @@
     <sprite>sprites\sprReaperDown</sprite>
     <sprite>sprites\sprReaperLeft</sprite>
     <sprite>sprites\sprReaperRight</sprite>
+    <sprite>sprites\sprMaleCitizenUp</sprite>
+    <sprite>sprites\sprMaleCitizenDown</sprite>
+    <sprite>sprites\sprMaleCitizenLeft</sprite>
+    <sprite>sprites\sprMaleCitizenRight</sprite>
+    <sprite>sprites\sprMaleCitizenCower</sprite>
+    <sprite>sprites\femaleCitizenUp</sprite>
+    <sprite>sprites\femaleCitizenDown</sprite>
+    <sprite>sprites\femaleCitizenLeft</sprite>
+    <sprite>sprites\femaleCitizenRight</sprite>
+    <sprite>sprites\femaleCitizenCower</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

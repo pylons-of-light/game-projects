@@ -30,6 +30,8 @@
 g_keyDirection = -1;   //-1 to ensure no initial false input.
 g_bKeyDirectionIsPressed = false;
 g_bKeyDirectionIsReleased = false;
+
+image_speed = 0;
 </string>
           </argument>
         </arguments>
