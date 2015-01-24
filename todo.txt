@@ -1,1 +1,31 @@
-by laptop
+sprites
+=======
+reaper
+reaper scythe attack? maybe just a "white slash" sprite appearing in front of the reaper.
+male NPC, 4-way movement and single-direction (down) crouching/cowering
+female NPC, 4-way movement and single-direction (down) crouching/cowering
+house
+tree
+other random "town" objects
+
+
+code
+====
+player movement
+NPC interaction (with scythe)
+NPC random "wandering" movement AI
+NPC fleeing from reaper AI
+health bar, which depletes by say 1% every second
+clock, which shows 12:00 and counts down to 0:00 each second
+
+
+rooms
+=====
+probably a title screen, with our names and such
+a single level, consisting of a small town at nighttime
+
+
+notes
+=====
+unless we end up having more than 1 level, saving/loading is probably unnecessary
+ (although GM does have some save/load mechanics built into it)
