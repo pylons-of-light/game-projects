@@ -25,13 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Constants
-globalvar ONE_SECOND, HEALTH_MAX, HEALTH_UNIT;
-ONE_SECOND = room_speed;
-HEALTH_MAX = 100;
-HEALTH_UNIT = 1;
-
-//Globals
+            <string>//Globals
 globalvar g_health;
 g_health = HEALTH_MAX;
 

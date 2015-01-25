@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>REAPER_SPEED = 6;
-
-image_speed = 0;
+            <string>image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -59,19 +57,19 @@ bKeyDirectionIsReleased = false;
 
 //Check for arrow key or WASD presses
 if keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord('D')) {
-    keyDirection = 0;
+    keyDirection = RIGHT;
     bKeyDirectionIsPressed = true;
 }
 else if keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord('W')) {
-    keyDirection = 90;
+    keyDirection = UP;
     bKeyDirectionIsPressed = true;
 }
 else if keyboard_check_pressed(vk_left) or keyboard_check_pressed(ord('A')) {
-    keyDirection = 180;
+    keyDirection = LEFT;
     bKeyDirectionIsPressed = true;
 }
 else if keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord('S')) {
-    keyDirection = 270;
+    keyDirection = DOWN;
     bKeyDirectionIsPressed = true;
 }
 
@@ -88,13 +86,13 @@ or keyboard_check_released(ord('S')) {
     keyDirection = -1;   //Clear direction state
     
     if keyboard_check(vk_right) or keyboard_check(ord('D'))
-        keyDirection = 0;
+        keyDirection = RIGHT;
     else if keyboard_check(vk_up) or keyboard_check(ord('W'))
-        keyDirection = 90;
+        keyDirection = UP;
     else if keyboard_check(vk_left) or keyboard_check(ord('A'))
-        keyDirection = 180;
+        keyDirection = LEFT;
     else if keyboard_check(vk_down) or keyboard_check(ord('S'))
-        keyDirection = 270;
+        keyDirection = DOWN;
 }
 
 //Set speed and direction when key pressed
@@ -115,13 +113,13 @@ if bKeyDirectionIsReleased {
 }
 
 if bKeyDirectionIsPressed or bKeyDirectionIsReleased {
-    if keyDirection == 0
+    if keyDirection == RIGHT
         sprite_index = spr_reaperRight;
-    else if keyDirection == 90
+    else if keyDirection == UP
         sprite_index = spr_reaperUp;
-    else if keyDirection == 180
+    else if keyDirection == LEFT
         sprite_index = spr_reaperLeft;
-    else if keyDirection == 270
+    else if keyDirection == DOWN
         sprite_index = spr_reaperDown;
 }
 

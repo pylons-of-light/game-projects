@@ -28,23 +28,13 @@
             <string>//TODO: Maybe move this to some code that executes at the start of the program.
 randomize();
 
+
 image_speed = 0;
 
 bMale = choose(true, false)
 sprite = choose(0, 1)
 
-if bMale {
-    if sprite == 0
-        sprite_index = spr_maleCitizenDown
-    else
-        sprite_index = spr_maleCitizen2Down
-}
-else {
-    if sprite == 0
-        sprite_index = spr_femaleCitizenDown
-    else
-        sprite_index = spr_femaleCitizen2Down
-}
+sprite_index = CitizenSprite(bMale, sprite, DOWN)
 </string>
           </argument>
         </arguments>
