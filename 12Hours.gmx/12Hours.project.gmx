@@ -6,27 +6,42 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprReaperUp</sprite>
-    <sprite>sprites\sprReaperDown</sprite>
-    <sprite>sprites\sprReaperLeft</sprite>
-    <sprite>sprites\sprReaperRight</sprite>
-    <sprite>sprites\sprMaleCitizenUp</sprite>
-    <sprite>sprites\sprMaleCitizenDown</sprite>
-    <sprite>sprites\sprMaleCitizenLeft</sprite>
-    <sprite>sprites\sprMaleCitizenRight</sprite>
-    <sprite>sprites\sprMaleCitizenCower</sprite>
-    <sprite>sprites\femaleCitizenUp</sprite>
-    <sprite>sprites\femaleCitizenDown</sprite>
-    <sprite>sprites\femaleCitizenLeft</sprite>
-    <sprite>sprites\femaleCitizenRight</sprite>
-    <sprite>sprites\femaleCitizenCower</sprite>
+    <sprite>sprites\spr_reaperUp</sprite>
+    <sprite>sprites\spr_reaperDown</sprite>
+    <sprite>sprites\spr_reaperLeft</sprite>
+    <sprite>sprites\spr_reaperRight</sprite>
+    <sprite>sprites\spr_maleCitizenUp</sprite>
+    <sprite>sprites\spr_maleCitizenDown</sprite>
+    <sprite>sprites\spr_maleCitizenLeft</sprite>
+    <sprite>sprites\spr_maleCitizenRight</sprite>
+    <sprite>sprites\spr_maleCitizenCower</sprite>
+    <sprite>sprites\spr_femaleCitizenUp</sprite>
+    <sprite>sprites\spr_femaleCitizenDown</sprite>
+    <sprite>sprites\spr_femaleCitizenLeft</sprite>
+    <sprite>sprites\spr_femaleCitizenRight</sprite>
+    <sprite>sprites\spr_femaleCitizenCower</sprite>
+    <sprite>sprites\spr_maleCitizen2Up</sprite>
+    <sprite>sprites\spr_maleCitizen2Down</sprite>
+    <sprite>sprites\spr_maleCitizen2Left</sprite>
+    <sprite>sprites\spr_maleCitizen2Right</sprite>
+    <sprite>sprites\spr_maleCitizen2Cower</sprite>
+    <sprite>sprites\spr_femaleCitizen2Up</sprite>
+    <sprite>sprites\spr_femaleCitizen2Down</sprite>
+    <sprite>sprites\spr_femaleCitizen2Left</sprite>
+    <sprite>sprites\spr_femaleCitizen2Right</sprite>
+    <sprite>sprites\spr_femaleCitizen2Cower</sprite>
+    <sprite>sprites\spr_citizenMask</sprite>
+    <sprite>sprites\spr_reaperMask</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgr_ground1</background>
+    <background>background\bgr_ground1Transparent</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\overlay</object>
     <object>objects\reaper</object>
-    <object>objects\maleCitizen</object>
+    <object>objects\citizen</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level1</room>

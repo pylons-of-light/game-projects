@@ -1,31 +1,41 @@
 sprites
 =======
-reaper
+a town floor background texture -- maybe just a brown earth texture
 reaper scythe attack? maybe just a "white slash" sprite appearing in front of the reaper.
-male NPC, 4-way movement and single-direction (down) crouching/cowering
-female NPC, 4-way movement and single-direction (down) crouching/cowering
 house
 tree
 other random "town" objects
-
+//reaper
+//male NPC, 4-way movement and single-direction (down) crouching/cowering
+//female NPC, 4-way movement and single-direction (down) crouching/cowering
 
 code
 ====
-player movement
+code for starting a new level and exiting the game
+occasional NPC spawning, either at random positions or by walking into the room from the edges of the room
 NPC interaction (with scythe)
 NPC random "wandering" movement AI
 NPC fleeing from reaper AI
-health bar, which depletes by say 1% every second
+health bar recharges when kill NPCs
+game over on death
 clock, which shows 12:00 and counts down to 0:00 each second
-
+optional: speech bubbles and text
 
 rooms
 =====
-probably a title screen, with our names and such
+a title screen, with our names and "New Day" and "Exit" buttons
 a single level, consisting of a small town at nighttime
+optional: narration intro/outro screens, with yes/no button in outro screen
 
 
 notes
 =====
 unless we end up having more than 1 level, saving/loading is probably unnecessary
  (although GM does have some save/load mechanics built into it)
+toggling between fullscreen and windowed mode (via F11) is broken in the latest stable release of gamemaker.
+
+
+resources used
+==============
+sprites: http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/
+textures: http://opengameart.org/node/33434
