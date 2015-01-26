@@ -1,3 +1,7 @@
+//Get the sprite a citizen should use
+//Arguments: bMale, citizen sprite index, dir
+//TODO maybe remove this function; SetCitizenSprite usurps it
+
 bMale = argument0
 sprite = argument1
 dir = argument2

@@ -37,5 +37,7 @@ toggling between fullscreen and windowed mode (via F11) is broken in the latest 
 
 resources used
 ==============
-sprites: http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/
-textures: http://opengameart.org/node/33434
+sprites:
+http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/
+http://spritefx.blogspot.com/2013/04/sprite-slash.html
+http://opengameart.org/node/33434
