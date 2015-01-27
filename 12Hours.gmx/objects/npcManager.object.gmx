@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-50</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,30 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Note that due to how GM does drawing, even when using the 'with' statement, drawing will be done
-//using dialogueManager's depth level.
+            <string>//TODO create NPCs, perhaps a random number
 
-//Adjust drawing positions for the padding at the top of the sprites.
-//TODO maybe make these macro constants rather than global vars here.
-globalvar CITIZEN_OFFSET_Y, CHILD_OFFSET_Y;   //Must be a global to be referrable to in a 'with' statement.
-REAPER_OFFSET_Y = 18
-CITIZEN_OFFSET_Y = -3
-CHILD_OFFSET_Y = -14
+//TODO call alarm[0] to create more NPCS later
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//TODO generate a NPC somewhere
 
-draw_set_colour(c_white)
-draw_set_halign(fa_center)
-
-if reaper.dialogue != '' {
-    draw_text(reaper.x + reaper.sprite_width/2, reaper.y + REAPER_OFFSET_Y, reaper.dialogue)
-}
-
-with citizen
-    if dialogue != '' {
-        if object_get_name(object_index) == 'child'
-            draw_text(x + sprite_width/2, y + CHILD_OFFSET_Y, dialogue)
-        else
-            draw_text(x + sprite_width/2, y + CITIZEN_OFFSET_Y, dialogue)
-    }
+//TODO call alarm again
+//
+//The delay used should be somewhat random and should depend on instance_number(citizen).
+//
+//We could also make NPCs rarer later in the leve, by incorporating a ratio between the overall
+//time duration for the level and the current time that has elapsed in the level
+//(see the global vars in levelManager's Create event).
 </string>
           </argument>
         </arguments>

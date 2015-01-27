@@ -6,6 +6,9 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_reaperMask</sprite>
+    <sprite>sprites\spr_citizenMask</sprite>
+    <sprite>sprites\spr_childMask</sprite>
     <sprite>sprites\spr_reaperUp</sprite>
     <sprite>sprites\spr_reaperDown</sprite>
     <sprite>sprites\spr_reaperLeft</sprite>
@@ -30,9 +33,19 @@
     <sprite>sprites\spr_femaleCitizen2Left</sprite>
     <sprite>sprites\spr_femaleCitizen2Right</sprite>
     <sprite>sprites\spr_femaleCitizen2Cower</sprite>
-    <sprite>sprites\spr_citizenMask</sprite>
-    <sprite>sprites\spr_reaperMask</sprite>
+    <sprite>sprites\spr_maleChildUp</sprite>
+    <sprite>sprites\spr_maleChildDown</sprite>
+    <sprite>sprites\spr_maleChildLeft</sprite>
+    <sprite>sprites\spr_maleChildRight</sprite>
+    <sprite>sprites\spr_femaleChildUp</sprite>
+    <sprite>sprites\spr_femaleChildDown</sprite>
+    <sprite>sprites\spr_femaleChildLeft</sprite>
+    <sprite>sprites\spr_femaleChildRight</sprite>
     <sprite>sprites\spr_slash</sprite>
+    <sprite>sprites\spr_house1</sprite>
+    <sprite>sprites\spr_tree1</sprite>
+    <sprite>sprites\spr_tree2</sprite>
+    <sprite>sprites\spr_tree3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
@@ -42,17 +55,28 @@
   <scripts name="scripts">
     <script>scripts\CitizenSprite.gml</script>
     <script>scripts\SetCitizenSprite.gml</script>
+    <script>scripts\ShowDialogue.gml</script>
+    <script>scripts\PlayerMove.gml</script>
+    <script>scripts\PlayerAttack.gml</script>
+    <script>scripts\CitizenMove.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\overlay</object>
+    <object>objects\levelManager</object>
+    <object>objects\npcManager</object>
+    <object>objects\dialogueManager</object>
     <object>objects\reaper</object>
     <object>objects\citizen</object>
-    <object>objects\dialogueManager</object>
+    <object>objects\child</object>
+    <object>objects\block</object>
+    <object>objects\house1</object>
+    <object>objects\tree1</object>
+    <object>objects\tree2</object>
+    <object>objects\tree3</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level1</room>
   </rooms>
-  <constants number="8">
+  <constants number="10">
     <constant name="RIGHT">0</constant>
     <constant name="UP">90</constant>
     <constant name="LEFT">180</constant>
@@ -61,6 +85,8 @@
     <constant name="HEALTH_MAX">100</constant>
     <constant name="HEALTH_UNIT">1</constant>
     <constant name="REAPER_SPEED">6</constant>
+    <constant name="CITIZEN_SPEED">5</constant>
+    <constant name="CHILD_SPEED">6</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

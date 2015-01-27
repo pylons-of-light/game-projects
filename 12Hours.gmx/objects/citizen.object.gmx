@@ -42,10 +42,14 @@ SetCitizenSprite(self)
 
 dialogue = ''
 
-/*
+
+/* //TODO remove: dialogue test. this is probably how you should add dialogue, though, when you want to give it.
 if random(1) &lt; .5 {
     dialogue = 'Test.'
     alarm[0] = SECOND * 3
+    
+    //alternative method:
+    ShowDialogue(self, 'Test.', 3)
 }
 */
 </string>
@@ -94,8 +98,7 @@ dialogue = ''
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if distance_to_object(reaper) &lt; 50
-    mp_potential_step(reaper.x, reaper.y, -5, false)
+            <string>CitizenMove(self)
 </string>
           </argument>
         </arguments>

@@ -26,10 +26,41 @@
           <argument>
             <kind>1</kind>
             <string>//Globals
-globalvar g_health;
+globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health;
 g_health = HEALTH_MAX
+g_levelStartTime = current_time
+g_levelSeconds = 12 * 60
+//g_levelSeconds = 5   //TODO remove
+g_levelDuration = g_levelSeconds * 1000
 
 alarm[0] = SECOND
+alarm[1] = SECOND * g_levelSeconds
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//TODO end game properly
+
+//TODO remove
+ShowDialogue(reaper, 'Game over.', 2)
 </string>
           </argument>
         </arguments>
@@ -111,7 +142,39 @@ if keyboard_check_pressed(vk_f11) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_healthbar(view_xview[0] + 20, view_yview[0] + 20, view_xview[0] + 30, view_yview[0] + 140, g_health, c_black, c_red, c_blue, 3, true, true)
+            <string>//--------------------------
+//--Calculate clock progress
+//--------------------------
+
+millisecondsLeft = g_levelDuration - (current_time - g_levelStartTime - 1000)   //The 1000 is a mathematical convenience, for printing purposes; without it, the clock will be 1 second fast.
+
+//TODO remove: test having only 10 seconds left
+//millisecondsLeft = g_levelDuration - (current_time + 60 * 1000 * 11 + 50 * 1000 - g_levelStartTime - 1000)
+
+secondsLeft = floor(millisecondsLeft / 1000)
+minutesLeft = floor(secondsLeft / 60)
+secondsLeft -= minutesLeft * 60
+
+if minutesLeft &lt; 0 {
+    secondsLeft = 0
+    minutesLeft = 0
+}
+
+secondsStr = string(secondsLeft)
+if string_length(secondsStr) == 1
+    secondsStr = '0' + secondsStr
+
+
+//------------------
+//--Draw UI elements
+//------------------
+
+//Draw clock
+draw_set_colour(c_white)
+draw_set_halign(fa_left)
+draw_text(view_xview[0] + 15, view_yview[0] + 20, string(minutesLeft) + ':' + secondsStr)
+
+draw_healthbar(view_xview[0] + 20, view_yview[0] + 45, view_xview[0] + 30, view_yview[0] + 165, g_health, make_color_rgb(48, 44, 44), c_red, c_blue, 3, true, true)
 
 //Unnecessary; this would be used if there were an actual sprite associated with this object
 //draw_sprite(sprite_index, image_index, x, y)
