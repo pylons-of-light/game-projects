@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//TODO remove:
-//Test change to object
-
+            <string>direction = DOWN
 image_speed = 0
 
 dialogue = ''
@@ -80,6 +78,9 @@ dialogue = ''
           <argument>
             <kind>1</kind>
             <string>PlayerMove()
+
+if mouse_check_button_pressed(mb_left)
+    PlayerAttack()
 </string>
           </argument>
         </arguments>

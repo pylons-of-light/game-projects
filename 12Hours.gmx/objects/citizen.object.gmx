@@ -43,9 +43,12 @@ SetCitizenSprite(self)
 dialogue = ''
 
 bRunning = false
+bDying = false
+bCowering = false
 
 ranx = random(1920);
 rany = random(1080);
+
 
 walkSpeed = 1
 runSpeed = 4
@@ -61,6 +64,37 @@ fleeDialogue[1] = "It's coming..."
 fleeDialogue[2] = "Waaaugh!"
 fleeDialogue[3] = "Get away from me!"
 fleeDialogue[4] = "No... no... no..."
+
+dieDialogue[0] = "Aaaugh!"
+dieDialogue[1] = "My soul... splitting..."
+dieDialogue[2] = "This feeling..."
+dieDialogue[3] = "No, I'm not ready--"
+dieDialogue[4] = "Help!"
+
+healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 10)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -131,6 +165,46 @@ dialogue = ''
           <argument>
             <kind>1</kind>
             <string>CitizenMove(self)
+
+if bDying
+    if image_alpha &gt; 0 image_alpha -= 0.05;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if distance_to_object(reaper) &lt; 50 {
+    //Set offsets to use when displaying thunder
+    var xOffset = 100, yOffset
+    switch object_index {
+        case child:
+            yOffset = 130
+            break
+        default:
+            yOffset = 120
+            break
+    }
+    
+    instance_create(x + sprite_width/2 - xOffset, y + sprite_height/2 - yOffset, thunder)
+    CitizenDie(self)
+}
 </string>
           </argument>
         </arguments>

@@ -41,7 +41,12 @@
     <sprite>sprites\spr_femaleChildDown</sprite>
     <sprite>sprites\spr_femaleChildLeft</sprite>
     <sprite>sprites\spr_femaleChildRight</sprite>
-    <sprite>sprites\spr_slash</sprite>
+    <sprite>sprites\spr_slashRight</sprite>
+    <sprite>sprites\spr_slashUp</sprite>
+    <sprite>sprites\spr_slashLeft</sprite>
+    <sprite>sprites\spr_slashDown</sprite>
+    <sprite>sprites\spr_thunder</sprite>
+    <sprite>sprites\spr_thunderOrigSize</sprite>
     <sprite>sprites\spr_house1</sprite>
     <sprite>sprites\spr_tree1</sprite>
     <sprite>sprites\spr_tree2</sprite>
@@ -59,6 +64,8 @@
     <script>scripts\PlayerMove.gml</script>
     <script>scripts\PlayerAttack.gml</script>
     <script>scripts\CitizenMove.gml</script>
+    <script>scripts\CitizenSpawn.gml</script>
+    <script>scripts\CitizenDie.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\levelManager</object>
@@ -67,6 +74,8 @@
     <object>objects\reaper</object>
     <object>objects\citizen</object>
     <object>objects\child</object>
+    <object>objects\slash</object>
+    <object>objects\thunder</object>
     <object>objects\block</object>
     <object>objects\house1</object>
     <object>objects\tree1</object>
@@ -76,7 +85,11 @@
   <rooms name="rooms">
     <room>rooms\level1</room>
   </rooms>
-  <constants number="10">
+  <constants number="14">
+    <constant name="CHILD_OFFSET_Y">-14</constant>
+    <constant name="CITIZEN_OFFSET_Y">-3</constant>
+    <constant name="REAPER_OFFSET_Y">18</constant>
+    <constant name="DIE_DL_MAX">4</constant>
     <constant name="WANDER_DL_MAX">4</constant>
     <constant name="FLEE_DL_MAX">4</constant>
     <constant name="RIGHT">0</constant>

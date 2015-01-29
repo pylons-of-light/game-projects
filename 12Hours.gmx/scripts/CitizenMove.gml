@@ -2,10 +2,13 @@
 //Arguments: citizen instance
 
 with argument0 {
+    if bDying or bCowering
+        exit
+    
     if distance_to_object(reaper) < 100
     {
         bRunning = true
-        alarm[1] = room_speed * 2;
+        alarm[1] = room_speed * (2 + random(4));   //Run away for from 2 to 6 seconds.
     }
     
     if bRunning
@@ -51,5 +54,7 @@ with argument0 {
     
     //TODO call SetCitizenSprite(self), if 'direction' has changed.
     //TODO set animation to moving or static depending on speed
+    
     //TODO an npc who exits the level should be destroyed, to keep instance_number(citizen) counts low
+    //TODO or, ignore that; maybe just let them reenter the map randomly, like they already do now.
 }

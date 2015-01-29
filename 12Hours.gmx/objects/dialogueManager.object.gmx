@@ -28,13 +28,6 @@
             <string>//Note that due to how GM does drawing, even when using the 'with' statement, drawing will be done
 //using dialogueManager's depth level.
 
-//Adjust drawing positions for the padding at the top of the sprites.
-//TODO maybe make these macro constants rather than global vars here.
-globalvar CITIZEN_OFFSET_Y, CHILD_OFFSET_Y;   //Must be a global to be referrable to in a 'with' statement.
-REAPER_OFFSET_Y = 18
-CITIZEN_OFFSET_Y = -3
-CHILD_OFFSET_Y = -14
-
 draw_set_colour(c_white)
 draw_set_halign(fa_center)
 
