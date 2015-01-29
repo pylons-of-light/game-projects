@@ -77,6 +77,8 @@
     <room>rooms\level1</room>
   </rooms>
   <constants number="10">
+    <constant name="WANDER_DL_MAX">4</constant>
+    <constant name="FLEE_DL_MAX">4</constant>
     <constant name="RIGHT">0</constant>
     <constant name="UP">90</constant>
     <constant name="LEFT">180</constant>
@@ -85,8 +87,6 @@
     <constant name="HEALTH_MAX">100</constant>
     <constant name="HEALTH_UNIT">1</constant>
     <constant name="REAPER_SPEED">6</constant>
-    <constant name="CITIZEN_SPEED">5</constant>
-    <constant name="CHILD_SPEED">6</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -42,18 +42,48 @@ SetCitizenSprite(self)
 
 dialogue = ''
 
+bRunning = false
+
 ranx = random(1920);
 rany = random(1080);
 
-/* //TODO remove: dialogue test. this is probably how you should add dialogue, though, when you want to give it.
-if random(1) &lt; .5 {
-    dialogue = 'Test.'
-    alarm[0] = SECOND * 3
-    
-    //alternative method:
-    ShowDialogue(self, 'Test.', 3)
-}
-*/
+walkSpeed = 1
+runSpeed = 4
+
+wanderDialogue[0] = "Nice night we're having."
+wanderDialogue[1] = "The lights... catch the eyes..."
+wanderDialogue[2] = "Hmm mmh."
+wanderDialogue[3] = "Tired... should go to bed..."
+wanderDialogue[4] = "Hey, what's that?"
+
+fleeDialogue[0] = "No! I'm not ready to die yet!"
+fleeDialogue[1] = "It's coming..."
+fleeDialogue[2] = "Waaaugh!"
+fleeDialogue[3] = "Get away from me!"
+fleeDialogue[4] = "No... no... no..."
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bRunning = false
 </string>
           </argument>
         </arguments>
