@@ -42,6 +42,8 @@ SetCitizenSprite(self)
 
 dialogue = ''
 
+ranx = random(1920);
+rany = random(1080);
 
 /* //TODO remove: dialogue test. this is probably how you should add dialogue, though, when you want to give it.
 if random(1) &lt; .5 {
