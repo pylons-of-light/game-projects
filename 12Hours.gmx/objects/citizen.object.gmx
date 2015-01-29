@@ -72,6 +72,8 @@ dieDialogue[3] = "No, I'm not ready--"
 dieDialogue[4] = "Help!"
 
 healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 10)
+
+//comment
 </string>
           </argument>
         </arguments>
