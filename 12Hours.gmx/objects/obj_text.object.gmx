@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>text = "                 When you time is up, it's up." +"##"+
+            <string>text = "                 When your time is up, it's up." +"##"+
        "Young or old, the choice of when we meet the end is not our own"+"##"+
        "The One that is tasked with collecting the souls of the damned" +"#"+
-       "was once alive himself. At first relutant to take a life, by not"+"#"+
+       "was once alive himself. At first he was reluctant to take a life, but not"+"#"+
        "doing so presented itself in a natural disaster that killed thousands."+"#"+
-       "This new Reaper learned quickly that balance in the relms of the "+"#"+
+       "This new Reaper learned quickly that balance in the realms of the "+"#"+
        "dead and the living must be kept, with no exceptions"           +"#"+
        "Night after night, the Reaper must keep order within the sea of "+"#"+
-       "chaos that presents itself as the Reaper passes through the relms."+"#"+
+       "chaos that presents itself as the Reaper passes through the realms."+"#"+
        "Despite knowing the consequences, the Reaper is starting to question"+"#"+
        "whether or not the work he is doing is actually necessary, "+"#"+
        "or is he just being punished for all of the wrong he had done."+"#"+
@@ -66,7 +66,10 @@ scroll_speed = 0.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if scroll_pos = string_length(text) - scroll_span then
+            <string>draw_set_colour(c_white)
+//draw_set_halign(fa_left)
+
+if scroll_pos = string_length(text) - scroll_span then
 { scroll_pos = 0; } else
 { scroll_pos += scroll_speed; }
 

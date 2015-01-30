@@ -2,10 +2,19 @@
 //Arguments: citizen instance
 
 with argument0 {
+    /*count = 0
+    with citizen {   //Note that this automatically excludes the current instance
+        if self != other
+            other.count += 1
+            continue
+    }
+    dialogue = string(count)
+    */
+    
     if bDying or bCowering
         exit
     
-    if distance_to_object(reaper) < 100
+    if not bGrayed and distance_to_object(reaper) < 100
     {
         bRunning = true
         alarm[1] = room_speed * (2 + random(4));   //Run away for from 2 to 6 seconds.
@@ -55,6 +64,6 @@ with argument0 {
     //TODO call SetCitizenSprite(self), if 'direction' has changed.
     //TODO set animation to moving or static depending on speed
     
-    //TODO an npc who exits the level should be destroyed, to keep instance_number(citizen) counts low
-    //TODO or, ignore that; maybe just let them reenter the map randomly, like they already do now.
+    //not TODO: an npc who exits the level should be destroyed, to keep instance_number(citizen) counts low
+    //TODO ignore that; maybe just let them reenter the map randomly, like they already do now.
 }

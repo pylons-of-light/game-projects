@@ -25,13 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Globals
-globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health;
+            <string>randomize()   //Seed random number generator.
+
+
+//Globals
+globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health, g_levelEasiness;
 g_health = HEALTH_MAX
 g_levelStartTime = current_time
 g_levelSeconds = 12 * 60
 //g_levelSeconds = 5   //TODO remove
 g_levelDuration = g_levelSeconds * 1000
+g_levelEasiness = .8   //Percentage, with low meaning harder; 1.0 aka 100% is easiest
 
 alarm[0] = SECOND
 alarm[1] = SECOND * g_levelSeconds

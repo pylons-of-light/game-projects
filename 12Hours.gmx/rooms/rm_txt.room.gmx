@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="obj_text" x="288" y="224" name="inst_2A8CBECC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="levelManager" x="32" y="0" name="inst_1F4D199A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

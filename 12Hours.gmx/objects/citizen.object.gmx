@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//TODO: Maybe move this to some code that executes at the start of the program.
-randomize()
-
-
-image_speed = 0
+            <string>image_speed = 0
 direction = DOWN
 
 bMale = choose(true, false)
@@ -46,8 +42,77 @@ bRunning = false
 bDying = false
 bCowering = false
 
-ranx = random(1920);
-rany = random(1080);
+
+//Are any other citizens grayed out? If not, make this guy non-grayed. Otherwise, decide whether
+//to gray this NPC out or not based on a random chance.
+
+bGrayed = false
+bAnyGrayed = false
+bGrayedForever = false
+
+
+//---------------------------------------------------------
+//---Determine whether this NPC should be grayed out or not
+
+//Did we just start this level? If so, due to a design flaw in GameMaker, all the citizens will already
+//exist, and none of them will have bGrayed set except for the current instance. So we can't just
+//iterate through them and test for bGrayed -- and GML has no way to test if a variable exists yet.
+//So instead, we won't iterate through the instances, we'll pretend that other grayed-out NPCs already
+//exist.
+if current_time - g_levelStartTime &lt; 500 {   //Did we just start the level?
+    bAnyGrayed = true;
+}
+else {
+    with citizen {
+        if self == other
+            continue
+        if bGrayed {
+            other.bAnyGrayed = true
+            exit
+        }
+    }
+}
+
+if bAnyGrayed {
+    bGrayed = (random(1) * 1.6 &lt;= g_levelEasiness)   //Very arbitrary; probably needs adjustment
+    
+    if bGrayed {
+        /*
+        //These values work for non-white-colored sprites
+        image_blend = make_colour_hsv(0, 0, 150)
+        image_alpha = .7
+        */
+        image_blend = make_colour_hsv(255, 0, 100)
+        image_alpha = .9
+        
+        //50%: 15 seconds to 2 minutes
+        //25%: 2 minutes to 5 minutes
+        //25%: forever (they stay gray forever)
+        percent = random(1)
+        if percent &lt;= .50 {
+            alarm[3] = SECOND * (15 + (120-15) * random(1))
+            //alarm[3] = 1
+            //dialogue = string(alarm[3]/SECOND)   //TODO remove
+        }
+        else if percent &lt;= .75 {
+            alarm[3] = SECOND * (120 + (300-120) * random(1))
+            //alarm[3] = 1
+            //dialogue = string(alarm[3]/SECOND)   //TODO remove
+        }
+        else {
+            bGrayedForever = true
+            dialogue = "grayed forever"   //TODO remove
+        }
+    }
+}
+else
+    bGrayed = false
+
+//---------------------------------------------------------
+
+
+ranx = random(1920)
+rany = random(1080)
 
 
 walkSpeed = 1
@@ -71,9 +136,38 @@ dieDialogue[2] = "This feeling..."
 dieDialogue[3] = "No, I'm not ready--"
 dieDialogue[4] = "Help!"
 
-healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 10)
+healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 5)
 
 //comment
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Un-gray the citizen. Note that this should never be called if bGrayedForever is true
+
+bGrayed = false
+image_blend = c_white   //Or -1; anyway, this means to draw the sprite using normal colors.
+image_alpha = 1
+
+dialogue = "un-grayed"   //TODO remove
 </string>
           </argument>
         </arguments>
@@ -166,7 +260,10 @@ dialogue = ''
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>CitizenMove(self)
+            <string>if alarm[3] &gt; 0
+    dialogue = string(ceil(alarm[3]/SECOND))   //TODO remove
+
+CitizenMove(self)
 
 if bDying
     if image_alpha &gt; 0 image_alpha -= 0.05;
