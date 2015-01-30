@@ -55,6 +55,7 @@
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
     <background>background\bgr_ground1Transparent</background>
+    <background>background\bgr_Start</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -81,8 +82,12 @@
     <object>objects\tree1</object>
     <object>objects\tree2</object>
     <object>objects\tree3</object>
+    <object>objects\obj_NextRoomText</object>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Start</room>
+    <room>rooms\rm_txt</room>
     <room>rooms\level1</room>
   </rooms>
   <constants number="14">
