@@ -3,14 +3,18 @@
   <caption></caption>
   <width>1024</width>
   <height>768</height>
-  <vsnap>50</vsnap>
-  <hsnap>50</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>-1</isometric>
   <speed>30</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>sound_stop_all()
+sound_play(music_title)
+sound_loop(music_title)
+
+//audio_play_sound(music_title, 0, true)</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -52,6 +56,9 @@
   </views>
   <instances>
     <instance objName="obj_NextRoomText" x="100" y="250" name="inst_C67AA794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="newGame" x="960" y="224" name="inst_25F354EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="saveGame" x="960" y="288" name="inst_4762A684" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="loadGame" x="960" y="352" name="inst_86F285B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -1,24 +1,22 @@
 sprites
 =======
-some random "town" objects
+more various "town" objects
 lamp
 
 code
 ====
 optional: code for launching a pause screen
 occasional NPC spawning, either at random positions or by walking into the room from the edges of the room
-game over on death
+game over on death; restarts current level (this will involve fiddling with room persistence)
 
 rooms
 =====
+two more levels
 game over screen?
-two more levels?
-narration screens for each level?
+narration screens for each level, and a game ending narration screen
 
 notes
 =====
-unless we end up having more than 1 level, saving/loading is probably unnecessary
- (although GM does have some save/load mechanics built into it)
 toggling between fullscreen and windowed mode (via F11) is broken in the latest stable release of gamemaker.
 
 sprite resources used

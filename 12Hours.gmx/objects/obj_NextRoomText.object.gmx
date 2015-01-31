@@ -8,6 +8,34 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>globalvar g_bPaused, g_pausedTime, g_pausedRoom, g_bResuming, g_bNewGame;
+g_bPaused = false
+g_pausedTime = -1
+g_pausedRoom = -1
+g_bResuming = false
+g_bNewGame = false   //Note: Due to how GameMaker rooms work, we need to jump through some hoops to destroy the persistent state of paused rooms
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,8 +53,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_check_button_pressed(mb_left)
-    room_goto(rm_txt)
+            <string>/*
+if mouse_check_button_pressed(mb_left) {
+    
+}
+*/
 </string>
           </argument>
         </arguments>
@@ -49,7 +80,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_txt);
+            <string>if not g_bPaused
+    room_goto(rm_txt)
+else {
+    g_bResuming = true
+    room_goto(g_pausedRoom)
+}
 </string>
           </argument>
         </arguments>

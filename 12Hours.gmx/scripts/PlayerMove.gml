@@ -124,12 +124,12 @@ with reaper {
     //---------------------
     
     if place_meeting(x + hspeed, y, citizen)
-        hspeed = 0
+        speed = 0
     if place_meeting(x, y + vspeed, citizen)
-        vspeed = 0
+        speed = 0
     
     if place_meeting(x + hspeed, y, block)
-        hspeed = 0
+        speed = 0
     if place_meeting(x, y + vspeed, block)
-        vspeed = 0
+        speed = 0
 }

@@ -290,6 +290,16 @@ if bDying
           <argument>
             <kind>1</kind>
             <string>if distance_to_object(reaper) &lt; 50 {
+    if bGrayed {
+        var text
+        if bMale
+            text = "His"
+        else
+            text = "Her"
+        ShowDialogue(reaper, text + " time has not yet come.", 2)
+        exit
+    }
+    
     //Set offsets to use when displaying thunder
     var xOffset = 100, yOffset
     switch object_index {

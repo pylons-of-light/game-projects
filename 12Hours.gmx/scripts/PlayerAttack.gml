@@ -6,22 +6,22 @@ with reaper {
     tempXOffset = sprite_width/2 - sprite_get_width(slashPrototype)/2
     tempYOffset = sprite_height/2 - sprite_get_height(slashPrototype)/2
     
-    if other.direction == RIGHT {
+    if direction == RIGHT {
         tempXOffset += sprite_width / 2 - 15   //Note arbitrary adjustment
         tempYOffset += 15   //Help make it look like the slash is wrapping around the reaper's body
         slashSprite = spr_slashRight
     }
-    else if other.direction == UP {
+    else if direction == UP {
         tempXOffset += 10
         tempYOffset -= sprite_height / 2 - 25   //Slightly different arbitrary adjustment
         slashSprite = spr_slashUp
     }
-    else if other.direction == LEFT {
+    else if direction == LEFT {
         tempXOffset -= sprite_width / 2 - 10
         tempYOffset -= 10
         slashSprite = spr_slashLeft
     }
-    else if other.direction == DOWN {
+    else if direction == DOWN {
         tempXOffset -= 10
         tempYOffset += sprite_height / 2 - 20
         slashSprite = spr_slashDown

@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\music_title</sound>
+    <sound>sound\music_level1</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_reaperMask</sprite>
     <sprite>sprites\spr_citizenMask</sprite>
@@ -51,11 +54,16 @@
     <sprite>sprites\spr_tree1</sprite>
     <sprite>sprites\spr_tree2</sprite>
     <sprite>sprites\spr_tree3</sprite>
+    <sprite>sprites\spr_newGame</sprite>
+    <sprite>sprites\spr_saveGame</sprite>
+    <sprite>sprites\spr_loadGame</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
     <background>background\bgr_ground1Transparent</background>
     <background>background\bgr_Start</background>
+    <background>background\bgr_ground2</background>
+    <background>background\bgr_ground2Transparent</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -84,11 +92,15 @@
     <object>objects\tree3</object>
     <object>objects\obj_NextRoomText</object>
     <object>objects\obj_text</object>
+    <object>objects\newGame</object>
+    <object>objects\saveGame</object>
+    <object>objects\loadGame</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start</room>
     <room>rooms\rm_txt</room>
     <room>rooms\level1</room>
+    <room>rooms\level2</room>
   </rooms>
   <constants number="16">
     <constant name="MEDIUM_HEALTH_DL_MAX">4</constant>
