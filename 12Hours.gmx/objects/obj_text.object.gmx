@@ -67,7 +67,7 @@ scroll_speed = 0.5;
           <argument>
             <kind>1</kind>
             <string>draw_set_colour(c_white)
-//draw_set_halign(fa_left)
+draw_set_halign(fa_left)
 
 if scroll_pos = string_length(text) - scroll_span then
 { scroll_pos = 0; } else

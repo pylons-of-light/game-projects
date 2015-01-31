@@ -37,10 +37,15 @@ if reaper.dialogue != '' {
 
 with citizen
     if dialogue != '' {
+        if bGrayed
+            draw_set_colour(c_gray)
+        
         if object_get_name(object_index) == 'child'
             draw_text(x + sprite_width/2, y + CHILD_OFFSET_Y, dialogue)
         else
             draw_text(x + sprite_width/2, y + CITIZEN_OFFSET_Y, dialogue)
+        
+        draw_set_colour(c_white)
     }
 </string>
           </argument>
