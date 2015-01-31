@@ -1,24 +1,19 @@
 sprites
 =======
-reaper scythe attack? maybe just a "white slash" sprite appearing in front of the reaper.
 some random "town" objects
+lamp
 
 code
 ====
 optional: code for launching a pause screen
 occasional NPC spawning, either at random positions or by walking into the room from the edges of the room
-NPC interaction (with scythe)
-NPC random "wandering" movement AI
-NPC fleeing from reaper AI
-health bar recharges when kill NPCs
 game over on death
-occasional random dialogue triggers for NPC and reaper
 
 rooms
 =====
-a title screen, with our names and "New Day" and "Exit" buttons; links to first level
-a single level, consisting of a small town at nighttime
-narration intro/outro screens, with yes/no button in outro screen
+game over screen?
+two more levels?
+narration screens for each level?
 
 notes
 =====

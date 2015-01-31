@@ -90,13 +90,15 @@
     <room>rooms\rm_txt</room>
     <room>rooms\level1</room>
   </rooms>
-  <constants number="14">
-    <constant name="CHILD_OFFSET_Y">-14</constant>
-    <constant name="CITIZEN_OFFSET_Y">-3</constant>
-    <constant name="REAPER_OFFSET_Y">18</constant>
+  <constants number="16">
+    <constant name="MEDIUM_HEALTH_DL_MAX">4</constant>
+    <constant name="LOW_HEALTH_DL_MAX">5</constant>
     <constant name="DIE_DL_MAX">4</constant>
     <constant name="WANDER_DL_MAX">4</constant>
     <constant name="FLEE_DL_MAX">4</constant>
+    <constant name="CHILD_OFFSET_Y">-14</constant>
+    <constant name="CITIZEN_OFFSET_Y">-3</constant>
+    <constant name="REAPER_OFFSET_Y">18</constant>
     <constant name="RIGHT">0</constant>
     <constant name="UP">90</constant>
     <constant name="LEFT">180</constant>

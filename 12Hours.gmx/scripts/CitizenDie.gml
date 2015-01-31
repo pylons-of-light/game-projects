@@ -4,6 +4,15 @@
 with argument0 {
     if bDying   //Already dying
         exit
+    if bGrayed {
+        var text
+        if bMale
+            text = "His"
+        else
+            text = "Her"
+        ShowDialogue(reaper, text + " time has not yet come.", 2)
+        exit
+    }
     
     g_health += healthBoost
     if g_health > HEALTH_MAX
