@@ -64,6 +64,7 @@
     <sprite>sprites\btnCredits</sprite>
     <sprite>sprites\btnLoadGame</sprite>
     <sprite>sprites\btnRestart</sprite>
+    <sprite>sprites\btn_SaveGame</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
@@ -107,6 +108,7 @@
     <object>objects\obj_Exit</object>
     <object>objects\obj_LoadGame</object>
     <object>objects\obj_Credits</object>
+    <object>objects\obj_SaveGame</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start</room>
