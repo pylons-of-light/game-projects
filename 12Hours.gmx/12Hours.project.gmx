@@ -61,6 +61,9 @@
     <sprite>sprites\btn_Reap</sprite>
     <sprite>sprites\btn_Exit</sprite>
     <sprite>sprites\btn_GiveUp</sprite>
+    <sprite>sprites\btnCredits</sprite>
+    <sprite>sprites\btnLoadGame</sprite>
+    <sprite>sprites\btnRestart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
@@ -68,6 +71,7 @@
     <background>background\bgr_Start</background>
     <background>background\bgr_ground2</background>
     <background>background\bgr_ground2Transparent</background>
+    <background>background\bgr_Credits</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -101,12 +105,15 @@
     <object>objects\loadGame</object>
     <object>objects\obj_NewGame</object>
     <object>objects\obj_Exit</object>
+    <object>objects\obj_LoadGame</object>
+    <object>objects\obj_Credits</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start</room>
     <room>rooms\rm_txt</room>
     <room>rooms\level1</room>
     <room>rooms\level2</room>
+    <room>rooms\rm_credits</room>
   </rooms>
   <constants number="16">
     <constant name="MEDIUM_HEALTH_DL_MAX">4</constant>
