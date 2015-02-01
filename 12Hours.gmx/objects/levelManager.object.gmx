@@ -29,12 +29,13 @@
 
 
 //Globals
-globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health, g_levelEasiness;
+globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health, g_levelEasiness, g_bLevelEnding;
 g_health = HEALTH_MAX
 g_levelStartTime = current_time
 g_levelSeconds = 12 * 60
-//g_levelSeconds = 5   //TODO remove
+//g_levelSeconds = 5   //TODO remove; for testing purposes
 g_levelDuration = g_levelSeconds * 1000
+g_bLevelEnding = false
 
 alarm[0] = SECOND
 alarm[1] = SECOND * g_levelSeconds
@@ -45,6 +46,38 @@ if room == level1 {
 }
 else if room == level2 {
     g_levelEasiness = .6
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Advance to the next level or die, depending on conditions
+
+if g_health &lt;= 0
+    room_restart()
+else {
+    if room == level1
+        room_goto(rm_level2Txt)
+    else if room == level2
+        room_goto(rm_endingText)
 }
 </string>
           </argument>
@@ -68,10 +101,11 @@ else if room == level2 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//TODO end game properly
+            <string>//Trigger the end of the level
 
-//TODO remove
-ShowDialogue(reaper, 'Game over.', 2)
+g_bLevelEnding = true
+instance_create(0, 0, fadeToBlack)
+alarm[2] = SECOND * 5   //Give the fading animation time to complete
 </string>
           </argument>
         </arguments>
@@ -94,8 +128,14 @@ ShowDialogue(reaper, 'Game over.', 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>g_health -= HEALTH_UNIT
-alarm[0] = SECOND
+            <string>if not g_bLevelEnding {
+    g_health -= HEALTH_UNIT
+    alarm[0] = SECOND
+    
+    if g_health &lt;= 0 {
+        alarm[1] = 1   //Trigger the end of the level
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -132,11 +172,19 @@ if g_bResuming {
     g_pausedRoom = -1
     g_bResuming = false
     
-    //TODO add levels 2 and 3 in here
     if room == level1 {
-        sound_stop_all()
-        sound_play(music_level1)
-        sound_loop(music_level1)
+        if not sound_isplaying(music_level1) {
+            sound_stop_all()
+            sound_play(music_level1)
+            sound_loop(music_level1)
+        }
+    }
+    else if room == level2 {
+        if not sound_isplaying(music_level2) {
+            sound_stop_all()
+            sound_play(music_level2)
+            sound_loop(music_level2)
+        }
     }
 }
 

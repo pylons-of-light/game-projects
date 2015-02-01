@@ -10,9 +10,11 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>sound_stop_all()
-sound_play(music_level1)
-sound_loop(music_level1)</code>
+  <code>if not sound_isplaying(music_level1) {
+    sound_stop_all()
+    sound_play(music_level1)
+    sound_loop(music_level1)
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -80,11 +80,24 @@ if mouse_check_button_pressed(mb_left) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not g_bPaused
-    room_goto(rm_txt)
+            <string>//Hotkey for exiting game
+if keyboard_check(vk_control) and keyboard_check(ord('Q'))
+    game_end()
+else if keyboard_check_pressed(vk_f11) {
+    if window_get_fullscreen() {
+        window_set_fullscreen(false)
+    }
+    else {
+        window_set_fullscreen(true)
+    }
+}
 else {
-    g_bResuming = true
-    room_goto(g_pausedRoom)
+    if not g_bPaused
+        room_goto(rm_txt)
+    else {
+        g_bResuming = true
+        room_goto(g_pausedRoom)
+    }
 }
 </string>
           </argument>

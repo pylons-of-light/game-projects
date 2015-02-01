@@ -2,6 +2,12 @@
 //Arguments: none
 
 with reaper {
+    if g_bLevelEnding {
+        speed = 0
+        image_speed = 0
+        exit
+    }
+    
     bKeyDirectionIsPressed = false
     bKeyDirectionIsReleased = false
     

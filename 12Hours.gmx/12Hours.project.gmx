@@ -10,6 +10,7 @@
     <sound>sound\sound_slash</sound>
     <sound>sound\sound_thunder</sound>
     <sound>sound\sound_swoosh</sound>
+    <sound>sound\music_level2</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_reaperMask</sprite>
@@ -117,6 +118,7 @@
     <object>objects\obj_SaveGame</object>
     <object>objects\controlsButton</object>
     <object>objects\controlsView</object>
+    <object>objects\fadeToBlack</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start</room>
