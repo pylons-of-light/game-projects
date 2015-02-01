@@ -12,4 +12,6 @@ with npcManager {
     //We could also make NPCs rarer later in the level, by incorporating a ratio between the overall
     //time duration for the level and the current time that has elapsed in the level
     //(see the global vars in levelManager's Create event).
+    
+    SetCitizenMoveLocation(self);
 }

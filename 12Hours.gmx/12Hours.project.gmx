@@ -90,6 +90,7 @@
     <script>scripts\CitizenMove.gml</script>
     <script>scripts\CitizenSpawn.gml</script>
     <script>scripts\CitizenDie.gml</script>
+    <script>scripts\SetCitizenMoveLocation.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\levelManager</object>
