@@ -10,9 +10,11 @@
   <persistent>-1</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>sound_stop_all()
-sound_play(music_title)
-sound_loop(music_title)
+  <code>if not sound_isplaying(music_title) {
+    sound_stop_all()
+    sound_play(music_title)
+    sound_loop(music_title)
+}
 
 //audio_play_sound(music_title, 0, true)</code>
   <enableViews>0</enableViews>
@@ -61,6 +63,8 @@ sound_loop(music_title)
     <instance objName="obj_LoadGame" x="928" y="352" name="inst_D1C047DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Credits" x="928" y="544" name="inst_1DDB114F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_SaveGame" x="928" y="416" name="inst_B4D9E48E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="controlsButton" x="192" y="704" name="inst_07F65365" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="controlsView" x="64" y="608" name="inst_71652077" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

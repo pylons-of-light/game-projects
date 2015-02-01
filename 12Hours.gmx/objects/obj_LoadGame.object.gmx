@@ -72,6 +72,13 @@
           <argument>
             <kind>1</kind>
             <string>//load game state code
+
+if file_exists('save.ini') {
+    game_load('save.ini')
+    show_message("Save file loaded.")
+}
+else
+    show_message("No save file found.")
 </string>
           </argument>
         </arguments>

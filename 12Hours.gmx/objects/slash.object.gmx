@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = .5
+
+bInitializing = true
 </string>
           </argument>
         </arguments>
@@ -48,8 +50,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = reaper.x + xOffset;
-y = reaper.y + yOffset;
+            <string>x = reaper.x + xOffset
+y = reaper.y + yOffset
+
+if bInitializing {
+    bHit = false
+    
+    //Play either a loud or a quiet slashing sound, depending on whether contact was made.
+    
+    with citizen {
+        if not bDying and not bGrayed and place_meeting(x, y, slash) {
+            other.bHit = true
+            CitizenDie(self)
+            break
+        }
+    }
+    
+    if bHit
+        sound_play(sound_slash)
+    else
+        sound_play(sound_swoosh)
+    
+    bInitializing = false
+}
 </string>
           </argument>
         </arguments>
@@ -72,7 +95,7 @@ y = reaper.y + yOffset;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>CitizenDie(other)
+            <string>//CitizenDie(other)
 </string>
           </argument>
         </arguments>

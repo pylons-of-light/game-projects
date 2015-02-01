@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>text = "                 When your time is up, it's up." +"##"+
+            <string>/*text = "                 When your time is up, it's up." +"##"+
        "Young or old, the choice of when we meet the end is not our own"+"##"+
        "The One that is tasked with collecting the souls of the damned" +"#"+
        "was once alive himself. At first he was reluctant to take a life, but not"+"#"+
@@ -40,33 +40,69 @@
        "Now the Reaper must make a choice: continue reaping souls to maintain."+"#"+
        "balance within the two relms, or to go against his duties as a Reaper."+"#"+
        "and allow those damned souls a chance to make their own fate.";
-
-//TODO uncomment
-/*
-startTime = current_time
-
-text = "  It's night. You're sleeping. Don't worry, this won't take long. I just have a##" +
-       "little message for you.###" +
-       "  When someone is marked for death, they're supposed to die. Their eyes take on a##" +
-       "sickly aura. Their skin glows. They're the only people I can really see, down##" +
-       "here, on my nightly journeys. They aren't aware that anything is wrong, at first.##" +
-       "They're still alive. But when they're ready, they start to see me as well.###" +
-       "  Man or woman, adult or child. They have been marked. And someone needs to perform##" +
-       "the finishing touch. That's where I come in.###" +
-       "  Sometimes I'm put aside by an innocent gaze. By a shining young face. I see it, and##" +
-       "think, this doesn't have to be. Not yet. So I leave them there. I'm not supposed to.##" +
-       "Sometimes I postpone a meeting for years. But they always meet me, in the end.##" +
-       "Everyone.###" +
-       "  That's how it has always been. That's how it will always be. I will always be here,##" +
-       "every night, making my rounds, for the 12 hours I have alotted each night to walk##" +
-       "this earth. Because if I were to ever slow, if I were to ever cease in my duties,##" +
-       "my own life would be forfeit. That is all I know. And who would come for me?"
 */
 
 scroll_pos = 1;
-scroll_span = 100;
+scroll_span = 1;
 scroll_speed = 0.5;
-//scroll_speed = 2;
+
+bEnding = false
+counter = 0
+
+
+text = ""
+
+nextLevel = level1
+
+lingerSeconds = 2   //The number of seconds between the end of text output and the beginning of text fading
+endSeconds = 6   //The number of seconds it takes for an auto-level transition at the end of text output
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_alpha(1);
+room_goto(nextLevel);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bEnding = true;
 </string>
           </argument>
         </arguments>
@@ -92,15 +128,26 @@ scroll_speed = 0.5;
             <string>draw_set_colour(c_white)
 draw_set_halign(fa_left)
 
+
+//Make the early text start quickly, until the scroll span reaches its max of 100
+if scroll_span &lt; 100
+    scroll_span += 1
+
+
 if scroll_pos = string_length(text) - scroll_span then
-{ scroll_pos = 0; } else
+{
+ //Note: Edited slightly from original version, to allow gradual fade out
+ scroll_pos += scroll_speed;
+ alarm[0] = SECOND * lingerSeconds;
+ alarm[1] = SECOND * endSeconds;
+}
+else
 { scroll_pos += scroll_speed; }
 
 text_draw = "";
 
 for (i=1; i&lt;=string_length(text); i+=1;)
 {
- 
  if string_char_at(text,i) = "#" then
  { text_draw += "#"; }
  else
@@ -111,13 +158,20 @@ for (i=1; i&lt;=string_length(text); i+=1;)
  { text_draw += string_char_at(text,i); }
 }
 
+
+counter += 1
+
+if bEnding
+    if draw_get_alpha() &gt; 0
+        draw_set_alpha(draw_get_alpha() - .005)
+
 draw_text(x,y,text_draw);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="1">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -134,7 +188,8 @@ draw_text(x,y,text_draw);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(level1);
+            <string>draw_set_alpha(1);
+room_goto(nextLevel);
 </string>
           </argument>
         </arguments>

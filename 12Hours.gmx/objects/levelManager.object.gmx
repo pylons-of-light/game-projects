@@ -207,9 +207,9 @@ room_goto(rm_Start)
 
 if current_time - g_levelStartTime &gt; 300 {
     if room == level1
-        room_goto(level2)
+        room_goto(rm_level2Txt)
     else if room == level2
-        room_goto(level1)
+        room_goto(rm_endingText)
 }
 </string>
           </argument>

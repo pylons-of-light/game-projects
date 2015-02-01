@@ -71,7 +71,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_txt);
+            <string>g_bPaused = false
+g_pausedTime = -1
+g_pausedRoom = -1
+g_bResuming = false
+g_bNewGame = true
+
+room_goto(rm_txt)
+
+//Note: If we're currently paused from some room, the paused room is still persistent and GameMaker
+//has no good way of resetting it from this room, so we'll just have to deal with that when we go
+//to that room.
 </string>
           </argument>
         </arguments>

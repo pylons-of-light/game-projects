@@ -7,6 +7,9 @@
   <sounds name="sound">
     <sound>sound\music_title</sound>
     <sound>sound\music_level1</sound>
+    <sound>sound\sound_slash</sound>
+    <sound>sound\sound_thunder</sound>
+    <sound>sound\sound_swoosh</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_reaperMask</sprite>
@@ -65,6 +68,8 @@
     <sprite>sprites\btnLoadGame</sprite>
     <sprite>sprites\btnRestart</sprite>
     <sprite>sprites\btn_SaveGame</sprite>
+    <sprite>sprites\spr_controlsButton</sprite>
+    <sprite>sprites\spr_controlsView</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
@@ -89,6 +94,7 @@
     <object>objects\levelManager</object>
     <object>objects\npcManager</object>
     <object>objects\dialogueManager</object>
+    <object>objects\creditsManager</object>
     <object>objects\reaper</object>
     <object>objects\citizen</object>
     <object>objects\child</object>
@@ -101,20 +107,24 @@
     <object>objects\tree3</object>
     <object>objects\obj_NextRoomText</object>
     <object>objects\obj_text</object>
-    <object>objects\newGame</object>
-    <object>objects\saveGame</object>
-    <object>objects\loadGame</object>
+    <object>objects\obj_level1Txt</object>
+    <object>objects\obj_level2Txt</object>
+    <object>objects\obj_endingTxt</object>
     <object>objects\obj_NewGame</object>
     <object>objects\obj_Exit</object>
     <object>objects\obj_LoadGame</object>
     <object>objects\obj_Credits</object>
     <object>objects\obj_SaveGame</object>
+    <object>objects\controlsButton</object>
+    <object>objects\controlsView</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start</room>
     <room>rooms\rm_txt</room>
     <room>rooms\level1</room>
+    <room>rooms\rm_level2Txt</room>
     <room>rooms\level2</room>
+    <room>rooms\rm_endingText</room>
     <room>rooms\rm_credits</room>
   </rooms>
   <constants number="16">

@@ -26,6 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>//Save game state code
+
+if file_exists('save.ini') {
+    bOverwrite = show_question("Overwrite previous save?")
+    if bOverwrite
+        game_save('save.ini')
+}
+else
+    game_save('save.ini')
 </string>
           </argument>
         </arguments>
@@ -43,5 +51,8 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>75,19</point>
+    <point>76,76</point>
+  </PhysicsShapePoints>
 </object>

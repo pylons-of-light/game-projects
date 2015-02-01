@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = .5
+
+sound_play(sound_thunder)
 </string>
           </argument>
         </arguments>
