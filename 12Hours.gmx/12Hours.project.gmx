@@ -132,11 +132,11 @@
     <room>rooms\rm_credits</room>
   </rooms>
   <constants number="16">
-    <constant name="MEDIUM_HEALTH_DL_MAX">4</constant>
-    <constant name="LOW_HEALTH_DL_MAX">5</constant>
-    <constant name="DIE_DL_MAX">4</constant>
-    <constant name="WANDER_DL_MAX">4</constant>
-    <constant name="FLEE_DL_MAX">4</constant>
+    <constant name="MEDIUM_HEALTH_DL_MAX">10</constant>
+    <constant name="LOW_HEALTH_DL_MAX">10</constant>
+    <constant name="DIE_DL_MAX">20</constant>
+    <constant name="WANDER_DL_MAX">20</constant>
+    <constant name="FLEE_DL_MAX">20</constant>
     <constant name="CHILD_OFFSET_Y">-14</constant>
     <constant name="CITIZEN_OFFSET_Y">-3</constant>
     <constant name="REAPER_OFFSET_Y">18</constant>

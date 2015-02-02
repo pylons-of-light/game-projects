@@ -29,6 +29,7 @@
 // Something in those checks cause these variables to never get set and then the game
 // will crash when something tries to access them later on; maybe your exit statement 
 // on 73, idk.
+//Edit: Yes, almost certainly that was the problem! Sorry.
 ranx = random(1920)
 rany = random(1080)
 
@@ -40,20 +41,68 @@ wanderDialogue[1] = "The lights... catch the eyes..."
 wanderDialogue[2] = "Hmm mmh."
 wanderDialogue[3] = "Tired... should go to bed..."
 wanderDialogue[4] = "Hey, what's that?"
+wanderDialogue[5] = "I wish there were more to do in this town."
+wanderDialogue[6] = "Did you hear what happened to Alice?"
+wanderDialogue[7] = "There's a new wine shop in town."
+wanderDialogue[8] = "My arms are stiff after all the crates I stacked today."
+wanderDialogue[9] = "I heard Mary is going to divorce Roger."
+wanderDialogue[10] = "There's not much to do in this town."
+wanderDialogue[11] = "I've been thinking about getting a cat."
+wanderDialogue[12] = "If we had more dogs, we'd have fewer rats."
+wanderDialogue[13] = "I wish the carnival would come to town."
+wanderDialogue[14] = "It's a big world out there."
+wanderDialogue[15] = "I'm bushed."
+wanderDialogue[16] = "Heh..."
+wanderDialogue[17] = "Just whistling in the wind..."
+wanderDialogue[18] = "Why is it always nighttime around here?"
+wanderDialogue[19] = "Need a long hot shower."
+wanderDialogue[20] = "Damn moles keep digging holes in my lawn."
 
 fleeDialogue[0] = "No! I'm not ready to die yet!"
 fleeDialogue[1] = "It's coming..."
 fleeDialogue[2] = "Waaaugh!"
 fleeDialogue[3] = "Get away from me!"
 fleeDialogue[4] = "No... no... no..."
+fleeDialogue[5] = "What the hell?!"
+fleeDialogue[6] = "Time to RUN FOR MY LIFE!"
+fleeDialogue[7] = "I don't want to die!"
+fleeDialogue[8] = "Help!"
+fleeDialogue[9] = "HELP!"
+fleeDialogue[10] = "Whatever it is, kill it!"
+fleeDialogue[11] = "I don't deserve this!"
+fleeDialogue[12] = "This isn't... supposed..."
+fleeDialogue[13] = "It's coming for me!"
+fleeDialogue[14] = "This isn't right!"
+fleeDialogue[15] = "No, no!"
+fleeDialogue[16] = "Get me the hell out of here!"
+fleeDialogue[17] = "Heaven save us!"
+fleeDialogue[18] = "Holy..."
+fleeDialogue[19] = "Oh my god."
+fleeDialogue[20] = "The Reaper!"
 
 dieDialogue[0] = "Aaaugh!"
 dieDialogue[1] = "My soul... splitting..."
 dieDialogue[2] = "This feeling..."
 dieDialogue[3] = "No, I'm not ready--"
 dieDialogue[4] = "Help!"
+dieDialogue[5] = "Urgh.."
+dieDialogue[6] = "My--"
+dieDialogue[7] = "About... time..."
+dieDialogue[8] = "This isn't... no..."
+dieDialogue[9] = "My last words... not very good."
+dieDialogue[10] = "I'm coming home."
+dieDialogue[11] = "Why?"
+dieDialogue[12] = "Why me?"
+dieDialogue[13] = "Noooo!"
+dieDialogue[14] = "This..."
+dieDialogue[15] = "..."
+dieDialogue[16] = "Oh no."
+dieDialogue[17] = "Sigh..."
+dieDialogue[18] = "I'll make you a deal--"
+dieDialogue[19] = "Well, isn't this wonderful."
+dieDialogue[20] = "And I never told--"
 
-healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 5)
+healthBoost = HEALTH_UNIT * 15 + irandom(HEALTH_UNIT * 10)
 
 image_speed = 0
 direction = DOWN
