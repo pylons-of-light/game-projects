@@ -25,12 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>//TODO create NPCs, perhaps a random number
 max_npcs = (5 + ceil(random(15)))
+=======
+            <string>//create NPCs, perhaps a random number
+max_npcs = ceil(random(20))
+>>>>>>> 6296d3746e3d6b8daa26aa7c8209c6e797f3432d
 
 show_debug_message("Max npcs allowed: " + string(max_npcs));
 
-//TODO call alarm[0] to create more NPCS later
+//call alarm[0] to create more NPCS later
 alarm[0] = 10
 </string>
           </argument>

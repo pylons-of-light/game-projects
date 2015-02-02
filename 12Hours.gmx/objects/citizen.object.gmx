@@ -99,7 +99,7 @@ else {
             continue
         if bGrayed {
             other.bAnyGrayed = true
-            exit
+            break
         }
     }
 }
