@@ -2,22 +2,26 @@
 //Arguments: person instance
 
 with argument0 {
-    ranx = x - 300 + random(600);
-    rany = y - 300 + random(600);
+    //ranx = round(random_range(200, room_width - 200));
+    //rany = round(random_range(200, room_height - 200));
+   
+    ranx = round( x - 150 + random(300) );
+    rany = round( x - 150 + random(300) );    
+     
+    if(ranx >= room_width){
+        ranx = room_width - 100;
+    } else if(ranx <= 0){
+        ranx = 100;
+    }
     
-    if ranx > room_width  
-      ranx = room_width - 50
+    if(rany >= room_height){
+        rany = room_height - 100;
+    } else if(rany <= 0){
+        rany = 100;
+    }   
     
-    if ranx < 0 || ranx == 0
-      ranx = 50
-      
-    if rany > room_height
-      rany = room_height - 50
-    
-    if rany < 0 || rany == 0
-      rany = 50
-    
-    alarm[11] = 0  
+    alarm[11] = 0;
       
     show_debug_message("set citizen move to: " + string(ranx) + ", " + string(rany));
+    //show_debug_message("room dimensions: " + string(room_width) + ", " + string(room_height));
 }

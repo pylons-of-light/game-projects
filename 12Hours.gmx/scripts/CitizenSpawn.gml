@@ -2,34 +2,29 @@
 //Arguments: none
 
 with npcManager {
-    show_debug_message("Spawning npc")
-    
     //Determine Child or Adult
-    ran_type = random(4)
-    if(ran_type < 4)
+    ran_type = irandom(5)
+    if(ran_type < 5)
         type = citizen
     else
         type = child            
     
     //Determine Spawn Location
-    spawn_x = random(room_width - 100) + 50
-    spawn_y = random(room_height - 100) + 50
+    spawn_x = round(irandom_range(100, room_width - 100))
+    spawn_y = round(irandom_range(100, room_width - 100))
     
     //Spawn
+    show_debug_message("Spawning NPC at " + string(spawn_x) + "," + string(spawn_y))
     instance_create(spawn_x, spawn_y, type)
-    
-    //Set random movement
-    //SetCitizenMoveLocation(self);  
     
     nextSpawnTime = 0
     
-    nextSpawnTime += random(30) * 5
+    nextSpawnTime += floor(SECOND * random(15))
     
-    show_debug_message("Next npc spawn in " + string(nextSpawnTime) + " seconds.")
+    show_debug_message("Next NPC spawn in " + string(nextSpawnTime) + " frames.")
     
     alarm[0] = nextSpawnTime    
   
-
     //TODO generate a citizen or child somewhere
     
     //TODO call alarm[0] again

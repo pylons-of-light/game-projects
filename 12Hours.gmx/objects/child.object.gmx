@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>event_inherited()
 
-ranx = random(1920)
-rany = random(1080)
+ranx = x
+rany = y
 
 walkSpeed = 2
 runSpeed = 5

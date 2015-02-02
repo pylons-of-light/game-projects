@@ -61,10 +61,10 @@
     <instance objName="tutorialManager" x="244" y="60" name="inst_BCACBC3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="reaper" x="136" y="180" name="inst_D12FBAEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="house1" x="754" y="778" name="inst_CE9D88F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="citizen" x="68" y="596" name="inst_03495092" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="citizen" x="688" y="348" name="inst_03495092" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="810" y="130" name="inst_C13C6558" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="1162" y="656" name="inst_5712B189" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="child" x="180" y="620" name="inst_65595412" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="child" x="1036" y="664" name="inst_65595412" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="house1" x="104" y="374" name="inst_FC895494" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree1" x="374" y="234" name="inst_83A51CD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree2" x="464" y="632" name="inst_2A378447" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

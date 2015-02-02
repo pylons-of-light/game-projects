@@ -29,8 +29,9 @@
 // Something in those checks cause these variables to never get set and then the game
 // will crash when something tries to access them later on; maybe your exit statement 
 // on 73, idk.
-ranx = random(1920)
-rany = random(1080)
+
+ranx = x
+rany = y
 
 walkSpeed = 1
 runSpeed = 4
