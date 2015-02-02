@@ -17,16 +17,22 @@ with argument0 {
     if not bGrayed and distance_to_object(reaper) < 100
     {
         bRunning = true
-        alarm[1] = room_speed * (2 + random(4));   //Run away for from 2 to 6 seconds.
+        alarm[1] = room_speed * (2 + random(4));   //Run away for 2 to 6 seconds.
     }
     
     if bRunning
     {
         
+        //prevent npc from leaving room
+        /*
         if( (x - runSpeed > 50 && x + runSpeed < room_width - 50 ) &&
             (y - runSpeed > 50 && y + runSpeed < room_height - 50 ) ){
             mp_potential_step(reaper.x, reaper.y, -runSpeed, false)
         }
+        */
+        
+        //allow npc to leave room
+        mp_potential_step(reaper.x, reaper.y, -runSpeed, false)
         
         if random(1) < .01
             ShowDialogue(self, fleeDialogue[irandom(FLEE_DL_MAX)], 3)
@@ -37,13 +43,15 @@ with argument0 {
         alarm[11] += 1;
         if alarm[11] > 300
         {
-          SetCitizenMoveLocation(self); 
+          SetCitizenMoveLocation(self)
           
           if(choose(0, 1) == 1)
             ShowDialogue(self, wanderDialogue[irandom(WANDER_DL_MAX)], 3)
         }
         else
-        {                                  
+        {                
+              
+        
           mp_potential_step(ranx, rany, walkSpeed, 0)
         }
     }

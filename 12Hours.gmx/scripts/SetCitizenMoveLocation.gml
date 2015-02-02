@@ -17,7 +17,7 @@ with argument0 {
     if rany < 0 || rany == 0
       rany = 50
     
-    alarm[11] = 0;
-    
+    alarm[11] = 0  
+      
     show_debug_message("set citizen move to: " + string(ranx) + ", " + string(rany));
 }

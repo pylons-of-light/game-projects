@@ -25,7 +25,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
+            <string>// Needed to move these variable above the conditional checks you are doing below.
+// Something in those checks cause these variables to never get set and then the game
+// will crash when something tries to access them later on; maybe your exit statement 
+// on 73, idk.
+ranx = random(1920)
+rany = random(1080)
+
+walkSpeed = 1
+runSpeed = 4
+
+wanderDialogue[0] = "Nice night we're having."
+wanderDialogue[1] = "The lights... catch the eyes..."
+wanderDialogue[2] = "Hmm mmh."
+wanderDialogue[3] = "Tired... should go to bed..."
+wanderDialogue[4] = "Hey, what's that?"
+
+fleeDialogue[0] = "No! I'm not ready to die yet!"
+fleeDialogue[1] = "It's coming..."
+fleeDialogue[2] = "Waaaugh!"
+fleeDialogue[3] = "Get away from me!"
+fleeDialogue[4] = "No... no... no..."
+
+dieDialogue[0] = "Aaaugh!"
+dieDialogue[1] = "My soul... splitting..."
+dieDialogue[2] = "This feeling..."
+dieDialogue[3] = "No, I'm not ready--"
+dieDialogue[4] = "Help!"
+
+healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 5)
+
+image_speed = 0
 direction = DOWN
 
 bMale = choose(true, false)
@@ -105,38 +135,12 @@ if bAnyGrayed {
         }
     }
 }
-else
+else{
     bGrayed = false
-
+}
 //---------------------------------------------------------
 
 
-ranx = random(1920)
-rany = random(1080)
-
-
-walkSpeed = 1
-runSpeed = 4
-
-wanderDialogue[0] = "Nice night we're having."
-wanderDialogue[1] = "The lights... catch the eyes..."
-wanderDialogue[2] = "Hmm mmh."
-wanderDialogue[3] = "Tired... should go to bed..."
-wanderDialogue[4] = "Hey, what's that?"
-
-fleeDialogue[0] = "No! I'm not ready to die yet!"
-fleeDialogue[1] = "It's coming..."
-fleeDialogue[2] = "Waaaugh!"
-fleeDialogue[3] = "Get away from me!"
-fleeDialogue[4] = "No... no... no..."
-
-dieDialogue[0] = "Aaaugh!"
-dieDialogue[1] = "My soul... splitting..."
-dieDialogue[2] = "This feeling..."
-dieDialogue[3] = "No, I'm not ready--"
-dieDialogue[4] = "Help!"
-
-healthBoost = HEALTH_UNIT * 5 + irandom(HEALTH_UNIT * 5)
 
 //comment
 </string>
