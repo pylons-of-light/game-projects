@@ -58,6 +58,7 @@
     <instance objName="levelManager" x="28" y="52" name="inst_22837145" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="npcManager" x="96" y="52" name="inst_E29CF214" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dialogueManager" x="170" y="56" name="inst_48FA30B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="tutorialManager" x="244" y="60" name="inst_BCACBC3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="reaper" x="136" y="180" name="inst_D12FBAEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="citizen" x="712" y="474" name="inst_D2CB20A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="citizen" x="474" y="542" name="inst_03495092" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

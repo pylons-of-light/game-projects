@@ -97,6 +97,7 @@
     <object>objects\npcManager</object>
     <object>objects\dialogueManager</object>
     <object>objects\creditsManager</object>
+    <object>objects\tutorialManager</object>
     <object>objects\reaper</object>
     <object>objects\citizen</object>
     <object>objects\child</object>
