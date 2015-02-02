@@ -41,7 +41,7 @@ with argument0 {
     if not bRunning
     {
         alarm[11] += 1;
-        if alarm[11] > 300
+        if alarm[11] > 300 || (ranx == x && rany == y)
         {
           SetCitizenMoveLocation(self)
           
@@ -50,9 +50,19 @@ with argument0 {
         }
         else
         {                
-              
-        
-          mp_potential_step(ranx, rany, walkSpeed, 0)
+            if(rany > y || rany < y){
+                if(rany > y)
+                    direction = UP
+                if(rany < y)
+                    direction = DOWN
+            } else {
+                if(ranx < x)
+                   direction = LEFT
+                if(ranx > x)
+                  direction = RIGHT
+            }
+            SetCitizenSprite(self)
+            mp_potential_step(ranx, rany, walkSpeed, 0)
         }
     }
     

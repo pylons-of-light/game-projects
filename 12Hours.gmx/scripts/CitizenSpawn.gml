@@ -22,8 +22,8 @@ with npcManager {
     var searchCount = 0
     var searchMax = 1000   //Try this many random locations to place a NPC, if we keep hitting obstacles when spawning the NPC
     while true {
-        spawn_x = random(room_width - 100) + 50
-        spawn_y = random(room_height - 100) + 50
+        spawn_x = round(irandom_range(100, room_width - 100))
+        spawn_y = round(irandom_range(100, room_width - 100))
         
         //Did we hit an empty spot?
         if  place_free(spawn_x, spawn_y)
@@ -53,17 +53,22 @@ with npcManager {
             nextSpawnTime += SECOND * (2 + 2 * (1-g_levelEasiness))
     }
     
-    nextSpawnTime += SECOND * (10 + 10 * (1-g_levelEasiness))
+    //temporarily commented out
+    //nextSpawnTime += SECOND * (10 + 10 * (1-g_levelEasiness))
+    
+    nextSpawnTime += floor(SECOND * random(15))
     
     //Spawn
-    if searchCount < searchMax
+    if searchCount < searchMax {
         instance_create(spawn_x, spawn_y, type)
+        show_debug_message("Spawning NPC at " + string(spawn_x) + "," + string(spawn_y))
+    }
     
     
     //Set random movement
     //SetCitizenMoveLocation(self);  
     
-    show_debug_message("Next npc spawn in " + string(nextSpawnTime) + " seconds.")
+    show_debug_message("Next NPC spawn in " + string(nextSpawnTime) + " frames.")
     
     alarm[0] = nextSpawnTime
   

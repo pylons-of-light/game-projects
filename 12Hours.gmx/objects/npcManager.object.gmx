@@ -25,16 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>//create NPCs
 if room == level1
     max_npcs = 20
 else
     max_npcs = 20
-=======
-            <string>//TODO create NPCs, perhaps a random number
-max_npcs = (5 + ceil(random(15)))
->>>>>>> origin/master
+
+//TODO create NPCs, perhaps a random number
+//temporarily commented out
+//max_npcs = (5 + ceil(random(15)))
 
 show_debug_message("Max npcs allowed: " + string(max_npcs));
 
