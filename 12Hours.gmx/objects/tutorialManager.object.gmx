@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-99</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,28 +25,79 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize()   //Seed random number generator.
-
-
-//Globals
-globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health, g_levelEasiness, g_bLevelEnding;
-g_health = HEALTH_MAX
-g_levelStartTime = current_time
-g_levelSeconds = 12 * 60
-//g_levelSeconds = 5   //TODO remove; for testing purposes
-g_levelDuration = g_levelSeconds * 1000
-g_bLevelEnding = false
-
-alarm[0] = SECOND * 5   //Give the player 5 seconds at the start of the level before health starts going down
-alarm[1] = SECOND * g_levelSeconds
-
-
-if room == level1 {
-    g_levelEasiness = .8   //Percentage, with low meaning harder; 1.0 aka 100% is easiest
-}
-else if room == level2 {
-    g_levelEasiness = .6
-}
+            <string>text = ""
+alarm[0] = SECOND * 2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>text = ""
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>text = "The time remaining in the level, and your current health,#are shown in the upper left. You must keep reaping souls, or you'll die."
+alarm[5] = SECOND * 10
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ShowDialogue(reaper, "My goal is simply to survive to the end of the night.", 7)
+alarm[4] = SECOND * 10
 </string>
           </argument>
         </arguments>
@@ -69,16 +120,8 @@ else if room == level2 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Advance to the next level or die, depending on conditions
-
-if g_health &lt;= 0
-    room_restart()
-else {
-    if room == level1
-        room_goto(rm_level2Txt)
-    else if room == level2
-        room_goto(rm_endingText)
-}
+            <string>text = ""
+alarm[3] = SECOND * 3
 </string>
           </argument>
         </arguments>
@@ -101,11 +144,8 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Trigger the end of the level
-
-g_bLevelEnding = true
-instance_create(0, 0, fadeToBlack)
-alarm[2] = SECOND * 5   //Give the fading animation time to complete
+            <string>text = "Use Space or the left mouse button to reap souls.#Right-click a nearby target to perform a proximity attack."
+alarm[2] = SECOND * 10
 </string>
           </argument>
         </arguments>
@@ -128,137 +168,8 @@ alarm[2] = SECOND * 5   //Give the fading animation time to complete
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not g_bLevelEnding {
-    g_health -= HEALTH_UNIT
-    alarm[0] = SECOND
-    
-    if g_health &lt;= 0 {
-        alarm[1] = 1   //Trigger the end of the level
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if g_bNewGame and room_persistent {
-    room_persistent = false
-    room_restart()
-    g_bNewGame = false
-}
-
-if g_bResuming {
-    room_persistent = false
-    g_levelStartTime += current_time - g_pausedTime
-    g_bPaused = false
-    g_pausedTime = -1
-    g_pausedRoom = -1
-    g_bResuming = false
-    
-    if room == level1 {
-        if not sound_isplaying(music_level1) {
-            sound_stop_all()
-            sound_play(music_level1)
-            sound_loop(music_level1)
-        }
-    }
-    else if room == level2 {
-        if not sound_isplaying(music_level2) {
-            sound_stop_all()
-            sound_play(music_level2)
-            sound_loop(music_level2)
-        }
-    }
-}
-
-//Hotkey for exiting game
-if keyboard_check(vk_control) and keyboard_check(ord('Q'))
-    game_end()
-
-//Hotkey for toggling fullscreen
-if keyboard_check_pressed(vk_f11) {
-    if window_get_fullscreen() {
-        window_set_fullscreen(false)
-    }
-    else {
-        window_set_fullscreen(true)
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_persistent = true
-g_bPaused = true
-g_pausedTime = current_time
-g_pausedRoom = room
-g_bResuming = false
-room_goto(rm_Start)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//TODO remove this cheat
-
-if current_time - g_levelStartTime &gt; 300 {
-    if room == level1
-        room_goto(rm_level2Txt)
-    else if room == level2
-        room_goto(rm_endingText)
-}
+            <string>ShowDialogue(reaper, "Time to get to work.", 3)
+alarm[1] = SECOND * 5
 </string>
           </argument>
         </arguments>
@@ -281,42 +192,12 @@ if current_time - g_levelStartTime &gt; 300 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//--------------------------
-//--Calculate clock progress
-//--------------------------
-
-millisecondsLeft = g_levelDuration - (current_time - g_levelStartTime - 1000)   //The 1000 is a mathematical convenience, for printing purposes; without it, the clock will be 1 second fast.
-
-//TODO remove: test having only 10 seconds left
-//millisecondsLeft = g_levelDuration - (current_time + 60 * 1000 * 11 + 50 * 1000 - g_levelStartTime - 1000)
-
-secondsLeft = floor(millisecondsLeft / 1000)
-minutesLeft = floor(secondsLeft / 60)
-secondsLeft -= minutesLeft * 60
-
-if minutesLeft &lt; 0 {
-    secondsLeft = 0
-    minutesLeft = 0
-}
-
-secondsStr = string(secondsLeft)
-if string_length(secondsStr) == 1
-    secondsStr = '0' + secondsStr
-
-
-//------------------
-//--Draw UI elements
-//------------------
-
-//Draw clock
+            <string>//Draw clock
 draw_set_colour(c_white)
 draw_set_halign(fa_left)
-draw_text(view_xview[0] + 15, view_yview[0] + 20, string(minutesLeft) + ':' + secondsStr)
 
-draw_healthbar(view_xview[0] + 20, view_yview[0] + 45, view_xview[0] + 30, view_yview[0] + 165, g_health, make_color_rgb(48, 44, 44), c_red, c_blue, 3, true, true)
-
-//Unnecessary; this would be used if there were an actual sprite associated with this object
-//draw_sprite(sprite_index, image_index, x, y)
+if text != ""
+    draw_text(view_xview[0] + 250, view_yview[0] + 10, text)
 </string>
           </argument>
         </arguments>
