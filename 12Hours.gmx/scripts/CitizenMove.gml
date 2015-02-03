@@ -11,8 +11,6 @@ with argument0 {
     dialogue = string(count)
     */
     
-    image_speed = 0
-    
     if bDying or bCowering
         exit
     
@@ -25,18 +23,23 @@ with argument0 {
     if bRunning
     {
         image_speed = .1
-        
-        //prevent npc from leaving room
-        /*
+
+        /* prevent npc from leaving room
         if( (x - runSpeed > 50 && x + runSpeed < room_width - 50 ) &&
             (y - runSpeed > 50 && y + runSpeed < room_height - 50 ) ){
             mp_potential_step(reaper.x, reaper.y, -runSpeed, false)
         }
         */
         
-        //allow npc to leave room
-        mp_potential_step(reaper.x, reaper.y, -runSpeed, false)
+        reached = mp_potential_step(reaper.x, reaper.y, -runSpeed, false)
         
+        if(reached == true)
+        {
+            image_speed = 0
+        }
+        
+        SetCitizenSprite(self)
+           
         if random(1) < .01
             ShowDialogue(self, fleeDialogue[irandom(FLEE_DL_MAX)], 3)
     }
@@ -55,31 +58,17 @@ with argument0 {
         {
             image_speed = .1
             
-            //Removed for now
-            /*
-            if(rany > y)
+            reached = mp_potential_step(ranx, rany, walkSpeed, 0)
+            
+            if(reached == true)
             {
-                direction = UP
+                image_speed = 0
             }
-            else if(rany < y)
-            {
-                direction = DOWN
-            }    
-            else if(ranx < x)
-            {
-               direction = LEFT
-            } 
-            else if(ranx > x)
-            {
-              direction = RIGHT
-            }
-            */
             
             SetCitizenSprite(self)
-            
-            mp_potential_step(ranx, rany, walkSpeed, 0)
         }
     }
+    
     
     //TODO call SetCitizenSprite(self), if 'direction' has changed.
     //TODO set animation to moving or static depending on speed

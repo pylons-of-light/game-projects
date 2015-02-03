@@ -113,14 +113,13 @@ sprite = choose(0, 1)   //Sprite index
 //TODO: Remove: this alternative method.
 //sprite_index = CitizenSprite(bMale, sprite, DOWN)
 
-SetCitizenSprite(self)
-
 dialogue = ''
 
 bRunning = false
 bDying = false
 bCowering = false
 
+SetCitizenSprite(self)
 
 //Are any other citizens grayed out? If not, make this guy non-grayed. Otherwise, decide whether
 //to gray this NPC out or not based on a random chance.

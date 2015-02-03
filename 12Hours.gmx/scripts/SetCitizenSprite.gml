@@ -3,43 +3,89 @@
 
 instance = argument0;
 
+quad = 1;
+
 with instance {
+
+
+    if( direction >= 0 and direction <= 90 )
+    {
+        quad = 1
+    }
+    
+    if( direction >= 90 and direction <= 180 )
+    {
+        quad = 2
+    }
+    
+    if ( direction >= 180 and direction <= 270 )
+    {
+        quad = 3
+    }
+    
+    if ( direction >= 270 and direction <= 360)
+    {
+        quad = 4   
+    }
+    
+    if(quad == 1 || quad == 2)
+    {
+        if(instance.bRunning)
+        {
+            quad = 4
+        }
+    }
+    else if(quad == 3 || quad == 4)
+    {
+        if(instance.bRunning)
+        {
+            quad = 1
+        }   
+    }
+    
+    
     if (object_get_name(instance.object_index) == 'child') 
     {
         if (bMale) 
         {
-            if (direction == RIGHT)
+            if (quad == 1 || quad == 4)
             {
                 sprite_index = spr_maleChildRight
             }
-            else if (direction == LEFT)
+            
+            if (quad == 2 || quad == 3)
             {
                 sprite_index = spr_maleChildLeft
             }
-            else if (direction == UP)
+            
+            if (quad == 1 || quad == 2)
             {
                 sprite_index = spr_maleChildUp
             }
-            else if (direction == DOWN)
+            
+            if (quad == 3 || quad == 4)
             {
                 sprite_index = spr_maleChildDown
             }
         }
         else
         {
-            if (direction == RIGHT)
+            if (quad == 1 || quad == 4)
             {
                 sprite_index = spr_femaleChildRight
             }
-            else if (direction == LEFT)
+            
+            if (quad == 2 || quad == 3)
             {
                 sprite_index = spr_femaleChildLeft
             }
-            else if (direction == UP)
+            
+            if (quad == 1 || quad == 2)
             {
                 sprite_index = spr_femaleChildUp
             }
-            else if (direction == DOWN)
+            
+            if (quad == 3 || quad == 4)
             {
                 sprite_index = spr_femaleChildDown
             }        
@@ -49,38 +95,44 @@ with instance {
     {
         if (bMale) 
         {
-            if (direction == RIGHT)
+            if (quad == 1 || quad == 4)
             {
                 sprite_index = spr_maleCitizenRight
             }
-            else if (direction == LEFT)
+            
+            if (quad == 2 || quad == 3)
             {
                 sprite_index = spr_maleCitizenLeft
             }
-            else if (direction == UP)
+            
+            if (quad == 1 || quad == 2)
             {
                 sprite_index = spr_maleCitizenUp
             }
-            else if (direction == DOWN)
+            
+            if (quad == 3 || quad == 4)
             {
                 sprite_index = spr_maleCitizenDown
             }
         }
         else
         {
-            if (direction == RIGHT)
+            if (quad == 1 || quad == 4)
             {
                 sprite_index = spr_femaleCitizenRight
             }
-            else if (direction == LEFT)
+            
+            if (quad == 2 || quad == 3)
             {
                 sprite_index = spr_femaleCitizenLeft
             }
-            else if (direction == UP)
+            
+            if (quad == 1 || quad == 2)
             {
                 sprite_index = spr_femaleCitizenUp
             }
-            else if (direction == DOWN)
+            
+            if (quad == 3 || quad == 4)
             {
                 sprite_index = spr_femaleCitizenDown
             }        
