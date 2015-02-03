@@ -11,6 +11,8 @@ with argument0 {
     dialogue = string(count)
     */
     
+    image_speed = 0
+    
     if bDying or bCowering
         exit
     
@@ -22,6 +24,7 @@ with argument0 {
     
     if bRunning
     {
+        image_speed = .1
         
         //prevent npc from leaving room
         /*
@@ -50,7 +53,10 @@ with argument0 {
         }
         else
         {
+            image_speed = .1
+            
             //Removed for now
+            /*
             if(rany > y)
             {
                 direction = UP
@@ -67,6 +73,7 @@ with argument0 {
             {
               direction = RIGHT
             }
+            */
             
             SetCitizenSprite(self)
             
