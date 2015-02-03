@@ -51,18 +51,25 @@ with argument0 {
         else
         {
             //Removed for now
-            /*if(rany > y || rany < y){
-                if(rany > y)
-                    direction = UP
-                if(rany < y)
-                    direction = DOWN
-            } else {
-                if(ranx < x)
-                   direction = LEFT
-                if(ranx > x)
-                  direction = RIGHT
-            }*/
+            if(rany > y)
+            {
+                direction = UP
+            }
+            else if(rany < y)
+            {
+                direction = DOWN
+            }    
+            else if(ranx < x)
+            {
+               direction = LEFT
+            } 
+            else if(ranx > x)
+            {
+              direction = RIGHT
+            }
+            
             SetCitizenSprite(self)
+            
             mp_potential_step(ranx, rany, walkSpeed, 0)
         }
     }
