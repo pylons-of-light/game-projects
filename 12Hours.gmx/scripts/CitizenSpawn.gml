@@ -30,7 +30,8 @@ with npcManager {
         if  place_free(spawn_x, spawn_y)
         and place_free(spawn_x + type.sprite_width-1, spawn_y)
         and place_free(spawn_x, spawn_y + type.sprite_height-1)
-        and place_free(spawn_x + type.sprite_width-1, spawn_y + type.sprite_height-1) {
+        and place_free(spawn_x + type.sprite_width-1, spawn_y + type.sprite_height-1)
+        and place_free(spawn_x + type.sprite_width/2, spawn_y + type.sprite_height/2) {
             show_debug_message("new NPC")
             break
         }

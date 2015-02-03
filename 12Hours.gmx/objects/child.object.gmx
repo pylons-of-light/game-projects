@@ -99,7 +99,7 @@ dieDialogue[18] = "Why?!"
 dieDialogue[19] = "Not yet!"
 dieDialogue[20] = "This isn't fair.."
 
-healthBoost = HEALTH_UNIT * 40
+healthBoost = HEALTH_UNIT * 30
 </string>
           </argument>
         </arguments>
