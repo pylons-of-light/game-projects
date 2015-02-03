@@ -49,8 +49,9 @@ with argument0 {
             ShowDialogue(self, wanderDialogue[irandom(WANDER_DL_MAX)], 3)
         }
         else
-        {                
-            if(rany > y || rany < y){
+        {
+            //Removed for now
+            /*if(rany > y || rany < y){
                 if(rany > y)
                     direction = UP
                 if(rany < y)
@@ -60,18 +61,12 @@ with argument0 {
                    direction = LEFT
                 if(ranx > x)
                   direction = RIGHT
-            }
+            }*/
             SetCitizenSprite(self)
             mp_potential_step(ranx, rany, walkSpeed, 0)
         }
     }
     
-    //TODO cowering under certain conditions?
-    //note that there's currently no child cower sprite; maybe kids never cower.
-    
     //TODO call SetCitizenSprite(self), if 'direction' has changed.
     //TODO set animation to moving or static depending on speed
-    
-    //not TODO: an npc who exits the level should be destroyed, to keep instance_number(citizen) counts low
-    //TODO ignore that; maybe just let them reenter the map randomly, like they already do now.
 }

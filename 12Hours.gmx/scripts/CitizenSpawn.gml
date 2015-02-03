@@ -48,15 +48,15 @@ with npcManager {
     
     with citizen {
         if not bGrayed
-            nextSpawnTime += SECOND * (5 + 2 * (1-g_levelEasiness))
+            nextSpawnTime += SECOND * (4 + 2 * (1-g_levelEasiness))
         else
-            nextSpawnTime += SECOND * (2 + 2 * (1-g_levelEasiness))
+            nextSpawnTime += SECOND * (1 + 2 * (1-g_levelEasiness))
     }
     
     //temporarily commented out
     //nextSpawnTime += SECOND * (10 + 10 * (1-g_levelEasiness))
     
-    nextSpawnTime += floor(SECOND * random(15))
+    nextSpawnTime += floor(SECOND * random(10))
     
     //Spawn
     if searchCount < searchMax {

@@ -33,6 +33,7 @@ dialogue = ''
 keyDirection = -1   //No current movement direction triggered via the keyboard
 
 previousHealthDialogueTime = -1
+spawnedCitizenTime = -1
 
 
 mediumHealthDialogue[0] = "This is not good."
@@ -111,14 +112,27 @@ if mouse_check_button_pressed(mb_left)
 
 //Once in a while, if the player's health is low, complain.
 if previousHealthDialogueTime == -1 or current_time - previousHealthDialogueTime &gt; 15000 {
-    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45)and random(1) &lt; .5 {
+    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5 {
         ShowDialogue(self, mediumHealthDialogue[irandom(MEDIUM_HEALTH_DL_MAX)], 2)
         previousHealthDialogueTime = current_time
     }
     
-    if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10)and random(1) &lt; .5 {
+    if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .5 {
         ShowDialogue(self, lowHealthDialogue[irandom(LOW_HEALTH_DL_MAX)], 2)
         previousHealthDialogueTime = current_time
+    }
+}
+
+//If the player is close to death, maybe quicken the spawn time for the next NPC.
+if spawnedCitizenTime == -1 or current_time - spawnedCitizenTime &gt; 15000 {
+    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5 {
+        npcManager.alarm[0] /= 2
+        spawnedCitizenTime = current_time
+    }
+    
+    if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .5 {
+        npcManager.alarm[0] /= 20
+        spawnedCitizenTime = current_time
     }
 }
 </string>

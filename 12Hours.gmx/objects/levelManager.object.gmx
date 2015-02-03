@@ -32,13 +32,13 @@
 globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health, g_levelEasiness, g_bLevelEnding;
 g_health = HEALTH_MAX
 g_levelStartTime = current_time
-g_levelSeconds = 12 * 60
+g_levelSeconds = 1 * 60   //TODO adjust maybe?
 //g_levelSeconds = 5   //TODO remove; for testing purposes
 g_levelDuration = g_levelSeconds * 1000
 g_bLevelEnding = false
 
 alarm[0] = SECOND * 5   //Give the player 5 seconds at the start of the level before health starts going down
-alarm[1] = SECOND * g_levelSeconds
+//alarm[1] = SECOND * g_levelSeconds   //REMOVED in favor of a simpler solution.
 
 
 if room == level1 {
@@ -289,6 +289,9 @@ millisecondsLeft = g_levelDuration - (current_time - g_levelStartTime - 1000)   
 
 //TODO remove: test having only 10 seconds left
 //millisecondsLeft = g_levelDuration - (current_time + 60 * 1000 * 11 + 50 * 1000 - g_levelStartTime - 1000)
+
+if not g_bLevelEnding and millisecondsLeft &lt; 0
+    alarm[1] = 1   //End the level
 
 secondsLeft = floor(millisecondsLeft / 1000)
 minutesLeft = floor(secondsLeft / 60)

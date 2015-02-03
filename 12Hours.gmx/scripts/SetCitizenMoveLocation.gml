@@ -2,11 +2,8 @@
 //Arguments: person instance
 
 with argument0 {
-    //ranx = round(random_range(200, room_width - 200));
-    //rany = round(random_range(200, room_height - 200));
-   
-    ranx = round( x - 150 + random(300) );
-    rany = round( x - 150 + random(300) );    
+    ranx = x - 300 + random(600);
+    rany = y - 300 + random(600); 
      
     if(ranx >= room_width){
         ranx = room_width - 100;
@@ -23,6 +20,4 @@ with argument0 {
     alarm[11] = 0;
       
     show_debug_message("set citizen move to: " + string(ranx) + ", " + string(rany));
-    //show_debug_message("room dimensions: " + string(room_width) + ", " + string(room_height));
 }
-
