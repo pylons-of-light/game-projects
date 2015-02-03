@@ -8,11 +8,12 @@ with npcManager {
     
     var childCount = instance_number(child)
     
-    if childCount >= max_npcs / 5   //Only a fifth of the max NPCs can be kids
+    //Only a sixth of the max NPCs can be kids; also, only make kids when the player isn't low on health
+    if g_health <= HEALTH_MAX / 3 or childCount >= floor(max_npcs / 6)
         type = citizen
     else {
         var ran_type = irandom(4)
-        if(ran_type < 4)   //4 in 5 chance
+        if(ran_type < 4)   //4 in 5 chance of getting an adult
             type = citizen
         else
             type = child

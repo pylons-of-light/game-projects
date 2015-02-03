@@ -14,7 +14,16 @@ with argument0 {
         exit
     }
     
-    g_health += healthBoost
+    //Maybe give the player an extra health boost, but only if his health is low.
+    
+    var healthBoostPlusPossibleExtra = healthBoost
+    
+    if g_health <= HEALTH_MAX / 5
+        healthBoostPlusPossibleExtra += HEALTH_UNIT*10 + irandom(HEALTH_UNIT*10)
+    else if g_health <= HEALTH_MAX / 3
+        healthBoostPlusPossibleExtra += HEALTH_UNIT*5 + irandom(HEALTH_UNIT*10)
+    
+    g_health += healthBoostPlusPossibleExtra
     if g_health > HEALTH_MAX
         g_health = HEALTH_MAX
     

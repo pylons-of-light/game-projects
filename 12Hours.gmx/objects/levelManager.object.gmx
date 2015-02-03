@@ -32,7 +32,7 @@
 globalvar g_levelSeconds, g_levelStartTime, g_levelDuration, g_health, g_levelEasiness, g_bLevelEnding;
 g_health = HEALTH_MAX
 g_levelStartTime = current_time
-g_levelSeconds = 1 * 60   //TODO adjust maybe?
+g_levelSeconds = 12 * 60
 //g_levelSeconds = 5   //TODO remove; for testing purposes
 g_levelDuration = g_levelSeconds * 1000
 g_bLevelEnding = false

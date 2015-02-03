@@ -102,7 +102,7 @@ dieDialogue[18] = "I'll make you a deal--"
 dieDialogue[19] = "Well, isn't this wonderful."
 dieDialogue[20] = "And I never told--"
 
-healthBoost = HEALTH_UNIT * 10 + irandom(HEALTH_UNIT * 10)
+healthBoost = HEALTH_UNIT * 10
 
 image_speed = 0
 direction = DOWN
@@ -121,13 +121,13 @@ bCowering = false
 
 SetCitizenSprite(self)
 
-//Are any other citizens grayed out? If not, make this guy non-grayed. Otherwise, decide whether
+//Are all other citizens grayed out? If not, make this guy non-grayed. Otherwise, decide whether
 //to gray this NPC out or not based on a random chance.
 
 bGrayed = false
-bAnyGrayed = false
 bGrayedForever = false
 bStartingNPC = false   //Is this a NPC that was created in the level editor, not by random spawning?
+grayedCount = 0
 
 
 //---------------------------------------------------------
@@ -139,7 +139,6 @@ bStartingNPC = false   //Is this a NPC that was created in the level editor, not
 //So instead, we won't iterate through the instances, we'll pretend that other grayed-out NPCs already
 //exist.
 if current_time - g_levelStartTime &lt; 500 {   //Did we just start the level?
-    bAnyGrayed = true;
     bStartingNPC = true;
 }
 else {
@@ -147,13 +146,15 @@ else {
         if self == other
             continue
         if bGrayed {
-            other.bAnyGrayed = true
+            other.grayedCount += 1
             break
         }
     }
 }
 
-if bAnyGrayed {
+//Only consider making the NPC grayed out if: (1) there aren't that many grayed-out NPCs
+//already; (2) the player isn't even close to low on health.
+if bStartingNPC or (grayedCount &lt; floor(instance_number(citizen) / 4) and (g_health &gt; HEALTH_MAX / 2)) {
     if bStartingNPC
         bGrayed = random(1) &lt; .7
     else

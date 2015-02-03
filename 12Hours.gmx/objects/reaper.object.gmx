@@ -110,30 +110,31 @@ dialogue = ''
 if mouse_check_button_pressed(mb_left)
     PlayerAttack()
 
-//Once in a while, if the player's health is low, complain.
-if previousHealthDialogueTime == -1 or current_time - previousHealthDialogueTime &gt; 15000 {
-    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5 {
+
+//Every 10 seconds: if the player's health is low, maybe complain.
+if previousHealthDialogueTime == -1 or current_time - previousHealthDialogueTime &gt; 10000 {
+    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .8
         ShowDialogue(self, mediumHealthDialogue[irandom(MEDIUM_HEALTH_DL_MAX)], 2)
-        previousHealthDialogueTime = current_time
-    }
     
-    if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .5 {
+    else if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .8
         ShowDialogue(self, lowHealthDialogue[irandom(LOW_HEALTH_DL_MAX)], 2)
-        previousHealthDialogueTime = current_time
-    }
+    
+    previousHealthDialogueTime = current_time
 }
 
-//If the player is close to death, maybe quicken the spawn time for the next NPC.
+//Every 15 seconds: If the player is close to death, maybe quicken the spawn time for the next NPC.
+//In fact, if the player is very low on health, almost always quickly spawn a new NPC.
 if spawnedCitizenTime == -1 or current_time - spawnedCitizenTime &gt; 15000 {
-    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5 {
+    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5
         npcManager.alarm[0] /= 2
-        spawnedCitizenTime = current_time
-    }
     
-    if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .5 {
+    else if g_health &lt;= floor(HEALTH_MAX * .30) and g_health &gt;= floor(HEALTH_MAX * .20) and random(1) &lt; .8
         npcManager.alarm[0] /= 20
-        spawnedCitizenTime = current_time
-    }
+    
+    else if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .9
+        npcManager.alarm[0] /= 40
+    
+    spawnedCitizenTime = current_time
 }
 </string>
           </argument>
