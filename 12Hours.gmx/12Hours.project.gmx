@@ -54,10 +54,6 @@
     <sprite>sprites\spr_slashDown</sprite>
     <sprite>sprites\spr_thunder</sprite>
     <sprite>sprites\spr_thunderOrigSize</sprite>
-    <sprite>sprites\spr_house1</sprite>
-    <sprite>sprites\spr_tree1</sprite>
-    <sprite>sprites\spr_tree2</sprite>
-    <sprite>sprites\spr_tree3</sprite>
     <sprite>sprites\spr_newGame</sprite>
     <sprite>sprites\spr_saveGame</sprite>
     <sprite>sprites\spr_loadGame</sprite>
@@ -71,6 +67,21 @@
     <sprite>sprites\btn_SaveGame</sprite>
     <sprite>sprites\spr_controlsButton</sprite>
     <sprite>sprites\spr_controlsView</sprite>
+    <sprite>sprites\spr_tree1</sprite>
+    <sprite>sprites\spr_tree2</sprite>
+    <sprite>sprites\spr_tree3</sprite>
+    <sprite>sprites\spr_house1</sprite>
+    <sprite>sprites\spr_house2</sprite>
+    <sprite>sprites\spr_house3</sprite>
+    <sprite>sprites\spr_house4</sprite>
+    <sprite>sprites\spr_house5</sprite>
+    <sprite>sprites\spr_well1</sprite>
+    <sprite>sprites\spr_well2</sprite>
+    <sprite>sprites\spr_misc1</sprite>
+    <sprite>sprites\spr_misc2</sprite>
+    <sprite>sprites\spr_misc3</sprite>
+    <sprite>sprites\spr_weeds1</sprite>
+    <sprite>sprites\spr_weeds2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_ground1</background>
@@ -104,10 +115,6 @@
     <object>objects\slash</object>
     <object>objects\thunder</object>
     <object>objects\block</object>
-    <object>objects\house1</object>
-    <object>objects\tree1</object>
-    <object>objects\tree2</object>
-    <object>objects\tree3</object>
     <object>objects\obj_NextRoomText</object>
     <object>objects\obj_text</object>
     <object>objects\obj_level1Txt</object>
@@ -121,6 +128,21 @@
     <object>objects\controlsButton</object>
     <object>objects\controlsView</object>
     <object>objects\fadeToBlack</object>
+    <object>objects\tree1</object>
+    <object>objects\tree2</object>
+    <object>objects\tree3</object>
+    <object>objects\house1</object>
+    <object>objects\house2</object>
+    <object>objects\house3</object>
+    <object>objects\house4</object>
+    <object>objects\house5</object>
+    <object>objects\well1</object>
+    <object>objects\well2</object>
+    <object>objects\misc1</object>
+    <object>objects\misc2</object>
+    <object>objects\misc3</object>
+    <object>objects\weeds1</object>
+    <object>objects\weeds2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Start</room>

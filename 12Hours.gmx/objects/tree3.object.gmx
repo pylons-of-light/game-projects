@@ -3,7 +3,7 @@
   <spriteName>spr_tree3</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-3</depth>
   <persistent>0</persistent>
   <parentName>block</parentName>
   <maskName>&lt;undefined&gt;</maskName>
