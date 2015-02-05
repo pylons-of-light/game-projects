@@ -28,13 +28,17 @@
             <string>event_inherited()
 
 text = "                                                      #" +
-       "  I could show you more. But I think that's enough. I'm just trying to give you a##" +
-       "hint, you see. A glimpse into what's coming. You'll probably forget what##" +
-       "you've seen here; another dream in the depths of the night. But maybe, it'll stay##" +
-       "with you in the back of your mind, so that when your time comes, you'll go more##" +
-       "peacefully than most. That's all I want. To see peoples' faces a little less##" +
-       "surprised, a little less afraid in their final moments. Because those are the only##" +
-       "expressions I ever see. I guess that's selfish.###" +
+       "  I could show you more. But I think that's enough. " + string(g_soulCount) + " souls taken, today alone...##" +
+       "Do you remember the looks on their faces? Do you remember their surprise, their sudden##" +
+       "horror? It doesn't have to be like that. Not if you prepare for it. Embrace it, if you##" +
+       "like. Or simply accept it. But don't be surprised.###" +
+       "  I'm just trying to give you a hint, you see. A glimpse into what's coming. You'll##" +
+       "probably forget what you've seen here; another dream in the depths of the night. But##" +
+       "maybe, it'll stay with you in the back of your mind, so that when your time comes, you'll##" +
+       "go more peacefully than most.###" +
+       "  That's all I want. To see peoples' faces a little less surprised, a little less afraid##" +
+       "in their final moments. Because those are the only expressions I ever see. I guess that's##" +
+       "selfish.###" +
        "  I'm probably expecting too much. This is just a silent message passed out to##" +
        "sleepers in the night, a lost dream that will be ignored. But I've been doing this##" +
        "for so long, I wanted to do something different for once. To send a message, to##" +

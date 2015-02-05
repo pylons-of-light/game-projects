@@ -31,7 +31,7 @@ ranx = x
 rany = y
 
 walkSpeed = 2
-runSpeed = 4.8
+runSpeed = 4.7
 
 wanderDialogue[0] = "Ha ha ha!"
 wanderDialogue[1] = "I know you're hiding somewhere!"

@@ -96,7 +96,7 @@ alarm[5] = SECOND * 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ShowDialogue(reaper, "My goal is simply to survive to the end of the night.", 7)
+            <string>ShowDialogue(reaper, "My goal is simply to survive for the next 12 hours.", 7)
 alarm[4] = SECOND * 10
 </string>
           </argument>

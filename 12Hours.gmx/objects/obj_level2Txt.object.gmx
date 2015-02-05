@@ -31,7 +31,9 @@ text = "                                                      #" +
        "  That was one night. That was EVERY night. We can see it again, if you##" +
        "like. It won't change much. Are you expecting to see a change? This is my##" +
        "LIFE. It never varies. By this time tomorrow I'll have forgotten the faces##" +
-       "of the men whose souls I took today.###" +
+       "of the men whose souls I took today. " + string(g_soulCount) + " souls... forgotten.###" +
+       "  And you saw only part of my work. Time and space are... a little warped for me.##" +
+       "I can exist in many places at once. I have to, or my work would never get done.###" +
        "  You think me selfish. Must I repeat myself? I am only performing my function.##" +
        "And I practice more mercy than I am supposed to -- how many young lives have I seen##" +
        "tinged with the colors of death, and ignored? Enough to put my own life in peril,##" +

@@ -100,7 +100,7 @@
     <instance objName="citizen" x="1872" y="842" name="inst_6531253A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="citizen" x="1052" y="1090" name="inst_003AE4FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="citizen" x="1742" y="2304" name="inst_633C8A1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="child" x="4992" y="2432" name="inst_0254E0BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="child" x="3508" y="2454" name="inst_0254E0BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="house1" x="2140" y="762" name="inst_6E2636DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="child" x="766" y="1204" name="inst_CE3AE071" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="484" y="-118" name="inst_EF01704E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -315,8 +315,8 @@
     <instance objName="tree2" x="-224" y="1886" name="inst_99CBB3A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree2" x="-226" y="2054" name="inst_4A99F31C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="well1" x="2" y="1830" name="inst_5F5922EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="child" x="286" y="2490" name="inst_A199811C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="child" x="176" y="2176" name="inst_3C093E8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="child" x="238" y="2212" name="inst_A199811C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="child" x="156" y="2098" name="inst_3C093E8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc1" x="140" y="1920" name="inst_316C4584" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc2" x="126" y="1888" name="inst_844D8162" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc3" x="980" y="1280" name="inst_1EC52054" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -381,7 +381,7 @@
     <instance objName="house3" x="1196" y="3142" name="inst_82522AE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="house3" x="3198" y="2924" name="inst_2CAACFC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="house2" x="-28" y="2942" name="inst_23EA6F0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="citizen" x="124" y="3316" name="inst_4B6CF7A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="citizen" x="708" y="3328" name="inst_4B6CF7A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc3" x="304" y="3204" name="inst_5EE275B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc1" x="274" y="3226" name="inst_9BF03CC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree2" x="834" y="2668" name="inst_DF158C56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -452,7 +452,7 @@
     <instance objName="house2" x="5536" y="1120" name="inst_BB16BC70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="well1" x="5506" y="234" name="inst_4FCB2813" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree1" x="-38" y="1684" name="inst_70699772" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="citizen" x="432" y="3144" name="inst_EE5CE097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="citizen" x="540" y="2830" name="inst_EE5CE097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="well1" x="350" y="3268" name="inst_9A4F45D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc2" x="4302" y="3624" name="inst_67B13ACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="misc2" x="4954" y="3308" name="inst_550324A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -487,8 +487,8 @@
     <instance objName="tree3" x="5756" y="3760" name="inst_784AFDAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="5798" y="3786" name="inst_BC5BE023" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="citizen" x="5610" y="3740" name="inst_CBC6B40A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="child" x="5540" y="3676" name="inst_E8F9AD2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="child" x="5746" y="3712" name="inst_ED4F0347" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="child" x="4370" y="2246" name="inst_E8F9AD2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="tree3" x="2034" y="1292" name="inst_B0864C19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="child" x="4760" y="1870" name="inst_D1229260" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="3942" y="832" name="inst_ED95CC5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="2850" y="648" name="inst_7B11F257" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -597,7 +597,12 @@
     <instance objName="tree3" x="2082" y="1264" name="inst_DCB1CB88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="2190" y="1046" name="inst_A0F427C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tree3" x="1958" y="1246" name="inst_E3045090" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="tree3" x="2034" y="1292" name="inst_B0864C19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weeds1" x="206" y="142" name="inst_4FAFEA07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weeds2" x="4176" y="1950" name="inst_85D4DF92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weeds3" x="1906" y="1786" name="inst_890FF227" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weeds1" x="3992" y="-920" name="inst_8C16AE58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weeds2" x="-412" y="2092" name="inst_CC63474E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weeds3" x="2152" y="260" name="inst_556A34F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar g_bPaused, g_pausedTime, g_pausedRoom, g_bResuming, g_bNewGame;
+            <string>globalvar g_bPaused, g_pausedTime, g_pausedRoom, g_bResuming, g_bNewGame, g_soulCount;
 g_bPaused = false
 g_pausedTime = -1
 g_pausedRoom = -1
 g_bResuming = false
 g_bNewGame = false   //Note: Due to how GameMaker rooms work, we need to jump through some hoops to destroy the persistent state of paused rooms
+g_soulCount = 0
 </string>
           </argument>
         </arguments>

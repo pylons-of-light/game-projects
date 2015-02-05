@@ -9,7 +9,7 @@
   <bboxmode>0</bboxmode>
   <bbox_left>18</bbox_left>
   <bbox_right>45</bbox_right>
-  <bbox_top>15</bbox_top>
+  <bbox_top>14</bbox_top>
   <bbox_bottom>63</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -27,5 +27,7 @@
     <frame index="4">images\spr_femaleCitizenUp_4.png</frame>
     <frame index="5">images\spr_femaleCitizenUp_5.png</frame>
     <frame index="6">images\spr_femaleCitizenUp_6.png</frame>
+    <frame index="7">images\spr_femaleCitizenUp_7.png</frame>
+    <frame index="8">images\spr_femaleCitizenUp_8.png</frame>
   </frames>
 </sprite>

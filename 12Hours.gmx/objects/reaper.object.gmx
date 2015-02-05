@@ -122,16 +122,19 @@ if previousHealthDialogueTime == -1 or current_time - previousHealthDialogueTime
     previousHealthDialogueTime = current_time
 }
 
-//Every 15 seconds: If the player is close to death, maybe quicken the spawn time for the next NPC.
+//Every 10 seconds: If the player is close to death, maybe quicken the spawn time for the next NPC.
 //In fact, if the player is very low on health, almost always quickly spawn a new NPC.
-if spawnedCitizenTime == -1 or current_time - spawnedCitizenTime &gt; 15000 {
-    if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5
+if spawnedCitizenTime == -1 or current_time - spawnedCitizenTime &gt; 10000 {
+    if g_health &lt;= floor(HEALTH_MAX * .70) and g_health &gt;= floor(HEALTH_MAX * .55) and random(1) &lt; .5
+        npcManager.alarm[0] *= .75
+    
+    else if g_health &lt;= floor(HEALTH_MAX * .55) and g_health &gt;= floor(HEALTH_MAX * .45) and random(1) &lt; .5
         npcManager.alarm[0] /= 2
     
     else if g_health &lt;= floor(HEALTH_MAX * .30) and g_health &gt;= floor(HEALTH_MAX * .20) and random(1) &lt; .8
         npcManager.alarm[0] /= 20
     
-    else if g_health &lt;= floor(HEALTH_MAX * .20) and g_health &gt;= floor(HEALTH_MAX * .10) and random(1) &lt; .9
+    else if g_health &lt;= floor(HEALTH_MAX * .20) and random(1) &lt; .9
         npcManager.alarm[0] /= 40
     
     spawnedCitizenTime = current_time

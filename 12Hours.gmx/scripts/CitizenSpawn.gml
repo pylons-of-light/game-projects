@@ -24,7 +24,7 @@ with npcManager {
     var searchMax = 1000   //Try this many random locations to place a NPC, if we keep hitting obstacles when spawning the NPC
     while true {
         spawn_x = round(irandom_range(100, room_width - 100))
-        spawn_y = round(irandom_range(100, room_width - 100))
+        spawn_y = round(irandom_range(100, room_height - 100))
         
         //Did we hit an empty spot?
         if  place_free(spawn_x, spawn_y) {   //Note that npcManager's mask is used to perform this check, so it must be at least as big as a citizen sprite could be.
@@ -54,7 +54,14 @@ with npcManager {
     //temporarily commented out
     //nextSpawnTime += SECOND * (10 + 10 * (1-g_levelEasiness))
     
-    nextSpawnTime += floor(SECOND * random(10))
+    if g_health <= HEALTH_MAX / 3
+        nextSpawnTime += floor(SECOND * random(4))
+    else
+        nextSpawnTime += floor(SECOND * random(9))
+    
+    if room == level2 {   //Tweak this room's mechanics a bit
+        nextSpawnTime *= .9
+    }
     
     //Spawn
     if searchCount < searchMax {

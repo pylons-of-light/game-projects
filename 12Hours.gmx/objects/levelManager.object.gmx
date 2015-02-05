@@ -42,11 +42,13 @@ alarm[0] = SECOND * 5   //Give the player 5 seconds at the start of the level be
 
 
 if room == level1 {
-    g_levelEasiness = .8   //Percentage, with low meaning harder; 1.0 aka 100% is easiest
+    g_levelEasiness = .85   //Percentage, with low meaning harder; 1.0 aka 100% is easiest
 }
 else if room == level2 {
-    g_levelEasiness = .6
+    g_levelEasiness = .85   //Uses high easiness rating for now, since level2 is intrinsically harder for other reasons (size mostly).
 }
+
+g_soulCount = 0
 </string>
           </argument>
         </arguments>
@@ -234,36 +236,6 @@ room_goto(rm_Start)
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//TODO remove this cheat
-
-if current_time - g_levelStartTime &gt; 300 {
-    if room == level1
-        room_goto(rm_level2Txt)
-    else if room == level2
-        room_goto(rm_endingText)
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -318,8 +290,40 @@ draw_text(view_xview[0] + 15, view_yview[0] + 20, string(minutesLeft) + ':' + se
 
 draw_healthbar(view_xview[0] + 20, view_yview[0] + 45, view_xview[0] + 30, view_yview[0] + 165, g_health, make_color_rgb(48, 44, 44), c_red, c_blue, 3, true, true)
 
+draw_text(view_xview[0] + 15, view_yview[0] + 172, "Souls: " + string(g_soulCount))
+
 //Unnecessary; this would be used if there were an actual sprite associated with this object
 //draw_sprite(sprite_index, image_index, x, y)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="118">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//TODO remove this cheat. Or not! Let's leave it in.
+
+if current_time - g_levelStartTime &gt; 300 {
+    if room == level1
+        room_goto(rm_level2Txt)
+    else if room == level2
+        room_goto(rm_endingText)
+}
 </string>
           </argument>
         </arguments>

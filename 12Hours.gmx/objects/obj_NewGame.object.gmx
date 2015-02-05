@@ -76,6 +76,7 @@ g_pausedTime = -1
 g_pausedRoom = -1
 g_bResuming = false
 g_bNewGame = true
+g_soulCount = 0
 
 room_goto(rm_txt)
 

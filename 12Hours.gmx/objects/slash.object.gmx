@@ -59,6 +59,9 @@ if bInitializing {
     //Play either a loud or a quiet slashing sound, depending on whether contact was made.
     
     with citizen {
+        if bGrayed {
+            CitizenDie(self)   //This will just create a message saying Death can't kill that person.
+        }
         if not bDying and not bGrayed and place_meeting(x, y, slash) {
             other.bHit = true
             CitizenDie(self)
