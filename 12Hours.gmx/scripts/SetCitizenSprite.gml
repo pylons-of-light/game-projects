@@ -3,10 +3,9 @@
 
 instance = argument0;
 
-quad = 1
-
 with instance {
-
+    quad = 1
+    
     d = floor(direction)
     
     //right
@@ -36,9 +35,15 @@ with instance {
     if(d == 305 or d == 360 or d == 0 or d == 45)
         quad = 1
     
+    if(d == 90)
+        quad = 2
+    
     if(d == 225 or d == 180 or d == 135)    
         quad = 3
-        
+    
+    if(d == 270)
+        quad = 4
+    
     //ShowDialogue(self, string(d) + "-" + string(quad), 1)
     
     //invert for when fleeing

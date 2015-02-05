@@ -27,11 +27,7 @@ with npcManager {
         spawn_y = round(irandom_range(100, room_width - 100))
         
         //Did we hit an empty spot?
-        if  place_free(spawn_x, spawn_y)
-        and place_free(spawn_x + type.sprite_width-1, spawn_y)
-        and place_free(spawn_x, spawn_y + type.sprite_height-1)
-        and place_free(spawn_x + type.sprite_width-1, spawn_y + type.sprite_height-1)
-        and place_free(spawn_x + type.sprite_width/2, spawn_y + type.sprite_height/2) {
+        if  place_free(spawn_x, spawn_y) {   //Note that npcManager's mask is used to perform this check, so it must be at least as big as a citizen sprite could be.
             show_debug_message("new NPC")
             break
         }

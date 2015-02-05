@@ -22,7 +22,7 @@ with argument0 {
     
     if bRunning
     {
-        image_speed = .1
+        image_speed = .3
 
         /* prevent npc from leaving room
         if( (x - runSpeed > 50 && x + runSpeed < room_width - 50 ) &&
@@ -56,7 +56,7 @@ with argument0 {
         }
         else
         {
-            image_speed = .1
+            image_speed = .2
             
             reached = mp_potential_step(ranx, rany, walkSpeed, 0)
             

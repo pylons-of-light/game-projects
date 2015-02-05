@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_npcSpawningSprite</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,20 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//create NPCs
-if room == level1
-    max_npcs = 20
-else
-    max_npcs = 30
-
-//TODO create NPCs, perhaps a random number
-//temporarily commented out
-//max_npcs = (5 + ceil(random(15)))
-
-show_debug_message("Max npcs allowed: " + string(max_npcs));
-
-//call alarm[0] to create more NPCS later
-alarm[0] = 10
+            <string>alarm[0] = SECOND * 1
 </string>
           </argument>
         </arguments>
@@ -61,19 +48,8 @@ alarm[0] = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Note that this would double-count children
-//nNpcs = instance_number(citizen) + instance_number(child)
-
-show_debug_message("nNpcs: " + string(instance_number(citizen)));
-
-if(instance_number(citizen) &lt; max_npcs)
-{
-    CitizenSpawn();
-}
-else
-{
-    alarm[0] = SECOND * 30;
-}
+            <string>npcManager.alarm[0] = 1
+alarm[0] = SECOND
 </string>
           </argument>
         </arguments>

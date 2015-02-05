@@ -332,8 +332,10 @@ dialogue = ''
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[3] &gt; 0
+            <string>/*
+if alarm[3] &gt; 0
     dialogue = string(ceil(alarm[3]/SECOND))   //TODO remove
+*/
 
 CitizenMove(self)
 
