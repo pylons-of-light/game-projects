@@ -21,16 +21,23 @@ with npcManager {
     
     //Determine Spawn Location
     var searchCount = 0
-    var searchMax = 1000   //Try this many random locations to place a NPC, if we keep hitting obstacles when spawning the NPC
+    var searchMax = 20000   //Try this many random locations to place a NPC, if we keep hitting obstacles when spawning the NPC
     while true {
         spawn_x = round(irandom_range(100, room_width - 100))
         spawn_y = round(irandom_range(100, room_height - 100))
         
         //Did we hit an empty spot?
-        if  place_free(spawn_x, spawn_y) {   //Note that npcManager's mask is used to perform this check, so it must be at least as big as a citizen sprite could be.
+        if  place_free(spawn_x, spawn_y)
+        and place_free(spawn_x-30, spawn_y-30)
+        and place_free(spawn_x+30, spawn_y-30)
+        and place_free(spawn_x-30, spawn_y+30)
+        and place_free(spawn_x+30, spawn_y+30) {   //Note that npcManager's mask is used to perform this check, so it must be at least as big as a citizen sprite could be.
             show_debug_message("new NPC")
             break
         }
+        
+        //TODO maybe uncomment; for now, we just keep looking forever, since we know we must find a place eventually.
+        //searchCount += 1
         
         //If we didn't hit an empty spot, just keep looking...
         

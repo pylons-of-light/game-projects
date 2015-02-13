@@ -225,7 +225,7 @@ bGrayed = false
 image_blend = c_white   //Or -1; anyway, this means to draw the sprite using normal colors.
 image_alpha = 1
 
-dialogue = "un-grayed"   //TODO remove
+//dialogue = "un-grayed"   //TODO remove
 </string>
           </argument>
         </arguments>
