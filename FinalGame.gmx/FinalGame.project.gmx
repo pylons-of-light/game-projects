@@ -7,16 +7,26 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_playerShip</sprite>
+    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\sprite3</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background1</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\PlayerShipMove.gml</script>
+    <script>scripts\PlayerAvatarMove.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\playerShip</object>
+    <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_nTest</room>
   </rooms>
   <help>
