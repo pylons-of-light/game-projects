@@ -130,4 +130,5 @@ with obj_player {
         speed = 0
     if place_meeting(x, y + vspeed, block)
         speed = 0
+    */
 }
