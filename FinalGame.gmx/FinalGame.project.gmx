@@ -37,8 +37,8 @@
     <object>objects\globals</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_nTest</room>
     <room>rooms\rm_dungeon_test1</room>
+    <room>rooms\rm_nTest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
