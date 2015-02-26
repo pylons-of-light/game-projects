@@ -70,7 +70,7 @@ with obj_player {
     if bKeyDirectionIsPressed {
         direction = keyDirection
         speed = g_AVATAR_SPEED
-        image_speed = .1   //Start animation
+        image_speed = .3   //Start animation
     }
     
     //Set speed and direction when key released
