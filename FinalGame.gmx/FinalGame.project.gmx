@@ -7,8 +7,10 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_playerShip</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\spr_playerUp</sprite>
+    <sprite>sprites\spr_playerDown</sprite>
+    <sprite>sprites\spr_playerRight</sprite>
+    <sprite>sprites\spr_playerLeft</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -24,6 +26,7 @@
   <objects name="objects">
     <object>objects\playerShip</object>
     <object>objects\obj_player</object>
+    <object>objects\globals</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test1</room>

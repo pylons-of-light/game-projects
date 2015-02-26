@@ -8,38 +8,38 @@ with obj_player {
     
     //Check for new arrow key or WASD presses
     if keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord('D')) {
-        keyDirection = RIGHT
+        keyDirection = g_RIGHT
         bKeyDirectionIsPressed = true
     }
     else if keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord('W')) {
-        keyDirection = UP
+        keyDirection = g_UP
         bKeyDirectionIsPressed = true
     }
     else if keyboard_check_pressed(vk_left) or keyboard_check_pressed(ord('A')) {
-        keyDirection = LEFT
+        keyDirection = g_LEFT
         bKeyDirectionIsPressed = true
     }
     else if keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord('S')) {
-        keyDirection = DOWN
+        keyDirection = g_DOWN
         bKeyDirectionIsPressed = true
     }
     else if speed == 0 {   //No new key has been pressed, but we're stalled.
         //Grab whatever currently-held movement key we can get.
         if keyboard_check(vk_right) or keyboard_check(ord('D')) {
             bKeyDirectionIsPressed = true
-            keyDirection = RIGHT
+            keyDirection = g_RIGHT
         }
         else if keyboard_check(vk_up) or keyboard_check(ord('W')) {
             bKeyDirectionIsPressed = true
-            keyDirection = UP
+            keyDirection = g_UP
         }
         else if keyboard_check(vk_left) or keyboard_check(ord('A')) {
             bKeyDirectionIsPressed = true
-            keyDirection = LEFT
+            keyDirection = g_LEFT
         }
         else if keyboard_check(vk_down) or keyboard_check(ord('S')) {
             bKeyDirectionIsPressed = true
-            keyDirection = DOWN
+            keyDirection = g_DOWN
         }
     }
     
@@ -57,19 +57,19 @@ with obj_player {
         
         //Grab whatever currently-held movement key we can get.
         if keyboard_check(vk_right) or keyboard_check(ord('D'))
-            keyDirection = RIGHT
+            keyDirection = g_RIGHT
         else if keyboard_check(vk_up) or keyboard_check(ord('W'))
-            keyDirection = UP
+            keyDirection = g_UP
         else if keyboard_check(vk_left) or keyboard_check(ord('A'))
-            keyDirection = LEFT
+            keyDirection = g_LEFT
         else if keyboard_check(vk_down) or keyboard_check(ord('S'))
-            keyDirection = DOWN
+            keyDirection = g_DOWN
     }
     
     //Set speed and direction when key pressed
     if bKeyDirectionIsPressed {
         direction = keyDirection
-        speed = REAPER_SPEED
+        speed = g_AVATAR_SPEED
         image_speed = .1   //Start animation
     }
     
@@ -86,14 +86,14 @@ with obj_player {
     }
     
     if (bKeyDirectionIsPressed or bKeyDirectionIsReleased) and keyDirection != -1 {
-        if direction == RIGHT
-            sprite_index = spr_reaperRight
-        else if direction == UP
-            sprite_index = spr_reaperUp
-        else if direction == LEFT
-            sprite_index = spr_reaperLeft
-        else if direction == DOWN
-            sprite_index = spr_reaperDown
+        if direction == g_RIGHT
+            sprite_index = spr_playerRight
+        else if direction == g_UP
+            sprite_index = spr_playerUp
+        else if direction == g_LEFT
+            sprite_index = spr_playerLeft
+        else if direction == g_DOWN
+            sprite_index = spr_playerDown
     }
     
     
@@ -120,7 +120,7 @@ with obj_player {
     //---------------------
     //---Prevent collisions
     //---------------------
-    
+    /*
     if place_meeting(x + hspeed, y, citizen)
         speed = 0
     if place_meeting(x, y + vspeed, citizen)
@@ -130,4 +130,5 @@ with obj_player {
         speed = 0
     if place_meeting(x, y + vspeed, block)
         speed = 0
+    */
 }
