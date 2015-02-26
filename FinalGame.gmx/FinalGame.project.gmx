@@ -11,6 +11,9 @@
     <sprite>sprites\spr_playerDown</sprite>
     <sprite>sprites\spr_playerRight</sprite>
     <sprite>sprites\spr_playerLeft</sprite>
+    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_lise</sprite>
+    <sprite>sprites\spr_dialogueBox</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -19,18 +22,23 @@
   <scripts name="scripts">
     <script>scripts\PlayerShipMove.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
+    <script>scripts\ShowDialogue.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_default</font>
+  </fonts>
   <objects name="objects">
+    <object>objects\dialogueMgr</object>
     <object>objects\playerShip</object>
     <object>objects\obj_player</object>
     <object>objects\globals</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_nTest</room>
+    <room>rooms\rm_dungeon_test1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
