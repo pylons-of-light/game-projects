@@ -11,7 +11,6 @@
     <sprite>sprites\spr_playerDown</sprite>
     <sprite>sprites\spr_playerRight</sprite>
     <sprite>sprites\spr_playerLeft</sprite>
-    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_lise</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
   </sprites>
