@@ -81,7 +81,7 @@ with obj_player {
         }
         else {
             direction = keyDirection
-            speed = 1
+            speed = g_AVATAR_SPEED
         }
     }
     
@@ -120,15 +120,10 @@ with obj_player {
     //---------------------
     //---Prevent collisions
     //---------------------
-    /*
-    if place_meeting(x + hspeed, y, citizen)
+    
+    if place_meeting(x + hspeed, y, obj_collider)
         speed = 0
-    if place_meeting(x, y + vspeed, citizen)
+    if place_meeting(x, y + vspeed, obj_collider)
         speed = 0
     
-    if place_meeting(x + hspeed, y, block)
-        speed = 0
-    if place_meeting(x, y + vspeed, block)
-        speed = 0
-    */
 }

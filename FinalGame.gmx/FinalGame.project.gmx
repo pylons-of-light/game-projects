@@ -13,6 +13,8 @@
     <sprite>sprites\spr_playerLeft</sprite>
     <sprite>sprites\spr_lise</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
+    <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\spr_collider</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -33,7 +35,8 @@
     <object>objects\dialogueMgr</object>
     <object>objects\playerShip</object>
     <object>objects\obj_player</object>
-    <object>objects\globals</object>
+    <object>objects\obj_globals</object>
+    <object>objects\obj_collider</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test1</room>
