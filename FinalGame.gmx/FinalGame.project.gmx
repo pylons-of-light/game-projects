@@ -15,6 +15,11 @@
     <sprite>sprites\spr_dialogueBox</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\spr_collider</sprite>
+    <sprite>sprites\spr_town1</sprite>
+    <sprite>sprites\spr_town1Mask</sprite>
+    <sprite>sprites\spr_townNPCMarker</sprite>
+    <sprite>sprites\spr_townQuestMarker</sprite>
+    <sprite>sprites\spr_tavern1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -32,15 +37,16 @@
     <font>fonts\fnt_default</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_globals</object>
     <object>objects\dialogueMgr</object>
     <object>objects\playerShip</object>
     <object>objects\obj_player</object>
-    <object>objects\obj_globals</object>
     <object>objects\obj_collider</object>
+    <object>objects\townMgr</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_nTest</room>
+    <room>rooms\rm_dungeon_test1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
