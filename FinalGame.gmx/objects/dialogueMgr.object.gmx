@@ -42,7 +42,10 @@ speakerPortrait = -1
 text = ''
 bNewPage = true
 
-alarmTime = room_speed / 20
+
+//TODO uncomment; the 1 is temporary. Maybe.
+//alarmTime = room_speed / 20
+alarmTime = 1
 </string>
           </argument>
         </arguments>
@@ -262,7 +265,16 @@ else {
         
         draw_text(x + 229, y + 87, speaker)
         
-        draw_text(x + 234, y + 115, text)
+        if not ds_list_empty(list) {
+            var pos = string_pos(' ', list[|0]);
+            var remainingWord = '';
+            if pos != -1
+                remainingWord = string_copy(list[|0], 1, pos-1);
+            draw_text(x + 234, y + 115, ParagraphedText(text, remainingWord))
+        }
+        else
+            draw_text(x + 234, y + 115, ParagraphedText(text, ''))
+        //draw_text_ext(x + 234, y + 115, text, 30, DIALOGUE_DRAW_WIDTH)   //TODO remove
         
         draw_set_alpha(1)
     }

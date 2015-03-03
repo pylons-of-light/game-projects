@@ -30,6 +30,9 @@
 //from being recreated when going back to a previous room, but it won't stop it from being
 //recreated for each separate room.
 
+
+//Constants
+
 globalvar g_AVATAR_SPEED;
 g_AVATAR_SPEED = 4;
 
@@ -52,6 +55,12 @@ RIGHT = 0
 UP = 90
 LEFT = 180
 DOWN = 270
+
+globalvar DIALOGUE_DRAW_WIDTH;
+DIALOGUE_DRAW_WIDTH = 750
+
+
+//Variables
 
 globalvar g_playerShipX, g_playerShipY, g_playerShipDir;
 g_playerShipX = 0

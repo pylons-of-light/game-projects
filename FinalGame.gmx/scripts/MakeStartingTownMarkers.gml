@@ -14,4 +14,3 @@ ds_list_add(g_townMarkers, 'v1n1d1')
 //Town 2
 
 //Tavern
-
