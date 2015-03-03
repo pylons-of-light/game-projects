@@ -47,11 +47,8 @@
     <object>objects\townMgr</object>
   </objects>
   <rooms name="rooms">
-<<<<<<< HEAD
-=======
     <room>rooms\room2</room>
     <room>rooms\rm_dungeon_test1</room>
->>>>>>> origin/master
     <room>rooms\rm_nTest</room>
     <room>rooms\rm_dungeon_test1</room>
   </rooms>
