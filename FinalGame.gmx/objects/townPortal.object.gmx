@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dialogueId = ""   //Set by MakeTownDetails if this portal links to dialogue sequence
-portal = -1   //Set by MakeTownDetails if this portal links to a town area
+            <string>dialogueId = ''   //Set by MakeTownDetails if this portal links to dialogue sequence
+portal = ''   //Set by MakeTownDetails if this portal links to a town area
+
+//Set by MakeTownDetails if this portal links to ocean
+oceanX = 0
+oceanY = 0
 </string>
           </argument>
         </arguments>
@@ -49,13 +53,21 @@ portal = -1   //Set by MakeTownDetails if this portal links to a town area
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not dialogueMgr.bVisible {
+            <string>if townMgr.bMoveReady and not dialogueMgr.bVisible {
     if dialogueId != '' {
         ShowDialogue(dialogueId)
     }
-    else if portal != -1 {
-        g_townSprite = portal
-        room_restart()
+    else if portal != '' {
+        if portal == 'ocean' {
+            g_playerShipX = oceanX
+            g_playerShipY = oceanY
+            g_playerShipDir = oceanDir
+            room_goto(rm_ocean)
+        }
+        else {
+            g_townId = portal
+            room_restart()
+        }
     }
 }
 </string>

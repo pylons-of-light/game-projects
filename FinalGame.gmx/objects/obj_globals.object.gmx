@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar g_AVATAR_SPEED;
+            <string>//Note: This object should only be put in one room, which the user will be in before any other
+//room. (The title screen is a good bet.) Simply making this object persistent will prevent it
+//from being recreated when going back to a previous room, but it won't stop it from being
+//recreated for each separate room.
+
+globalvar g_AVATAR_SPEED;
 g_AVATAR_SPEED = 4;
 
 globalvar g_RIGHT;
@@ -48,17 +53,19 @@ UP = 90
 LEFT = 180
 DOWN = 270
 
+globalvar g_playerShipX, g_playerShipY, g_playerShipDir;
+g_playerShipX = 0
+g_playerShipY = 0
+g_playerShipDir = 0
 
-globalvar g_townSprite;
-g_townSprite = spr_town1
+globalvar g_townId;
+g_townId = 'town1'
 
-globalvar g_townNpcMarkers;
-g_townNpcMarkers = ds_list_create()
+globalvar g_townMarkers;
+g_townMarkers = ds_list_create()
 
 
-//Create starting NPC markers
-ds_list_add(g_townNpcMarkers, "t1n1d1")
-
+MakeStartingTownMarkers()
 </string>
           </argument>
         </arguments>

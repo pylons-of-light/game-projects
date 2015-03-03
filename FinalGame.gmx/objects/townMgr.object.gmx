@@ -28,11 +28,15 @@
             <string>alpha = 0
 maskAlpha = 0
 
-townMask = GetTownMask(g_townSprite)
+bMoveReady = false
 
-MakeTownDetails(g_townSprite, townMask)
+townMask = GetTownMask(g_townId)
 
-alarm[0] = 30
+MakeTownDetails(g_townId, townMask)
+
+//Run town intro dialogue sequences
+alarmTime = 38
+alarm[0] = alarmTime
 </string>
           </argument>
         </arguments>
@@ -55,10 +59,16 @@ alarm[0] = 30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Deal with town-intro conversations
+            <string>//Enable the dialogue manager
+//Note: This is designed to happen around the time the fade-in animations complete, but
+//probably slightly aftwards.
 
-//TODO replace with proper dialogues
-ShowDialogue("t1n1d1")
+bMoveReady = true
+
+if dialogueMgr.bUsable {
+    dialogueMgr.bVisible = true
+    dialogueMgr.alarm[0] = dialogueMgr.alarmTime
+}
 </string>
           </argument>
         </arguments>
@@ -87,14 +97,14 @@ ShowDialogue("t1n1d1")
         alpha = 1
     
     draw_set_alpha(alpha)
-    draw_sprite(g_townSprite, 0, 0, 0)
+    draw_sprite(GetTownSprite(g_townId), 0, 0, 0)
     draw_set_alpha(1)
 }
 else {
-    draw_sprite(spr_town1, 0, 0, 0)
+    draw_sprite(GetTownSprite(g_townId), 0, 0, 0)
     
     if maskAlpha != 1 {
-        maskAlpha += .05
+        maskAlpha += .065
         if maskAlpha &gt; 1
             maskAlpha = 1
         
@@ -102,8 +112,10 @@ else {
         draw_sprite(townMask, 0, 0, 0)
         draw_set_alpha(1)
     }
-    else
+    else {
         draw_sprite(townMask, 0, 0, 0)
+        //bMoveReady = true   //Note: Removed to alarm[0] for now.
+    }
 }
 </string>
           </argument>

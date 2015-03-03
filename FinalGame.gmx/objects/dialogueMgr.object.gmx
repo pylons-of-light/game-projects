@@ -43,8 +43,6 @@ text = ''
 bNewPage = true
 
 alarmTime = room_speed / 20
-
-//alarm[0] = alarmTime
 </string>
           </argument>
         </arguments>
@@ -100,8 +98,10 @@ alarmTime = room_speed / 20
         alarm[0] = alarmTime
     }
 }
-else
+else {
     bUsable = false
+    bNewPage = true
+}
 </string>
           </argument>
         </arguments>
@@ -125,15 +125,13 @@ else
           <argument>
             <kind>1</kind>
             <string>if mouse_check_button_pressed(mb_left) {
-    if bUsable {
+    if bUsable and alarm[0] &lt; 0 {
         if not ds_list_empty(list) and string_length(list[|0]) == 0
             ds_list_delete(list, 0)
         
-        if alarm[0] &lt; 0 {
-            text = ''
-            bNewPage = true
-            alarm[0] = alarmTime
-        }
+        text = ''
+        bNewPage = true
+        alarm[0] = alarmTime
     }
 }
 </string>
@@ -232,6 +230,10 @@ else
             if alpha &lt;= 0 {
                 alpha = 0
                 bVisible = false
+                
+                //Prevent the old portrait from flashing at the start of the next dialogue sequence
+                speaker = ''
+                speakerPortrait = -1
             }
         }
     }
