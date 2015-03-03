@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>dialogueId = ""   //Set by MakeTownDetails if this portal links to dialogue sequence
-portal = 0   //Set by MakeTownDetails if this portal links to a town area
+portal = -1   //Set by MakeTownDetails if this portal links to a town area
 </string>
           </argument>
         </arguments>
@@ -49,7 +49,16 @@ portal = 0   //Set by MakeTownDetails if this portal links to a town area
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if not dialogueMgr.bVisible {
+    if dialogueId != '' {
+        ShowDialogue(dialogueId)
+    }
+    else if portal != -1 {
+        g_townSprite = portal
+        room_restart()
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>

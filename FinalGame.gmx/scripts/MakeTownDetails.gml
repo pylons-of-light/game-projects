@@ -9,7 +9,7 @@ if spr == spr_town1 {
     if mask == spr_town1Mask {
         new = instance_create(108, 393, townPortal)
         new.mask_index = spr_mask130x65
-        new.portal = spr_town1Mask
+        new.portal = spr_town1
         
         new = instance_create(915, 364, townPortal)
         new.mask_index = spr_mask55x35
