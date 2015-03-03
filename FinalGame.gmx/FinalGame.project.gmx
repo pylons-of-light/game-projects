@@ -12,6 +12,7 @@
     <sprite>sprites\spr_playerRight</sprite>
     <sprite>sprites\spr_playerLeft</sprite>
     <sprite>sprites\spr_lise</sprite>
+    <sprite>sprites\spr_grant</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\spr_collider</sprite>
@@ -20,6 +21,9 @@
     <sprite>sprites\spr_townNPCMarker</sprite>
     <sprite>sprites\spr_townQuestMarker</sprite>
     <sprite>sprites\spr_tavern1</sprite>
+    <sprite>sprites\spr_mask130x65</sprite>
+    <sprite>sprites\spr_mask55x35</sprite>
+    <sprite>sprites\spr_empty</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -31,6 +35,9 @@
     <script>scripts\PlayerShipMove.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
     <script>scripts\ShowDialogue.gml</script>
+    <script>scripts\GetTownMask.gml</script>
+    <script>scripts\MakeTownDetails.gml</script>
+    <script>scripts\GetPortrait.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -41,15 +48,17 @@
   <objects name="objects">
     <object>objects\obj_globals</object>
     <object>objects\dialogueMgr</object>
+    <object>objects\townMgr</object>
     <object>objects\playerShip</object>
     <object>objects\obj_player</object>
     <object>objects\obj_collider</object>
-    <object>objects\townMgr</object>
+    <object>objects\townNpcMarker</object>
+    <object>objects\townQuestMarker</object>
+    <object>objects\townPortal</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room2</room>
-    <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_nTest</room>
+    <room>rooms\room2</room>
     <room>rooms\rm_dungeon_test1</room>
   </rooms>
   <help>

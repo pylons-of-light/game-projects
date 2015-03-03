@@ -1,3 +1,6 @@
+//Player ship movement
+//Arguments: player ship
+
 with argument0 {
     if keyboard_check(vk_up) {
         physics_apply_local_force(0, 0, 0, -200)

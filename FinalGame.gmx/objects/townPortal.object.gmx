@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>10</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,20 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha = 0
-maskAlpha = 0
-
-townMask = GetTownMask(g_townSprite)
-
-MakeTownDetails(g_townSprite, townMask)
-
-alarm[0] = 30
+            <string>dialogueId = ""   //Set by MakeTownDetails if this portal links to dialogue sequence
+portal = 0   //Set by MakeTownDetails if this portal links to a town area
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,57 +49,7 @@ alarm[0] = 30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Deal with town-intro conversations
-
-//TODO replace with proper dialogues
-ShowDialogue("t1n1d1")
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if alpha != 1 {
-    alpha += .05
-    if alpha &gt; 1
-        alpha = 1
-    
-    draw_set_alpha(alpha)
-    draw_sprite(g_townSprite, 0, 0, 0)
-    draw_set_alpha(1)
-}
-else {
-    draw_sprite(spr_town1, 0, 0, 0)
-    
-    if maskAlpha != 1 {
-        maskAlpha += .05
-        if maskAlpha &gt; 1
-            maskAlpha = 1
-        
-        draw_set_alpha(maskAlpha)
-        draw_sprite(townMask, 0, 0, 0)
-        draw_set_alpha(1)
-    }
-    else
-        draw_sprite(townMask, 0, 0, 0)
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
