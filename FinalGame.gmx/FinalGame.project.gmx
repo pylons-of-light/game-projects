@@ -30,11 +30,14 @@
     <sprite>sprites\spr_mask45x110</sprite>
     <sprite>sprites\spr_mask400x200</sprite>
     <sprite>sprites\spr_backButton</sprite>
+    <sprite>sprites\spr_teleport1</sprite>
+    <sprite>sprites\spr_teleport2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
-    <background>background\background2</background>
-    <background>background\background3</background>
+    <background>background\br_dungeon_items</background>
+    <background>background\br_dungeon_walls</background>
+    <background>background\br_stairs</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -69,11 +72,15 @@
     <object>objects\townPortal</object>
     <object>objects\townBackButton</object>
     <object>objects\town1Port</object>
+    <object>objects\obj_teleport1</object>
+    <object>objects\obj_teleport2</object>
+    <object>objects\obj_teleport_back1</object>
+    <object>objects\obj_teleport_back2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_town</room>
     <room>rooms\rm_ocean</room>
-    <room>rooms\room2</room>
+    <room>rooms\rm_dungeon_test2</room>
     <room>rooms\rm_dungeon_test1</room>
   </rooms>
   <help>
