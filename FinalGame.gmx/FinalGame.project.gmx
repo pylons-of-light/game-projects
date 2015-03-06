@@ -6,32 +6,46 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="town">
+      <sprites name="bg">
+        <sprite>sprites\spr_town1</sprite>
+        <sprite>sprites\spr_town1Mask</sprite>
+        <sprite>sprites\spr_town2</sprite>
+        <sprite>sprites\spr_town2Mask</sprite>
+        <sprite>sprites\spr_tavern1</sprite>
+        <sprite>sprites\spr_tavern1Mask</sprite>
+      </sprites>
+      <sprites name="masks">
+        <sprite>sprites\spr_mask45x110</sprite>
+        <sprite>sprites\spr_mask130x65</sprite>
+        <sprite>sprites\spr_mask55x35</sprite>
+        <sprite>sprites\spr_mask400x200</sprite>
+      </sprites>
+      <sprite>sprites\spr_townNPCMarker</sprite>
+      <sprite>sprites\spr_townQuestMarker</sprite>
+      <sprite>sprites\spr_backButton</sprite>
+    </sprites>
+    <sprites name="naval">
+      <sprites name="ships">
+        <sprite>sprites\spr_playerShip</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="dungeon">
+      <sprite>sprites\spr_playerUp</sprite>
+      <sprite>sprites\spr_playerDown</sprite>
+      <sprite>sprites\spr_playerRight</sprite>
+      <sprite>sprites\spr_playerLeft</sprite>
+      <sprite>sprites\sprite8</sprite>
+      <sprite>sprites\spr_collider</sprite>
+      <sprite>sprites\spr_teleport1</sprite>
+      <sprite>sprites\spr_teleport2</sprite>
+    </sprites>
+    <sprites name="portraits">
+      <sprite>sprites\spr_lise</sprite>
+      <sprite>sprites\spr_grant</sprite>
+    </sprites>
     <sprite>sprites\spr_empty</sprite>
-    <sprite>sprites\spr_playerShip</sprite>
-    <sprite>sprites\spr_playerUp</sprite>
-    <sprite>sprites\spr_playerDown</sprite>
-    <sprite>sprites\spr_playerRight</sprite>
-    <sprite>sprites\spr_playerLeft</sprite>
-    <sprite>sprites\spr_lise</sprite>
-    <sprite>sprites\spr_grant</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
-    <sprite>sprites\sprite8</sprite>
-    <sprite>sprites\spr_collider</sprite>
-    <sprite>sprites\spr_town1</sprite>
-    <sprite>sprites\spr_town1Mask</sprite>
-    <sprite>sprites\spr_town2</sprite>
-    <sprite>sprites\spr_town2Mask</sprite>
-    <sprite>sprites\spr_tavern1</sprite>
-    <sprite>sprites\spr_tavern1Mask</sprite>
-    <sprite>sprites\spr_townNPCMarker</sprite>
-    <sprite>sprites\spr_townQuestMarker</sprite>
-    <sprite>sprites\spr_mask130x65</sprite>
-    <sprite>sprites\spr_mask55x35</sprite>
-    <sprite>sprites\spr_mask45x110</sprite>
-    <sprite>sprites\spr_mask400x200</sprite>
-    <sprite>sprites\spr_backButton</sprite>
-    <sprite>sprites\spr_teleport1</sprite>
-    <sprite>sprites\spr_teleport2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -49,9 +63,10 @@
     <script>scripts\GetTownSprite.gml</script>
     <script>scripts\GetTownMask.gml</script>
     <script>scripts\GetPortrait.gml</script>
-    <script>scripts\PlayerShipMove.gml</script>
-    <script>scripts\PlayerAvatarMove.gml</script>
     <script>scripts\ParagraphedText.gml</script>
+    <script>scripts\PlayerShipMove.gml</script>
+    <script>scripts\ShipCollide.gml</script>
+    <script>scripts\PlayerAvatarMove.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -62,27 +77,34 @@
   <objects name="objects">
     <object>objects\obj_globals</object>
     <object>objects\dialogueMgr</object>
-    <object>objects\townMgr</object>
-    <object>objects\townMarker</object>
-    <object>objects\townNpcMarker</object>
-    <object>objects\townQuestMarker</object>
-    <object>objects\townPortal</object>
-    <object>objects\townBackButton</object>
-    <object>objects\playerShip</object>
-    <object>objects\merchantShip</object>
-    <object>objects\warship</object>
-    <object>objects\town1Port</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_collider</object>
-    <object>objects\obj_teleport1</object>
-    <object>objects\obj_teleport2</object>
-    <object>objects\obj_teleport_back1</object>
-    <object>objects\obj_teleport_back2</object>
+    <objects name="town">
+      <object>objects\townMgr</object>
+      <object>objects\townMarker</object>
+      <object>objects\townNpcMarker</object>
+      <object>objects\townQuestMarker</object>
+      <object>objects\townPortal</object>
+      <object>objects\townBackButton</object>
+    </objects>
+    <objects name="naval">
+      <object>objects\playerShip</object>
+      <object>objects\navalBlock</object>
+      <object>objects\merchantShip</object>
+      <object>objects\warship</object>
+      <object>objects\town1Port</object>
+    </objects>
+    <objects name="dungeon">
+      <object>objects\obj_player</object>
+      <object>objects\obj_collider</object>
+      <object>objects\obj_teleport1</object>
+      <object>objects\obj_teleport2</object>
+      <object>objects\obj_teleport_back1</object>
+      <object>objects\obj_teleport_back2</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_ocean</room>
     <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_dungeon_test2</room>
-    <room>rooms\rm_ocean</room>
     <room>rooms\rm_town</room>
     <room>rooms\room2</room>
   </rooms>

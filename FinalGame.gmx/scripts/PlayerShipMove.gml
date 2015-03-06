@@ -1,6 +1,9 @@
-//Player ship movement
-//Arguments: player ship
+//Called from player ship step event
 
+
+
+//Old physics code; TODO remove
+/*
 with argument0 {
     if keyboard_check(vk_up) {
         physics_apply_local_force(0, 0, 0, -200)
@@ -61,3 +64,4 @@ with argument0 {
            phy_linear_velocity_y = 0;
     }
 }
+*/
