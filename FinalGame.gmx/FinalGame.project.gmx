@@ -39,6 +39,7 @@
       <sprite>sprites\spr_collider</sprite>
       <sprite>sprites\spr_teleport1</sprite>
       <sprite>sprites\spr_teleport2</sprite>
+      <sprite>sprites\spr_celing</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -52,6 +53,7 @@
     <background>background\br_dungeon_items</background>
     <background>background\br_dungeon_walls</background>
     <background>background\br_stairs</background>
+    <background>background\background5</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -76,6 +78,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_globals</object>
+    <object>objects\titleManager</object>
     <object>objects\dialogueMgr</object>
     <objects name="town">
       <object>objects\townMgr</object>
@@ -99,14 +102,15 @@
       <object>objects\obj_teleport2</object>
       <object>objects\obj_teleport_back1</object>
       <object>objects\obj_teleport_back2</object>
+      <object>objects\obj_celing</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_ocean</room>
-    <room>rooms\rm_dungeon_test1</room>
+    <room>rooms\rm_title</room>
     <room>rooms\rm_dungeon_test2</room>
+    <room>rooms\rm_dungeon_test1</room>
+    <room>rooms\rm_ocean</room>
     <room>rooms\rm_town</room>
-    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
