@@ -28,7 +28,10 @@
     <sprites name="naval">
       <sprites name="ships">
         <sprite>sprites\spr_playerShip</sprite>
+        <sprite>sprites\sprite27</sprite>
       </sprites>
+      <sprite>sprites\spr_cannonball</sprite>
+      <sprite>sprites\spr_cannonballExplosion</sprite>
     </sprites>
     <sprites name="dungeon">
       <sprite>sprites\spr_playerUp</sprite>
@@ -89,10 +92,13 @@
       <object>objects\townBackButton</object>
     </objects>
     <objects name="naval">
-      <object>objects\playerShip</object>
       <object>objects\navalBlock</object>
+      <object>objects\playerShip</object>
+      <object>objects\npcShip</object>
       <object>objects\merchantShip</object>
       <object>objects\warship</object>
+      <object>objects\cannonball</object>
+      <object>objects\cannonballExplosion</object>
       <object>objects\town1Port</object>
     </objects>
     <objects name="dungeon">
