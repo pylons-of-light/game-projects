@@ -369,10 +369,18 @@ left = direction - 90
 if left &lt; 0
     left += 360
 right = direction + 90
-if right &gt; 360
+if right &gt;= 360
     right -= 360
 
-if abs(aimDir - left) &lt; abs(aimDir - right)
+var leftDiff = abs(aimDir - left)
+if leftDiff &gt; 180
+    leftDiff = 360 - leftDiff
+
+var rightDiff = abs(aimDir - right)
+if rightDiff &gt; 180
+    rightDiff = 360 - rightDiff
+
+if leftDiff &lt; rightDiff
     aimDir = left
 else
     aimDir = right

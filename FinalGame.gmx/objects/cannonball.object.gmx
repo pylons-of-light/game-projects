@@ -77,6 +77,11 @@ instance_destroy()
             <string>if sourceShip == other.id
     exit
 else {
+    if sourceShip == instance_nearest(x, y, playerShip) {
+        other.bHostile = true
+        other.alarm[0] = room_speed * 10
+    }
+    
     instance_create(x, y, cannonballExplosion)
     instance_destroy()
 }

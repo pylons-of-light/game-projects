@@ -25,11 +25,64 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>destination = town1Port
+            <string>event_inherited()
+
+destination = town1Port
 
 maxSpeed = 1
 mySpeed = maxSpeed / 4
 frame = 0
+
+bHostile = true
+bChasing = false
+bTurningToFire = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bChasing = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bHostile = false
+bTurningToFire = false
 </string>
           </argument>
         </arguments>
@@ -54,25 +107,65 @@ frame = 0
             <kind>1</kind>
             <string>++frame
 
-var realDir, dirDifference, nearest;
+var realDir, dirDifference, nearestCb;
 
 //TODO improve this so fleeing happens properly (use bFleeing or something) and the ship moves perpendicularly
 
-nearest = instance_nearest(x, y, cannonball)
-if nearest.sourceShip != id and distance_to_object(nearest) &lt; 100 {
-    mp_potential_step_object(nearest.x, nearest.y, -mySpeed*2, navalBlock)   //TODO why need * 2?
-    realDir = direction - 180
-    if realDir &lt; 0
-        realDir += 360
+if not bTurningToFire {
+    nearestCb = instance_nearest(x, y, cannonball)
+    if nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100 {
+        mp_potential_step_object(nearestCb.x, nearestCb.y, -mySpeed*2, navalBlock)   //TODO why need * 2?
+        realDir = direction - 180
+        if realDir &lt; 0
+            realDir += 360
+    }
+    else if bChasing or distance_to_object(playerShip) &lt; 200 {
+        mp_potential_step_object(playerShip.x, playerShip.y, mySpeed, navalBlock)
+        realDir = direction
+        bChasing = true
+        
+        if alarm[1] &lt; 0 and distance_to_object(playerShip) &gt; 300
+            alarm[1] = room_speed * 5
+    }
+    else {
+        mp_potential_step_object(destination.x, destination.y, mySpeed, navalBlock)
+        realDir = direction
+    }
+    
+    /*
+    mp_potential_step_object(playerShip.x, playerShip.y, 0, navalBlock)   //TODO remove
+    realDir = direction   //TODO remove
+    */
 }
-else if distance_to_object(playerShip) &lt; 400 {
-    mp_potential_step_object(playerShip.x, playerShip.y, mySpeed, navalBlock)
-    realDir = direction
+
+
+if bHostile {
+    if bTurningToFire {
+        speed = mySpeed / 5
+        var goalDir = point_direction(x, y, playerShip.x, playerShip.y);
+        //TODO account for 360-degree nonsense
+        if direction &lt; goalDir
+            direction += 5
+        if direction &gt; goalDir
+            direction -= 5
+        realDir = direction
+        
+        TryNpcShipAdjacentFire()
+    }
+    else {
+        if current_time - cbFireDelay &lt; lastFiredTime {
+            if random(1) &lt; .0 {   //TODO change back to .1 or something
+                bTurningToFire = true
+                //show_message("ttf")
+            }
+            else
+                TryNpcShipAdjacentFire()
+        }
+    }
 }
-else {
-    mp_potential_step_object(destination.x, destination.y, mySpeed, navalBlock)
-    realDir = direction
-}
+
+
+//Adjust image dir to match real dir
 
 var bAdjustDir = false;
 dirDifference = abs(image_angle - realDir)
@@ -88,17 +181,30 @@ else if mySpeed &lt; maxSpeed {
     mySpeed = min(mySpeed + .1, maxSpeed)
 }
 
+var tempAngle;
 if frame mod 2 == 0 {
     var diffMetric = 5
     if dirDifference &gt; diffMetric {
-        //TODO it's likely this will need modification
-        if image_angle &lt; realDir and image_angle + 360 - realDir &gt; diffMetric {
-            //show_message(string(image_angle) + " " + string(realDir))
-            image_angle += diffMetric
+        //show_message(string(image_angle) + " " + string(realDir))
+        if image_angle &lt; realDir {
+            if not bAdjustDir
+                tempAngle = image_angle + diffMetric
+            else {
+                tempAngle = image_angle - diffMetric
+            }
         }
-        else if image_angle &gt; realDir and realDir + 360 - image_angle &gt; diffMetric {
-            image_angle -= diffMetric
+        else {
+            if not bAdjustDir
+                tempAngle = image_angle - diffMetric
+            else
+                tempAngle = image_angle + diffMetric
         }
+        
+        if tempAngle &lt; 0
+            tempAngle += 360
+        if tempAngle &gt;= 360
+            tempAngle -= 360
+        image_angle = tempAngle
     }
     else {
         if bAdjustDir {
@@ -110,7 +216,6 @@ if frame mod 2 == 0 {
             image_angle = (image_angle + realDir) / 2;
     }
 }
-
 </string>
           </argument>
         </arguments>

@@ -72,6 +72,8 @@
     <script>scripts\PlayerShipMove.gml</script>
     <script>scripts\ShipCollide.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
+    <script>scripts\ShipFire.gml</script>
+    <script>scripts\TryNpcShipAdjacentFire.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>

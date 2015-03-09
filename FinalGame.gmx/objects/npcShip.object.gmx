@@ -29,6 +29,8 @@
 cbFlyTime = 150
 cbSpeed = 3
 cbFireDelay = 800
+
+bHostile = false
 </string>
           </argument>
         </arguments>

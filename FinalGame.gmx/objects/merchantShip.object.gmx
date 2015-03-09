@@ -25,11 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>destination = town1Port
+            <string>event_inherited()
+
+destination = town1Port
 
 maxSpeed = 1
 mySpeed = maxSpeed / 4
 frame = 0
+
+bHostile = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bHostile = false
 </string>
           </argument>
         </arguments>
@@ -54,7 +81,7 @@ frame = 0
             <kind>1</kind>
             <string>++frame
 
-var realDir, dirDifference, nearest;
+var realDir, dirDifference, nearestCb;
 
 //TODO improve this so fleeing happens properly (use bFleeing or something) and the ship moves perpendicularly
 
@@ -70,9 +97,17 @@ else {
     realDir = direction
 }
 
+/*
+mp_potential_step_object(playerShip.x, playerShip.y, 0, navalBlock)   //TODO remove
+realDir = direction   //TODO remove
+*/
+
+
+var bAdjustDir = false;
 dirDifference = abs(image_angle - realDir)
 if dirDifference &gt; 180 {
     dirDifference = 360 - dirDifference
+    bAdjustDir = true
 }
 
 if dirDifference &gt; 2 {
@@ -82,17 +117,44 @@ else if mySpeed &lt; maxSpeed {
     mySpeed = min(mySpeed + .1, maxSpeed)
 }
 
+var tempAngle;
 if frame mod 2 == 0 {
-    if dirDifference &gt; 5 {
-        if image_angle &lt; realDir
-            image_angle += 5
-        else
-            image_angle -= 5
+    var diffMetric = 5
+    if dirDifference &gt; diffMetric {
+        //show_message(string(image_angle) + " " + string(realDir))
+        if image_angle &lt; realDir {
+            if not bAdjustDir
+                tempAngle = image_angle + diffMetric
+            else {
+                tempAngle = image_angle - diffMetric
+            }
+        }
+        else {
+            if not bAdjustDir
+                tempAngle = image_angle - diffMetric
+            else
+                tempAngle = image_angle + diffMetric
+        }
+        
+        if tempAngle &lt; 0
+            tempAngle += 360
+        if tempAngle &gt;= 360
+            tempAngle -= 360
+        image_angle = tempAngle
     }
     else {
-        image_angle = (image_angle + realDir) / 2;
+        if bAdjustDir {
+            smaller = min(image_angle, realDir) + 360
+            larger = max(image_angle, realDir)
+            image_angle = (smaller + larger) / 2 - 360;
+        }
+        else
+            image_angle = (image_angle + realDir) / 2;
     }
 }
+
+if bHostile
+    TryNpcShipAdjacentFire()
 </string>
           </argument>
         </arguments>
