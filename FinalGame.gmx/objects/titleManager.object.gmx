@@ -27,16 +27,16 @@
             <kind>1</kind>
             <string>randomize()
 
+//room_goto(rm_town)
+
 //Note: This only works if there's a file in
 //C:\Users\USERNAME\AppData\Local\FinalGame
 //(on Windows 7 anyway) named 'rains'
-/*
+
 if file_exists("rains")
     room_goto(rm_ocean)
 else
     room_goto_next()
-*/
-room_goto(rm_town)
 </string>
           </argument>
         </arguments>
