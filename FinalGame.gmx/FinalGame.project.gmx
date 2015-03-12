@@ -28,7 +28,9 @@
     <sprites name="naval">
       <sprites name="ships">
         <sprite>sprites\spr_playerShip</sprite>
-        <sprite>sprites\sprite27</sprite>
+        <sprite>sprites\spr_merchantShip</sprite>
+        <sprite>sprites\spr_warship</sprite>
+        <sprite>sprites\sprite30</sprite>
       </sprites>
       <sprite>sprites\spr_cannonball</sprite>
       <sprite>sprites\spr_cannonballExplosion</sprite>
