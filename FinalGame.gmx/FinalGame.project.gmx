@@ -40,11 +40,14 @@
       <sprite>sprites\spr_playerDown</sprite>
       <sprite>sprites\spr_playerRight</sprite>
       <sprite>sprites\spr_playerLeft</sprite>
-      <sprite>sprites\sprite8</sprite>
       <sprite>sprites\spr_collider</sprite>
       <sprite>sprites\spr_teleport1</sprite>
       <sprite>sprites\spr_teleport2</sprite>
       <sprite>sprites\spr_celing</sprite>
+      <sprite>sprites\spr_attackRight</sprite>
+      <sprite>sprites\spr_attackLeft</sprite>
+      <sprite>sprites\spr_attackUp</sprite>
+      <sprite>sprites\spr_attackDown</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -73,6 +76,7 @@
     <script>scripts\ParagraphedText.gml</script>
     <script>scripts\PlayerShipMove.gml</script>
     <script>scripts\ShipCollide.gml</script>
+    <script>scripts\PlayerAvatarAttack.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
     <script>scripts\ShipFire.gml</script>
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
@@ -113,6 +117,7 @@
       <object>objects\obj_teleport_back1</object>
       <object>objects\obj_teleport_back2</object>
       <object>objects\obj_celing</object>
+      <object>objects\obj_rapier</object>
     </objects>
   </objects>
   <rooms name="rooms">
