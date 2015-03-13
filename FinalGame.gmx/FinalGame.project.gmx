@@ -62,6 +62,7 @@
     <background>background\br_dungeon_walls</background>
     <background>background\br_stairs</background>
     <background>background\background5</background>
+    <background>background\br_cave</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -122,6 +123,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
+    <room>rooms\rm_cave</room>
     <room>rooms\rm_dungeon_test2</room>
     <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_ocean</room>
