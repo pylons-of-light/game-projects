@@ -38,16 +38,20 @@
     <sprites name="dungeon">
       <sprite>sprites\spr_playerUp</sprite>
       <sprite>sprites\spr_playerDown</sprite>
-      <sprite>sprites\spr_playerRight</sprite>
       <sprite>sprites\spr_playerLeft</sprite>
+      <sprite>sprites\spr_playerRight</sprite>
+      <sprite>sprites\spr_grantUp</sprite>
+      <sprite>sprites\spr_grantDown</sprite>
+      <sprite>sprites\spr_grantLeft</sprite>
+      <sprite>sprites\spr_grantRight</sprite>
       <sprite>sprites\spr_collider</sprite>
       <sprite>sprites\spr_teleport1</sprite>
       <sprite>sprites\spr_teleport2</sprite>
       <sprite>sprites\spr_celing</sprite>
-      <sprite>sprites\spr_attackRight</sprite>
-      <sprite>sprites\spr_attackLeft</sprite>
       <sprite>sprites\spr_attackUp</sprite>
       <sprite>sprites\spr_attackDown</sprite>
+      <sprite>sprites\spr_attackLeft</sprite>
+      <sprite>sprites\spr_attackRight</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
