@@ -55,6 +55,7 @@
       <sprite>sprites\spr_attackDown</sprite>
       <sprite>sprites\spr_attackLeft</sprite>
       <sprite>sprites\spr_attackRight</sprite>
+      <sprite>sprites\spr_floorTorch</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -69,8 +70,12 @@
     <background>background\br_dungeon_walls</background>
     <background>background\br_stairs</background>
     <background>background\background5</background>
-    <background>background\br_cave</background>
     <background>background\br_water</background>
+    <background>background\br_title</background>
+    <background>background\br_caveTopLeft</background>
+    <background>background\br_caveTopRight</background>
+    <background>background\br_caveBottomLeft</background>
+    <background>background\br_caveBottomRight</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -129,7 +134,9 @@
       <object>objects\obj_teleport_back2</object>
       <object>objects\obj_celing</object>
       <object>objects\obj_rapier</object>
+      <object>objects\floorTorch</object>
     </objects>
+    <object>objects\gameMgr</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

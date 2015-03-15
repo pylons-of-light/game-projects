@@ -51,7 +51,8 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="dialogueMgr" x="32" y="32" name="inst_896AC39C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="gameMgr" x="32" y="32" name="inst_95CE3F6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dialogueMgr" x="64" y="32" name="inst_896AC39C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="416" y="32" name="inst_45A65CD2" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="192" y="128" name="inst_AA4CACB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="416" y="256" name="inst_0187EACF" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
