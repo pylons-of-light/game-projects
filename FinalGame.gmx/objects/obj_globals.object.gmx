@@ -73,6 +73,8 @@ g_townId = 'town1'
 globalvar g_townMarkers;
 g_townMarkers = ds_list_create()
 
+globalvar g_lastChangedRoomTime;
+g_lastChangedRoomTime = 0
 
 MakeStartingTownMarkers()
 </string>

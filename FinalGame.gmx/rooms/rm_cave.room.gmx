@@ -51,6 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+    <instance objName="dialogueMgr" x="32" y="32" name="inst_6350899C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="352" y="320" name="inst_D9FA81DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="1344" y="0" name="inst_742A3E79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="1280" y="0" name="inst_7D301F03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -688,6 +689,14 @@
     <instance objName="obj_collider" x="1888" y="2400" name="inst_1CD75C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="1920" y="2400" name="inst_B9C31588" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collider" x="1952" y="2368" name="inst_A586F6D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1280" y="1632" name="inst_951A3356" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1312" y="1600" name="inst_98613F26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1216" y="1632" name="inst_79BD4264" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1184" y="1568" name="inst_FB3D03E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1248" y="1664" name="inst_C2E7B375" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1472" y="1728" name="inst_6F21618B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1536" y="1664" name="inst_5BEA2B80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collider" x="1600" y="1696" name="inst_BD7472DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="br_cave" x="320" y="256" w="32" h="32" xo="352" yo="384" id="10011876" name="inst_53C0FDC6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

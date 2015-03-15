@@ -1,6 +1,9 @@
 //Player movement
 //Arguments: none
 
+if dialogueMgr.text != ""
+    exit
+
 bKeyDirectionIsPressed = false
 bKeyDirectionIsReleased = false
 
