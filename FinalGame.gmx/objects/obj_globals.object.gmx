@@ -73,6 +73,9 @@ g_townId = 'town1'
 globalvar g_townMarkers;
 g_townMarkers = ds_list_create()
 
+globalvar g_avatarAttacking;
+g_avatarAttacking = false;
+
 globalvar g_lastChangedRoomTime;
 g_lastChangedRoomTime = 0
 

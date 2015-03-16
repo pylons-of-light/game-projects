@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = .9
+g_avatarAttacking = true;
 </string>
           </argument>
         </arguments>
@@ -49,6 +50,7 @@
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
+g_avatarAttacking = false;
 </string>
           </argument>
         </arguments>
