@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-10</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -46,6 +46,9 @@ bNewPage = true
 //TODO uncomment; the 1 is temporary. Maybe.
 //alarmTime = room_speed / 20
 alarmTime = 1
+
+if g_lastChangedRoomTime != 0
+    g_lastChangedRoomTime = current_time
 </string>
           </argument>
         </arguments>
@@ -159,8 +162,10 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room != rm_town
+            <string>if current_time - g_lastChangedRoomTime &gt; 200 and room != rm_town {
+    g_lastChangedRoomTime = current_time
     room_goto_next()
+}
 </string>
           </argument>
         </arguments>
@@ -183,8 +188,10 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room != rm_dungeon_test2
+            <string>if current_time - g_lastChangedRoomTime &gt; 200 and room != rm_title {
+    g_lastChangedRoomTime = current_time
     room_goto_previous()
+}
 </string>
           </argument>
         </arguments>

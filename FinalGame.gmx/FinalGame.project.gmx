@@ -32,6 +32,9 @@
         <sprite>sprites\spr_warship</sprite>
         <sprite>sprites\sprite30</sprite>
       </sprites>
+      <sprites name="terrain">
+        <sprite>sprites\spr_terrain1</sprite>
+      </sprites>
       <sprite>sprites\spr_cannonball</sprite>
       <sprite>sprites\spr_cannonballExplosion</sprite>
     </sprites>
@@ -52,6 +55,7 @@
       <sprite>sprites\spr_attackDown</sprite>
       <sprite>sprites\spr_attackLeft</sprite>
       <sprite>sprites\spr_attackRight</sprite>
+      <sprite>sprites\spr_floorTorch</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -66,7 +70,13 @@
     <background>background\br_dungeon_walls</background>
     <background>background\br_stairs</background>
     <background>background\background5</background>
-    <background>background\br_cave</background>
+    <background>background\br_water</background>
+    <background>background\br_title</background>
+    <background>background\br_caveTopLeft</background>
+    <background>background\br_caveTopRight</background>
+    <background>background\br_caveBottomLeft</background>
+    <background>background\br_caveBottomRight</background>
+    <background>background\br_credits</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -113,6 +123,8 @@
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
       <object>objects\town1Port</object>
+      <object>objects\terrain</object>
+      <object>objects\terrain1</object>
     </objects>
     <objects name="dungeon">
       <object>objects\obj_player</object>
@@ -123,7 +135,9 @@
       <object>objects\obj_teleport_back2</object>
       <object>objects\obj_celing</object>
       <object>objects\obj_rapier</object>
+      <object>objects\floorTorch</object>
     </objects>
+    <object>objects\gameMgr</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
