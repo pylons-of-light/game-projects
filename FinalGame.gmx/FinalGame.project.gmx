@@ -76,6 +76,7 @@
     <background>background\br_caveTopRight</background>
     <background>background\br_caveBottomLeft</background>
     <background>background\br_caveBottomRight</background>
+    <background>background\br_credits</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
