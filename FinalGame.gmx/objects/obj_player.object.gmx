@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>direction = g_DOWN
 image_speed = 0
+attacking = false
 </string>
           </argument>
         </arguments>
@@ -49,7 +50,15 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PlayerAvatarMove()
+            <string>//only move if were not attacking
+if(g_avatarAttacking == false)
+{
+    PlayerAvatarMove();
+}
+else
+{
+    speed = 0;
+}
 </string>
           </argument>
         </arguments>

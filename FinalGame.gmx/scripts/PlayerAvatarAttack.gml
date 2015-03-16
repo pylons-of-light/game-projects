@@ -1,4 +1,4 @@
-with obj_player{
+with obj_player{    
     var attackPrototype = spr_attackRight;
     tempXOffset = sprite_width / 2 - sprite_get_width(attackPrototype) / 2;
     tempYOffset = tempXOffset;
