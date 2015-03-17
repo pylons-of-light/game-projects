@@ -73,6 +73,12 @@
     <sprite>sprites\spr_dialogueBox</sprite>
     <sprite>sprites\spr_controls</sprite>
     <sprite>sprites\spr_credits</sprite>
+    <sprite>sprites\spr_t1</sprite>
+    <sprite>sprites\spr_t2Top</sprite>
+    <sprite>sprites\spr_t2Bottom</sprite>
+    <sprite>sprites\spr_t3</sprite>
+    <sprite>sprites\spr_t4</sprite>
+    <sprite>sprites\spr_t5</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -132,8 +138,6 @@
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
       <object>objects\town1Port</object>
-      <object>objects\terrain</object>
-      <object>objects\terrain1</object>
     </objects>
     <objects name="dungeon">
       <object>objects\obj_player</object>
@@ -149,6 +153,13 @@
     <object>objects\gameMgr</object>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
+    <object>objects\terrain</object>
+    <object>objects\t1</object>
+    <object>objects\t2Top</object>
+    <object>objects\t2Bottom</object>
+    <object>objects\t3</object>
+    <object>objects\t4</object>
+    <object>objects\t5</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

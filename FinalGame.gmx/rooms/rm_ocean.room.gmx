@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>10000</width>
-  <height>8000</height>
+  <height>10000</height>
   <vsnap>16</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
@@ -53,11 +53,16 @@
   <instances>
     <instance objName="gameMgr" x="16" y="16" name="inst_CD5A89FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dialogueMgr" x="32" y="16" name="inst_E7520D85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="playerShip" x="384" y="400" name="inst_AD5ACEB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="terrain1" x="0" y="0" name="inst_E5ABFD33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="town1Port" x="608" y="384" name="inst_39CF42A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="warship" x="512" y="848" name="inst_402055CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="merchantShip" x="912" y="768" name="inst_72A51E4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t2Bottom" x="4704" y="3440" name="inst_DC6F64F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t2Top" x="4704" y="2160" name="inst_23FAF366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="playerShip" x="4480" y="3056" name="inst_19CD25CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="warship" x="4016" y="3408" name="inst_95C4BC76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="merchantShip" x="4064" y="2752" name="inst_780ECDD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="town1Port" x="4320" y="3232" name="inst_F6F56096" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t1" x="2336" y="3856" name="inst_C69A150F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t3" x="1424" y="1328" name="inst_61AB4D5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t4" x="3024" y="1440" name="inst_6E5C12E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t5" x="5120" y="6080" name="inst_A10B4E6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
