@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>10000</width>
-  <height>10000</height>
+  <height>8993</height>
   <vsnap>16</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
@@ -53,16 +53,45 @@
   <instances>
     <instance objName="gameMgr" x="16" y="16" name="inst_CD5A89FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dialogueMgr" x="32" y="16" name="inst_E7520D85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="t2Bottom" x="4704" y="3440" name="inst_DC6F64F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="t2Top" x="4704" y="2160" name="inst_23FAF366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="playerShip" x="4480" y="3056" name="inst_19CD25CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="warship" x="4016" y="3408" name="inst_95C4BC76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="merchantShip" x="4064" y="2752" name="inst_780ECDD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="town1Port" x="4320" y="3232" name="inst_F6F56096" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="t1" x="2336" y="3856" name="inst_C69A150F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="t3" x="1424" y="1328" name="inst_61AB4D5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="playerShip" x="5712" y="4304" name="inst_2D0A8533" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t1" x="1936" y="3840" name="inst_C69A150F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t2Bottom" x="4960" y="2848" name="inst_DC6F64F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t2Top" x="4944" y="1568" name="inst_23FAF366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeRight" x="9760" y="4096" name="inst_21F26D31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeRight" x="9760" y="8192" name="inst_36AA9DA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeRight" x="9760" y="6144" name="inst_C70B7F5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t3" x="880" y="1296" name="inst_61AB4D5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="t4" x="3024" y="1440" name="inst_6E5C12E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="t5" x="5120" y="6080" name="inst_A10B4E6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t6" x="2400" y="6608" name="inst_0F2D555F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t7" x="736" y="6784" name="inst_91DD4F3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeLeft" x="0" y="6144" name="inst_410289AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeTop" x="0" y="0" name="inst_E57D54F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeTop" x="2048" y="0" name="inst_D7CEEC20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeTop" x="4096" y="0" name="inst_123DF792" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeTop" x="6144" y="0" name="inst_8AAA78D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeTop" x="8192" y="0" name="inst_245ACDCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeBottom" x="0" y="8752" name="inst_3170B483" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeBottom" x="2048" y="8752" name="inst_89D8FBAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeBottom" x="4096" y="8752" name="inst_7412E232" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeBottom" x="6144" y="8752" name="inst_81B4409C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeLeft" x="0" y="8192" name="inst_0E999826" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeLeft" x="0" y="0" name="inst_DAEFB83A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeLeft" x="0" y="2048" name="inst_0C06B42F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeLeft" x="0" y="4096" name="inst_B2EDDE54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeBottom" x="8192" y="8752" name="inst_FE1FD87A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t13" x="7296" y="6432" name="inst_D7903522" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t9" x="496" y="2592" name="inst_2E757B46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t12" x="5552" y="7104" name="inst_1D82B6FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t10" x="6096" y="7904" name="inst_3F18D791" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t11" x="1168" y="2960" name="inst_551F5F40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t8" x="2976" y="8621" name="inst_ED6F3185" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="t14" x="8080" y="2176" name="inst_F32599B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeRight" x="9760" y="0" name="inst_B5B1807E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mapEdgeRight" x="9760" y="2048" name="inst_BF033AF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="town1Port" x="5840" y="4032" name="inst_8F46E2DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="merchantShip" x="6288" y="4496" name="inst_F26D1FEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="warship" x="5280" y="4496" name="inst_B0FF8A9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

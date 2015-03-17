@@ -33,10 +33,28 @@
         <sprite>sprites\sprite30</sprite>
       </sprites>
       <sprites name="terrain">
-        <sprite>sprites\spr_terrain1</sprite>
+        <sprite>sprites\spr_t1</sprite>
+        <sprite>sprites\spr_t2Top</sprite>
+        <sprite>sprites\spr_t2Bottom</sprite>
+        <sprite>sprites\spr_t3</sprite>
+        <sprite>sprites\spr_t4</sprite>
+        <sprite>sprites\spr_t5</sprite>
+        <sprite>sprites\spr_t6</sprite>
+        <sprite>sprites\spr_t7</sprite>
+        <sprite>sprites\spr_t8</sprite>
+        <sprite>sprites\spr_t9</sprite>
+        <sprite>sprites\spr_t10</sprite>
+        <sprite>sprites\spr_t11</sprite>
+        <sprite>sprites\spr_t12</sprite>
+        <sprite>sprites\spr_t13</sprite>
+        <sprite>sprites\spr_t14</sprite>
       </sprites>
       <sprite>sprites\spr_cannonball</sprite>
       <sprite>sprites\spr_cannonballExplosion</sprite>
+      <sprite>sprites\spr_mapEdgeTop</sprite>
+      <sprite>sprites\spr_mapEdgeBottom</sprite>
+      <sprite>sprites\spr_mapEdgeLeft</sprite>
+      <sprite>sprites\spr_mapEdgeRight</sprite>
     </sprites>
     <sprites name="dungeon">
       <sprite>sprites\spr_playerUp</sprite>
@@ -73,12 +91,6 @@
     <sprite>sprites\spr_dialogueBox</sprite>
     <sprite>sprites\spr_controls</sprite>
     <sprite>sprites\spr_credits</sprite>
-    <sprite>sprites\spr_t1</sprite>
-    <sprite>sprites\spr_t2Top</sprite>
-    <sprite>sprites\spr_t2Bottom</sprite>
-    <sprite>sprites\spr_t3</sprite>
-    <sprite>sprites\spr_t4</sprite>
-    <sprite>sprites\spr_t5</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -130,6 +142,24 @@
       <object>objects\townBackButton</object>
     </objects>
     <objects name="naval">
+      <objects name="terrain">
+        <object>objects\terrain</object>
+        <object>objects\t1</object>
+        <object>objects\t2Top</object>
+        <object>objects\t2Bottom</object>
+        <object>objects\t3</object>
+        <object>objects\t4</object>
+        <object>objects\t5</object>
+        <object>objects\t6</object>
+        <object>objects\t7</object>
+        <object>objects\t8</object>
+        <object>objects\t9</object>
+        <object>objects\t11</object>
+        <object>objects\t10</object>
+        <object>objects\t12</object>
+        <object>objects\t13</object>
+        <object>objects\t14</object>
+      </objects>
       <object>objects\navalBlock</object>
       <object>objects\playerShip</object>
       <object>objects\npcShip</object>
@@ -138,6 +168,10 @@
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
       <object>objects\town1Port</object>
+      <object>objects\mapEdgeTop</object>
+      <object>objects\mapEdgeBottom</object>
+      <object>objects\mapEdgeLeft</object>
+      <object>objects\mapEdgeRight</object>
     </objects>
     <objects name="dungeon">
       <object>objects\obj_player</object>
@@ -153,13 +187,6 @@
     <object>objects\gameMgr</object>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
-    <object>objects\terrain</object>
-    <object>objects\t1</object>
-    <object>objects\t2Top</object>
-    <object>objects\t2Bottom</object>
-    <object>objects\t3</object>
-    <object>objects\t4</object>
-    <object>objects\t5</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
