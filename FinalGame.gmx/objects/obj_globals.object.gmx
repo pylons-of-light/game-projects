@@ -79,6 +79,9 @@ g_avatarAttacking = false;
 globalvar g_lastChangedRoomTime;
 g_lastChangedRoomTime = 0
 
+globalvar g_weaponLevel, g_armorLevel;
+g_weaponLevel = 1
+g_armorLevel = 1
 
 MakeStartingTownMarkers()
 </string>

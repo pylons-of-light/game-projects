@@ -61,8 +61,18 @@
       <sprite>sprites\spr_lise</sprite>
       <sprite>sprites\spr_grant</sprite>
     </sprites>
+    <sprites name="title">
+      <sprite>sprites\spr_titleStart</sprite>
+      <sprite>sprites\spr_titleSave</sprite>
+      <sprite>sprites\spr_titleLoad</sprite>
+      <sprite>sprites\spr_titleCredits</sprite>
+      <sprite>sprites\spr_titleControls</sprite>
+      <sprite>sprites\spr_titleQuit</sprite>
+    </sprites>
     <sprite>sprites\spr_empty</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
+    <sprite>sprites\spr_controls</sprite>
+    <sprite>sprites\spr_credits</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -76,7 +86,6 @@
     <background>background\br_caveTopRight</background>
     <background>background\br_caveBottomLeft</background>
     <background>background\br_caveBottomRight</background>
-    <background>background\br_credits</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -138,6 +147,8 @@
       <object>objects\floorTorch</object>
     </objects>
     <object>objects\gameMgr</object>
+    <object>objects\controlsImg</object>
+    <object>objects\creditsImg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
