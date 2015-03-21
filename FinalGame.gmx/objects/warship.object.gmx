@@ -3,7 +3,7 @@
   <spriteName>spr_warship</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>npcShip</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -105,7 +105,9 @@ bTurningToFire = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>++frame
+            <string>event_inherited()
+
+++frame
 
 var realDir, dirDifference, nearestCb;
 
@@ -136,6 +138,11 @@ if not bTurningToFire {
     mp_potential_step_object(playerShip.x, playerShip.y, 0, navalBlock)   //TODO remove
     realDir = direction   //TODO remove
     */
+}
+
+if bDying {
+    mySpeed *= 0.99
+    exit
 }
 
 /*

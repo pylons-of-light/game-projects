@@ -3,7 +3,7 @@
   <spriteName>spr_cannonball</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-3</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -82,6 +82,10 @@ else {
         other.alarm[0] = room_speed * 10
     }
     
+    other.shipHealth -= other.receiveCannonDamage
+    if other.shipHealth &lt; 0
+        other.shipHealth = 0
+    
     instance_create(x, y, cannonballExplosion)
     instance_destroy()
 }
@@ -110,6 +114,10 @@ else {
             <string>if sourceShip == other.id
     exit
 else {
+    g_shipHealth -= SHIP_HEALTH_MAX / 10
+    if g_shipHealth &lt; 0
+        g_shipHealth = 0
+    
     instance_create(x, y, cannonballExplosion)
     instance_destroy()
 }
