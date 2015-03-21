@@ -68,7 +68,7 @@
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
     <option_colordepth>0</option_colordepth>
-    <option_display_name>GameMaker: Studio</option_display_name>
+    <option_display_name>Port City Pirates</option_display_name>
     <option_displayerrors>True</option_displayerrors>
     <option_facebook_app_display_name></option_facebook_app_display_name>
     <option_facebook_appid></option_facebook_appid>
@@ -302,7 +302,7 @@
     <option_win8_analytics_id></option_win8_analytics_id>
     <option_win8_build_version>0</option_win8_build_version>
     <option_win8_certificate_location>Windows8_TemporaryKey.pfx</option_win8_certificate_location>
-    <option_win8_display_name>FinalGame</option_win8_display_name>
+    <option_win8_display_name>Port City Pirates</option_win8_display_name>
     <option_win8_internet_capable>0</option_win8_internet_capable>
     <option_win8_interpolate>-1</option_win8_interpolate>
     <option_win8_landscape_allowed>-1</option_win8_landscape_allowed>

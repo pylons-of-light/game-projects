@@ -91,6 +91,8 @@
     <sprite>sprites\spr_dialogueBox</sprite>
     <sprite>sprites\spr_controls</sprite>
     <sprite>sprites\spr_credits</sprite>
+    <sprite>sprites\spr_minimap</sprite>
+    <sprite>sprites\spr_minimapPlayer</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -187,6 +189,7 @@
     <object>objects\gameMgr</object>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
+    <object>objects\minimap</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

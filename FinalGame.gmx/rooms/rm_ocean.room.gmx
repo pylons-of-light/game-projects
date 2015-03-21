@@ -51,9 +51,10 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="gameMgr" x="16" y="16" name="inst_CD5A89FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="dialogueMgr" x="32" y="16" name="inst_E7520D85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="gameMgr" x="288" y="320" name="inst_CD5A89FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="dialogueMgr" x="304" y="320" name="inst_E7520D85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="playerShip" x="5712" y="4304" name="inst_2D0A8533" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="minimap" x="320" y="320" name="inst_146B0829" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="t1" x="1936" y="3840" name="inst_C69A150F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="t2Bottom" x="4960" y="2848" name="inst_DC6F64F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="t2Top" x="4944" y="1568" name="inst_23FAF366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
