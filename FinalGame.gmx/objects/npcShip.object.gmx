@@ -25,17 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lastFiredTime = current_time
+            <string>//We can expect most or all of these stats to be overridden
+
+lastFiredTime = current_time
 cbFlyTime = 150
 cbSpeed = 3
 cbFireDelay = 800
 
+bDying = false
 bHostile = false
 
-shipHealth = 10
-receiveCannonDamage = 5
-
-bDying = false
+shipHealth = SHIP_HEALTH_MAX
+dealCannonDamage = SHIP_HEALTH_MAX / 10
+gold = 50
 </string>
           </argument>
         </arguments>

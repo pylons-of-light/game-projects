@@ -34,6 +34,10 @@ mySpeed = maxSpeed / 4
 frame = 0
 
 bHostile = false
+
+shipHealth = SHIP_HEALTH_MAX * .75
+dealCannonDamage = SHIP_HEALTH_MAX / 20
+gold = 10 * random_range(10, 50)
 </string>
           </argument>
         </arguments>

@@ -49,7 +49,9 @@
         <sprite>sprites\spr_t13</sprite>
         <sprite>sprites\spr_t14</sprite>
       </sprites>
-      <sprite>sprites\spr_town1Port</sprite>
+      <sprites name="ports">
+        <sprite>sprites\spr_town1Port</sprite>
+      </sprites>
       <sprite>sprites\spr_minimap</sprite>
       <sprite>sprites\spr_minimapPlayer</sprite>
       <sprite>sprites\spr_cannonball</sprite>
@@ -165,6 +167,9 @@
         <object>objects\t13</object>
         <object>objects\t14</object>
       </objects>
+      <objects name="ports">
+        <object>objects\town1Port</object>
+      </objects>
       <object>objects\navalMgr</object>
       <object>objects\minimap</object>
       <object>objects\navalBlock</object>
@@ -174,7 +179,6 @@
       <object>objects\warship</object>
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
-      <object>objects\town1Port</object>
       <object>objects\mapEdgeTop</object>
       <object>objects\mapEdgeBottom</object>
       <object>objects\mapEdgeLeft</object>

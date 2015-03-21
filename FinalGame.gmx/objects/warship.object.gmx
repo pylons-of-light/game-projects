@@ -36,6 +36,10 @@ frame = 0
 bHostile = true
 bChasing = false
 bTurningToFire = false
+
+shipHealth = SHIP_HEALTH_MAX * 1
+dealCannonDamage = SHIP_HEALTH_MAX / 15
+gold = 10 * random_range(5, 30)
 </string>
           </argument>
         </arguments>

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Set by source ship; it will also set alarm[0]
 sourceShip = -1
+damage = -1
 </string>
           </argument>
         </arguments>
@@ -82,7 +83,7 @@ else {
         other.alarm[0] = room_speed * 10
     }
     
-    other.shipHealth -= other.receiveCannonDamage
+    other.shipHealth -= damage
     if other.shipHealth &lt; 0
         other.shipHealth = 0
     
@@ -114,7 +115,7 @@ else {
             <string>if sourceShip == other.id
     exit
 else {
-    g_shipHealth -= SHIP_HEALTH_MAX / 10
+    g_shipHealth -= damage * g_shipArmor
     if g_shipHealth &lt; 0
         g_shipHealth = 0
     

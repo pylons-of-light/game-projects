@@ -33,7 +33,8 @@
 lastFiredTime = current_time
 cbFlyTime = 150
 cbSpeed = 3
-cbFireDelay = 800
+//cbFireDelay = 800
+dealCannonDamage = SHIP_HEALTH_MAX / 15
 
 
 acceleration = 0.1   //Changes based on speed
@@ -48,7 +49,7 @@ turnSpeedIndicator = 0   //Will be negative for left and positive for right
 turnSpeedLimiter = 0
 
 //Constants
-maxSpeed = 4
+//maxSpeed = 4
 turnSteeringSpeed = 0.4   //The higher this number, the faster the turning will adjust
 driftTraction = 0.025   //The lower this number, the longer a drift will hold
 divBrakeSpeed = 60   //The smaller this number, the faster the ship will slow down when braking
@@ -205,10 +206,10 @@ else {
         turnSpeedLimiter -= 0.1
 }
 
-if speed &gt; maxSpeed
-    speed = maxSpeed   //Limit the ship speed
-if speed &lt; -maxSpeed/1.5
-    speed = -maxSpeed/1.5   //Limit the ship speed in reverse
+if speed &gt; g_shipMaxSpeed
+    speed = g_shipMaxSpeed   //Limit the ship speed
+if speed &lt; -g_shipMaxSpeed/1.5
+    speed = -g_shipMaxSpeed/1.5   //Limit the ship speed in reverse
 
 if driftSpeed &gt; 0
     driftSpeed -= driftTraction   //If the ship is drifting slowly, decrease the drift speed
@@ -262,7 +263,7 @@ else if direction &lt; 0
     direction = 360
 
 var one, two, three;
-one = 1.7 + ((maxSpeed - speed)/10)   //The number used is arbitrary
+one = 1.7 + ((g_shipMaxSpeed - speed)/10)   //The number used is arbitrary
 two = -one
 three = ((((image_angle - direction) mod 360) + 540) mod 360) - 180
 direction += median(one, two, three)   //Adjust the direction based on the image angle. This allows for drift because direction adjusts slower than the image_angle does.
@@ -358,7 +359,7 @@ room_goto(rm_town)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if current_time - cbFireDelay &lt; lastFiredTime
+            <string>if current_time - g_cbFireDelay &lt; lastFiredTime
     exit
 
 var nearest, aimDir, left, right;
@@ -391,18 +392,21 @@ cb1 = instance_create(x + lengthdir_x(25, direction), y + lengthdir_y(25, direct
 cb1.direction = aimDir - 5
 cb1.speed = cbSpeed
 cb1.sourceShip = id
+cb1.damage = dealCannonDamage
 cb1.alarm[0] = cbFlyTime
 
 cb2 = instance_create(x, y, cannonball)
 cb2.direction = aimDir
 cb2.speed = cbSpeed
 cb2.sourceShip = id
+cb2.damage = dealCannonDamage
 cb2.alarm[0] = cbFlyTime
 
 cb3 = instance_create(x + lengthdir_x(25, direction-180), y + lengthdir_y(25, direction-180), cannonball)
 cb3.direction = aimDir + 5
 cb3.speed = cbSpeed
 cb3.sourceShip = id
+cb3.damage = dealCannonDamage
 cb3.alarm[0] = cbFlyTime
 
 lastFiredTime = current_time
