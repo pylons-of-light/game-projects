@@ -77,9 +77,16 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sourceShip == other.id or distance_to_point(other.x, other.y) &gt; 45
+            <string>//if sourceShip == other.id or distance_to_point(other.x, other.y) &gt; 45
+if sourceShip == other.id
     exit
 else {
+    other.mask_index = other.sprite_index
+    var bMeeting = place_meeting(x, y, other);
+    other.mask_index = spr_shipMask
+    if not bMeeting
+        exit
+    
     if sourceShip == instance_nearest(x, y, playerShip) {
         other.bHostile = true
         other.alarm[0] = room_speed * 10

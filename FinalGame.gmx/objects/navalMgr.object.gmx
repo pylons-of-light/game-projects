@@ -54,12 +54,12 @@ var merchantCount = instance_number(merchantShip);
 var warshipCount = instance_number(warship);
 var totalShips = merchantCount + warshipCount;
 
-if totalShips &lt; 30 {
+if totalShips &lt; 20 {
     var type;
     if merchantCount &lt;= warshipCount
         type = merchantShip;
     else
-        type = merchantShip;   //TODO switch to warship
+        type = warship;
     
     var viewLeft = view_xview[0] - HALF_SHIP;
     var viewRight = view_xview[0] + view_wview[0] + HALF_SHIP;
@@ -87,10 +87,7 @@ if totalShips &lt; 30 {
     new.destinationY = randY
     SetRandomShipDestination(new)
     
-    if totalShips &lt; 10
-        alarm[0] = room_speed * .5
-    else
-        alarm[0] = room_speed * 1
+    alarm[0] = room_speed * .1
 }
 else
     alarm[0] = room_speed * 8
