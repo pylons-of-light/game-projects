@@ -77,7 +77,7 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if sourceShip == other.id
+            <string>if sourceShip == other.id or distance_to_point(other.x, other.y) &gt; 45
     exit
 else {
     if sourceShip == instance_nearest(x, y, playerShip) {

@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>//We can expect most or all of these stats to be overridden
 
+destinationX = town1Port.x
+destinationY = town1Port.y
+bCityDestination = true
+
 lastFiredTime = current_time
 cbFlyTime = 150
 cbSpeed = 3
@@ -72,6 +76,12 @@ if bDying {
         if killer == instance_nearest(x, y, playerShip)
             g_gold += gold
         instance_destroy()
+    }
+}
+
+if not bDying {
+    if not bCityDestination and x == destinationX and y == destinationY {
+        SetRandomShipDestination(self)
     }
 }
 </string>

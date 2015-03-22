@@ -37,6 +37,7 @@
         <sprite>sprites\spr_merchantShip</sprite>
         <sprite>sprites\spr_warship</sprite>
         <sprite>sprites\sprite30</sprite>
+        <sprite>sprites\spr_shipMask</sprite>
       </sprites>
       <sprites name="terrain">
         <sprite>sprites\spr_t1</sprite>
@@ -140,6 +141,7 @@
     <script>scripts\PlayerAvatarMove.gml</script>
     <script>scripts\ShipFire.gml</script>
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
+    <script>scripts\SetRandomShipDestination.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -183,9 +185,12 @@
         <object>objects\t14</object>
       </objects>
       <objects name="ports">
+        <object>objects\townPort</object>
         <object>objects\town1Port</object>
         <object>objects\town2Port</object>
         <object>objects\town3Port</object>
+        <object>objects\town4Port</object>
+        <object>objects\town5Port</object>
       </objects>
       <object>objects\navalMgr</object>
       <object>objects\minimap</object>
@@ -215,8 +220,6 @@
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
-    <object>objects\town4Port</object>
-    <object>objects\town5Port</object>
     <object>objects\dungeon1Port</object>
     <object>objects\dungeon2Port</object>
   </objects>
