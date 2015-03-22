@@ -109,7 +109,10 @@ bTurningToFire = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
+            <string>if not ds_list_empty(g_dlg)
+    exit
+
+event_inherited()
 
 ++frame
 

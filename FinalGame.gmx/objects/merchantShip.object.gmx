@@ -83,7 +83,10 @@ gold = 10 * irandom_range(10, 50)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
+            <string>if not ds_list_empty(g_dlg)
+    exit
+
+event_inherited()
 
 ++frame
 

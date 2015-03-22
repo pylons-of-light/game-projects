@@ -1,7 +1,7 @@
 //Player movement
 //Arguments: none
 
-if dialogueMgr.text != ""
+if not ds_list_empty(g_dlg)
     exit
 
 bKeyDirectionIsPressed = false

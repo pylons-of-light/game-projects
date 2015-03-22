@@ -98,7 +98,10 @@ divSpeedTurnAdjustment = 100   //The higher this number, the less speed is effec
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if g_shipHealth &lt;= 0 {
+            <string>if not ds_list_empty(g_dlg)
+    exit
+
+if g_shipHealth &lt;= 0 {
     bDying = true
 }
 
@@ -312,6 +315,33 @@ direction += median(one, two, three)   //Adjust the direction based on the image
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="town2Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastTownX = g_town2X
+g_shipLastTownY = g_town2Y
+g_shipLastTownDir = g_town2Dir
+g_townId = 'town2'
+room_goto(rm_town)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="town1Port">
       <action>
         <libid>1</libid>
@@ -379,7 +409,10 @@ room_goto(rm_town)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PlayerShipFire()
+            <string>if not ds_list_empty(g_dlg)
+    exit
+
+PlayerShipFire()
 </string>
           </argument>
         </arguments>

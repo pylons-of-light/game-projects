@@ -55,7 +55,7 @@ else if townId == 'town1Tavern' {
 
 else if townId == 'town2' {
     //Portals
-    new = instance_create(411, 188, townPortal)
+    new = instance_create(269, 303, townPortal)
     new.mask_index = spr_mask400x200
     new.portal = 'town2Tavern'
     
@@ -64,10 +64,9 @@ else if townId == 'town2' {
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
     new.portal = 'ocean'
-    //TODO change coords
-    new.oceanX = 500
-    new.oceanY = 300
-    new.oceanDir = 180
+    new.oceanX = g_town2X
+    new.oceanY = g_town2Y
+    new.oceanDir = g_town2Dir
 }
 
 else if townId == 'town2Tavern' {

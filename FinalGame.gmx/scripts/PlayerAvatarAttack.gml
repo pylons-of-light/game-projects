@@ -1,4 +1,4 @@
-if dialogueMgr.text != ""
+if not ds_list_empty(g_dlg)
     exit
     
 with obj_player{    

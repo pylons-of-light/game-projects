@@ -71,14 +71,24 @@ LAND_DIE_LOSE_GOLD_MULT = 0.9
 
 //Variables
 
-//--- Port details (for the place to put the ship when it leaves a port)
+//--- Port details (for the place to put the ship when it leaves a port, etc)
 var shipDist = sprite_get_width(spr_playerShip);
 //TODO maybe try to get these manually from the town port locations
+
 globalvar g_town1X, g_town1Y, g_town1Dir;
 g_town1Dir = 270
 g_town1X = 5856 + lengthdir_x(shipDist, g_town1Dir)
 g_town1Y = 4000 + lengthdir_y(shipDist, g_town1Dir)
+
+globalvar g_town2X, g_town2Y, g_town2Dir;
+g_town2Dir = 340
+g_town2X = 3136 + lengthdir_x(shipDist, g_town2Dir)
+g_town2Y = 4832 + lengthdir_y(shipDist, g_town2Dir)
 //---
+
+globalvar g_town2Unlocked, g_town3Unlocked;
+g_town2Unlocked = false;
+g_town3Unlocked = false;
 
 globalvar g_shipX, g_shipY, g_shipDir;
 g_shipX = g_town1X
@@ -94,8 +104,9 @@ g_shipLastPortDir = g_shipDir
 globalvar g_townId;
 g_townId = 'town1'
 
-globalvar g_townMarkers;
+globalvar g_townMarkers, g_dlg;
 g_townMarkers = ds_list_create()
+g_dlg = ds_list_create()
 
 globalvar g_avatarAttacking;
 g_avatarAttacking = false;
