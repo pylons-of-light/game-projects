@@ -3,8 +3,10 @@
 //Arguments: dialogue id
 
 dialogueId = argument0
+bDelete = argument1
 
 if ds_list_find_index(g_townMarkers, dialogueId) != -1 {
-    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, dialogueId))
+    if bDelete
+        ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, dialogueId))
     ShowDialogue(dialogueId)
 }

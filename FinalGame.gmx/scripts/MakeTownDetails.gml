@@ -20,22 +20,21 @@ if townId == 'town1' {
         
         new = instance_create(915, 364, townPortal)
         new.mask_index = spr_mask55x35
-        new.dialogueId = 't1p1d1'   //TODO maybe make this area an accessible portal based on certain conditions
+        new.dialogueId = 't1p1'   //TODO maybe make this area an accessible portal based on certain conditions
     }
     
     //Markers
-    TryNpcMarker('t1n1d1', 500, 350)
+    TryNpcMarker('t1n1', 500, 350)
+    
+    //Auto-dialogue
+    TryAutoDialogue('t1a1', true)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
     new.portal = 'ocean'
-    //TODO change coords
     new.oceanX = g_town1X
     new.oceanY = g_town1Y
     new.oceanDir = g_town1Dir
-    
-    //Auto-dialogue
-    TryAutoDialogue('t1a1d1')
 }
 
 else if townId == 'town1Tavern' {
@@ -47,10 +46,10 @@ else if townId == 'town1Tavern' {
     }
     
     //Markers
-    TryNpcMarker('v1n1d1', 674, 261)
+    TryNpcMarker('v1n1', 674, 261)
     
     //Auto-dialogue
-    TryAutoDialogue('v1a1d1')
+    TryAutoDialogue('v1a1', true)
 }
 
 else if townId == 'town2' {
@@ -60,6 +59,7 @@ else if townId == 'town2' {
     new.portal = 'town2Tavern'
     
     //Markers
+    TryNpcMarker('t2n1', 166, 342)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -78,10 +78,67 @@ else if townId == 'town2Tavern' {
     }
     
     //Markers
-    if ds_list_find_index(g_townMarkers, 'v2n1d1') != -1 {
-        new = instance_create(649, 370, townNpcMarker)
-        new.dialogueId = 'v2n1d1'
+    TryNpcMarker('v2n1', 649, 370)
+}
+
+else if townId == 'town3' {
+    //Portals
+    new = instance_create(238, 434, townPortal)
+    new.mask_index = spr_mask135x45
+    new.portal = 'town3Tavern'
+    
+    //Markers
+    TryNpcMarker('t3n1', 470, 460)
+    
+    //Back button
+    new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
+    new.portal = 'ocean'
+    new.oceanX = g_town3X
+    new.oceanY = g_town3Y
+    new.oceanDir = g_town3Dir
+}
+
+else if townId == 'town3Tavern' {
+    //Portals
+    if mask == spr_tavern1Mask {
+        new = instance_create(411, 188, townPortal)
+        new.mask_index = spr_mask45x110
+        new.portal = 'town3'
     }
+    
+    //Markers
+    TryNpcMarker('v3n1', 940, 345)
+}
+
+else if townId == 'town4' {
+    //Portals
+    
+    //Markers
+    
+    //Auto-dialogue
+    TryAutoDialogue('t4a1', true)
+    
+    //Back button
+    new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
+    new.portal = 'ocean'
+    new.oceanX = g_town4X
+    new.oceanY = g_town4Y
+    new.oceanDir = g_town4Dir
+}
+
+else if townId == 'town5' {
+    //Portals
+    
+    //Markers
+    TryNpcMarker('t5n1', 269, 489)
+    TryNpcMarker('t5n2', 335, 258)
+    
+    //Back button
+    new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
+    new.portal = 'ocean'
+    new.oceanX = g_town5X
+    new.oceanY = g_town5Y
+    new.oceanDir = g_town5Dir
 }
 
 else

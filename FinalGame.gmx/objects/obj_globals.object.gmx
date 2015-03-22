@@ -71,7 +71,7 @@ LAND_DIE_LOSE_GOLD_MULT = 0.9
 
 //Variables
 
-//--- Port details (for the place to put the ship when it leaves a port, etc)
+//--- Port details (for the place to put the ship when it leaves a port)
 var shipDist = sprite_get_width(spr_playerShip);
 //TODO maybe try to get these manually from the town port locations
 
@@ -84,12 +84,29 @@ globalvar g_town2X, g_town2Y, g_town2Dir;
 g_town2Dir = 340
 g_town2X = 3136 + lengthdir_x(shipDist, g_town2Dir)
 g_town2Y = 4832 + lengthdir_y(shipDist, g_town2Dir)
+
+globalvar g_town3X, g_town3Y, g_town3Dir;
+g_town3Dir = 120
+g_town3X = 8576 + lengthdir_x(shipDist, g_town3Dir)
+g_town3Y = 2272 + lengthdir_y(shipDist, g_town3Dir)
+
+globalvar g_town4X, g_town4Y, g_town4Dir;
+g_town4Dir = 270
+g_town4X = 8096 + lengthdir_x(shipDist, g_town4Dir)
+g_town4Y = 7232 + lengthdir_y(shipDist, g_town4Dir)
+
+globalvar g_town5X, g_town5Y, g_town5Dir;
+g_town5Dir = 90
+g_town5X = 3264 + lengthdir_x(shipDist, g_town5Dir)
+g_town5Y = 8784 + lengthdir_y(shipDist, g_town5Dir)
 //---
 
 globalvar g_town2Unlocked, g_town3Unlocked;
 g_town2Unlocked = false;
 g_town3Unlocked = false;
 
+//TODO: follow this advice:
+//Note: These should be directed towards the first town, at the start of the game
 globalvar g_shipX, g_shipY, g_shipDir;
 g_shipX = g_town1X
 g_shipY = g_town1Y

@@ -12,14 +12,20 @@
         <sprite>sprites\spr_town1Mask</sprite>
         <sprite>sprites\spr_town2</sprite>
         <sprite>sprites\spr_town2Mask</sprite>
+        <sprite>sprites\spr_town3</sprite>
+        <sprite>sprites\spr_town3Mask</sprite>
+        <sprite>sprites\spr_town4</sprite>
+        <sprite>sprites\spr_town5</sprite>
         <sprite>sprites\spr_tavern1</sprite>
         <sprite>sprites\spr_tavern1Mask</sprite>
+        <sprite>sprites\spr_townFullMask</sprite>
       </sprites>
       <sprites name="masks">
         <sprite>sprites\spr_mask45x110</sprite>
         <sprite>sprites\spr_mask130x65</sprite>
         <sprite>sprites\spr_mask55x35</sprite>
         <sprite>sprites\spr_mask400x200</sprite>
+        <sprite>sprites\spr_mask135x45</sprite>
       </sprites>
       <sprite>sprites\spr_townNPCMarker</sprite>
       <sprite>sprites\spr_townQuestMarker</sprite>
@@ -52,6 +58,10 @@
       <sprites name="ports">
         <sprite>sprites\spr_town1Port</sprite>
         <sprite>sprites\spr_town2Port</sprite>
+        <sprite>sprites\spr_town3Port</sprite>
+        <sprite>sprites\spr_town4Port</sprite>
+        <sprite>sprites\spr_town5Port</sprite>
+        <sprite>sprites\spr_unknownPort</sprite>
       </sprites>
       <sprite>sprites\spr_minimap</sprite>
       <sprite>sprites\spr_minimapPlayer</sprite>
@@ -175,6 +185,7 @@
       <objects name="ports">
         <object>objects\town1Port</object>
         <object>objects\town2Port</object>
+        <object>objects\town3Port</object>
       </objects>
       <object>objects\navalMgr</object>
       <object>objects\minimap</object>
@@ -204,6 +215,10 @@
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
+    <object>objects\town4Port</object>
+    <object>objects\town5Port</object>
+    <object>objects\dungeon1Port</object>
+    <object>objects\dungeon2Port</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

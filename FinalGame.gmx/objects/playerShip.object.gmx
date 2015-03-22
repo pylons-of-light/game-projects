@@ -292,6 +292,87 @@ direction += median(one, two, three)   //Adjust the direction based on the image
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="town5Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastPortX = g_town5X
+g_shipLastPortY = g_town5Y
+g_shipLastPortDir = g_town5Dir
+g_townId = 'town5'
+room_goto(rm_town)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="town4Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastPortX = g_town4X
+g_shipLastPortY = g_town4Y
+g_shipLastPortDir = g_town4Dir
+g_townId = 'town4'
+room_goto(rm_town)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="town3Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastPortX = g_town3X
+g_shipLastPortY = g_town3Y
+g_shipLastPortDir = g_town3Dir
+g_townId = 'town3'
+room_goto(rm_town)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="navalBlock">
       <action>
         <libid>1</libid>
@@ -332,9 +413,9 @@ direction += median(one, two, three)   //Adjust the direction based on the image
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>g_shipLastTownX = g_town2X
-g_shipLastTownY = g_town2Y
-g_shipLastTownDir = g_town2Dir
+            <string>g_shipLastPortX = g_town2X
+g_shipLastPortY = g_town2Y
+g_shipLastPortDir = g_town2Dir
 g_townId = 'town2'
 room_goto(rm_town)
 </string>
@@ -359,9 +440,9 @@ room_goto(rm_town)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>g_shipLastTownX = g_town1X
-g_shipLastTownY = g_town1Y
-g_shipLastTownDir = g_town1Dir
+            <string>g_shipLastPortX = g_town1X
+g_shipLastPortY = g_town1Y
+g_shipLastPortDir = g_town1Dir
 g_townId = 'town1'
 room_goto(rm_town)
 </string>

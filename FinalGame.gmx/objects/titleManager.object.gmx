@@ -35,8 +35,8 @@
 
 
 if file_exists("rains") {
-    room_goto(rm_town)
-    //room_goto(rm_ocean)
+    //room_goto(rm_town)
+    room_goto(rm_ocean)
 }
 else
     room_goto_next()

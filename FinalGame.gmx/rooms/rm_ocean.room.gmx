@@ -95,6 +95,9 @@
     <instance objName="merchantShip" x="6288" y="4496" name="inst_F26D1FEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="warship" x="5280" y="4496" name="inst_B0FF8A9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="town2Port" x="3136" y="4832" name="inst_A22688E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="town3Port" x="8576" y="2272" name="inst_A951186B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="town4Port" x="8096" y="7232" name="inst_51301D73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="town5Port" x="3264" y="8784" name="inst_90244FCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
