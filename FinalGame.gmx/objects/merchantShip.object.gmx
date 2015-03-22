@@ -37,7 +37,7 @@ bHostile = false
 
 shipHealth = SHIP_HEALTH_MAX * .75
 dealCannonDamage = SHIP_HEALTH_MAX / 20
-gold = 10 * random_range(10, 50)
+gold = 10 * irandom_range(10, 50)
 </string>
           </argument>
         </arguments>
@@ -86,9 +86,6 @@ gold = 10 * random_range(10, 50)
             <string>event_inherited()
 
 ++frame
-
-if bDying
-    exit
 
 var realDir, dirDifference, nearestCb;
 

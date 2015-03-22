@@ -25,16 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//TODO
-//x = g_playerShipX
-//y = g_playerShipY
-//direction = g_playerShipDir
+            <string>x = g_shipX
+y = g_shipY
+image_angle = g_shipDir
 
 lastFiredTime = current_time
 cbFlyTime = 150
 cbSpeed = 3
 //cbFireDelay = 800
 dealCannonDamage = SHIP_HEALTH_MAX / 15
+
+bDying = false
 
 
 acceleration = 0.1   //Changes based on speed
@@ -97,11 +98,27 @@ divSpeedTurnAdjustment = 100   //The higher this number, the less speed is effec
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//PlayerShipMove(self)
-//xx = 100
-//yy = 300
-//var dir = point_direction(x, y, xx, yy);
+            <string>if g_shipHealth &lt;= 0 {
+    bDying = true
+}
 
+if bDying {
+    image_alpha -= .02
+    if image_alpha &lt;= 0 {
+        //Die in a ship battle
+        g_shipX = g_shipLastPortX
+        g_shipY = g_shipLastPortY
+        g_shipDir = g_shipLastPortDir
+        g_gold = floor(g_gold * SHIP_DIE_LOSE_GOLD_MULT)
+        g_shipHealth = SHIP_HEALTH_MAX
+        room_restart()
+    }
+}
+
+if bDying {
+    speed *= 0.99
+    exit
+}
 
 //Prevent the ship from leaving the room
 if x &gt; room_width {
@@ -272,30 +289,6 @@ direction += median(one, two, three)   //Adjust the direction based on the image
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="town1Port">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>g_townId = 'town1'
-room_goto(rm_town)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="navalBlock">
       <action>
         <libid>1</libid>
@@ -314,6 +307,33 @@ room_goto(rm_town)
           <argument>
             <kind>1</kind>
             <string>ShipCollide()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="town1Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastTownX = g_town1X
+g_shipLastTownY = g_town1Y
+g_shipLastTownDir = g_town1Dir
+g_townId = 'town1'
+room_goto(rm_town)
 </string>
           </argument>
         </arguments>
@@ -359,57 +379,7 @@ room_goto(rm_town)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if current_time - g_cbFireDelay &lt; lastFiredTime
-    exit
-
-var nearest, aimDir, left, right;
-nearest = instance_nearest(x, y, npcShip)
-aimDir = point_direction(x, y, nearest.x, nearest.y)
-
-left = direction - 90
-if left &lt; 0
-    left += 360
-right = direction + 90
-if right &gt;= 360
-    right -= 360
-
-var leftDiff = abs(aimDir - left)
-if leftDiff &gt; 180
-    leftDiff = 360 - leftDiff
-
-var rightDiff = abs(aimDir - right)
-if rightDiff &gt; 180
-    rightDiff = 360 - rightDiff
-
-if leftDiff &lt; rightDiff
-    aimDir = left
-else
-    aimDir = right
-
-//show_message(string(direction) + " " + string(left) + " " + string(right))
-
-cb1 = instance_create(x + lengthdir_x(25, direction), y + lengthdir_y(25, direction), cannonball)
-cb1.direction = aimDir - 5
-cb1.speed = cbSpeed
-cb1.sourceShip = id
-cb1.damage = dealCannonDamage
-cb1.alarm[0] = cbFlyTime
-
-cb2 = instance_create(x, y, cannonball)
-cb2.direction = aimDir
-cb2.speed = cbSpeed
-cb2.sourceShip = id
-cb2.damage = dealCannonDamage
-cb2.alarm[0] = cbFlyTime
-
-cb3 = instance_create(x + lengthdir_x(25, direction-180), y + lengthdir_y(25, direction-180), cannonball)
-cb3.direction = aimDir + 5
-cb3.speed = cbSpeed
-cb3.sourceShip = id
-cb3.damage = dealCannonDamage
-cb3.alarm[0] = cbFlyTime
-
-lastFiredTime = current_time
+            <string>PlayerShipFire()
 </string>
           </argument>
         </arguments>

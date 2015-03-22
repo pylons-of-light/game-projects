@@ -60,16 +60,36 @@ globalvar DIALOGUE_DRAW_WIDTH;
 DIALOGUE_DRAW_WIDTH = 750
 
 globalvar SHIP_HEALTH_MAX, LAND_HEALTH_MAX;
-SHIP_HEALTH_MAX = 100;
-LAND_HEALTH_MAX = 100;
+SHIP_HEALTH_MAX = 100
+LAND_HEALTH_MAX = 100
+
+//Multipliers for the amount of gold you lose when you die
+globalvar SHIP_DIE_LOSE_GOLD_MULT, LAND_DIE_LOSE_GOLD_MULT;
+SHIP_DIE_LOSE_GOLD_MULT = 0.9
+LAND_DIE_LOSE_GOLD_MULT = 0.9
 
 
 //Variables
 
-globalvar g_playerShipX, g_playerShipY, g_playerShipDir;
-g_playerShipX = 0
-g_playerShipY = 0
-g_playerShipDir = 0
+//--- Port details (for the place to put the ship when it leaves a port)
+var shipDist = sprite_get_width(spr_playerShip);
+//TODO maybe try to get these manually from the town port locations
+globalvar g_town1X, g_town1Y, g_town1Dir;
+g_town1Dir = 270
+g_town1X = 5856 + lengthdir_x(shipDist, g_town1Dir)
+g_town1Y = 4000 + lengthdir_y(shipDist, g_town1Dir)
+//---
+
+globalvar g_shipX, g_shipY, g_shipDir;
+g_shipX = g_town1X
+g_shipY = g_town1Y
+g_shipDir = g_town1Dir
+
+//Keep track of the exit point of the most recently visited port
+globalvar g_shipLastPortX, g_shipLastPortY, g_shipLastPortDir;
+g_shipLastPortX = g_shipX
+g_shipLastPortY = g_shipY
+g_shipLastPortDir = g_shipDir
 
 globalvar g_townId;
 g_townId = 'town1'
@@ -83,10 +103,10 @@ g_avatarAttacking = false;
 globalvar g_lastChangedRoomTime;
 g_lastChangedRoomTime = 0
 
-globalvar g_gold, landHealth, g_shipHealth;
-g_gold = 10;   //Starting gold value
-g_landHealth = LAND_HEALTH_MAX;
-g_shipHealth = SHIP_HEALTH_MAX;
+globalvar g_gold, g_landHealth, g_shipHealth;
+g_gold = 10   //Starting gold value
+g_landHealth = LAND_HEALTH_MAX
+g_shipHealth = SHIP_HEALTH_MAX
 
 globalvar g_weaponLevel, g_armorLevel;
 g_weaponLevel = 1

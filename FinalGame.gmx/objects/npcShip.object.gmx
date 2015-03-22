@@ -35,6 +35,8 @@ cbFireDelay = 800
 bDying = false
 bHostile = false
 
+killer = -1   //The id of the ship who kills this ship, when that happens
+
 shipHealth = SHIP_HEALTH_MAX
 dealCannonDamage = SHIP_HEALTH_MAX / 10
 gold = 50
@@ -66,8 +68,11 @@ gold = 50
 
 if bDying {
     image_alpha -= .02
-    if image_alpha &lt;= 0
+    if image_alpha &lt;= 0 {
+        if killer == instance_nearest(x, y, playerShip)
+            g_gold += gold
         instance_destroy()
+    }
 }
 </string>
           </argument>

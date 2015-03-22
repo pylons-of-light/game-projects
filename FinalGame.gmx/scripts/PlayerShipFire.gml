@@ -1,13 +1,10 @@
-//TODO use this? probably not. i think this would be for NPC ships though. may need modification.
-//Arguments: target object
+//Called by the player ship when firing cannons
 
-var targetObj = argument0;
-
-if current_time - cbFireDelay < lastFiredTime
+if current_time - g_cbFireDelay < lastFiredTime
     exit
 
 var nearest, aimDir, left, right;
-nearest = instance_nearest(x, y, targetObj)
+nearest = instance_nearest(x, y, npcShip)
 aimDir = point_direction(x, y, nearest.x, nearest.y)
 
 left = direction - 90
@@ -17,7 +14,15 @@ right = direction + 90
 if right >= 360
     right -= 360
 
-if abs(aimDir - left) < abs(aimDir - right)
+var leftDiff = abs(aimDir - left)
+if leftDiff > 180
+    leftDiff = 360 - leftDiff
+
+var rightDiff = abs(aimDir - right)
+if rightDiff > 180
+    rightDiff = 360 - rightDiff
+
+if leftDiff < rightDiff
     aimDir = left
 else
     aimDir = right

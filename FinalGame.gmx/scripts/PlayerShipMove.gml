@@ -1,4 +1,5 @@
 //Called from player ship step event
+//TODO outdated, should probably remove this someday
 
 
 

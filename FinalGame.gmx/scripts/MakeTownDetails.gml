@@ -30,9 +30,9 @@ if townId == 'town1' {
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
     new.portal = 'ocean'
     //TODO change coords
-    new.oceanX = 100
-    new.oceanY = 700
-    new.oceanDir = 0
+    new.oceanX = g_town1X
+    new.oceanY = g_town1Y
+    new.oceanDir = g_town1Dir
     
     //Auto-dialogue
     TryAutoDialogue('t1a1d1')

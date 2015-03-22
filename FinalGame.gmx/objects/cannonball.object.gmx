@@ -52,6 +52,8 @@ damage = -1
             <kind>1</kind>
             <string>if place_meeting(x, y, navalBlock)
     instance_create(x, y, cannonballExplosion)
+else
+    instance_create(x, y, cannonballSink)
 instance_destroy()
 </string>
           </argument>
@@ -84,8 +86,10 @@ else {
     }
     
     other.shipHealth -= damage
-    if other.shipHealth &lt; 0
+    if other.shipHealth &lt;= 0 {
+        other.killer = sourceShip
         other.shipHealth = 0
+    }
     
     instance_create(x, y, cannonballExplosion)
     instance_destroy()

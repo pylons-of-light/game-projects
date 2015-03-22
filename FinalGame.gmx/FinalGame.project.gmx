@@ -56,6 +56,7 @@
       <sprite>sprites\spr_minimapPlayer</sprite>
       <sprite>sprites\spr_cannonball</sprite>
       <sprite>sprites\spr_cannonballExplosion</sprite>
+      <sprite>sprites\spr_cannonballSink</sprite>
       <sprite>sprites\spr_mapEdgeTop</sprite>
       <sprite>sprites\spr_mapEdgeBottom</sprite>
       <sprite>sprites\spr_mapEdgeLeft</sprite>
@@ -122,6 +123,7 @@
     <script>scripts\GetPortrait.gml</script>
     <script>scripts\ParagraphedText.gml</script>
     <script>scripts\PlayerShipMove.gml</script>
+    <script>scripts\PlayerShipFire.gml</script>
     <script>scripts\ShipCollide.gml</script>
     <script>scripts\PlayerAvatarAttack.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
@@ -145,6 +147,8 @@
       <object>objects\townMarker</object>
       <object>objects\townNpcMarker</object>
       <object>objects\townQuestMarker</object>
+      <object>objects\townMerchantMarker</object>
+      <object>objects\townShipwrightMarker</object>
       <object>objects\townPortal</object>
       <object>objects\townBackButton</object>
     </objects>
@@ -179,6 +183,7 @@
       <object>objects\warship</object>
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
+      <object>objects\cannonballSink</object>
       <object>objects\mapEdgeTop</object>
       <object>objects\mapEdgeBottom</object>
       <object>objects\mapEdgeLeft</object>
