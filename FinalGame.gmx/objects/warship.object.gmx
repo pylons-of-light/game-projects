@@ -6,7 +6,7 @@
   <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>npcShip</parentName>
-  <maskName>spr_shipMask</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -256,7 +256,7 @@ if frame mod 2 == 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ShipCollide()
+            <string>//ShipCollide()
 </string>
           </argument>
         </arguments>

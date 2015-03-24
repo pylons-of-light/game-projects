@@ -34,7 +34,7 @@ bCityDestination = true
 lastFiredTime = current_time
 cbFlyTime = 150
 cbSpeed = 4
-cbFireDelay = 800
+cbFireDelay = 1000
 
 bDying = false
 bHostile = false

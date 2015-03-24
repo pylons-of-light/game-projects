@@ -149,8 +149,8 @@ g_armorLevel = 1
 //Global stats for player ship
 globalvar g_shipMaxSpeed, g_cbFireDelay, g_shipArmor;
 g_shipMaxSpeed = 4
-g_cbFireDelay = 800
-g_shipArmor = 1.0   //Damage multiplier; will go down as armor grows stronger
+g_cbFireDelay = 1000
+g_shipArmor = 1.0   //Damage multiplier; this number will go down as armor grows stronger
 
 MakeStartingTownMarkers()
 </string>
