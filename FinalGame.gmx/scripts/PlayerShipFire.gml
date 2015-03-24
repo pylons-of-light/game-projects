@@ -22,15 +22,22 @@ var rightDiff = abs(aimDir - right)
 if rightDiff > 180
     rightDiff = 360 - rightDiff
 
-if leftDiff < rightDiff
+var cb1Dir, cb3Dir;
+if leftDiff < rightDiff {
     aimDir = left
-else
+    cb1Dir = aimDir + 5
+    cb3Dir = aimDir - 5
+}
+else {
     aimDir = right
+    cb1Dir = aimDir - 5
+    cb3Dir = aimDir + 5
+}
 
 //show_message(string(direction) + " " + string(left) + " " + string(right))
 
 cb1 = instance_create(x + lengthdir_x(25, direction), y + lengthdir_y(25, direction), cannonball)
-cb1.direction = aimDir - 5
+cb1.direction = cb1Dir
 cb1.speed = cbSpeed
 cb1.sourceShip = id
 cb1.damage = dealCannonDamage
@@ -44,7 +51,7 @@ cb2.damage = dealCannonDamage
 cb2.alarm[0] = cbFlyTime
 
 cb3 = instance_create(x + lengthdir_x(25, direction-180), y + lengthdir_y(25, direction-180), cannonball)
-cb3.direction = aimDir + 5
+cb3.direction = cb3Dir
 cb3.speed = cbSpeed
 cb3.sourceShip = id
 cb3.damage = dealCannonDamage

@@ -139,7 +139,6 @@
     <script>scripts\ShipCollide.gml</script>
     <script>scripts\PlayerAvatarAttack.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
-    <script>scripts\ShipFire.gml</script>
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
     <script>scripts\SetRandomShipDestination.gml</script>
   </scripts>
