@@ -118,7 +118,7 @@ event_inherited()
 
 ++frame
 
-var realDir, dirDifference, nearestCb;
+var realDir, nearestCb;
 
 //TODO improve this so fleeing happens properly (use bFleeing or something) and the ship moves perpendicularly
 
@@ -182,58 +182,7 @@ if bHostile {
 */
 TryNpcShipAdjacentFire()
 
-
-//Adjust image dir to match real dir
-
-var bAdjustDir = false;
-dirDifference = abs(image_angle - realDir)
-if dirDifference &gt; 180 {
-    dirDifference = 360 - dirDifference
-    bAdjustDir = true
-}
-
-if dirDifference &gt; 2 {
-    mySpeed = maxSpeed * (1 - (dirDifference / 360))
-}
-else if mySpeed &lt; maxSpeed {
-    mySpeed = min(mySpeed + .1, maxSpeed)
-}
-
-var tempAngle;
-if frame mod 2 == 0 {
-    var diffMetric = 5
-    if dirDifference &gt; diffMetric {
-        //show_message(string(image_angle) + " " + string(realDir))
-        if image_angle &lt; realDir {
-            if not bAdjustDir
-                tempAngle = image_angle + diffMetric
-            else {
-                tempAngle = image_angle - diffMetric
-            }
-        }
-        else {
-            if not bAdjustDir
-                tempAngle = image_angle - diffMetric
-            else
-                tempAngle = image_angle + diffMetric
-        }
-        
-        if tempAngle &lt; 0
-            tempAngle += 360
-        if tempAngle &gt;= 360
-            tempAngle -= 360
-        image_angle = tempAngle
-    }
-    else {
-        if bAdjustDir {
-            smaller = min(image_angle, realDir) + 360
-            larger = max(image_angle, realDir)
-            image_angle = (smaller + larger) / 2 - 360;
-        }
-        else
-            image_angle = (image_angle + realDir) / 2;
-    }
-}
+NpcShipAdjustImageAndSpeed(realDir)
 </string>
           </argument>
         </arguments>

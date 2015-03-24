@@ -44,6 +44,9 @@ killer = -1   //The id of the ship who kills this ship, when that happens
 shipHealth = SHIP_HEALTH_MAX
 dealCannonDamage = SHIP_HEALTH_MAX / 10
 gold = 50
+
+oldImageTime = current_time
+oldImageDir = direction
 </string>
           </argument>
         </arguments>
