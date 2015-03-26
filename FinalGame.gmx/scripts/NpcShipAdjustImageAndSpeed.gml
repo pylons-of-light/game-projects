@@ -36,6 +36,12 @@ else if mySpeed < maxSpeed {
     mySpeed = min(mySpeed + .1, maxSpeed)
 }
 
+//Don't bother rotating image if outside of view.
+if x < view_xview[0] - HALF_SHIP or x > view_xview[0] + view_wview[0] + HALF_SHIP
+   or y < view_yview[0] - HALF_SHIP or y > view_yview[0] + view_hview[0] + HALF_SHIP {
+   exit
+}
+
 var tempAngle;
 if frame mod updateFrameFreq == 0 {
     var diffMetric = 5

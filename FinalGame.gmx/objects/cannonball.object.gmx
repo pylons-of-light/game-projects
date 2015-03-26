@@ -81,13 +81,13 @@ instance_destroy()
 if sourceShip == other.id
     exit
 else {
-    /*
+    //TODO maybe remove again
     other.mask_index = other.sprite_index
     var bMeeting = place_meeting(x, y, other);
     other.mask_index = spr_shipMask
     if not bMeeting
         exit
-    */
+    
     
     if sourceShip == instance_nearest(x, y, playerShip) {
         other.bHostile = true

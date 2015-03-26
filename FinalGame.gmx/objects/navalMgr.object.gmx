@@ -113,13 +113,15 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(cannonball) {
+            <string>/*
+if instance_exists(cannonball) {
     instance_deactivate_object(npcShip)
     instance_activate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 128, view_hview + 128, true)
 }
 else {
     instance_activate_object(npcShip)
 }
+*/
 </string>
           </argument>
         </arguments>

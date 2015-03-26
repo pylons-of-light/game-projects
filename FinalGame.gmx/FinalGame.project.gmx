@@ -117,6 +117,8 @@
     <background>background\br_stairs</background>
     <background>background\background5</background>
     <background>background\br_water</background>
+    <background>background\br_waterPowerOf2</background>
+    <background>background\bg_waterSmall</background>
     <background>background\br_title</background>
     <background>background\br_caveTopLeft</background>
     <background>background\br_caveTopRight</background>
