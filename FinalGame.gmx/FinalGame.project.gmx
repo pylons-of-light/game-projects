@@ -92,6 +92,10 @@
       <sprite>sprites\spr_attackLeft</sprite>
       <sprite>sprites\spr_attackRight</sprite>
       <sprite>sprites\spr_floorTorch</sprite>
+      <sprite>sprites\spr_skeletonUp</sprite>
+      <sprite>sprites\spr_skeletonLeft</sprite>
+      <sprite>sprites\spr_skeletonDown</sprite>
+      <sprite>sprites\spr_skeletonRight</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -217,6 +221,8 @@
       <object>objects\obj_celing</object>
       <object>objects\obj_rapier</object>
       <object>objects\floorTorch</object>
+      <object>objects\obj_mob</object>
+      <object>objects\obj_mob_skeleton</object>
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
