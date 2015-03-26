@@ -121,6 +121,8 @@
     <background>background\br_stairs</background>
     <background>background\background5</background>
     <background>background\br_water</background>
+    <background>background\br_waterPowerOf2</background>
+    <background>background\bg_waterSmall</background>
     <background>background\br_title</background>
     <background>background\br_caveTopLeft</background>
     <background>background\br_caveTopRight</background>
@@ -143,9 +145,9 @@
     <script>scripts\ShipCollide.gml</script>
     <script>scripts\PlayerAvatarAttack.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
-    <script>scripts\ShipFire.gml</script>
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
     <script>scripts\SetRandomShipDestination.gml</script>
+    <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -195,6 +197,8 @@
         <object>objects\town3Port</object>
         <object>objects\town4Port</object>
         <object>objects\town5Port</object>
+        <object>objects\dungeon1Port</object>
+        <object>objects\dungeon2Port</object>
       </objects>
       <object>objects\navalMgr</object>
       <object>objects\minimap</object>
@@ -226,8 +230,6 @@
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
-    <object>objects\dungeon1Port</object>
-    <object>objects\dungeon2Port</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>

@@ -38,7 +38,7 @@ frame = 0
 bHostile = false
 
 shipHealth = SHIP_HEALTH_MAX * .75
-dealCannonDamage = SHIP_HEALTH_MAX / 20
+dealCannonDamage = SHIP_HEALTH_MAX / 12
 gold = 10 * irandom_range(10, 50)
 </string>
           </argument>
@@ -88,11 +88,19 @@ gold = 10 * irandom_range(10, 50)
             <string>if not ds_list_empty(g_dlg)
     exit
 
+//Don't do anything if a cannonball exists and we're outside the view.
+if instance_exists(cannonball) {
+    if x &lt; view_xview[0] - HALF_SHIP or x &gt; view_xview[0] + view_wview[0] + HALF_SHIP
+       or y &lt; view_yview[0] - HALF_SHIP or y &gt; view_yview[0] + view_hview[0] + HALF_SHIP {
+       exit
+    }
+}
+
 event_inherited()
 
 ++frame
 
-var realDir, dirDifference, nearestCb;
+var realDir, nearestCb;
 
 //TODO improve this so fleeing happens properly (use bFleeing or something) and the ship moves perpendicularly
 
@@ -118,59 +126,11 @@ if bDying {
     exit
 }
 
+NpcShipAdjustImageAndSpeed(realDir)
 
-var bAdjustDir = false;
-dirDifference = abs(image_angle - realDir)
-if dirDifference &gt; 180 {
-    dirDifference = 360 - dirDifference
-    bAdjustDir = true
-}
-
-if dirDifference &gt; 2 {
-    mySpeed = maxSpeed * (1 - (dirDifference / 360))
-}
-else if mySpeed &lt; maxSpeed {
-    mySpeed = min(mySpeed + .1, maxSpeed)
-}
-
-var tempAngle;
-if frame mod 2 == 0 {
-    var diffMetric = 5
-    if dirDifference &gt; diffMetric {
-        //show_message(string(image_angle) + " " + string(realDir))
-        if image_angle &lt; realDir {
-            if not bAdjustDir
-                tempAngle = image_angle + diffMetric
-            else {
-                tempAngle = image_angle - diffMetric
-            }
-        }
-        else {
-            if not bAdjustDir
-                tempAngle = image_angle - diffMetric
-            else
-                tempAngle = image_angle + diffMetric
-        }
-        
-        if tempAngle &lt; 0
-            tempAngle += 360
-        if tempAngle &gt;= 360
-            tempAngle -= 360
-        image_angle = tempAngle
-    }
-    else {
-        if bAdjustDir {
-            smaller = min(image_angle, realDir) + 360
-            larger = max(image_angle, realDir)
-            image_angle = (smaller + larger) / 2 - 360;
-        }
-        else
-            image_angle = (image_angle + realDir) / 2;
-    }
-}
-
-if bHostile
+if bHostile {
     TryNpcShipAdjacentFire()
+}
 </string>
           </argument>
         </arguments>
@@ -193,7 +153,8 @@ if bHostile
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ShipCollide()
+            <string>//TODO why is this necessary, if the pathfinding avoids these objects?
+ShipCollide()
 </string>
           </argument>
         </arguments>
