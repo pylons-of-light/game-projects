@@ -31,7 +31,7 @@
 destinationX = town1Port.x
 destinationY = town1Port.y
 
-maxSpeed = 1
+maxSpeed = 1.5
 mySpeed = maxSpeed / 4
 frame = 0
 
@@ -40,7 +40,7 @@ bChasing = false
 bTurningToFire = false
 
 shipHealth = SHIP_HEALTH_MAX * 1
-dealCannonDamage = SHIP_HEALTH_MAX / 15
+dealCannonDamage = SHIP_HEALTH_MAX / 12
 gold = 10 * irandom_range(5, 30)
 </string>
           </argument>
@@ -205,7 +205,8 @@ NpcShipAdjustImageAndSpeed(realDir)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//ShipCollide()
+            <string>//TODO why is this necessary, if the pathfinding avoids these objects?
+ShipCollide()
 </string>
           </argument>
         </arguments>

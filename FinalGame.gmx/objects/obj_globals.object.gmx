@@ -65,8 +65,8 @@ LAND_HEALTH_MAX = 100
 
 //Multipliers for the amount of gold you lose when you die
 globalvar SHIP_DIE_LOSE_GOLD_MULT, LAND_DIE_LOSE_GOLD_MULT;
-SHIP_DIE_LOSE_GOLD_MULT = 0.9
-LAND_DIE_LOSE_GOLD_MULT = 0.9
+SHIP_DIE_LOSE_GOLD_MULT = 0.6
+LAND_DIE_LOSE_GOLD_MULT = 0.6
 
 globalvar GENERATE_RAND_LOCATIONS;
 GENERATE_RAND_LOCATIONS = 10000   //When randomly placing spawned objects, make this many tries

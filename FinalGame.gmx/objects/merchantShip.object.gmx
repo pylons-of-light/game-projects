@@ -38,7 +38,7 @@ frame = 0
 bHostile = false
 
 shipHealth = SHIP_HEALTH_MAX * .75
-dealCannonDamage = SHIP_HEALTH_MAX / 20
+dealCannonDamage = SHIP_HEALTH_MAX / 12
 gold = 10 * irandom_range(10, 50)
 </string>
           </argument>
@@ -144,7 +144,8 @@ if bHostile
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//ShipCollide()
+            <string>//TODO why is this necessary, if the pathfinding avoids these objects?
+ShipCollide()
 </string>
           </argument>
         </arguments>
