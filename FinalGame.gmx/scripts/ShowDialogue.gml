@@ -5,9 +5,15 @@
 with dialogueMgr {
 bUsable = true
 
+//------ Events ------
+
+if argument0 == 'reef_crash' {
+    ds_list_add(g_dlg, "g How about we NOT crash into things?")
+}
+
 //------ Town 1 ------
 
-if argument0 == 't1a1' {
+else if argument0 == 't1a1' {
 //ds_list_add(g_dlg, "l This plays automatically for town1.")
 //ds_list_add(g_dlg, "g But only once!")
 //ds_list_add(g_dlg, "l We should stay low for now, try not to attract attention.")
@@ -79,9 +85,20 @@ ds_list_add(g_dlg, "l Town 5 more dialogue.")
 else
     show_error("Invalid dialogue: " + argument0, 0)
 
-if townMgr.bMoveReady {
-    //Note: If the town manager is not ready, it'll do this itself in a bit.
-    bVisible = true
-    alarm[0] = alarmTime
+if room == rm_town {
+    if townMgr.bMoveReady {
+        //Note: If the town manager is not ready, it'll do this itself in a bit.
+        bVisible = true
+        alarm[0] = alarmTime
+    }
 }
+
+else if room == rm_ocean {
+    //Enable the dialogue manager
+    if dialogueMgr.bUsable {
+        dialogueMgr.bVisible = true
+        dialogueMgr.alarm[0] = dialogueMgr.alarmTime
+    }
+}
+
 }

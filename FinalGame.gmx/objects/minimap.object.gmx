@@ -53,12 +53,21 @@ drawHeight = sprite_get_height(spr_minimap)
             <kind>1</kind>
             <string>if keyboard_check(ord('M')) or keyboard_check(ord('Q')) or keyboard_check(ord('E')) {
     draw_set_alpha(0.8)
-    var drawX = view_xview[0] + drawXOffset;
-    var drawY = view_yview[0] + drawYOffset;
+    drawX = view_xview[0] + drawXOffset
+    drawY = view_yview[0] + drawYOffset
     draw_sprite(spr_minimap, 0, drawX, drawY)
     
     draw_sprite(spr_minimapPlayer, 0, drawX + drawWidth * (playerShip.x / room_width),
                                       drawY + drawHeight * (playerShip.y / room_height))
+    
+    //TODO maybe remove or limit to NPCs within distance of player
+    with(npcShip) {
+        //if distance_to_object(playerShip) &lt; 600   //Largely arbitrary number (somewhat similar to half the view size)
+        if true
+            draw_sprite(spr_minimapNPC, 0, other.drawX + other.drawWidth * (x / room_width),
+                                           other.drawY + other.drawHeight * (y / room_height))
+    }
+    
     draw_set_alpha(1)
 }
 </string>

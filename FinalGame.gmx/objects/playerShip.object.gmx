@@ -37,6 +37,9 @@ dealCannonDamage = SHIP_HEALTH_MAX / 15
 
 bDying = false
 
+crashPainDelay = 500
+lastCrashedTime = current_time - crashPainDelay
+
 
 acceleration = 0.1   //Changes based on speed
 friction = 0.009
@@ -445,6 +448,39 @@ g_shipLastPortY = g_town1Y
 g_shipLastPortDir = g_town1Dir
 g_townId = 'town1'
 room_goto(rm_town)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="terrain">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if current_time - lastCrashedTime &gt;= crashPainDelay and not dialogueMgr.bVisible {
+    g_shipHealth -= SHIP_HEALTH_MAX / 30
+    lastCrashedTime = current_time
+}
+
+ShipCollide()
+
+if not g_bCrashedReefs {
+    ShowDialogue('reef_crash')
+    g_bCrashedReefs = true
+}
 </string>
           </argument>
         </arguments>

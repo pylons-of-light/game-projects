@@ -153,6 +153,12 @@ g_cbFireDelay = 1000
 g_shipArmor = 1.0   //Damage multiplier; this number will go down as armor grows stronger
 
 MakeStartingTownMarkers()
+
+
+//Event flags
+globalvar g_bCrashedReefs;
+g_bCrashedReefs = false
+
 </string>
           </argument>
         </arguments>
