@@ -43,8 +43,15 @@ if file_exists("rains") {
     
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'oa1'))
     
+    ds_list_add(g_townMarkers, 'gold_goal1')
+    ds_list_add(g_townMarkers, 'ship_spawn1')
+    ds_list_add(g_townMarkers, 'v1i1')
+    
     //room_goto(rm_town)
     room_goto(rm_ocean)
+    
+    g_shipX = g_town2X
+    g_shipY = g_town2Y
 }
 else
     room_goto_next()

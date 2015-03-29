@@ -101,8 +101,10 @@ divSpeedTurnAdjustment = 100   //The higher this number, the less speed is effec
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
+            <string>if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr) {
+    speed *= .9   //We're in a cinematic or something? Slow down if we were moving.
     exit
+}
 
 if g_shipHealth &lt;= 0 {
     bDying = true

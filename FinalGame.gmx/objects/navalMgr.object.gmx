@@ -101,6 +101,8 @@ if totalShips &lt; 40 {
     var new = instance_create(randX, randY, type);
     new.destinationX = randX
     new.destinationY = randY
+    //Note: We're not going to bother with setting direction or image_angle, since these
+    //ships are created offscreen.
     SetRandomShipDestination(new)
     
     alarm[0] = room_speed * .1
@@ -129,7 +131,14 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
+            <string>//Check for gold goals
+
+TryGoldGoalDialogue('gold_goal1', 'gold_goal1_reached', 500)
+
+//TODO other gold goals
+
+
+/*
 if instance_exists(cannonball) {
     instance_deactivate_object(npcShip)
     instance_activate_region(view_xview[0] - 64, view_yview - 64, view_wview[0] + 128, view_hview + 128, true)

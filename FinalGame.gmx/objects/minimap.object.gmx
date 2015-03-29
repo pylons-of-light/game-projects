@@ -63,9 +63,15 @@ drawHeight = sprite_get_height(spr_minimap)
     //TODO maybe remove or limit to NPCs within distance of player
     with(npcShip) {
         //if distance_to_object(playerShip) &lt; 600   //Largely arbitrary number (somewhat similar to half the view size)
-        if true
-            draw_sprite(spr_minimapNPC, 0, other.drawX + other.drawWidth * (x / room_width),
-                                           other.drawY + other.drawHeight * (y / room_height))
+        if true {
+            var sprite = spr_minimapNPC;
+            var objName = object_get_name(object_index);
+            if objName != 'merchantShip' and objName != 'warship'
+                sprite = spr_minimapNPCImportant
+            
+            draw_sprite(sprite, 0, other.drawX + other.drawWidth * (x / room_width),
+                                   other.drawY + other.drawHeight * (y / room_height))
+        }
     }
     
     draw_set_alpha(1)

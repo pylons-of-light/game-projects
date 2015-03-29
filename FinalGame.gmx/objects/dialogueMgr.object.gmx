@@ -187,7 +187,7 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if current_time - g_lastChangedRoomTime &gt; 200 and room != rm_town {
+            <string>if current_time - g_lastChangedRoomTime &gt; 200 and room != rm_ocean {
     g_lastChangedRoomTime = current_time
     room_goto_next()
 }

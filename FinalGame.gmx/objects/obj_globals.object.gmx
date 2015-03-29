@@ -122,6 +122,8 @@ g_shipLastPortDir = g_shipDir
 globalvar g_townId;
 g_townId = 'town1Tavern'
 
+//The truth is that "town markers" is an obsolete term, kept out of precedence; the marker list
+//contains all markers that make the game's plot move. Each marker is given a unique ID.
 globalvar g_townMarkers, g_dlg;
 g_townMarkers = ds_list_create()
 g_dlg = ds_list_create()
