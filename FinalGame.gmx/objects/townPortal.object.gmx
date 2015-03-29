@@ -54,7 +54,7 @@ oceanDir = 270
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if townMgr.bMoveReady and not dialogueMgr.bVisible {
+            <string>if townMgr.bMoveReady and not dialogueMgr.bVisible and not instance_exists(tutorialMgr) {
     if dialogueId != '' {
         ShowDialogue(dialogueId)
     }

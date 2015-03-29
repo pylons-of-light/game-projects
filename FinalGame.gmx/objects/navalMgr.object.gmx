@@ -25,7 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = room_speed * 1
+            <string>//TODO make sure uncommented
+//MakeOceanDetails()
+
+if g_firstTimeInOcean {
+    instance_create(view_xview[0], view_yview[0], tutorialMgr)
+    g_firstTimeInOcean = false
+}
+
+alarm[0] = room_speed * 1
 </string>
           </argument>
         </arguments>
@@ -54,7 +62,7 @@ var merchantCount = instance_number(merchantShip);
 var warshipCount = instance_number(warship);
 var totalShips = merchantCount + warshipCount;
 
-if totalShips &lt; 20 {
+if totalShips &lt; 40 {
     var type;
     if merchantCount &lt;= warshipCount
         type = merchantShip;
@@ -150,6 +158,9 @@ draw_set_halign(fa_left)
 draw_text(view_xview[0] + 15, view_yview[0] + 20, 'Gold: ' + string(g_gold))
 //draw_text(view_xview[0] + 15, view_yview[0] + 20, 'Hull: ' + string(g_shipHealth) + '%')
 draw_healthbar(view_xview[0] + 20, view_yview[0] + 45, view_xview[0] + 30, view_yview[0] + 165, g_shipHealth, make_color_rgb(48, 44, 44), make_color_rgb(194, 19, 19), make_color_rgb(121, 142, 68), 3, true, true)
+
+//draw_text(view_xview[0] + 15, view_yview[0] + 200, 'NPCs: ' + string(instance_number(npcShip)))
+//draw_text(view_xview[0] + 15, view_yview[0] + 200, 'CBs: ' + string(instance_number(cannonball)))
 </string>
           </argument>
         </arguments>

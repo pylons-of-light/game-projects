@@ -3,6 +3,10 @@
 if current_time - cbFireDelay < lastFiredTime
     exit
 
+if distance_to_object(playerShip) > 1600 {   //TODO: Totally arbitrary number. Maybe make depend on cbFlyTime. Or maybe not.
+    exit
+}
+
 var nearest, aimDir, left, right;
 nearest = instance_nearest(x, y, playerShip)
 aimDir = point_direction(x, y, nearest.x, nearest.y)

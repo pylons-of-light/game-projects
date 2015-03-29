@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,16 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawXOffset = (view_wview[0] - sprite_get_width(spr_minimap)) / 2
-drawYOffset = (view_hview[0] - sprite_get_height(spr_minimap)) / 2
-drawWidth = sprite_get_width(spr_minimap)
-drawHeight = sprite_get_height(spr_minimap)
+            <string>x = view_xview[0]
+y = view_yview[0]
+
+image_alpha = 0
+maxAlpha = 0.8
+bClosing = false
+
+if room == rm_ocean {
+    sprite_index = spr_controlsOcean
+}
+else {
+    //TODO change to dungeon controls
+    sprite_index = spr_controls
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,25 +61,69 @@ drawHeight = sprite_get_height(spr_minimap)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(ord('M')) or keyboard_check(ord('Q')) or keyboard_check(ord('E')) {
-    draw_set_alpha(0.8)
-    drawX = view_xview[0] + drawXOffset
-    drawY = view_yview[0] + drawYOffset
-    draw_sprite(spr_minimap, 0, drawX, drawY)
-    
-    draw_sprite(spr_minimapPlayer, 0, drawX + drawWidth * (playerShip.x / room_width),
-                                      drawY + drawHeight * (playerShip.y / room_height))
-    
-    //TODO maybe remove or limit to NPCs within distance of player
-    with(npcShip) {
-        //if distance_to_object(playerShip) &lt; 600   //Largely arbitrary number (somewhat similar to half the view size)
-        if true
-            draw_sprite(spr_minimapNPC, 0, other.drawX + other.drawWidth * (x / room_width),
-                                           other.drawY + other.drawHeight * (y / room_height))
+            <string>x = view_xview[0]
+y = view_yview[0]
+
+if bClosing {
+    if image_alpha &gt; 0 {
+        image_alpha -= 0.06
+        if image_alpha &lt; 0
+            instance_destroy()
     }
-    
-    draw_set_alpha(1)
 }
+else {
+    if image_alpha &lt; maxAlpha {
+        image_alpha += 0.05
+        if image_alpha &gt; maxAlpha
+            image_alpha = maxAlpha
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bClosing = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bClosing = true
 </string>
           </argument>
         </arguments>
@@ -87,8 +141,5 @@ drawHeight = sprite_get_height(spr_minimap)
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>429,429</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>
