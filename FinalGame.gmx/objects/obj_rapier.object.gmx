@@ -49,7 +49,15 @@ g_avatarAttacking = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("rapier struck mob")
+            <string>with obj_mob
+{
+    if(taking_damage = false)
+    {
+        taking_damage = true;
+        show_debug_message("rapier struck mob");
+        alarm[0] = room_speed * 5;
+    }    
+}
 </string>
           </argument>
         </arguments>
