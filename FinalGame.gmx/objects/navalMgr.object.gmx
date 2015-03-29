@@ -26,10 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>//TODO make sure uncommented
-//MakeOceanDetails()
+MakeOceanDetails()
 
+/*
 if g_firstTimeInOcean {
     instance_create(view_xview[0], view_yview[0], tutorialMgr)
+    g_firstTimeInOcean = false
+}
+*/
+
+//Note that this will take place immediately; it doesn't wait until any potential dialogue finishes.
+if g_firstTimeInOcean {
+    instance_create(room_width, room_height, tutorialMgr)
     g_firstTimeInOcean = false
 }
 
@@ -161,6 +169,15 @@ draw_healthbar(view_xview[0] + 20, view_yview[0] + 45, view_xview[0] + 30, view_
 
 //draw_text(view_xview[0] + 15, view_yview[0] + 200, 'NPCs: ' + string(instance_number(npcShip)))
 //draw_text(view_xview[0] + 15, view_yview[0] + 200, 'CBs: ' + string(instance_number(cannonball)))
+
+/*
+if ds_list_empty(g_dlg) {
+    draw_text(view_xview[0] + 15, view_yview[0] + 200, 'dlg: ' + 'empty')
+}
+else {
+    draw_text(view_xview[0] + 15, view_yview[0] + 200, 'dlg: ' + g_dlg[|0])
+}
+*/
 </string>
           </argument>
         </arguments>

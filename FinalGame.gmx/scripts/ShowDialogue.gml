@@ -158,12 +158,14 @@ ds_list_add(g_dlg, "Alan Why not? As soon as you're ready to leave.")
 }
 
 else if argument0 == 'oa1' {
-ds_list_add(g_dlg, "g You know, I have a sneaking suspicion that this ship is wanted. Did you see the look that dock officer was giving us as we left?")
+ds_list_add(g_dlg, "c test")
+ds_list_add(g_dlg, "c again")
+/*ds_list_add(g_dlg, "g You know, I have a sneaking suspicion that this ship is wanted. Did you see the look that dock officer was giving us as we left?")
 ds_list_add(g_dlg, "l You mean that bastard Alan gave us a ship with a price on its head?")
 ds_list_add(g_dlg, "g I think so. ... For now, if we see a Navy ship, let's just try to avoid them. Odds are they might be looking for this ship.")
 ds_list_add(g_dlg, "l Son of a... all right. Check the map, try to figure out where we're going.")
 ds_list_add(g_dlg, "g I figure we should just sail around and look for random merchant ships to loot.")
-ds_list_add(g_dlg, "l Suits me.")
+ds_list_add(g_dlg, "l Suits me.")*/
 }
 
 

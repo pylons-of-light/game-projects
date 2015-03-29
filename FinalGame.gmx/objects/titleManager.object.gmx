@@ -37,6 +37,12 @@
 if file_exists("rains") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
+    
+    g_firstTimeInOcean = false
+    //g_firstTimeInDungeon = false
+    
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'oa1'))
+    
     //room_goto(rm_town)
     room_goto(rm_ocean)
 }

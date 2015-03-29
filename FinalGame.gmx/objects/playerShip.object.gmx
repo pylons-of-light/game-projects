@@ -250,7 +250,7 @@ if speed &lt; 0 {
     }
 }
 
-if keyboard_check(vk_lshift) {
+if keyboard_check(vk_control) {
     if speed &gt; 0
         speed -= speed/divBrakeSpeed
     if speed &lt; 0
@@ -527,7 +527,7 @@ if not g_bCrashedReefs {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not ds_list_empty(g_dlg)
+            <string>if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
     exit
 
 PlayerShipFire()

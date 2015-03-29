@@ -51,7 +51,7 @@ drawHeight = sprite_get_height(spr_minimap)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(ord('M')) or keyboard_check(ord('Q')) or keyboard_check(ord('E')) {
+            <string>if keyboard_check(vk_shift) or keyboard_check(ord('Q')) or keyboard_check(ord('E')) {
     draw_set_alpha(0.8)
     drawX = view_xview[0] + drawXOffset
     drawY = view_yview[0] + drawYOffset
