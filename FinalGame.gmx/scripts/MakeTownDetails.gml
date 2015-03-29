@@ -24,7 +24,8 @@ if townId == 'town1' {
     }
     
     //Markers
-    TryNpcMarker('t1n1', 500, 350)
+    TryNpcMarker('t1n1', 370, 390)
+    TryNpcMarker('t1n2', 720, 350)
     
     //Auto-dialogue
     TryAutoDialogue('t1a1', true)
@@ -46,7 +47,8 @@ else if townId == 'town1Tavern' {
     }
     
     //Markers
-    TryNpcMarker('v1n1', 674, 261)
+    TryNpcMarker('v1n1', 624, 280)
+    TryNpcMarker('v1n2', 717, 440)
     
     //Auto-dialogue
     TryAutoDialogue('v1a1', true)

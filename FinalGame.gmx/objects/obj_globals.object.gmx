@@ -63,11 +63,6 @@ globalvar SHIP_HEALTH_MAX, LAND_HEALTH_MAX;
 SHIP_HEALTH_MAX = 100
 LAND_HEALTH_MAX = 100
 
-//Multipliers for the amount of gold you lose when you die
-globalvar SHIP_DIE_LOSE_GOLD_MULT, LAND_DIE_LOSE_GOLD_MULT;
-SHIP_DIE_LOSE_GOLD_MULT = 0.6
-LAND_DIE_LOSE_GOLD_MULT = 0.6
-
 globalvar GENERATE_RAND_LOCATIONS;
 GENERATE_RAND_LOCATIONS = 10000   //When randomly placing spawned objects, make this many tries
 
@@ -125,7 +120,7 @@ g_shipLastPortY = g_shipY
 g_shipLastPortDir = g_shipDir
 
 globalvar g_townId;
-g_townId = 'town1'
+g_townId = 'town1Tavern'
 
 globalvar g_townMarkers, g_dlg;
 g_townMarkers = ds_list_create()
@@ -156,6 +151,9 @@ MakeStartingTownMarkers()
 
 
 //Event flags
+globalvar g_firstTimeInOcean, g_firstTimeInDungeon;
+g_firstTimeInOcean = true
+g_firstTimeInDungeon = true
 globalvar g_bCrashedReefs;
 g_bCrashedReefs = false
 

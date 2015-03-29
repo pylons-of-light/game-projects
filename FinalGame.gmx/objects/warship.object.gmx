@@ -111,7 +111,7 @@ bTurningToFire = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not ds_list_empty(g_dlg)
+            <string>if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
     exit
 
 //Don't do anything if a cannonball exists and we're outside the view.

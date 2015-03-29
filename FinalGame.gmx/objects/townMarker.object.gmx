@@ -111,7 +111,8 @@ else if image_alpha &lt; 1 and bFadeIn {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if townMgr.bMoveReady and not dialogueMgr.bVisible and not bDeleting and dialogueId != '' {
+            <string>if townMgr.bMoveReady and not dialogueMgr.bVisible and not instance_exists(tutorialMgr)
+   and not bDeleting and dialogueId != '' {
     //Delete NPC marker from town marker list
     dialoguePos = ds_list_find_index(g_townMarkers, dialogueId)
     if dialoguePos == -1

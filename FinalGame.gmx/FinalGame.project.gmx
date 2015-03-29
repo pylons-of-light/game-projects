@@ -114,6 +114,7 @@
     <sprite>sprites\spr_dialogueBox</sprite>
     <sprite>sprites\spr_controls</sprite>
     <sprite>sprites\spr_credits</sprite>
+    <sprite>sprites\spr_controlsOcean</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -135,6 +136,7 @@
     <script>scripts\ShowDialogue.gml</script>
     <script>scripts\MakeStartingTownMarkers.gml</script>
     <script>scripts\MakeTownDetails.gml</script>
+    <script>scripts\MakeOceanDetails.gml</script>
     <script>scripts\TryNpcMarker.gml</script>
     <script>scripts\TryAutoDialogue.gml</script>
     <script>scripts\GetTownSprite.gml</script>
@@ -149,6 +151,7 @@
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
     <script>scripts\SetRandomShipDestination.gml</script>
     <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
+    <script>scripts\DieLoseGold.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -162,6 +165,7 @@
     <object>objects\titleManager</object>
     <object>objects\gameMgr</object>
     <object>objects\dialogueMgr</object>
+    <object>objects\tutorialMgr</object>
     <objects name="town">
       <object>objects\townMgr</object>
       <object>objects\townMarker</object>
