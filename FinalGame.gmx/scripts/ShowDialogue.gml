@@ -1,6 +1,6 @@
 //Show dialogue sequence
 //(All dialogue is stored in this script)
-//Arguments: dialogue sequence id
+//Arguments: dialogue id (aka marker id)
 
 with dialogueMgr {
 bUsable = true
@@ -164,8 +164,66 @@ ds_list_add(g_dlg, "g I think so. ... For now, if we see a Navy ship, let's just
 ds_list_add(g_dlg, "l Son of a... all right. Check the map, try to figure out where we're going.")
 ds_list_add(g_dlg, "g I figure we should just sail around and look for random merchant ships to loot.")
 ds_list_add(g_dlg, "l Suits me.")
+
+ds_list_add(g_dlg, 'gold_goal1')
 }
 
+//The first ocean goal event.
+else if argument0 == 'gold_goal1_reached' {
+ds_list_add(g_dlg, "l Grant, how are we doing?")
+ds_list_add(g_dlg, "g Well, we've taken a few hits, there's no denying it. We're listing a little in the water.")
+ds_list_add(g_dlg, "l It'll take forever to pay Alan back like this, and half our funds will go towards ship repairs. We need a better plan.")
+ds_list_add(g_dlg, "g What do you have in mind?")
+ds_list_add(g_dlg, "l Let's go back to Rubina, and see if we can find some slightly more ambitious task than tackling random merchantmen.")
+
+ds_list_add(g_townMarkers, 't1a2')
+ds_list_add(g_townMarkers, 'v1i1')
+}
+
+else if argument0 == 't1a2' {
+ds_list_add(g_dlg, "g So, where to?")
+ds_list_add(g_dlg, "l I think the center of all information in the city is a good bet, don't you?")
+ds_list_add(g_dlg, "g Of course.")
+}
+
+//An important NPC.
+else if argument0 == 'v1i1' {
+ds_list_add(g_dlg, "Alan Lise, Grant? How are you guys making out?")
+ds_list_add(g_dlg, "l You didn't tell us we were sailing a floating deathtrap.")
+ds_list_add(g_dlg, "Alan Sorry?")
+ds_list_add(g_dlg, "g That ship is wanted by the Navy. They're out for blood!")
+ds_list_add(g_dlg, "Alan Oh, I was afraid of that. I'll deduct a suitable sum from the amount you owe me as compensation, of course.")
+ds_list_add(g_dlg, "l How about you reduce the amount we owe you by half. We could have died out there.")
+ds_list_add(g_dlg, "Alan You drive a hard bargain. Fine. Instead of owing me double the cost of the boat, you only owe me one-and-a-half times that figure.")
+ds_list_add(g_dlg, "l How much do we owe you again?")
+ds_list_add(g_dlg, "Alan It's still a lot more than you have, I can tell you that.")
+ds_list_add(g_dlg, "l Do you have any intelligence on how we could earn the money a little faster?")
+ds_list_add(g_dlg, "Alan You mean, a job?")
+ds_list_add(g_dlg, "l Something that could help us pay you back a little more efficiently.")
+ds_list_add(g_dlg, "Alan Well, I didn't tell you this, but: Rumors are, there's a brig, the Arabella, out of Brax, sailing for Saint Jace with two thousand pounds in gold bullion.")
+ds_list_add(g_dlg, "Alan It should be easy to spot. The masthead is painted in an exquisite crimson red.")
+ds_list_add(g_dlg, "l And you would just give us this information for free?")
+ds_list_add(g_dlg, "Alan Well, no. It'll cost you a finder's fee, of course.")
+ds_list_add(g_dlg, "l But we already know the information.")
+ds_list_add(g_dlg, "Alan Don't worry, I'll add the finder's fee to the amount you already owe me.")
+
+ds_list_add(g_townMarkers, 't1a3')
+ds_list_add(g_townMarkers, 'ship_spawn1')
+}
+
+else if argument0 == 't1a3' {
+ds_list_add(g_dlg, "l The Arabella should be heading from Brax to Saint Jace. Let's get her before she docks, I don't want to go anywhere near that hellhole.")
+ds_list_add(g_dlg, "l Check the map, and let's go catch that ship!")
+ds_list_add(g_dlg, "l Alan said it had a noticeable blue masthead.")
+ds_list_add(g_dlg, "g You mean red.")
+ds_list_add(g_dlg, "l That's what I said. Red.")
+}
+
+//TODO up to here
+else if argument0 == 'ship_spawn1_defeated' {
+ds_list_add(g_dlg, "l Ship dead!")
+ds_list_add(g_dlg, "g Yup.")
+}
 
 
 else
@@ -181,6 +239,7 @@ if room == rm_town {
 
 else if room == rm_ocean {
     //Enable the dialogue manager
+    //TODO I could probably make this statement a little simpler.
     if dialogueMgr.bUsable {
         dialogueMgr.bVisible = true
         dialogueMgr.alarm[0] = dialogueMgr.alarmTime

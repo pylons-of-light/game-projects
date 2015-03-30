@@ -97,7 +97,7 @@ else {
     other.shipHealth -= damage
     if other.shipHealth &lt;= 0 {
         other.killer = sourceShip
-        other.shipHealth = 0
+        //other.shipHealth = 0   //I've actually commented this out, since it's currently possible for a particular ship to have negative health. (And only then will it sink.)
     }
     
     instance_create(x, y, cannonballExplosion)

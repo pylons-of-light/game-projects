@@ -29,6 +29,8 @@ if townId == 'town1' {
     
     //Auto-dialogue
     TryAutoDialogue('t1a1', true)
+    TryAutoDialogue('t1a2', true)
+    TryAutoDialogue('t1a3', true)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -49,6 +51,7 @@ else if townId == 'town1Tavern' {
     //Markers
     TryNpcMarker('v1n1', 624, 280)
     TryNpcMarker('v1n2', 717, 440)
+    TryImportantMarker('v1i1', 590, 368)
     
     //Auto-dialogue
     TryAutoDialogue('v1a1', true)

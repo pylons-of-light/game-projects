@@ -36,7 +36,9 @@
         <sprite>sprites\spr_playerShip</sprite>
         <sprite>sprites\spr_merchantShip</sprite>
         <sprite>sprites\spr_warship</sprite>
-        <sprite>sprites\sprite30</sprite>
+        <sprite>sprites\spr_specialShip1</sprite>
+        <sprite>sprites\spr_specialShip2</sprite>
+        <sprite>sprites\spr_specialShip3</sprite>
         <sprite>sprites\spr_shipMask</sprite>
       </sprites>
       <sprites name="terrain">
@@ -67,6 +69,7 @@
       <sprite>sprites\spr_minimap</sprite>
       <sprite>sprites\spr_minimapPlayer</sprite>
       <sprite>sprites\spr_minimapNPC</sprite>
+      <sprite>sprites\spr_minimapNPCImportant</sprite>
       <sprite>sprites\spr_cannonball</sprite>
       <sprite>sprites\spr_cannonballExplosion</sprite>
       <sprite>sprites\spr_cannonballSink</sprite>
@@ -138,7 +141,11 @@
     <script>scripts\MakeTownDetails.gml</script>
     <script>scripts\MakeOceanDetails.gml</script>
     <script>scripts\TryNpcMarker.gml</script>
+    <script>scripts\TryImportantMarker.gml</script>
     <script>scripts\TryAutoDialogue.gml</script>
+    <script>scripts\TryGoldGoalDialogue.gml</script>
+    <script>scripts\RemoveMarker.gml</script>
+    <script>scripts\AutoPlayMarker.gml</script>
     <script>scripts\GetTownSprite.gml</script>
     <script>scripts\GetTownMask.gml</script>
     <script>scripts\GetPortrait.gml</script>
@@ -176,6 +183,7 @@
       <object>objects\townMgr</object>
       <object>objects\townMarker</object>
       <object>objects\townNpcMarker</object>
+      <object>objects\townImportantMarker</object>
       <object>objects\townQuestMarker</object>
       <object>objects\townMerchantMarker</object>
       <object>objects\townShipwrightMarker</object>
@@ -217,6 +225,7 @@
       <object>objects\playerShip</object>
       <object>objects\npcShip</object>
       <object>objects\merchantShip</object>
+      <object>objects\specialShip1</object>
       <object>objects\warship</object>
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
@@ -247,8 +256,8 @@
     <room>rooms\rm_cave</room>
     <room>rooms\rm_dungeon_test2</room>
     <room>rooms\rm_dungeon_test1</room>
-    <room>rooms\rm_ocean</room>
     <room>rooms\rm_town</room>
+    <room>rooms\rm_ocean</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
