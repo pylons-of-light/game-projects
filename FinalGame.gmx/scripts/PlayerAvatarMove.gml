@@ -1,7 +1,7 @@
 //Player movement
 //Arguments: none
 
-if not ds_list_empty(g_dlg)
+if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
     exit
 
 bKeyDirectionIsPressed = false

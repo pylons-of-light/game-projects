@@ -51,11 +51,21 @@ g_avatarAttacking = true;
             <kind>1</kind>
             <string>with obj_mob
 {
-    if(taking_damage = false)
+    if(taking_damage == false)
     {
-        taking_damage = true;
-        show_debug_message("rapier struck mob");
-        alarm[0] = room_speed * 5;
+        //disable further damage
+        taking_damage = true
+        //enable damage after x seconds
+        alarm[0] = room_speed * 1
+        //reduce the mobs health based on base damage times weapon level
+        hp = hp - (g_weaponDamageBase * (g_weaponLevel))
+        //grey out the mob
+        image_alpha = 0.50
+        //destroy the instance if the health is less than or equal to 0
+        if(hp &lt;= 0)
+        {
+            instance_destroy()
+        }
     }    
 }
 </string>

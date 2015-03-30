@@ -152,6 +152,12 @@
     <script>scripts\SetRandomShipDestination.gml</script>
     <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
     <script>scripts\DieLoseGold.gml</script>
+    <script>scripts\MobMoveWander.gml</script>
+    <script>scripts\SetMobWanderLocation.gml</script>
+    <script>scripts\SetMobSprite.gml</script>
+    <script>scripts\MobAggro.gml</script>
+    <script>scripts\MobFollow.gml</script>
+    <script>scripts\MobAttack.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>

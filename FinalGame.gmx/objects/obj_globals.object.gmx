@@ -137,7 +137,8 @@ g_gold = 10   //Starting gold value
 g_landHealth = LAND_HEALTH_MAX
 g_shipHealth = SHIP_HEALTH_MAX
 
-globalvar g_weaponLevel, g_armorLevel;
+globalvar g_weaponDamageBase, g_weaponLevel, g_armorLevel;
+g_weaponDamageBase = 1
 g_weaponLevel = 1
 g_armorLevel = 1
 
