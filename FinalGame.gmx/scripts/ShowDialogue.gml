@@ -200,7 +200,7 @@ ds_list_add(g_dlg, "Alan It's still a lot more than you have, I can tell you tha
 ds_list_add(g_dlg, "l Do you have any intelligence on how we could earn the money a little faster?")
 ds_list_add(g_dlg, "Alan You mean, a job?")
 ds_list_add(g_dlg, "l Something that could help us pay you back a little more efficiently.")
-ds_list_add(g_dlg, "Alan Well, I didn't tell you this, but: Rumors are, there's a brig out of Brax sailing for Saint Jace with a thousand pounds in gold bullion.")
+ds_list_add(g_dlg, "Alan Well, I didn't tell you this, but: Rumors are, there's a brig, the Arabella, out of Brax, sailing for Saint Jace with two thousand pounds in gold bullion.")
 ds_list_add(g_dlg, "Alan It should be easy to spot. The masthead is painted in an exquisite crimson red.")
 ds_list_add(g_dlg, "l And you would just give us this information for free?")
 ds_list_add(g_dlg, "Alan Well, no. It'll cost you a finder's fee, of course.")
@@ -212,12 +212,14 @@ ds_list_add(g_townMarkers, 'ship_spawn1')
 }
 
 else if argument0 == 't1a3' {
-ds_list_add(g_dlg, "l That ship should be heading from Brax to Saint Jace. Check the map, and let's go catch it!")
+ds_list_add(g_dlg, "l The Arabella should be heading from Brax to Saint Jace. Let's get her before she docks, I don't want to go anywhere near that hellhole.")
+ds_list_add(g_dlg, "l Check the map, and let's go catch that ship!")
 ds_list_add(g_dlg, "l Alan said it had a noticeable blue masthead.")
 ds_list_add(g_dlg, "g You mean red.")
 ds_list_add(g_dlg, "l That's what I said. Red.")
 }
 
+//TODO up to here
 else if argument0 == 'ship_spawn1_defeated' {
 ds_list_add(g_dlg, "l Ship dead!")
 ds_list_add(g_dlg, "g Yup.")
