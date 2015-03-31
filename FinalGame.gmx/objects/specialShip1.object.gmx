@@ -39,8 +39,8 @@ bFleeing = false
 bDead = false
 
 //TODO uncomment
-//shipHealth = SHIP_HEALTH_MAX * 1.8
-shipHealth = SHIP_HEALTH_MAX / 10
+shipHealth = SHIP_HEALTH_MAX * 1.6
+//shipHealth = SHIP_HEALTH_MAX / 10
 
 dealCannonDamage = SHIP_HEALTH_MAX / 10
 gold = 2000
