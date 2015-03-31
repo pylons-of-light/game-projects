@@ -165,7 +165,7 @@ ds_list_add(g_dlg, "l Son of a... all right. Check the map, try to figure out wh
 ds_list_add(g_dlg, "g I figure we should just sail around and look for random merchant ships to loot.")
 ds_list_add(g_dlg, "l Suits me.")
 
-ds_list_add(g_dlg, 'gold_goal1')
+ds_list_add(g_townMarkers, 'gold_goal1')
 }
 
 //The first ocean goal event.
