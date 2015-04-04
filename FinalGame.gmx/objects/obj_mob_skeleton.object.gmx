@@ -26,12 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-hp = 3;
 
-sprRight = spr_skeletonRight
-sprLeft = spr_skeletonLeft
-sprUp = spr_skeletonUp
-sprDown = spr_skeletonDown
+hp = 3
+maxHp = 3
+attackRange = 10
+
+sprWalkRight = spr_skeletonRight
+sprWalkLeft = spr_skeletonLeft
+sprWalkUp = spr_skeletonUp
+sprWalkDown = spr_skeletonDown
+
+sprAttackRight = spr_skeletonAttackRight
+sprAttackLeft = spr_skeletonAttackLeft
+sprAttackUp = spr_skeletonAttackUp
+sprAttackDown = spr_skeletonAttackDown
 </string>
           </argument>
         </arguments>
