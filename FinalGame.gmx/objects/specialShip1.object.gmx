@@ -152,12 +152,25 @@ if shipHealth &lt;= 0 {
 }
 
 if bDying {
-    g_gold += gold
-    
-    RemoveMarker('ship_spawn1')
-    AutoPlayMarker('ship_spawn1_defeated')
-    
-    bDead = true
+    if shipHealth &lt;= 0 {
+        g_gold += gold
+        
+        RemoveMarker('ship_spawn1')
+        AutoPlayMarker('ship_spawn1_defeated')
+        
+        bDead = true
+    }
+    else {
+        image_alpha -= .02
+        if image_alpha &lt;= 0 {
+            if g_firstTimeLoseSpecialShip1 {
+                g_firstTimeLoseSpecialShip1 = false
+                ShowDialogue('ship_spawn1_lost')
+            }
+            
+            instance_destroy()
+        }
+    }
 }
 
 if not bDying {

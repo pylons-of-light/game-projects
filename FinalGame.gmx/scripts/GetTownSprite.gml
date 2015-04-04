@@ -23,5 +23,7 @@ if townId == 'town4'
 
 if townId == 'town5'
     return spr_town5
+if townId == 'town5Tavern'
+    return spr_tavern1
 
 show_error("Invalid town: " + townId, 0)

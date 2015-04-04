@@ -102,9 +102,10 @@ g_town5X = 3264 + lengthdir_x(shipDist, g_town5Dir)
 g_town5Y = 8784 + lengthdir_y(shipDist, g_town5Dir)
 //---
 
-globalvar g_town2Unlocked, g_town3Unlocked;
+globalvar g_town2Unlocked, g_town3Unlocked, g_town5Unlocked;
 g_town2Unlocked = false;
 g_town3Unlocked = false;
+g_town5Unlocked = false;
 
 //TODO: follow this advice:
 //Note: These should be directed towards the first town, at the start of the game
@@ -157,9 +158,16 @@ MakeStartingTownMarkers()
 globalvar g_firstTimeInOcean, g_firstTimeInDungeon;
 g_firstTimeInOcean = true
 g_firstTimeInDungeon = true
+
 globalvar g_bCrashedReefs;
 g_bCrashedReefs = false
 
+globalvar g_firstTimeLoseSpecialShip1;
+g_firstTimeLoseSpecialShip1 = true
+
+//Crew etc boosts
+globalvar CREW_SPEED_BOOST;
+CREW_SPEED_BOOST = .5;
 </string>
           </argument>
         </arguments>

@@ -111,6 +111,8 @@ if not ds_list_empty(g_dlg) {
                 speaker = 'Grant'
             else if speaker == 'lu' or speaker == 'Lu'
                 speaker = 'Lucy'
+            else if speaker == 'blankperson'
+                speaker = ''
             
             if speaker != oldSpeaker {
                 speakerPortrait = GetPortrait(speaker)

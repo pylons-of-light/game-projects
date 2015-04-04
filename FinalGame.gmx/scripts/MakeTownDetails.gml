@@ -31,6 +31,7 @@ if townId == 'town1' {
     TryAutoDialogue('t1a1', true)
     TryAutoDialogue('t1a2', true)
     TryAutoDialogue('t1a3', true)
+    TryAutoDialogue('t1a4', true)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -55,13 +56,17 @@ else if townId == 'town1Tavern' {
     
     //Auto-dialogue
     TryAutoDialogue('v1a1', true)
+    TryAutoDialogue('v1a2', true)
 }
 
 else if townId == 'town2' {
     //Portals
+    //TODO: This has been removed for now, but it might be put in later.
+    /*
     new = instance_create(269, 303, townPortal)
     new.mask_index = spr_mask400x200
     new.portal = 'town2Tavern'
+    */
     
     //Markers
     TryNpcMarker('t2n1', 166, 342)
@@ -72,8 +77,12 @@ else if townId == 'town2' {
     new.oceanX = g_town2X
     new.oceanY = g_town2Y
     new.oceanDir = g_town2Dir
+    
+    //Auto-dialogue
+    TryAutoDialogue('t2a1', false)
 }
 
+//TODO: This has been removed for now, but it might be put in later.
 else if townId == 'town2Tavern' {
     //Portals
     if mask == spr_tavern1Mask {
@@ -133,10 +142,14 @@ else if townId == 'town4' {
 
 else if townId == 'town5' {
     //Portals
+    new = instance_create(239, 542, townPortal)
+    new.mask_index = spr_mask180x135
+    new.portal = 'town5Tavern'
     
     //Markers
     TryNpcMarker('t5n1', 269, 489)
     TryNpcMarker('t5n2', 335, 258)
+    TryImportantMarker('t5q1', 506, 499)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -144,6 +157,22 @@ else if townId == 'town5' {
     new.oceanX = g_town5X
     new.oceanY = g_town5Y
     new.oceanDir = g_town5Dir
+    
+    //Auto-dialogue
+    TryAutoDialogue('t5a1', false)
+}
+
+else if townId == 'town5Tavern' {
+    //Portals
+    if mask == spr_tavern1Mask {
+        new = instance_create(411, 188, townPortal)
+        new.mask_index = spr_mask45x110
+        new.portal = 'town5'
+    }
+    
+    //Markers
+    TryNpcMarker('v5n1', 900, 333)
+    TryImportantMarker('v5i1', 516, 469)
 }
 
 else

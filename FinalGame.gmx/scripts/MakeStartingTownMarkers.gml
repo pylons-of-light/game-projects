@@ -16,6 +16,7 @@ ds_list_add(g_townMarkers, 't1n1')
 ds_list_add(g_townMarkers, 't1n2')
 
 //Town 2
+ds_list_add(g_townMarkers, 't2a1')
 ds_list_add(g_townMarkers, 't2n1')
 //Tavern
 ds_list_add(g_townMarkers, 'v2n1')
@@ -29,5 +30,10 @@ ds_list_add(g_townMarkers, 'v3n1')
 ds_list_add(g_townMarkers, 't4a1')
 
 //Town 5
+ds_list_add(g_townMarkers, 't5a1')
 ds_list_add(g_townMarkers, 't5n1')
 ds_list_add(g_townMarkers, 't5n2')
+ds_list_add(g_townMarkers, 't5q1')
+//Tavern
+ds_list_add(g_townMarkers, 'v5n1')
+ds_list_add(g_townMarkers, 'v5i1')
