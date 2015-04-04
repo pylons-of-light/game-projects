@@ -41,6 +41,12 @@ if file_exists("rains") {
     g_firstTimeInOcean = false
     //g_firstTimeInDungeon = false
     
+    //TODO remove
+    g_shipMaxSpeed -= CREW_SPEED_BOOST
+    
+    g_town2Unlocked = true
+    g_town5Unlocked = true
+    
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'oa1'))
     
     ds_list_add(g_townMarkers, 'gold_goal1')
