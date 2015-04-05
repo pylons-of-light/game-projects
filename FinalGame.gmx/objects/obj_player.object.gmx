@@ -257,6 +257,11 @@ if(hp &gt; 0)
     var width = sprite_get_width(spr_healthBar) * ( obj_player.hp / obj_player.maxHp );
     draw_sprite_part(spr_healthBar, 0, 0, 0, width, sprite_get_height(spr_healthBar), hcx, hcy);
 }
+
+draw_set_font(fnt_hud)
+draw_set_colour(c_white)
+draw_set_halign(fa_left)
+draw_text(35, 75, 'Gold: ' + string(g_gold))
 </string>
           </argument>
         </arguments>
