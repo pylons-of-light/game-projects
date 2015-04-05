@@ -77,9 +77,9 @@ var shipDist = sprite_get_width(spr_playerShip);
 //TODO maybe try to get these manually from the town port locations
 
 globalvar g_town1X, g_town1Y, g_town1Dir;
-g_town1Dir = 270
-g_town1X = 5856 + lengthdir_x(shipDist, g_town1Dir)
-g_town1Y = 4000 + lengthdir_y(shipDist, g_town1Dir)
+g_town1Dir = 230
+g_town1X = 5984 + lengthdir_x(shipDist, g_town1Dir)
+g_town1Y = 4048 + lengthdir_y(shipDist, g_town1Dir)
 
 globalvar g_town2X, g_town2Y, g_town2Dir;
 g_town2Dir = 340
@@ -97,17 +97,27 @@ g_town4X = 8096 + lengthdir_x(shipDist, g_town4Dir)
 g_town4Y = 7232 + lengthdir_y(shipDist, g_town4Dir)
 
 globalvar g_town5X, g_town5Y, g_town5Dir;
-g_town5Dir = 90
+g_town5Dir = 80
 g_town5X = 3264 + lengthdir_x(shipDist, g_town5Dir)
 g_town5Y = 8784 + lengthdir_y(shipDist, g_town5Dir)
+
+globalvar g_dungeon1X, g_dungeon1Y, g_dungeon1Dir;
+g_dungeon1Dir = 110
+g_dungeon1X = 3552 + lengthdir_x(shipDist, g_dungeon1Dir)
+g_dungeon1Y = 8800 + lengthdir_y(shipDist, g_dungeon1Dir)
+
+globalvar g_dungeon2X, g_dungeon2Y, g_dungeon2Dir;
+g_dungeon2Dir = 290
+g_dungeon2X = 1120 + lengthdir_x(shipDist, g_dungeon2Dir)
+g_dungeon2Y = 1456 + lengthdir_y(shipDist, g_dungeon2Dir)
 //---
 
-globalvar g_town2Unlocked, g_town3Unlocked, g_town5Unlocked;
-g_town2Unlocked = false;
-g_town3Unlocked = false;
-g_town5Unlocked = false;
+globalvar g_town2Unlocked, g_town3Unlocked, g_town5Unlocked, g_finalIslandUnlocked;
+g_town2Unlocked = false
+g_town3Unlocked = false
+g_town5Unlocked = false
+g_finalIslandUnlocked = false
 
-//TODO: follow this advice:
 //Note: These should be directed towards the first town, at the start of the game
 globalvar g_shipX, g_shipY, g_shipDir;
 g_shipX = g_town1X
@@ -121,7 +131,7 @@ g_shipLastPortY = g_shipY
 g_shipLastPortDir = g_shipDir
 
 globalvar g_townId;
-g_townId = 'town1Tavern'
+g_townId = 'town1Tavern'   //The location of the first cinematic of the game
 
 //The truth is that "town markers" is an obsolete term, kept out of precedence; the marker list
 //contains all markers that make the game's plot move. Each marker is given a unique ID.
@@ -154,7 +164,15 @@ g_shipArmor = 1.0   //Damage multiplier; this number will go down as armor grows
 MakeStartingTownMarkers()
 
 
-//Event flags
+//Global variables for messages (shown indirectly via dialogue manager)
+globalvar g_msgText, g_msgAlpha, g_bMsgDisplayed;
+g_msgText = ''
+g_msgAlpha = 0
+g_bMsgDisplayed = false
+
+
+//Event flags and such
+
 globalvar g_firstTimeInOcean, g_firstTimeInDungeon;
 g_firstTimeInOcean = true
 g_firstTimeInDungeon = true
@@ -167,7 +185,7 @@ g_firstTimeLoseSpecialShip1 = true
 
 //Crew etc boosts
 globalvar CREW_SPEED_BOOST;
-CREW_SPEED_BOOST = .5;
+CREW_SPEED_BOOST = .5
 </string>
           </argument>
         </arguments>
