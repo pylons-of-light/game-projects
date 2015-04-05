@@ -49,8 +49,7 @@ g_avatarAttacking = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with obj_mob
-{
+            <string>with other{
     if(taking_damage == false)
     {
         //disable further damage
@@ -66,8 +65,8 @@ g_avatarAttacking = true;
         {
             instance_destroy()
         }
-    }    
-}
+    }
+}    
 </string>
           </argument>
         </arguments>
