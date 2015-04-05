@@ -248,10 +248,10 @@
       <object>objects\playerShip</object>
       <object>objects\npcShip</object>
       <object>objects\merchantShip</object>
+      <object>objects\warship</object>
       <object>objects\specialShip1</object>
       <object>objects\specialShip2</object>
       <object>objects\specialShip3</object>
-      <object>objects\warship</object>
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
       <object>objects\cannonballSink</object>

@@ -158,16 +158,18 @@ var realDir, nearestCb;
 
 if not bTurningToFire {
     nearestCb = instance_nearest(x, y, cannonball)
-    if bFleeing {
-        if not (nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100)
-            bFleeing = false
-    }
-    else if nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100 and random(1000) &lt;= 25 {
-        bFleeing = true
-        alarm[3] = room_speed * 1   //Stop fleeing in a bit.
+    if nearestCb != noone {
+        if bFleeing {
+            if not (nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100)
+                bFleeing = false
+        }
+        else if nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100 and random(1000) &lt;= 25 {
+            bFleeing = true
+            alarm[3] = room_speed * 1   //Stop fleeing in a bit.
+        }
     }
     
-    if bFleeing {
+    if bFleeing and nearestCb != noone {
         mp_potential_step_object(nearestCb.x, nearestCb.y, -mySpeed*2, navalBlock)   //TODO do we need to use a *2 multiplier?
         realDir = direction - 180
         if realDir &lt; 0
