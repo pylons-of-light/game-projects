@@ -27,9 +27,13 @@
             <kind>1</kind>
             <string>//We can expect most or all of these stats to be overridden
 
-destinationX = town1Port.x
-destinationY = town1Port.y
-bCityDestination = true
+if instance_exists(town1Port) {
+    destinationX = town1Port.x
+    destinationY = town1Port.y
+    bCityDestination = true
+}
+else
+    bCityDestination = false
 
 lastFiredTime = current_time
 cbFlyTime = 150

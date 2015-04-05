@@ -122,7 +122,7 @@ if bbox_bottom > room_height {
 //---Prevent collisions
 //---------------------
 
-if place_meeting(x + hspeed, y, obj_collider)
+if place_meeting(x + hspeed, y, obj_player_collider)
     speed = 0
-if place_meeting(x, y + vspeed, obj_collider)
+if place_meeting(x, y + vspeed, obj_player_collider)
     speed = 0

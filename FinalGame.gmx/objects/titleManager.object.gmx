@@ -45,21 +45,29 @@ if file_exists("rains") {
     //g_shipMaxSpeed -= CREW_SPEED_BOOST
     
     g_town2Unlocked = true
+    g_town3Unlocked = true
     g_town5Unlocked = true
     g_finalIslandUnlocked = true
     
+    ds_list_add(g_townMarkers, 't3a2')
+    
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'oa1'))
     
-    ds_list_add(g_townMarkers, 'gold_goal1')
-    ds_list_add(g_townMarkers, 'ship_spawn1')
-    ds_list_add(g_townMarkers, 'v1i1')
+    //ds_list_add(g_townMarkers, 'gold_goal1')
+    //ds_list_add(g_townMarkers, 'ship_spawn1')
+    //ds_list_add(g_townMarkers, 'v1i1')
     
     //room_goto(rm_town)
-    room_goto(rm_ocean)
+    //room_goto(rm_ocean)
+    room_goto(rm_cave)
     
-    g_shipX = g_town5X
-    g_shipY = g_town5Y
-    g_shipDir = g_town5Dir
+    g_shipX = g_town3X
+    g_shipY = g_town3Y
+    g_shipDir = g_town3Dir
+    
+    g_shipX = g_dungeon2X
+    g_shipY = g_dungeon2Y
+    g_shipDir = g_dungeon2Dir
 }
 else
     room_goto_next()

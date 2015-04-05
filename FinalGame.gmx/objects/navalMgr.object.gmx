@@ -25,23 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//TODO make sure uncommented
-MakeOceanDetails()
-
-/*
-if g_firstTimeInOcean {
-    instance_create(view_xview[0], view_yview[0], tutorialMgr)
-    g_firstTimeInOcean = false
+            <string>if room != rm_final_ship_boss {
+    MakeOceanDetails()
+    
+    //Note that this will take place immediately; it doesn't wait until any potential dialogue finishes.
+    if g_firstTimeInOcean {
+        instance_create(room_width, room_height, tutorialMgr)
+        g_firstTimeInOcean = false
+    }
+    
+    alarm[0] = room_speed * 1
 }
-*/
-
-//Note that this will take place immediately; it doesn't wait until any potential dialogue finishes.
-if g_firstTimeInOcean {
-    instance_create(room_width, room_height, tutorialMgr)
-    g_firstTimeInOcean = false
-}
-
-alarm[0] = room_speed * 1
 </string>
           </argument>
         </arguments>

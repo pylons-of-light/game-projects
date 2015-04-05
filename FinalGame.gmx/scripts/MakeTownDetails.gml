@@ -103,6 +103,7 @@ else if townId == 'town3' {
     
     //Markers
     TryNpcMarker('t3n1', 470, 460)
+    TryNpcMarker('t3n2', 98, 414)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -110,6 +111,10 @@ else if townId == 'town3' {
     new.oceanX = g_town3X
     new.oceanY = g_town3Y
     new.oceanDir = g_town3Dir
+    
+    //Auto-dialogue
+    TryAutoDialogue('t3a1', false)
+    TryAutoDialogue('t3a2', true)
 }
 
 else if townId == 'town3Tavern' {
@@ -121,7 +126,9 @@ else if townId == 'town3Tavern' {
     }
     
     //Markers
-    TryNpcMarker('v3n1', 940, 345)
+    TryNpcMarker('v3n1', 920, 345)
+    TryImportantMarker('v3i1', 588, 409)
+    TryImportantMarker('v3i2', 547, 250)
 }
 
 else if townId == 'town4' {

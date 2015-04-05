@@ -42,6 +42,7 @@
         <sprite>sprites\spr_specialShip2</sprite>
         <sprite>sprites\spr_specialShip3</sprite>
         <sprite>sprites\spr_shipMask</sprite>
+        <sprite>sprites\spr_specialShip3Mask</sprite>
       </sprites>
       <sprites name="terrain">
         <sprite>sprites\spr_t1</sprite>
@@ -99,11 +100,16 @@
       <sprite>sprites\spr_attackLeft</sprite>
       <sprite>sprites\spr_attackRight</sprite>
       <sprite>sprites\spr_floorTorch</sprite>
+      <sprite>sprites\spr_treasureChest1</sprite>
+      <sprite>sprites\spr_treasureChest2</sprite>
+      <sprite>sprites\spr_finalTreasure</sprite>
+      <sprite>sprites\spr_dungeon1Portal1</sprite>
+      <sprite>sprites\spr_dungeon1Portal2</sprite>
+      <sprite>sprites\spr_dungeon2Portal1</sprite>
       <sprite>sprites\spr_skeletonUp</sprite>
       <sprite>sprites\spr_skeletonLeft</sprite>
       <sprite>sprites\spr_skeletonDown</sprite>
       <sprite>sprites\spr_skeletonRight</sprite>
-      <sprite>sprites\spr_dungeon1Portal1</sprite>
       <sprite>sprites\spr_skeletonAttackUp</sprite>
       <sprite>sprites\spr_skeletonAttackLeft</sprite>
       <sprite>sprites\spr_skeletonAttackDown</sprite>
@@ -152,6 +158,7 @@
     <script>scripts\MakeStartingTownMarkers.gml</script>
     <script>scripts\MakeTownDetails.gml</script>
     <script>scripts\MakeOceanDetails.gml</script>
+    <script>scripts\MakeDungeonDetails.gml</script>
     <script>scripts\TryNpcMarker.gml</script>
     <script>scripts\TryImportantMarker.gml</script>
     <script>scripts\TryAutoDialogue.gml</script>
@@ -170,6 +177,7 @@
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
     <script>scripts\SetRandomShipDestination.gml</script>
     <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
+    <script>scripts\NpcShipBossAdjustImageAndSpeed.gml</script>
     <script>scripts\DieLoseGold.gml</script>
     <script>scripts\MobMoveWander.gml</script>
     <script>scripts\SetMobWanderLocation.gml</script>
@@ -218,8 +226,8 @@
         <object>objects\t7</object>
         <object>objects\t8</object>
         <object>objects\t9</object>
-        <object>objects\t11</object>
         <object>objects\t10</object>
+        <object>objects\t11</object>
         <object>objects\t12</object>
         <object>objects\t13</object>
         <object>objects\t14</object>
@@ -241,6 +249,8 @@
       <object>objects\npcShip</object>
       <object>objects\merchantShip</object>
       <object>objects\specialShip1</object>
+      <object>objects\specialShip2</object>
+      <object>objects\specialShip3</object>
       <object>objects\warship</object>
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
@@ -253,6 +263,7 @@
     <objects name="dungeon">
       <object>objects\obj_player</object>
       <object>objects\obj_collider</object>
+      <object>objects\obj_player_collider</object>
       <object>objects\obj_lowerCollider</object>
       <object>objects\obj_teleport1</object>
       <object>objects\obj_teleport2</object>
@@ -261,10 +272,16 @@
       <object>objects\obj_celing</object>
       <object>objects\obj_rapier</object>
       <object>objects\floorTorch</object>
+      <object>objects\treasureChest</object>
+      <object>objects\treasureChest1</object>
+      <object>objects\treasureChest2</object>
+      <object>objects\finalTreasure</object>
       <object>objects\obj_mob</object>
       <object>objects\obj_mob_skeleton</object>
+      <object>objects\obj_mob_bright</object>
       <object>objects\dungeon1Portal1</object>
       <object>objects\dungeon1Portal2</object>
+      <object>objects\dungeon2Portal1</object>
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>

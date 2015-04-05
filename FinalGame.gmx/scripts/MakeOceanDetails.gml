@@ -5,7 +5,7 @@
 //That would actually trigger a warp back into the port town, thus making the game basically
 //unplayable.
 
-//Important: Gold goals are check for in navalMgr
+//Important: Gold goals are checked for in navalMgr
 
 TryAutoDialogue('oa1', true)
 
@@ -16,6 +16,9 @@ if ds_list_find_index(g_townMarkers, 'ship_spawn1') != -1 {
     new.image_angle = new.direction
 }
 
-//TODO Priest's ship
-
-//TODO Unlock final dungeon
+//Priest's ship
+if g_shipwreckUnlocked {
+    var new = instance_create(5904, 7504, specialShip2);
+    new.direction = 75
+    new.image_angle = new.direction
+}
