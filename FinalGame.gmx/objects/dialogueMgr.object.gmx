@@ -41,6 +41,12 @@ text = ''
 bNewPage = true
 
 
+//TODO maybe mess with this so messages can render across rooms; but it's low-priority
+g_msgText = ''
+g_msgAlpha = 0
+g_bMsgDisplayed = false
+
+
 //TODO uncomment; the 1 is temporary. Maybe.
 //alarmTime = room_speed / 20
 alarmTime = 1
@@ -54,6 +60,36 @@ if not ds_list_empty(g_dlg) {
     
     //We won't call alarm[0] here; we'll do it from the draw event instead, once we're sure
     //the dialogue box has faded in properly.
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if g_msgAlpha &gt; 0 {
+    g_msgAlpha -= .05
+    alarm[1] = room_speed / 20
+}
+else {
+    g_msgText = ''
+    g_bMsgDisplayed = false
 }
 </string>
           </argument>
@@ -105,14 +141,24 @@ if not ds_list_empty(g_dlg) {
                 }
                 exit   //Not really necessary, since we're changing rooms no matter what
             }
+            else if speaker == 'showmsg' {
+                g_msgText = string_copy(g_dlg[|0], 9, string_length(g_dlg[|0]) - 8)
+                ds_list_delete(g_dlg, 0)
+                g_msgAlpha = 0
+                g_bMsgDisplayed = false
+                alarm[1] = room_speed * 5
+                speaker = ''
+                alarm[0] = 1
+                exit
+            }
+            else if speaker == 'blankperson'
+                speaker = ''
             else if speaker == 'l' or speaker == 'L'
                 speaker = 'Lise'
             else if speaker == 'g' or speaker == 'G'
                 speaker = 'Grant'
             else if speaker == 'lu' or speaker == 'Lu'
                 speaker = 'Lucy'
-            else if speaker == 'blankperson'
-                speaker = ''
             
             if speaker != oldSpeaker {
                 speakerPortrait = GetPortrait(speaker)
@@ -301,7 +347,24 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bVisible {
+            <string>if g_msgText != '' {
+    if not g_bMsgDisplayed {
+        if g_msgAlpha &lt; 1
+            g_msgAlpha += .05
+        if g_msgAlpha &gt;= 1 {
+            g_msgAlpha = 1
+            g_bMsgDisplayed = true
+        }
+    }
+    draw_set_alpha(g_msgAlpha)
+    draw_set_font(fnt_default)
+    draw_set_colour(c_white)
+    draw_set_halign(fa_center)
+    draw_text(view_xview[0] + view_wview[0]/2, view_yview + 10, g_msgText)
+    draw_set_alpha(1)   //Prevent problems with rendering various other things
+}
+
+if bVisible {
     if bUsable {
         if alpha != 1 {
             alpha += .05

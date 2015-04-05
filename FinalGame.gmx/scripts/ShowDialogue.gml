@@ -384,6 +384,7 @@ ds_list_add(g_dlg, "goto ocean")
 }
 else {
 ds_list_add(g_dlg, "l Let's ask at the tavern if anyone has seen Priest.")
+ds_list_add(g_dlg, "showmsg Testing yeah!")
 RemoveMarker('t5a1')
 }
 }

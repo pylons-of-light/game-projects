@@ -320,6 +320,60 @@ direction += median(one, two, three)   //Adjust the direction based on the image
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="dungeon2Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastPortX = g_dungeon2X
+g_shipLastPortY = g_dungeon2Y
+g_shipLastPortDir = g_dungeon2Dir
+g_townId = 'finalShipBoss'
+room_goto(rm_finalShipBoss)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="dungeon1Port">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>g_shipLastPortX = g_dungeon1X
+g_shipLastPortY = g_dungeon1Y
+g_shipLastPortDir = g_dungeon1Dir
+g_townId = 'dungeon1'
+room_goto(rm_dungeon_test2)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="town5Port">
       <action>
         <libid>1</libid>

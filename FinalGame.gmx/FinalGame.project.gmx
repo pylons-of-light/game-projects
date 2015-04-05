@@ -90,6 +90,7 @@
       <sprite>sprites\spr_grantLeft</sprite>
       <sprite>sprites\spr_grantRight</sprite>
       <sprite>sprites\spr_collider</sprite>
+      <sprite>sprites\spr_lowerCollider</sprite>
       <sprite>sprites\spr_teleport1</sprite>
       <sprite>sprites\spr_teleport2</sprite>
       <sprite>sprites\spr_celing</sprite>
@@ -102,6 +103,7 @@
       <sprite>sprites\spr_skeletonLeft</sprite>
       <sprite>sprites\spr_skeletonDown</sprite>
       <sprite>sprites\spr_skeletonRight</sprite>
+      <sprite>sprites\spr_dungeon1Portal1</sprite>
       <sprite>sprites\spr_skeletonAttackUp</sprite>
       <sprite>sprites\spr_skeletonAttackLeft</sprite>
       <sprite>sprites\spr_skeletonAttackDown</sprite>
@@ -251,6 +253,7 @@
     <objects name="dungeon">
       <object>objects\obj_player</object>
       <object>objects\obj_collider</object>
+      <object>objects\obj_lowerCollider</object>
       <object>objects\obj_teleport1</object>
       <object>objects\obj_teleport2</object>
       <object>objects\obj_teleport_back1</object>
@@ -260,6 +263,8 @@
       <object>objects\floorTorch</object>
       <object>objects\obj_mob</object>
       <object>objects\obj_mob_skeleton</object>
+      <object>objects\dungeon1Portal1</object>
+      <object>objects\dungeon1Portal2</object>
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
@@ -272,6 +277,7 @@
     <room>rooms\rm_dungeon_test1</room>
     <room>rooms\rm_town</room>
     <room>rooms\rm_ocean</room>
+    <room>rooms\rm_final_ship_boss</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
