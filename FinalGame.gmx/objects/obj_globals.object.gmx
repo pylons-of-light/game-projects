@@ -164,6 +164,11 @@ g_shipArmor = 1.0   //Damage multiplier; this number will go down as armor grows
 MakeStartingTownMarkers()
 
 
+//Keep track of which chests have been picked up
+globalvar g_usedChests;
+g_usedChests = ds_list_create()
+
+
 //Global variables for messages (shown indirectly via dialogue manager)
 globalvar g_msgText, g_msgAlpha, g_bMsgDisplayed;
 g_msgText = ''

@@ -358,6 +358,8 @@ else {
           <argument>
             <kind>1</kind>
             <string>if g_msgText != '' {
+    if instance_exists(tutorialMgr)
+        alarm[1] = room_speed * 5   //Prevent this from vanishing yet.
     if not g_bMsgDisplayed {
         if g_msgAlpha &lt; 1
             g_msgAlpha += .05

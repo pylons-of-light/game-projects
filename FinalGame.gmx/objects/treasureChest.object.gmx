@@ -28,6 +28,11 @@
             <string>goldAmount = (10 + irandom(20)) * 10
 
 bFading = false
+
+chestID = string(room) + "|" + string(x) + "|" + string(y)
+
+if ds_list_find_index(g_usedChests, chestID) != -1
+    instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -53,8 +58,10 @@ bFading = false
             <string>if bFading {
     if image_alpha &gt; 0
         image_alpha -= 0.2
-    else
+    else {
+        ds_list_add(g_usedChests, chestID)
         instance_destroy()
+    }
 }
 </string>
           </argument>
