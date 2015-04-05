@@ -75,10 +75,11 @@ globalvar HALF_SHIP;
 HALF_SHIP = sprite_get_width(spr_shipMask) / 2
 
 
-//Variables
-
 //--- Port details (for the place to put the ship when it leaves a port)
+
 var shipDist = sprite_get_width(spr_playerShip);
+
+//Even though these are lowercase (sorry) they're really constants.
 //TODO maybe try to get these manually from the town port locations
 
 globalvar g_town1X, g_town1Y, g_town1Dir;
@@ -116,6 +117,15 @@ g_dungeon2Dir = 290
 g_dungeon2X = 1120 + lengthdir_x(shipDist, g_dungeon2Dir)
 g_dungeon2Y = 1456 + lengthdir_y(shipDist, g_dungeon2Dir)
 //---
+
+
+//Crew etc boosts
+globalvar CREW_SPEED_BOOST;
+CREW_SPEED_BOOST = .5
+
+
+
+//Variables
 
 globalvar g_town2Unlocked, g_town3Unlocked, g_town5Unlocked, g_finalIslandUnlocked;
 g_town2Unlocked = false
@@ -160,7 +170,7 @@ g_weaponDamageBase = 1
 g_weaponLevel = 1
 g_armorLevel = 1
 
-//Global stats for player ship
+//Global stats for player ship; subject to change
 globalvar g_shipMaxSpeed, g_cbFireDelay, g_shipArmor;
 g_shipMaxSpeed = 4
 g_cbFireDelay = 1000
@@ -202,10 +212,6 @@ g_bCrashedReefs = false
 
 globalvar g_firstTimeLoseSpecialShip1;
 g_firstTimeLoseSpecialShip1 = true
-
-//Crew etc boosts
-globalvar CREW_SPEED_BOOST;
-CREW_SPEED_BOOST = .5
 
 //Room persistence
 globalvar g_paused, g_pausedMusic, g_resuming;

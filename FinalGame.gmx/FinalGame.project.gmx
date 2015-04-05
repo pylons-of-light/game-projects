@@ -191,6 +191,8 @@
     <script>scripts\SetMobAvoidWall.gml</script>
     <script>scripts\PlayerAvatarDie.gml</script>
     <script>scripts\RestartGame.gml</script>
+    <script>scripts\SaveGame.gml</script>
+    <script>scripts\LoadGame.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>

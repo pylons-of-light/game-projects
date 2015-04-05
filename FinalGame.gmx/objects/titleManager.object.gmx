@@ -75,6 +75,9 @@ if file_exists("rains") {
     g_shipX = g_dungeon2X
     g_shipY = g_dungeon2Y
     g_shipDir = g_dungeon2Dir*/
+    g_shipX = g_dungeon1X
+    g_shipY = g_dungeon1Y
+    g_shipDir = g_dungeon1Dir
 }
 else {
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
@@ -154,16 +157,18 @@ if mouse_check_button_pressed(mb_left) {
     }
     
     if mouse_x &gt;= 222 and mouse_y &gt;= 445 and mouse_x &lt;= 329 and mouse_y &lt;= 479 {
-        if file_exists('save.ini') {
-            var bOverwrite = show_question("Overwrite previous save?");
-            if bOverwrite {
-                game_save('save.ini')
-                show_message("Game saved.")
-            }
-        }
+        if not ds_list_empty(g_dlg)
+            show_message("Can't save during dialogue sequence.")
         else {
-            game_save('save.ini')
-            show_message("Game saved.")
+            if file_exists('save.ini') {
+                var bOverwrite = show_question("Overwrite previous save?");
+                if bOverwrite {
+                    SaveGame()
+                }
+            }
+            else {
+                SaveGame()
+            }
         }
     }
     
@@ -171,8 +176,7 @@ if mouse_check_button_pressed(mb_left) {
         if file_exists('save.ini') {
             var bLoad = show_question("Load game, losing current progress?");
             if bLoad {
-                game_load('save.ini')
-                show_message("Save file loaded.")
+                LoadGame()
             }
         }
         else
