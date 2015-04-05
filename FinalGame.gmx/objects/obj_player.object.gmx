@@ -35,6 +35,9 @@ else {   //Must be in cave
 }
 image_speed = 0
 attacking = false
+maxHp = 3
+hp = 3
+dead = false
 </string>
           </argument>
         </arguments>
@@ -171,6 +174,36 @@ room_goto(rm_ocean)
 {
     obj_player.x = obj_teleport1.x;
     obj_player.y = obj_teleport1.y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var hcx = 32;
+var hcy = 32;
+draw_sprite(spr_healthContainer, 0, hcx, hcy);
+if(hp &gt; 0)
+{
+    var width = sprite_get_width(spr_healthBar) * ( obj_player.hp / obj_player.maxHp );
+    draw_sprite_part(spr_healthBar, 0, 0, 0, width, sprite_get_height(spr_healthBar), hcx, hcy);
 }
 </string>
           </argument>

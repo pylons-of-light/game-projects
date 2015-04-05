@@ -104,6 +104,14 @@
       <sprite>sprites\spr_skeletonDown</sprite>
       <sprite>sprites\spr_skeletonRight</sprite>
       <sprite>sprites\spr_dungeon1Portal1</sprite>
+      <sprite>sprites\spr_skeletonAttackUp</sprite>
+      <sprite>sprites\spr_skeletonAttackLeft</sprite>
+      <sprite>sprites\spr_skeletonAttackDown</sprite>
+      <sprite>sprites\spr_skeletonAttackRight</sprite>
+      <sprite>sprites\spr_healthContainer</sprite>
+      <sprite>sprites\spr_healthBar</sprite>
+      <sprite>sprites\spr_mobHPBubbleContainer</sprite>
+      <sprite>sprites\spr_mobHPBubbleColor</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -169,6 +177,9 @@
     <script>scripts\MobAggro.gml</script>
     <script>scripts\MobFollow.gml</script>
     <script>scripts\MobAttack.gml</script>
+    <script>scripts\PlayerTakeDamage.gml</script>
+    <script>scripts\SetMobAvoidWall.gml</script>
+    <script>scripts\PlayerAvatarDie.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -257,6 +268,7 @@
     </objects>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
+    <object>objects\obj_healthMgr</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title</room>
