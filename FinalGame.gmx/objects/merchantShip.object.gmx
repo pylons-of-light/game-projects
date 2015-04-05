@@ -89,6 +89,7 @@ gold = 10 * irandom_range(10, 50)
     exit
 
 //Don't do anything if a cannonball exists and we're outside the view.
+/*
 //if instance_number(cannonball) &gt; 9 {
 if instance_exists(cannonball) {
     if x &lt; view_xview[0] - HALF_SHIP or x &gt; view_xview[0] + view_wview[0] + HALF_SHIP
@@ -96,6 +97,7 @@ if instance_exists(cannonball) {
        exit
     }
 }
+*/
 
 event_inherited()
 

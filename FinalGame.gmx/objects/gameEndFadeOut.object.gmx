@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="1">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,54 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if g_resuming {
-    room_persistent = false
-    g_paused = false
-    g_pausedRoom = -1
-    g_resuming = false
-    
-    if g_pausedMusic != -1 {
-        if not sound_isplaying(g_pausedMusic) {
-            sound_stop_all()
-            sound_play(g_pausedMusic)
-            sound_loop(g_pausedMusic)
-        }
-    }
-    
-    g_pausedMusic = -1
-}
-else {
-    //Did we just arrive at a place where, on the previous playthrough, we had been persistent?
-    //If so, erase that nonsense. (Unfortunately, GameMaker doesn't let you remove a room's persistence
-    //from outside that room.)
-    var textIndex = ds_list_find_index(g_removePersistenceFrom, room);
-    if textIndex != -1 {
-        ds_list_delete(g_removePersistenceFrom, textIndex)
-        
-        if room_persistent {   //This should always happen, but we'll put the check here anyway.
-            //show_message('erasing old persistence')
-            room_persistent = false
-            room_restart()
-        }
-        /*else
-            show_message('that is odd')*/
-    }
-}
-
-if keyboard_check_pressed(vk_f11) {
-    if window_get_fullscreen() {
-        window_set_fullscreen(false)
-    }
-    else {
-        window_set_fullscreen(true)
-    }
-}
+            <string>alpha = 0
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="27">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,15 +48,15 @@ if keyboard_check_pressed(vk_f11) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_persistent = true
-g_paused = true
-g_pausedRoom = room
-g_resuming = false
-
-//TODORIGHTHERE set to current music
-g_pausedMusic = -1
-
-room_goto(rm_title)
+            <string>if alpha &lt; 1 {
+    alpha += .01
+    draw_set_alpha(alpha)
+    draw_set_colour(c_black)
+    draw_rectangle(view_xview[0], view_yview[0], view_xview[0]+view_wview[0], view_yview[0]+view_hview[0], false)
+    draw_set_alpha(1)
+}
+else
+    RestartGame()
 </string>
           </argument>
         </arguments>

@@ -40,6 +40,8 @@ speakerPortrait = -1
 text = ''
 bNewPage = true
 
+bExitingGame = false   //Exiting the game to the title screen
+
 
 //TODO maybe mess with this so messages can render across rooms; but it's low-priority
 g_msgText = ''
@@ -52,7 +54,7 @@ g_bMsgDisplayed = false
 alarmTime = 1
 
 if g_lastChangedRoomTime != 0
-    g_lastChangedRoomTime = current_time
+    g_lastChangedRoomTime = current_time - 300
 
 if not ds_list_empty(g_dlg) {
     bVisible = true
@@ -117,7 +119,19 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not ds_list_empty(g_dlg) {
+            <string>if bExitingGame
+    exit
+
+//If we're trapped in a persistence battle, wait until we have a usable room.
+//It's possible I should do this in a bunch of other situations in this game too,
+//but this is the crucial one. If we just came into a persistent room that's a relic of an old
+//playthrough, we don't want to remove critical dialogue from the dialogue queue.
+//UPDATE: This should never actually happen since gameMgr should take care of all this in its
+//Begin Step event, which should always run before this event. But still.
+if ds_list_find_index(g_removePersistenceFrom, room) != -1 and room_persistent
+    exit
+
+if not ds_list_empty(g_dlg) {
     if bNewPage = true {
         var pos = string_pos(' ', g_dlg[|0]);
         if pos == -1
@@ -128,6 +142,7 @@ else {
             
             //Common names
             if speaker == 'goto' {
+                speaker = ''
                 var portal = string_copy(g_dlg[|0], 6, string_length(g_dlg[|0]) - 5);
                 //show_message(portal)
                 
@@ -144,6 +159,12 @@ else {
                 }
                 else if portal == 'final_ship_boss' {
                     room_goto(rm_final_ship_boss)
+                }
+                else if portal == 'title' {
+                    bExitingGame = true
+                    //g_gameRestart = true
+                    instance_create(view_xview[0], view_yview[0], gameEndFadeOut)
+                    //room_goto(rm_title)
                 }
                 else {
                     g_townId = portal

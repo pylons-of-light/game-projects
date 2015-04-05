@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room != rm_final_ship_boss {
-    MakeOceanDetails()
-    
+            <string>MakeOceanDetails()
+
+if room != rm_final_ship_boss {
     //Note that this will take place immediately; it doesn't wait until any potential dialogue finishes.
     if g_firstTimeInOcean {
         instance_create(room_width, room_height, tutorialMgr)
