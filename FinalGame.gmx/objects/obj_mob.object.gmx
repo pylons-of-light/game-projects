@@ -47,6 +47,7 @@ rany = y
 walkSpeed = 2
 wanderDistance = 300
 wander = true
+avoidWall = true
 
 //sprites
 //defaults to skeleton, customized in on create of mob type
@@ -54,6 +55,29 @@ sprRight = spr_skeletonRight
 sprLeft = spr_skeletonLeft
 sprUp = spr_skeletonUp
 sprDown = spr_skeletonDown
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>avoidWall = true
 </string>
           </argument>
         </arguments>

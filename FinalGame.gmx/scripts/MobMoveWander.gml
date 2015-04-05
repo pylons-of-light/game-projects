@@ -17,7 +17,12 @@ with argument0
     //change wander direction if close to a collider
     if(distance_to_object(obj_collider) <= 25)    
     {
-        SetMobWanderLocation(self)
+        if(avoidWall == true)
+        {   
+            avoidWall = false
+            alarm[10] = room_speed * 1
+            SetMobAvoidWall(self)
+        }
     }
        
     /*
