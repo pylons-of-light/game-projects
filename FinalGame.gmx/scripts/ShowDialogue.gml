@@ -134,6 +134,7 @@ ds_list_add(g_dlg, "Citizen Years ago, it was a lively place. Always flickering 
 ds_list_add(g_dlg, "Citizen Then, one night, everything went horribly wrong.")
 ds_list_add(g_dlg, "Citizen Mildred was attempting a channeling spell for the amusement of the partygoers.")
 ds_list_add(g_dlg, "Citizen Tales say that she took on the mind and spirit of the northwestern wind -- the fiercest spirit of the sea, who whips up all the seasonal hurricanes and tempests, to tempt sailors to their doom.")
+ds_list_add(g_dlg, "At this point, skeletons rose from their graves and came to join the fun.")
 ds_list_add(g_dlg, "Citizen None left the party alive.")
 ds_list_add(g_dlg, "Citizen And from that day onward, the atmosphere of the place diminished considerably. No one goes there these days except pidgeons, poets, and madmen.")
 ds_list_add(g_dlg, "g Is there any treasure there?")
