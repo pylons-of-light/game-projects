@@ -1,7 +1,9 @@
-ini_open('save_data_structures.ini')
+ini_open('save.ini')
 
+/*
 var str = ds_list_write(g_removePersistenceFrom)
 ini_write_string("Lists", "g_removePersistenceFrom", str)
+*/
 
 str = ds_list_write(g_townMarkers)
 ini_write_string("Lists", "g_townMarkers", str)
@@ -11,6 +13,10 @@ ini_write_string("Lists", "g_dlg", str)
 
 str = ds_list_write(g_usedChests)
 ini_write_string("Lists", "g_usedChests", str)
+
+
+
+
 
 ini_close()
 

@@ -54,7 +54,9 @@ g_bMsgDisplayed = false
 alarmTime = 1
 
 if g_lastChangedRoomTime != 0
-    g_lastChangedRoomTime = current_time - 300
+    g_lastChangedRoomTime = current_time
+else
+    g_lastChangedRoomTime = current_time + 300   //Mandate a pause
 
 if not ds_list_empty(g_dlg) {
     bVisible = true
