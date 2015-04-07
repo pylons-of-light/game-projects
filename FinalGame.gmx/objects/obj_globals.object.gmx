@@ -74,6 +74,9 @@ GENERATE_RAND_LOCATIONS = 10000   //When randomly placing spawned objects, make 
 globalvar HALF_SHIP;
 HALF_SHIP = sprite_get_width(spr_shipMask) / 2
 
+globalvar MINIMAP_MARKER_RANGE;
+MINIMAP_MARKER_RANGE = 1200   //Somewhat arbitrary number (basically, "somewhat nearby" ships will be shown)
+
 
 //--- Port details (for the place to put the ship when it leaves a port)
 
@@ -185,10 +188,11 @@ g_usedChests = ds_list_create()
 
 
 //Global variables for messages (shown indirectly via dialogue manager)
-globalvar g_msgText, g_msgAlpha, g_bMsgDisplayed;
+globalvar g_msgText, g_msgAlpha, g_bMsgDisplayed, g_msgTextCached;
 g_msgText = ''
 g_msgAlpha = 0
 g_bMsgDisplayed = false
+g_msgTextCached = ''
 
 
 //Event flags and such

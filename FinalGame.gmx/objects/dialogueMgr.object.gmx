@@ -179,6 +179,7 @@ if not ds_list_empty(g_dlg) {
                 ds_list_delete(g_dlg, 0)
                 g_msgAlpha = 0
                 g_bMsgDisplayed = false
+                g_msgTextCached = g_msgText
                 alarm[1] = room_speed * 5
                 speaker = ''
                 alarm[0] = 1

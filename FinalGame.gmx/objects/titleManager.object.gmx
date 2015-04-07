@@ -35,8 +35,13 @@
 
 draw_set_alpha(1)
 
+//Unlock all towns.
+//TODO remove.
+g_town2Unlocked = true
+g_town3Unlocked = true
+g_town5Unlocked = true
 
-if file_exists("rains") {
+if file_exists("rainsREMOVED") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
@@ -82,7 +87,7 @@ if file_exists("rains") {
 else {
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd2a1'))
-    room_goto_next()
+    //room_goto_next()
 }
 
 if g_hitNewGameButton {
@@ -157,7 +162,9 @@ if mouse_check_button_pressed(mb_left) {
     }
     
     if mouse_x &gt;= 222 and mouse_y &gt;= 445 and mouse_x &lt;= 329 and mouse_y &lt;= 479 {
-        if not ds_list_empty(g_dlg)
+        if g_pausedRoom != rm_ocean
+            show_message("You can only save from the world map.")
+        else if not ds_list_empty(g_dlg)
             show_message("Can't save during dialogue sequence.")
         else {
             if file_exists('save.ini') {

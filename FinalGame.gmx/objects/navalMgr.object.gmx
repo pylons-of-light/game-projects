@@ -36,6 +36,9 @@ if room != rm_final_ship_boss {
     
     alarm[0] = room_speed * 1
 }
+
+if g_msgText == '' and g_msgTextCached != ''
+    ShowDialogue('msg_text_cached')
 </string>
           </argument>
         </arguments>

@@ -9,7 +9,11 @@ bUsable = true
 //------ Misc. events ------
 //--------------------------
 
-if argument0 == 'reef_crash' {
+if argument0 == 'msg_text_cached' {
+    ds_list_add(g_dlg, "showmsg " + g_msgTextCached)
+}
+
+else if argument0 == 'reef_crash' {
     ds_list_add(g_dlg, "g How about we NOT crash into things?")
 }
 
@@ -233,6 +237,8 @@ ds_list_add(g_townMarkers, 'gold_goal1')
 
 //The first ocean goal event.
 else if argument0 == 'gold_goal1_reached' {
+g_msgTextCached = ''
+
 ds_list_add(g_dlg, "l Grant, how are we doing?")
 ds_list_add(g_dlg, "g Well, we've taken a few hits, there's no denying it. We're listing a little in the water.")
 ds_list_add(g_dlg, "l It'll take forever to pay Alan back like this, and half our funds will go towards ship repairs. We need a better plan.")
@@ -305,6 +311,8 @@ ds_list_add(g_dlg, "l Let's go to Brax and see if he repeats the voyage.")
 }
 
 else if argument0 == 'ship_spawn1_defeated' {
+g_msgTextCached = ''
+
 ds_list_add(g_dlg, "l Anyone aboard? We're coming over.")
 ds_list_add(g_dlg, "Betsy Go away!")
 ds_list_add(g_dlg, "l Who are you?")
@@ -412,6 +420,7 @@ ds_list_add(g_dlg, "l There's no reason to be here. Let's try not to draw attent
 ds_list_add(g_dlg, "goto ocean")
 }
 else {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "l Let's ask at the tavern if anyone has seen Priest.")
 RemoveMarker('t5a1')
 }
@@ -455,6 +464,7 @@ ds_list_add(g_dlg, "l Oh. Well, let's leave.")
 ds_list_add(g_dlg, "goto ocean")
 }
 else {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "l I'll check with the harbor-master and see if anyone's heard from the Marilla.")
 ds_list_add(g_dlg, "l ...")
 ds_list_add(g_dlg, "l That's weird. No ship by that name has come into harbor.")
@@ -506,6 +516,7 @@ TryImportantMarker('v3i2', 547, 250)
 }
 
 else if argument0 == 'v3i2' {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "g Excuse me.")
 ds_list_add(g_dlg, "lu Well, aren't you cute.")
 ds_list_add(g_dlg, "l We're looking for information on a man named Frederick Priest. He would have been sailing here on a ship called the Mirella.")
@@ -540,6 +551,7 @@ g_shipwreckUnlocked = true
 }
 
 else if argument0 == 'ship_examine_wreck' {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "l Look there. Do you see what I see?")
 ds_list_add(g_dlg, "g It's a ship.")
 ds_list_add(g_dlg, "l Not just any ship. Look at the masthead. That's the Mirella. Of all things! It was sitting here this entire time.")
@@ -660,6 +672,8 @@ ds_list_add(g_townMarkers, 'boss_ship_intro')
 //TODO intermediary stuff
 
 else if argument0 == 'boss_ship_intro' {
+g_msgTextCached = ''
+
 ds_list_add(g_dlg, "Bright Lucy! What are you doing on board my ship?")
 ds_list_add(g_dlg, "goto title")   //TODO remove
 ds_list_add(g_dlg, "lu Oh well. I guess you would have noticed eventually.")
@@ -751,8 +765,6 @@ ds_list_add(g_dlg, "lu Lise and Grant seem like they'll be good partners. I'll p
 ds_list_add(g_dlg, "lu But as for this?")
 ds_list_add(g_dlg, "lu Heh. I'll never tell.")
 ds_list_add(g_dlg, "goto title")
-
-//TODO end game
 }
 
 

@@ -60,14 +60,17 @@ drawHeight = sprite_get_height(spr_minimap)
     draw_sprite(spr_minimapPlayer, 0, drawX + drawWidth * (playerShip.x / room_width),
                                       drawY + drawHeight * (playerShip.y / room_height))
     
-    //TODO maybe remove or limit to NPCs within distance of player
+    //Note that this limits markers to special NPCs or NPCs within a certain distance of the player's ship.
     with(npcShip) {
-        //if distance_to_object(playerShip) &lt; 600   //Largely arbitrary number (somewhat similar to half the view size)
-        if true {
-            var sprite = spr_minimapNPC;
-            var objName = object_get_name(object_index);
-            if objName != 'merchantShip' and objName != 'warship'
+        //if true {
+        var objName = object_get_name(object_index);
+        var bSpecialShip = objName != 'merchantShip' and objName != 'warship';
+        if distance_to_object(playerShip) &lt;= MINIMAP_MARKER_RANGE or bSpecialShip {
+            var sprite;
+            if bSpecialShip
                 sprite = spr_minimapNPCImportant
+            else
+                sprite = spr_minimapNPC
             
             draw_sprite(sprite, 0, other.drawX + other.drawWidth * (x / room_width),
                                    other.drawY + other.drawHeight * (y / room_height))
