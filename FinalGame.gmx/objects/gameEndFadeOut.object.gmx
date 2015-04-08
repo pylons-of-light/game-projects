@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
-  <parentName>obj_collider</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,20 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>goldAmount = (10 + irandom(20)) * 10
-
-bFading = false
-
-chestID = string(room) + "|" + string(x) + "|" + string(y)
-
-if ds_list_find_index(g_usedChests, chestID) != -1
-    instance_destroy()
+            <string>alpha = 0
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,14 +48,15 @@ if ds_list_find_index(g_usedChests, chestID) != -1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if bFading {
-    if image_alpha &gt; 0
-        image_alpha -= 0.2
-    else {
-        ds_list_add(g_usedChests, chestID)
-        instance_destroy()
-    }
+            <string>if alpha &lt; 1 {
+    alpha += .01
+    draw_set_alpha(alpha)
+    draw_set_colour(c_black)
+    draw_rectangle(view_xview[0], view_yview[0], view_xview[0]+view_wview[0], view_yview[0]+view_hview[0], false)
+    draw_set_alpha(1)
 }
+else
+    RestartGame()
 </string>
           </argument>
         </arguments>
@@ -80,8 +74,5 @@ if ds_list_find_index(g_usedChests, chestID) != -1
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>16,16</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

@@ -30,6 +30,11 @@
 //from being recreated when going back to a previous room, but it won't stop it from being
 //recreated for each separate room.
 
+if not g_gameRestart
+    exit
+
+g_gameRestart = false
+
 
 //Constants
 
@@ -69,11 +74,15 @@ GENERATE_RAND_LOCATIONS = 10000   //When randomly placing spawned objects, make 
 globalvar HALF_SHIP;
 HALF_SHIP = sprite_get_width(spr_shipMask) / 2
 
+globalvar MINIMAP_MARKER_RANGE;
+MINIMAP_MARKER_RANGE = 1200   //Somewhat arbitrary number (basically, "somewhat nearby" ships will be shown)
 
-//Variables
 
 //--- Port details (for the place to put the ship when it leaves a port)
+
 var shipDist = sprite_get_width(spr_playerShip);
+
+//Even though these are lowercase (sorry) they're really constants.
 //TODO maybe try to get these manually from the town port locations
 
 globalvar g_town1X, g_town1Y, g_town1Dir;
@@ -111,6 +120,15 @@ g_dungeon2Dir = 290
 g_dungeon2X = 1120 + lengthdir_x(shipDist, g_dungeon2Dir)
 g_dungeon2Y = 1456 + lengthdir_y(shipDist, g_dungeon2Dir)
 //---
+
+
+//Crew etc boosts
+globalvar CREW_SPEED_BOOST;
+CREW_SPEED_BOOST = .5
+
+
+
+//Variables
 
 globalvar g_town2Unlocked, g_town3Unlocked, g_town5Unlocked, g_finalIslandUnlocked;
 g_town2Unlocked = false
@@ -155,7 +173,7 @@ g_weaponDamageBase = 1
 g_weaponLevel = 1
 g_armorLevel = 1
 
-//Global stats for player ship
+//Global stats for player ship; subject to change
 globalvar g_shipMaxSpeed, g_cbFireDelay, g_shipArmor;
 g_shipMaxSpeed = 4
 g_cbFireDelay = 1000
@@ -164,11 +182,17 @@ g_shipArmor = 1.0   //Damage multiplier; this number will go down as armor grows
 MakeStartingTownMarkers()
 
 
+//Keep track of which chests have been picked up
+globalvar g_usedChests;
+g_usedChests = ds_list_create()
+
+
 //Global variables for messages (shown indirectly via dialogue manager)
-globalvar g_msgText, g_msgAlpha, g_bMsgDisplayed;
+globalvar g_msgText, g_msgAlpha, g_bMsgDisplayed, g_msgTextCached;
 g_msgText = ''
 g_msgAlpha = 0
 g_bMsgDisplayed = false
+g_msgTextCached = ''
 
 
 //Event flags and such
@@ -181,7 +205,9 @@ g_finalCinematic = false
 globalvar g_bossShipBeaten;
 g_bossShipBeaten = false
 
-globalvar g_firstTimeInOcean, g_firstTimeInDungeon;
+globalvar g_firstShipDeath, g_showFirstShipDeathMsg, g_firstTimeInOcean, g_firstTimeInDungeon;
+g_firstShipDeath = true
+g_showFirstShipDeathMsg = false
 g_firstTimeInOcean = true
 g_firstTimeInDungeon = true
 
@@ -191,9 +217,12 @@ g_bCrashedReefs = false
 globalvar g_firstTimeLoseSpecialShip1;
 g_firstTimeLoseSpecialShip1 = true
 
-//Crew etc boosts
-globalvar CREW_SPEED_BOOST;
-CREW_SPEED_BOOST = .5
+//Room persistence
+globalvar g_paused, g_pausedMusic, g_resuming;
+g_paused = false
+//Note that g_pausedRoom and g_removePersistenceFrom have been moved, so they are not affected here.
+g_pausedMusic = -1
+g_resuming = false
 </string>
           </argument>
         </arguments>

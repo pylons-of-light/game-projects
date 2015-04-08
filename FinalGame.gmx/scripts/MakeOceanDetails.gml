@@ -7,6 +7,13 @@
 
 //Important: Gold goals are checked for in navalMgr
 
+
+if room == rm_final_ship_boss {
+    TryAutoDialogue('boss_ship_intro', true)
+    exit
+}
+
+
 TryAutoDialogue('oa1', true)
 
 //Saintalmain's ship

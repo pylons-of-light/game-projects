@@ -33,8 +33,15 @@
 //C:\Users\USERNAME\AppData\Local\FinalGame
 //(on Windows 7 anyway) named 'rains'
 
+draw_set_alpha(1)
 
-if file_exists("rainsf") {
+//Unlock all towns.
+//TODO remove.
+g_town2Unlocked = true
+g_town3Unlocked = true
+g_town5Unlocked = true
+
+if file_exists("rainsREMOVED") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
@@ -47,7 +54,9 @@ if file_exists("rainsf") {
     g_town2Unlocked = true
     g_town3Unlocked = true
     g_town5Unlocked = true
+    
     g_finalIslandUnlocked = true
+    ds_list_add(g_townMarkers, 'boss_ship_intro')
     
     ds_list_add(g_townMarkers, 't3a2')
     
@@ -55,23 +64,53 @@ if file_exists("rainsf") {
     
     //ds_list_add(g_townMarkers, 'gold_goal1')
     //ds_list_add(g_townMarkers, 'ship_spawn1')
-    //ds_list_add(g_townMarkers, 'v1i1')
+    ds_list_add(g_townMarkers, 'v1i1')
+    
+    //ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
+    //ds_list_delete(g_townMarke2rs, ds_list_find_index(g_townMarkers, 'd2a1'))
     
     //room_goto(rm_town)
     //room_goto(rm_ocean)
-    room_goto(rm_cave)
-    
+    //room_goto(rm_cave)
+    /*
     g_shipX = g_town3X
     g_shipY = g_town3Y
     g_shipDir = g_town3Dir
     
     g_shipX = g_dungeon2X
     g_shipY = g_dungeon2Y
-    g_shipDir = g_dungeon2Dir
+    g_shipDir = g_dungeon2Dir*/
+    g_shipX = g_dungeon1X
+    g_shipY = g_dungeon1Y
+    g_shipDir = g_dungeon1Dir
 }
-else
-    room_goto_next()
+else {
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd2a1'))
+    //room_goto_next()
+}
 
+if g_hitNewGameButton {
+    g_hitNewGameButton = false
+    
+    //Note that this must be tested even if g_paused is true, since g_paused is currently
+    //reset when the game is restarted (by whatever means). As such, g_pausedRoom might still
+    //hold a persistent room.
+    if g_pausedRoom != -1 {
+        if ds_list_find_index(g_removePersistenceFrom, g_pausedRoom) == -1
+            ds_list_add(g_removePersistenceFrom, g_pausedRoom)
+    }
+    
+    g_paused = false
+    g_pausedRoom = -1
+    g_pausedMusic = -1
+    g_resuming = false
+    room_goto(rm_town)   //Restart the game
+}
+
+if g_paused {
+    instance_create(400, 460, titleNewGameButton)
+}
 </string>
           </argument>
         </arguments>
@@ -98,14 +137,58 @@ else
     exit
 
 if mouse_check_button_pressed(mb_left) {
-    if mouse_x &gt;= 222 and mouse_y &gt;= 402 and mouse_x &lt;= 338 and mouse_y &lt;= 444
-        a = 1   //TODO start
+    if mouse_x &gt;= 222 and mouse_y &gt;= 402 and mouse_x &lt;= 338 and mouse_y &lt;= 444 {
+        if not g_paused {
+            //This should never actually be true. If RestartGame() is never run from a persistent
+            //room, g_pausedRoom will be -1 here. Even hitting the New Game button won't have any
+            //effect, since that automatically triggers the start of a new game -- we don't have
+            //to wait to click this other button here.
+            if g_pausedRoom != -1 {
+                if ds_list_find_index(g_removePersistenceFrom, g_pausedRoom) == -1
+                    ds_list_add(g_removePersistenceFrom, g_pausedRoom)
+            }
+            //We shouldn't actually need to reset most of this stuff, but...
+            g_paused = false
+            g_pausedRoom = -1   //This definitely should probably be set, though.
+            g_pausedMusic = -1
+            g_resuming = false
+            
+            room_goto(rm_town)   //Start the game
+        }
+        else {
+            g_resuming = true
+            room_goto(g_pausedRoom)
+        }
+    }
     
-    if mouse_x &gt;= 222 and mouse_y &gt;= 445 and mouse_x &lt;= 329 and mouse_y &lt;= 479
-        a = 1   //TODO save
+    if mouse_x &gt;= 222 and mouse_y &gt;= 445 and mouse_x &lt;= 329 and mouse_y &lt;= 479 {
+        if g_pausedRoom != rm_ocean
+            show_message("You can only save from the world map.")
+        else if not ds_list_empty(g_dlg)
+            show_message("Can't save during dialogue sequence.")
+        else {
+            if file_exists('save.ini') {
+                var bOverwrite = show_question("Overwrite previous save?");
+                if bOverwrite {
+                    SaveGame()
+                }
+            }
+            else {
+                SaveGame()
+            }
+        }
+    }
     
-    if mouse_x &gt;= 222 and mouse_y &gt;= 480 and mouse_x &lt;= 338 and mouse_y &lt;= 516
-        a = 1   //TODO load
+    if mouse_x &gt;= 222 and mouse_y &gt;= 480 and mouse_x &lt;= 338 and mouse_y &lt;= 516 {
+        if file_exists('save.ini') {
+            var bLoad = show_question("Load game, losing current progress?");
+            if bLoad {
+                LoadGame()
+            }
+        }
+        else
+            show_message("No save file found.")
+    }
     
     if mouse_x &gt;= 222 and mouse_y &gt;= 517 and mouse_x &lt;= 391 and mouse_y &lt;= 554
         instance_create(0, 0, controlsImg)
@@ -116,6 +199,29 @@ if mouse_check_button_pressed(mb_left) {
     if mouse_x &gt;= 222 and mouse_y &gt;= 594 and mouse_x &lt;= 332 and mouse_y &lt;= 632
         game_end()
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto_next()
 </string>
           </argument>
         </arguments>

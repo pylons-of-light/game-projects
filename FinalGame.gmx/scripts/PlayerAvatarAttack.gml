@@ -11,20 +11,20 @@ with obj_player{
     tempYOffset = tempXOffset;
     
     if(direction == g_RIGHT){
-        tempXOffset += sprite_width / 2 - 20;
+        tempXOffset += sprite_width / 2 - 15;
         tempYOffset += -10;
         attackSprite = spr_attackRight;
     } else if(direction == g_LEFT) {
-        tempXOffset += sprite_width / 2 - 55;
+        tempXOffset += sprite_width / 2 - 60;
         tempYOffset += -10;
         attackSprite = spr_attackLeft;      
     } else if(direction == g_UP) {
         tempXOffset += sprite_width / 2 - 30;
-        tempYOffset += -10;
+        tempYOffset += -20;
         attackSprite = spr_attackUp;
     } else if(direction == g_DOWN) {
         tempXOffset += sprite_width / 2 - 30;
-        tempYOffset += 10;
+        tempYOffset += 20;
         attackSprite = spr_attackDown;    
     }
     

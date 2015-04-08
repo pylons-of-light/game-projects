@@ -7,7 +7,103 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if g_resuming {
+    room_persistent = false
+    g_paused = false
+    g_pausedRoom = -1
+    g_resuming = false
+    
+    if g_pausedMusic != -1 {
+        if not sound_isplaying(g_pausedMusic) {
+            sound_stop_all()
+            sound_play(g_pausedMusic)
+            sound_loop(g_pausedMusic)
+        }
+    }
+    
+    g_pausedMusic = -1
+}
+else {
+    //Did we just arrive at a place where, on the previous playthrough, we had been persistent?
+    //If so, erase that nonsense. (Unfortunately, GameMaker doesn't let you remove a room's persistence
+    //from outside that room.)
+    var textIndex = ds_list_find_index(g_removePersistenceFrom, room);
+    if textIndex != -1 {
+        ds_list_delete(g_removePersistenceFrom, textIndex)
+        
+        if room_persistent {   //This should always happen, but we'll put the check here anyway.
+            //show_message('erasing old persistence')
+            room_persistent = false
+            room_restart()
+        }
+        /*else
+            show_message('that is odd')*/
+    }
+}
+
+if keyboard_check_pressed(vk_f11) {
+    if window_get_fullscreen() {
+        window_set_fullscreen(false)
+    }
+    else {
+        window_set_fullscreen(true)
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_persistent = true
+g_paused = true
+g_pausedRoom = room
+g_resuming = false
+
+//TODORIGHTHERE set to current music
+g_pausedMusic = -1
+
+room_goto(rm_title)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

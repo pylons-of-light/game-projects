@@ -133,6 +133,8 @@
     </sprites>
     <sprite>sprites\spr_empty</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
+    <sprite>sprites\spr_titleNewGameButton</sprite>
+    <sprite>sprites\spr_titleNewGameButtonHover</sprite>
     <sprite>sprites\spr_controls</sprite>
     <sprite>sprites\spr_credits</sprite>
     <sprite>sprites\spr_controlsOcean</sprite>
@@ -188,6 +190,9 @@
     <script>scripts\PlayerTakeDamage.gml</script>
     <script>scripts\SetMobAvoidWall.gml</script>
     <script>scripts\PlayerAvatarDie.gml</script>
+    <script>scripts\RestartGame.gml</script>
+    <script>scripts\SaveGame.gml</script>
+    <script>scripts\LoadGame.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -197,6 +202,7 @@
     <font>fonts\fnt_hud</font>
   </fonts>
   <objects name="objects">
+    <object>objects\setupMgr</object>
     <object>objects\obj_globals</object>
     <object>objects\titleManager</object>
     <object>objects\gameMgr</object>
@@ -279,15 +285,18 @@
       <object>objects\obj_mob</object>
       <object>objects\obj_mob_skeleton</object>
       <object>objects\obj_mob_bright</object>
+      <object>objects\obj_healthMgr</object>
       <object>objects\dungeon1Portal1</object>
       <object>objects\dungeon1Portal2</object>
       <object>objects\dungeon2Portal1</object>
     </objects>
+    <object>objects\titleNewGameButton</object>
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
-    <object>objects\obj_healthMgr</object>
+    <object>objects\gameEndFadeOut</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_first</room>
     <room>rooms\rm_title</room>
     <room>rooms\rm_cave</room>
     <room>rooms\rm_dungeon_test2</room>

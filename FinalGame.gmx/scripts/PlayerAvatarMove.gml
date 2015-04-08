@@ -71,7 +71,7 @@ or keyboard_check_released(ord('S')) {
 if bKeyDirectionIsPressed {
     direction = keyDirection
     speed = g_AVATAR_SPEED
-    image_speed = .3   //Start animation
+    image_speed = .15   //Start animation
 }
 
 //Set speed and direction when key released

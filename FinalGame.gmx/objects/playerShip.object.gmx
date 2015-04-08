@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room == rm_final_ship_boss {
+            <string>if g_showFirstShipDeathMsg {
+    ShowDialogue('first_ship_death')
+    g_showFirstShipDeathMsg = false
+}
+
+if room == rm_final_ship_boss {
     if not g_finalCinematic {
         x = 320
         y = 700
@@ -134,6 +139,12 @@ if bDying {
         g_shipDir = g_shipLastPortDir
         DieLoseGold()
         g_shipHealth = SHIP_HEALTH_MAX
+        
+        if g_firstShipDeath {
+            g_showFirstShipDeathMsg = true
+            g_firstShipDeath = false
+        }
+        
         room_restart()
     }
 }

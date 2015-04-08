@@ -9,8 +9,17 @@ bUsable = true
 //------ Misc. events ------
 //--------------------------
 
-if argument0 == 'reef_crash' {
+if argument0 == 'msg_text_cached' {
+    ds_list_add(g_dlg, "showmsg " + g_msgTextCached)
+}
+
+else if argument0 == 'reef_crash' {
     ds_list_add(g_dlg, "g How about we NOT crash into things?")
+}
+
+else if argument0 == 'first_ship_death' {
+    ds_list_add(g_dlg, "l We lost some gold in that battle.")
+    ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
 }
 
 //----------------------------
@@ -129,6 +138,7 @@ ds_list_add(g_dlg, "Citizen Years ago, it was a lively place. Always flickering 
 ds_list_add(g_dlg, "Citizen Then, one night, everything went horribly wrong.")
 ds_list_add(g_dlg, "Citizen Mildred was attempting a channeling spell for the amusement of the partygoers.")
 ds_list_add(g_dlg, "Citizen Tales say that she took on the mind and spirit of the northwestern wind -- the fiercest spirit of the sea, who whips up all the seasonal hurricanes and tempests, to tempt sailors to their doom.")
+ds_list_add(g_dlg, "At this point, skeletons rose from their graves and came to join the fun.")
 ds_list_add(g_dlg, "Citizen None left the party alive.")
 ds_list_add(g_dlg, "Citizen And from that day onward, the atmosphere of the place diminished considerably. No one goes there these days except pidgeons, poets, and madmen.")
 ds_list_add(g_dlg, "g Is there any treasure there?")
@@ -144,7 +154,7 @@ ds_list_add(g_dlg, "Drunkard I hear there's a skilled mercenary in Brax who's lo
 //------ Mildred's Keep ------
 //----------------------------
 
-else if argument0 == 'd1_a1' {
+else if argument0 == 'd1a1' {
 ds_list_add(g_dlg, "l This looks like fun.")
 ds_list_add(g_dlg, "g You go first.")
 }
@@ -227,6 +237,8 @@ ds_list_add(g_townMarkers, 'gold_goal1')
 
 //The first ocean goal event.
 else if argument0 == 'gold_goal1_reached' {
+g_msgTextCached = ''
+
 ds_list_add(g_dlg, "l Grant, how are we doing?")
 ds_list_add(g_dlg, "g Well, we've taken a few hits, there's no denying it. We're listing a little in the water.")
 ds_list_add(g_dlg, "l It'll take forever to pay Alan back like this, and half our funds will go towards ship repairs. We need a better plan.")
@@ -299,6 +311,8 @@ ds_list_add(g_dlg, "l Let's go to Brax and see if he repeats the voyage.")
 }
 
 else if argument0 == 'ship_spawn1_defeated' {
+g_msgTextCached = ''
+
 ds_list_add(g_dlg, "l Anyone aboard? We're coming over.")
 ds_list_add(g_dlg, "Betsy Go away!")
 ds_list_add(g_dlg, "l Who are you?")
@@ -406,8 +420,8 @@ ds_list_add(g_dlg, "l There's no reason to be here. Let's try not to draw attent
 ds_list_add(g_dlg, "goto ocean")
 }
 else {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "l Let's ask at the tavern if anyone has seen Priest.")
-ds_list_add(g_dlg, "showmsg Testing yeah!")
 RemoveMarker('t5a1')
 }
 }
@@ -450,6 +464,7 @@ ds_list_add(g_dlg, "l Oh. Well, let's leave.")
 ds_list_add(g_dlg, "goto ocean")
 }
 else {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "l I'll check with the harbor-master and see if anyone's heard from the Marilla.")
 ds_list_add(g_dlg, "l ...")
 ds_list_add(g_dlg, "l That's weird. No ship by that name has come into harbor.")
@@ -501,6 +516,7 @@ TryImportantMarker('v3i2', 547, 250)
 }
 
 else if argument0 == 'v3i2' {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "g Excuse me.")
 ds_list_add(g_dlg, "lu Well, aren't you cute.")
 ds_list_add(g_dlg, "l We're looking for information on a man named Frederick Priest. He would have been sailing here on a ship called the Mirella.")
@@ -535,6 +551,7 @@ g_shipwreckUnlocked = true
 }
 
 else if argument0 == 'ship_examine_wreck' {
+g_msgTextCached = ''
 ds_list_add(g_dlg, "l Look there. Do you see what I see?")
 ds_list_add(g_dlg, "g It's a ship.")
 ds_list_add(g_dlg, "l Not just any ship. Look at the masthead. That's the Mirella. Of all things! It was sitting here this entire time.")
@@ -649,12 +666,16 @@ ds_list_add(g_dlg, "l It's surprisingly simple. Sail northwest for about as far 
 ds_list_add(g_dlg, "showmsg Sail northwest to The Cape of Lost Hope.")
 
 g_finalIslandUnlocked = true
+ds_list_add(g_townMarkers, 'boss_ship_intro')
 }
 
 //TODO intermediary stuff
 
 else if argument0 == 'boss_ship_intro' {
+g_msgTextCached = ''
+
 ds_list_add(g_dlg, "Bright Lucy! What are you doing on board my ship?")
+ds_list_add(g_dlg, "goto title")   //TODO remove
 ds_list_add(g_dlg, "lu Oh well. I guess you would have noticed eventually.")
 ds_list_add(g_dlg, "Bright What the hell are you doing?")
 ds_list_add(g_dlg, "lu Oh, I was just taking care of your cannons.")
@@ -664,7 +685,8 @@ ds_list_add(g_dlg, "Bright I see. I guess you've grown sick of sharing treasure 
 ds_list_add(g_dlg, "lu With you, yeah. Sorry. After what you did to Priest, it's just too dangerous. I've got to take care of you before you take care of me, you know?")
 ds_list_add(g_dlg, "Bright Well, it's not like I wasn't planning on killing you eventually. Now die!")
 ds_list_add(g_dlg, "g What's going on over there?")
-ds_list_add(g_dlg, "l It looks like Lucy's disabling Bright's cannons. But she must have been disrupted. Only about half of those cannons are out of commision, and that ship is gigantic. It's still going to be a dangerous battle. Stay low. We're going in.")
+ds_list_add(g_dlg, "l It looks like Lucy's disabling Bright's cannons. But she must have been disrupted.")
+ds_list_add(g_dlg, "l Only about half of those cannons are out of commision, and that ship is gigantic. It's still going to be a dangerous battle. Stay low. We're going in!")
 }
 
 else if argument0 == 'boss_ship_defeated' {
@@ -674,14 +696,17 @@ ds_list_add(g_dlg, "lu I jumped overboard. So did Robin. He already has a residu
 ds_list_add(g_dlg, "l Where's the entrance?")
 ds_list_add(g_dlg, "lu It's right over there. Hidden in those rocks, you see?")
 ds_list_add(g_dlg, "l No.")
-ds_list_add(g_dlg, "lu I'll show you, come on.")
+ds_list_add(g_dlg, "lu I'll show you. Follow me.")
 ds_list_add(g_dlg, "goto cave")
 }
 
-else if argument0 == 'd2_a1' {
-show_message("yeah")
+else if argument0 == 'd2a1' {
 ds_list_add(g_dlg, "lu This is bad. They've already been here for hours.")
 ds_list_add(g_dlg, "l Come on. Let's fight our way through.")
+
+//TODO remove this block
+//ds_list_add(g_townMarkers, 'final_cinematic')
+//TryAutoDialogue('final_cinematic', true)
 }
 
 //TODO trigger this
@@ -694,7 +719,9 @@ ds_list_add(g_dlg, "Bright Unfortunately, this treasure belongs to me. I'm the o
 ds_list_add(g_dlg, "l This is it. Be careful, everyone!")
 }
 
-//TODO trigger this
+//TODO trigger this; preferably when in sight of the end of the dungeon
+//or maybe split it up, having half of it only display when you reach the end of the dungeon
+//and Bright is dead
 else if argument0 == 'final_cinematic' {
 ds_list_add(g_dlg, "l Everybody all right?")
 ds_list_add(g_dlg, "g Yes.")
@@ -737,8 +764,7 @@ ds_list_add(g_dlg, "lu Besides, it's not like I plan to make a habit of this.")
 ds_list_add(g_dlg, "lu Lise and Grant seem like they'll be good partners. I'll probably play fair with them from now on.")
 ds_list_add(g_dlg, "lu But as for this?")
 ds_list_add(g_dlg, "lu Heh. I'll never tell.")
-
-//TODO end game
+ds_list_add(g_dlg, "goto title")
 }
 
 
