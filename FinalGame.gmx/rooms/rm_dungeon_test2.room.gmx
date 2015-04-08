@@ -1184,12 +1184,23 @@
     <instance objName="obj_mob_skeleton" x="1056" y="160" name="inst_DB09C4C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mob_skeleton" x="1696" y="160" name="inst_FFACFAC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mob_skeleton" x="96" y="736" name="inst_089633EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport3" x="672" y="384" name="inst_D597B8B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_top_left" x="992" y="64" name="inst_20F67AE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_top_left_to_bottom_right" x="1152" y="320" name="inst_1FD8E886" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_from_top_left" x="1344" y="448" name="inst_894744A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_bottom_right_to_bottom_left" x="1344" y="608" name="inst_84D34EFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_from_bottom_right_to_bottom_left" x="992" y="448" name="inst_866E8DDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_bottom_left_to_top_right" x="1120" y="544" name="inst_1D3823BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport_from_bottom_left_to_top_right" x="1504" y="128" name="inst_87DEEC7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="br_dungeon_items" x="1856" y="0" w="32" h="32" xo="0" yo="576" id="10010114" name="inst_965476D3" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="br_dungeon_walls" x="960" y="1184" w="32" h="32" xo="443" yo="155" id="10010121" name="inst_DF31A8EE" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="br_dungeon_walls" x="576" y="1504" w="32" h="32" xo="59" yo="91" id="10010132" name="inst_4BC8F781" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="br_dungeon_walls" x="736" y="1504" w="32" h="32" xo="59" yo="91" id="10010133" name="inst_40A3CDB6" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="br_dungeon_items" x="256" y="384" w="32" h="32" xo="0" yo="0" id="10010163" name="inst_09809321" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="br_dungeon_items" x="640" y="416" w="32" h="32" xo="128" yo="32" id="10010166" name="inst_FADBE62A" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="br_dungeon_items" x="576" y="384" w="32" h="32" xo="128" yo="32" id="10010167" name="inst_B5B45B74" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="672" y="96" w="32" h="32" xo="544" yo="96" id="10000458" name="inst_D20BAE6B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="704" y="96" w="32" h="32" xo="544" yo="96" id="10000459" name="inst_9ED2549A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="736" y="96" w="32" h="32" xo="544" yo="96" id="10000460" name="inst_86B8051B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -118,6 +118,8 @@
       <sprite>sprites\spr_healthBar</sprite>
       <sprite>sprites\spr_mobHPBubbleContainer</sprite>
       <sprite>sprites\spr_mobHPBubbleColor</sprite>
+      <sprite>sprites\spr_teleport3</sprite>
+      <sprite>sprites\spr_teleport_top_left</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -289,6 +291,14 @@
       <object>objects\dungeon1Portal1</object>
       <object>objects\dungeon1Portal2</object>
       <object>objects\dungeon2Portal1</object>
+      <object>objects\obj_teleport3</object>
+      <object>objects\obj_teleport_top_left</object>
+      <object>objects\obj_teleport_top_left_to_bottom_right</object>
+      <object>objects\obj_teleport_from_top_left</object>
+      <object>objects\obj_teleport_bottom_right_to_bottom_left</object>
+      <object>objects\obj_teleport_from_bottom_right_to_bottom_left</object>
+      <object>objects\obj_teleport_bottom_left_to_top_right</object>
+      <object>objects\obj_teleport_from_bottom_left_to_top_right</object>
     </objects>
     <object>objects\titleNewGameButton</object>
     <object>objects\controlsImg</object>
