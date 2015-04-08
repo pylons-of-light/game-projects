@@ -118,6 +118,14 @@
       <sprite>sprites\spr_healthBar</sprite>
       <sprite>sprites\spr_mobHPBubbleContainer</sprite>
       <sprite>sprites\spr_mobHPBubbleColor</sprite>
+      <sprite>sprites\spr_pirateUp</sprite>
+      <sprite>sprites\spr_pirateLeft</sprite>
+      <sprite>sprites\spr_pirateDown</sprite>
+      <sprite>sprites\spr_pirateRight</sprite>
+      <sprite>sprites\spr_pirateAttackUp</sprite>
+      <sprite>sprites\spr_pirateAttackLeft</sprite>
+      <sprite>sprites\spr_pirateAttackDown</sprite>
+      <sprite>sprites\spr_pirateAttackRight</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -193,6 +201,7 @@
     <script>scripts\RestartGame.gml</script>
     <script>scripts\SaveGame.gml</script>
     <script>scripts\LoadGame.gml</script>
+    <script>scripts\MobFade.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -289,6 +298,7 @@
       <object>objects\dungeon1Portal1</object>
       <object>objects\dungeon1Portal2</object>
       <object>objects\dungeon2Portal1</object>
+      <object>objects\obj_mob_pirate</object>
     </objects>
     <object>objects\titleNewGameButton</object>
     <object>objects\controlsImg</object>
