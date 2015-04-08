@@ -118,8 +118,19 @@
       <sprite>sprites\spr_healthBar</sprite>
       <sprite>sprites\spr_mobHPBubbleContainer</sprite>
       <sprite>sprites\spr_mobHPBubbleColor</sprite>
+<<<<<<< HEAD
       <sprite>sprites\spr_teleport3</sprite>
       <sprite>sprites\spr_teleport_top_left</sprite>
+=======
+      <sprite>sprites\spr_pirateUp</sprite>
+      <sprite>sprites\spr_pirateLeft</sprite>
+      <sprite>sprites\spr_pirateDown</sprite>
+      <sprite>sprites\spr_pirateRight</sprite>
+      <sprite>sprites\spr_pirateAttackUp</sprite>
+      <sprite>sprites\spr_pirateAttackLeft</sprite>
+      <sprite>sprites\spr_pirateAttackDown</sprite>
+      <sprite>sprites\spr_pirateAttackRight</sprite>
+>>>>>>> origin/master
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -195,6 +206,7 @@
     <script>scripts\RestartGame.gml</script>
     <script>scripts\SaveGame.gml</script>
     <script>scripts\LoadGame.gml</script>
+    <script>scripts\MobFade.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -291,6 +303,7 @@
       <object>objects\dungeon1Portal1</object>
       <object>objects\dungeon1Portal2</object>
       <object>objects\dungeon2Portal1</object>
+<<<<<<< HEAD
       <object>objects\obj_teleport3</object>
       <object>objects\obj_teleport_top_left</object>
       <object>objects\obj_teleport_top_left_to_bottom_right</object>
@@ -299,6 +312,9 @@
       <object>objects\obj_teleport_from_bottom_right_to_bottom_left</object>
       <object>objects\obj_teleport_bottom_left_to_top_right</object>
       <object>objects\obj_teleport_from_bottom_left_to_top_right</object>
+=======
+      <object>objects\obj_mob_pirate</object>
+>>>>>>> origin/master
     </objects>
     <object>objects\titleNewGameButton</object>
     <object>objects\controlsImg</object>

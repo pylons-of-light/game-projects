@@ -1159,8 +1159,6 @@
     <instance objName="obj_player_collider" x="2208" y="1664" name="inst_E0FA067C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="2304" y="1664" name="inst_05E7A094" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="2336" y="1664" name="inst_F4116FCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="480" y="544" name="inst_EDA0CBAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="928" y="896" name="inst_386ABBB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="128" y="320" name="inst_3E1A94ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="288" y="160" name="inst_E0A479D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="320" y="128" name="inst_235860B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1268,14 +1266,16 @@
     <instance objName="obj_player_collider" x="448" y="992" name="inst_815BBAD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="160" y="992" name="inst_B30E6DCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_collider" x="128" y="960" name="inst_FEA00097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="384" y="1568" name="inst_E388F4C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="544" y="2368" name="inst_6090B147" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="1312" y="2496" name="inst_D2042838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="2208" y="2336" name="inst_A0A5C620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="2048" y="1600" name="inst_FCB34CE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="1920" y="960" name="inst_247981F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dungeon2Portal1" x="0" y="608" name="inst_BBEC2EED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="finalTreasure" x="1112" y="0" name="inst_3B6EE7BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="512" y="512" name="inst_A0B3BE27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="896" y="896" name="inst_4C63F0A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="384" y="1568" name="inst_280D1D93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="480" y="2400" name="inst_8ACE68F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="1344" y="2464" name="inst_9CCCE80F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="2240" y="2336" name="inst_5AB02DD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="2080" y="1568" name="inst_2F7C141D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mob_pirate" x="1888" y="960" name="inst_8CDEFFC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

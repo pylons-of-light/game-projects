@@ -150,7 +150,8 @@ sprDown = spr_skeletonDown
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MobMoveWander(self)
+            <string>MobFade(self)
+MobMoveWander(self)
 MobAggro(self)
 SetMobSprite(self)
 </string>
