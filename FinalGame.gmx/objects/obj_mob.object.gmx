@@ -202,18 +202,19 @@ SetMobSprite(self)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-var offset = 0
+var start = ( x + ( sprite_width / 2 ) ) - 20 * ( maxHp / 2 );
 var i
+
 for(i = 0; i &lt; maxHp; i+= 1)
 {
     offset = i * 20
-    draw_sprite(spr_mobHPBubbleContainer, 0, x + offset, y - 10)
+    draw_sprite(spr_mobHPBubbleContainer, 0, start + offset, y - 10)
 }
-offset = 0
+
 for(i = 0; i &lt; hp; i+= 1)
 {
     offset = i * 20
-    draw_sprite(spr_mobHPBubbleColor, 0, x + offset, y - 10)
+    draw_sprite(spr_mobHPBubbleColor, 0, start + offset, y - 10)
 }
 </string>
           </argument>

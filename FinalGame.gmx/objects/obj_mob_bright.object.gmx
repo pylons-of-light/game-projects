@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-hp = 6
-maxHp = 6
+maxHp = 8
+hp = 8
 attackRange = 10
 
 sprWalkRight = spr_skeletonRight
