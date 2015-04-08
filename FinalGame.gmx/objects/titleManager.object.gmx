@@ -37,9 +37,11 @@ draw_set_alpha(1)
 
 //Unlock all towns.
 //TODO remove.
+/*
 g_town2Unlocked = true
 g_town3Unlocked = true
 g_town5Unlocked = true
+*/
 
 if file_exists("rainsREMOVED") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
@@ -85,6 +87,7 @@ if file_exists("rainsREMOVED") {
     g_shipDir = g_dungeon1Dir
 }
 else {
+    //Remove dungeon auto-dialogues
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd2a1'))
     //room_goto_next()
