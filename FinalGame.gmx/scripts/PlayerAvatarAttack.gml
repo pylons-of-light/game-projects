@@ -1,4 +1,4 @@
-if not ds_list_empty(g_dlg)
+if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
     exit
     
 with obj_player{

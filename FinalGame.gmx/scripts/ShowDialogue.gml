@@ -22,6 +22,13 @@ else if argument0 == 'first_ship_death' {
     ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
 }
 
+else if argument0 == 'first_time_warped' {
+    ds_list_add(g_dlg, "g What the hell just happened?")
+    ds_list_add(g_dlg, "l It looks like we just... warped, when we stepped on that tile.")
+    ds_list_add(g_dlg, "g This is black magic!")
+    ds_list_add(g_dlg, "l Let's look around for more of these tiles.")
+}
+
 //----------------------------
 //------ Town NPCs etc. ------
 //----------------------------

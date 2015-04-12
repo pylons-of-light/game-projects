@@ -64,7 +64,7 @@ g_bossShipBeaten = ini_read_real('Events', 'g_bossShipBeaten', g_bossShipBeaten)
 g_firstShipDeath = ini_read_real('Events', 'g_firstShipDeath', g_firstShipDeath)
 g_showFirstShipDeathMsg = ini_read_real('Events', 'g_showFirstShipDeathMsg', g_showFirstShipDeathMsg)
 g_firstTimeInOcean = ini_read_real('Events', 'g_firstTimeInOcean', g_firstTimeInOcean)
-g_firstTimeInDungeon = ini_read_real('Events', 'g_firstTimeInDungeon', g_firstTimeInDungeon)
+g_firstTimeWarped = ini_read_real('Events', 'g_firstTimeWarped', g_firstTimeWarped)
 g_bCrashedReefs = ini_read_real('Events', 'g_bCrashedReefs', g_bCrashedReefs)
 g_firstTimeLoseSpecialShip1 = ini_read_real('Events', 'g_firstTimeLoseSpecialShip1', g_firstTimeLoseSpecialShip1)
 

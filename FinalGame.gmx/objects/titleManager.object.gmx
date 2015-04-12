@@ -43,12 +43,12 @@ g_town3Unlocked = true
 g_town5Unlocked = true
 */
 
-if file_exists("rainsREMOVED") {
+if file_exists("rains") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
     g_firstTimeInOcean = false
-    //g_firstTimeInDungeon = false
+    //g_firstTimeWarped = false
     
     //TODO remove
     //g_shipMaxSpeed -= CREW_SPEED_BOOST
@@ -82,9 +82,14 @@ if file_exists("rainsREMOVED") {
     g_shipX = g_dungeon2X
     g_shipY = g_dungeon2Y
     g_shipDir = g_dungeon2Dir*/
+    
     g_shipX = g_dungeon1X
     g_shipY = g_dungeon1Y
     g_shipDir = g_dungeon1Dir
+    
+    g_townId = 'town1'
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 't1a1'))
+    room_goto(rm_town)
 }
 else {
     //Remove dungeon auto-dialogues

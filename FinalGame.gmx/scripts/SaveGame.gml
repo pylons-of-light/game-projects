@@ -63,7 +63,7 @@ ini_write_real('Events', 'g_bossShipBeaten', g_bossShipBeaten)
 ini_write_real('Events', 'g_firstShipDeath', g_firstShipDeath)
 ini_write_real('Events', 'g_showFirstShipDeathMsg', g_showFirstShipDeathMsg)
 ini_write_real('Events', 'g_firstTimeInOcean', g_firstTimeInOcean)
-ini_write_real('Events', 'g_firstTimeInDungeon', g_firstTimeInDungeon)
+ini_write_real('Events', 'g_firstTimeWarped', g_firstTimeWarped)
 ini_write_real('Events', 'g_bCrashedReefs', g_bCrashedReefs)
 ini_write_real('Events', 'g_firstTimeLoseSpecialShip1', g_firstTimeLoseSpecialShip1)
 

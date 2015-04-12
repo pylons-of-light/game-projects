@@ -2,6 +2,9 @@
 //the game starts. Also, make whatever ocean markers exist when the game starts.
 //Arguments: none
 
+//Events
+ds_list_add(g_townMarkers, 'first_time_warped')
+
 //Ocean
 ds_list_add(g_townMarkers, 'oa1')
 

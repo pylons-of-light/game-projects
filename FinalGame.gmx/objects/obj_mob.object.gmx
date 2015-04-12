@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>obj_player_collider</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -45,7 +45,7 @@ attackDamage = 1
 ranx = x
 rany = y
 walkSpeed = 2
-wanderDistance = 300
+wanderDistance = 500
 wander = true
 avoidWall = true
 
@@ -151,6 +151,10 @@ sprDown = spr_skeletonDown
           <argument>
             <kind>1</kind>
             <string>MobFade(self)
+
+if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
+    exit
+
 MobMoveWander(self)
 MobAggro(self)
 SetMobSprite(self)
@@ -204,7 +208,7 @@ SetMobSprite(self)
             <kind>1</kind>
             <string>draw_self()
 var start = ( x + ( sprite_width / 2 ) ) - 20 * ( maxHp / 2 );
-var i
+var i;
 
 for(i = 0; i &lt; maxHp; i+= 1)
 {

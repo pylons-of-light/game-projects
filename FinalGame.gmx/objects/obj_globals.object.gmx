@@ -77,6 +77,20 @@ HALF_SHIP = sprite_get_width(spr_shipMask) / 2
 globalvar MINIMAP_MARKER_RANGE;
 MINIMAP_MARKER_RANGE = 1200   //Somewhat arbitrary number (basically, "somewhat nearby" ships will be shown)
 
+globalvar SOLID_WARP_TILE_ALPHA, SOLID_WARP_LAND_TILE_ALPHA, WARP_TILE_ALPHA, WARP_LAND_TILE_ALPHA;
+SOLID_WARP_TILE_ALPHA = .15
+SOLID_WARP_LAND_TILE_ALPHA = .3
+WARP_TILE_ALPHA = .075
+WARP_LAND_TILE_ALPHA = .15
+
+globalvar WARP_OFFSET;
+WARP_OFFSET = 16// + sprite_get_width(spr_playerUp) / 2
+
+globalvar POTION_HEALTH, POTION_DROP_RATE, POTION_OFFSET;
+POTION_HEALTH = 2
+POTION_DROP_RATE = .25
+POTION_OFFSET = 16   //For drop position, use this as an offset from the NPC's position
+
 
 //--- Port details (for the place to put the ship when it leaves a port)
 
@@ -170,8 +184,8 @@ g_shipHealth = SHIP_HEALTH_MAX
 
 globalvar g_weaponDamageBase, g_weaponLevel, g_armorLevel;
 g_weaponDamageBase = 1
-g_weaponLevel = 1
-g_armorLevel = 1
+g_weaponLevel = 1   //Damage multiplier; this number will go up as weapon grows stronger
+g_armorLevel = 1   //Damage multiplier; this number will go down as armor grows stronger
 
 //Global stats for player ship; subject to change
 globalvar g_shipMaxSpeed, g_cbFireDelay, g_shipArmor;
@@ -205,11 +219,11 @@ g_finalCinematic = false
 globalvar g_bossShipBeaten;
 g_bossShipBeaten = false
 
-globalvar g_firstShipDeath, g_showFirstShipDeathMsg, g_firstTimeInOcean, g_firstTimeInDungeon;
+globalvar g_firstShipDeath, g_showFirstShipDeathMsg, g_firstTimeInOcean, g_firstTimeWarped;
 g_firstShipDeath = true
 g_showFirstShipDeathMsg = false
 g_firstTimeInOcean = true
-g_firstTimeInDungeon = true
+g_firstTimeWarped = true
 
 globalvar g_bCrashedReefs;
 g_bCrashedReefs = false

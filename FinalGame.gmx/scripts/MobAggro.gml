@@ -1,3 +1,6 @@
+if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
+    exit
+
 with argument0
 {
     //check vicinity to player
@@ -28,7 +31,7 @@ with argument0
         {
             MobFollow(self)
         }
-        else if(distance_to_object(obj_player) < attackRange)
+        else if(distance_to_object(obj_player) <= attackRange)
         {
             MobAttack(self)
         }

@@ -31,6 +31,8 @@
       </sprites>
       <sprite>sprites\spr_townNPCMarker</sprite>
       <sprite>sprites\spr_townQuestMarker</sprite>
+      <sprite>sprites\spr_townMerchantMarker</sprite>
+      <sprite>sprites\spr_townShipwrightMarker</sprite>
       <sprite>sprites\spr_backButton</sprite>
     </sprites>
     <sprites name="naval">
@@ -128,6 +130,15 @@
       <sprite>sprites\spr_pirateAttackLeft</sprite>
       <sprite>sprites\spr_pirateAttackDown</sprite>
       <sprite>sprites\spr_pirateAttackRight</sprite>
+      <sprite>sprites\spr_brightUp</sprite>
+      <sprite>sprites\spr_brightLeft</sprite>
+      <sprite>sprites\spr_brightDown</sprite>
+      <sprite>sprites\spr_brightRight</sprite>
+      <sprite>sprites\spr_brightAttackUp</sprite>
+      <sprite>sprites\spr_brightAttackLeft</sprite>
+      <sprite>sprites\spr_brightAttackDown</sprite>
+      <sprite>sprites\spr_brightAttackRight</sprite>
+      <sprite>sprites\spr_potionDrop</sprite>
     </sprites>
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
@@ -143,6 +154,8 @@
     </sprites>
     <sprite>sprites\spr_empty</sprite>
     <sprite>sprites\spr_dialogueBox</sprite>
+    <sprite>sprites\spr_choiceYes</sprite>
+    <sprite>sprites\spr_choiceNo</sprite>
     <sprite>sprites\spr_titleNewGameButton</sprite>
     <sprite>sprites\spr_titleNewGameButtonHover</sprite>
     <sprite>sprites\spr_controls</sprite>
@@ -283,9 +296,9 @@
       <object>objects\obj_player_collider</object>
       <object>objects\obj_lowerCollider</object>
       <object>objects\obj_teleport1</object>
+      <object>objects\obj_teleport1_land</object>
       <object>objects\obj_teleport2</object>
-      <object>objects\obj_teleport_back1</object>
-      <object>objects\obj_teleport_back2</object>
+      <object>objects\obj_teleport2_land</object>
       <object>objects\obj_celing</object>
       <object>objects\obj_rapier</object>
       <object>objects\floorTorch</object>
@@ -295,20 +308,23 @@
       <object>objects\finalTreasure</object>
       <object>objects\obj_mob</object>
       <object>objects\obj_mob_skeleton</object>
+      <object>objects\obj_mob_pirate</object>
       <object>objects\obj_mob_bright</object>
       <object>objects\obj_healthMgr</object>
+      <object>objects\potionDrop</object>
       <object>objects\dungeon1Portal1</object>
       <object>objects\dungeon1Portal2</object>
       <object>objects\dungeon2Portal1</object>
       <object>objects\obj_teleport3</object>
-      <object>objects\obj_teleport_top_left</object>
-      <object>objects\obj_teleport_top_left_to_bottom_right</object>
-      <object>objects\obj_teleport_from_top_left</object>
-      <object>objects\obj_teleport_bottom_right_to_bottom_left</object>
-      <object>objects\obj_teleport_from_bottom_right_to_bottom_left</object>
-      <object>objects\obj_teleport_bottom_left_to_top_right</object>
-      <object>objects\obj_teleport_from_bottom_left_to_top_right</object>
-      <object>objects\obj_mob_pirate</object>
+      <object>objects\obj_teleport3_land</object>
+      <object>objects\obj_teleport4</object>
+      <object>objects\obj_teleport4_land</object>
+      <object>objects\obj_teleport5</object>
+      <object>objects\obj_teleport5_land</object>
+      <object>objects\obj_teleport6</object>
+      <object>objects\obj_teleport6_land</object>
+      <object>objects\obj_teleport7</object>
+      <object>objects\obj_teleport7_land</object>
     </objects>
     <object>objects\titleNewGameButton</object>
     <object>objects\controlsImg</object>

@@ -1,3 +1,6 @@
+if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
+    exit
+
 with argument0
 {
     if(wander != true)
@@ -8,7 +11,7 @@ with argument0
     
     alarm[11]++
     
-    //change wander direction every 5 seconds
+    //change wander direction every 3 seconds
     if(alarm[11] >= (room_speed * 3))
     {
         SetMobWanderLocation(self)
