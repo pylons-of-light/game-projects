@@ -86,10 +86,11 @@ WARP_LAND_TILE_ALPHA = .15
 globalvar WARP_OFFSET;
 WARP_OFFSET = 16// + sprite_get_width(spr_playerUp) / 2
 
-globalvar POTION_HEALTH, POTION_DROP_RATE, POTION_OFFSET;
+globalvar POTION_HEALTH, POTION_DROP_RATE, POTION_X_OFFSET, POTION_Y_OFFSET;
 POTION_HEALTH = 2
 POTION_DROP_RATE = .25
-POTION_OFFSET = 16   //For drop position, use this as an offset from the NPC's position
+POTION_X_OFFSET = 16   //For drop position, use this as an offset from the NPC's x position
+POTION_Y_OFFSET = 19   //Same for y position
 
 
 //--- Port details (for the place to put the ship when it leaves a port)

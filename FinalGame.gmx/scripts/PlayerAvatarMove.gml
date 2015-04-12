@@ -4,7 +4,6 @@
 if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr) {
     speed = 0
     image_speed = 0
-    //show_message('um')
     exit
 }
 

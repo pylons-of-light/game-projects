@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>if bFading {
     if image_alpha &gt; 0
-        image_alpha -= .03
+        image_alpha -= .05
     else
         instance_destroy()
 }

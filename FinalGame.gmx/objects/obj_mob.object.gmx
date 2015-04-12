@@ -34,7 +34,7 @@ taking_damage = false
 hp = 1
 maxHp = 1
 aggro = false
-aggroRange = 50
+aggroRange = 300
 attacking = false
 canAttack = true
 attackRange = 25
@@ -44,8 +44,9 @@ attackDamage = 1
 //movement
 ranx = x
 rany = y
-walkSpeed = 2
-wanderDistance = 500
+walkSpeed = 1.8
+runSpeed = 2.3
+//wanderDistance = 600
 wander = true
 avoidWall = true
 
@@ -55,6 +56,35 @@ sprRight = spr_skeletonRight
 sprLeft = spr_skeletonLeft
 sprUp = spr_skeletonUp
 sprDown = spr_skeletonDown
+
+alarm[11] = room_speed * 3
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if distance_to_object(obj_player) &gt; aggroRange
+    SetMobWanderLocation(self)
+
+//change wander direction every 3 seconds
+alarm[11] = room_speed * 3
 </string>
           </argument>
         </arguments>
@@ -152,8 +182,11 @@ sprDown = spr_skeletonDown
             <kind>1</kind>
             <string>MobFade(self)
 
-if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr)
+if not ds_list_empty(g_dlg) or instance_exists(tutorialMgr) {
+    speed = 0
+    image_speed = 0
     exit
+}
 
 MobMoveWander(self)
 MobAggro(self)

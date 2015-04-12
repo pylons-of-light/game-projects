@@ -38,6 +38,8 @@ attacking = false
 maxHp = 10
 hp = 10
 dead = false
+
+g_avatarAttacking = false
 </string>
           </argument>
         </arguments>
@@ -432,6 +434,12 @@ draw_set_font(fnt_hud)
 draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_text(35, 75, 'Gold: ' + string(g_gold))
+
+//TODO remove
+/*
+if not ds_list_empty(g_dlg)
+    draw_text(35, 95, 'Dlg: ' + g_dlg[|0])
+*/
 </string>
           </argument>
         </arguments>

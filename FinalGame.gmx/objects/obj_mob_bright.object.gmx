@@ -31,6 +31,9 @@ maxHp = 8
 hp = 8
 attackRange = 10
 
+walkSpeed = 1
+runSpeed = 2.7
+
 sprWalkRight = spr_brightRight
 sprWalkLeft = spr_brightLeft
 sprWalkUp = spr_brightUp

@@ -17,5 +17,5 @@ with argument0{
         direction = 90
     }
     
-    alarm[11] = 3
+    //alarm[11] = 0
 }
