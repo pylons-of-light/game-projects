@@ -76,34 +76,6 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="potionDrop">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if not other.bFading {
-    other.bFading = true
-    hp += POTION_HEALTH
-    if hp &gt; maxHp
-        hp = maxHp
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_teleport7">
       <action>
         <libid>1</libid>
@@ -317,6 +289,34 @@ room_goto(rm_ocean)
 g_shipY = g_shipLastPortY
 g_shipDir = g_shipLastPortDir
 room_goto(rm_ocean)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="potionDrop">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if not other.bFading {
+    other.bFading = true
+    hp += POTION_HEALTH
+    if hp &gt; maxHp
+        hp = maxHp
+}
 </string>
           </argument>
         </arguments>
