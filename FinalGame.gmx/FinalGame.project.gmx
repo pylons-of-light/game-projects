@@ -43,6 +43,8 @@
         <sprite>sprites\spr_specialShip1</sprite>
         <sprite>sprites\spr_specialShip2</sprite>
         <sprite>sprites\spr_specialShip3</sprite>
+        <sprite>sprites\spr_specialShip4</sprite>
+        <sprite>sprites\spr_specialShip5</sprite>
         <sprite>sprites\spr_shipMask</sprite>
         <sprite>sprites\spr_specialShip3Mask</sprite>
       </sprites>
@@ -200,6 +202,8 @@
     <script>scripts\PlayerAvatarAttack.gml</script>
     <script>scripts\PlayerAvatarMove.gml</script>
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
+    <script>scripts\TryNpcShipFullFire.gml</script>
+    <script>scripts\TryBossShipFire.gml</script>
     <script>scripts\SetRandomShipDestination.gml</script>
     <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
     <script>scripts\NpcShipBossAdjustImageAndSpeed.gml</script>
@@ -283,6 +287,7 @@
       <object>objects\specialShip2</object>
       <object>objects\specialShip3</object>
       <object>objects\specialShip4</object>
+      <object>objects\specialShip5</object>
       <object>objects\cannonball</object>
       <object>objects\cannonballExplosion</object>
       <object>objects\cannonballSink</object>

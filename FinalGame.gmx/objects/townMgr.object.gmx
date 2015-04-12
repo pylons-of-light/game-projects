@@ -117,6 +117,14 @@ else {
         //bMoveReady = true   //Note: Removed to alarm[0] for now.
     }
 }
+
+//Draw gold
+draw_set_alpha(alpha)
+draw_set_font(fnt_hud)
+draw_set_colour(c_white)
+draw_set_halign(fa_left)
+draw_text(15, 20, 'Gold: ' + string(g_gold))
+draw_set_alpha(1)
 </string>
           </argument>
         </arguments>

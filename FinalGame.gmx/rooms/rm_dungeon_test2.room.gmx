@@ -1226,6 +1226,7 @@
     <instance objName="obj_player_collider" x="1600" y="672" name="inst_23485C4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_celing" x="1600" y="672" name="inst_92F2A448" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mob_skeleton" x="1664" y="960" name="inst_DD9F1B76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="potionDrop" x="928" y="1600" name="inst_086BB929" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="br_dungeon_items" x="1856" y="0" w="32" h="32" xo="0" yo="576" id="10010114" name="inst_965476D3" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

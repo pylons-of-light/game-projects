@@ -83,6 +83,17 @@ ds_list_add(g_dlg, "Citizen It's more productive to channel the money into makin
 ds_list_add(g_dlg, "Citizen That's what I heard from old Admiral Moran, anyway, after he retired. He's been sitting in our local saloon ever since.")
 }
 
+else if argument0 == 't2q1' {
+ds_list_add(g_dlg, "l Do you run Sophie's Flowers?")
+ds_list_add(g_dlg, "Sophie Yes?")
+ds_list_add(g_dlg, "g We have a package for you.")
+ds_list_add(g_dlg, "Sophie All right! The guns I ordered.")
+ds_list_add(g_dlg, "l I thought that package was heavy for flowers.")
+ds_list_add(g_dlg, "Sophie Here's some cash for delivering it safely. Thanks!")
+
+g_gold += 500
+}
+
 //TODO: This has been removed for now, but it might be put in later.
 else if argument0 == 'v2n1' {
 ds_list_add(g_dlg, "l This looks familiar.")
@@ -107,10 +118,51 @@ ds_list_add(g_dlg, "g How do you know that?")
 ds_list_add(g_dlg, "Sailor Everybody knows that.")
 }
 
+else if argument0 == 't3q1' {
+ds_list_add(g_dlg, "Girl Are you... sailors?")
+ds_list_add(g_dlg, "g You could say that, yes.")
+ds_list_add(g_dlg, "Girl Could you deliver this package to Brax for me?")
+ds_list_add(g_dlg, "g What's in it?")
+ds_list_add(g_dlg, "Girl Just flowers. They'll wilt if they don't arrive soon.")
+ds_list_add(g_dlg, "l You want us to travel halfway across the ocean to deliver flowers?")
+ds_list_add(g_dlg, "Girl Please! Deliver them Sophie's Flowers in Brax. She'll pay you.")
+ds_list_add(g_dlg, "g She'll pay us? Okay.")
+
+ds_list_add(g_townMarkers, 't2q1')
+}
+
 else if argument0 == 'v3n1' {
 ds_list_add(g_dlg, "g Hey, have you seen a man named Frederick Priest?")
 ds_list_add(g_dlg, "Drunkard (Urp.)")
 ds_list_add(g_dlg, "l I think he's dead.")
+}
+
+else if argument0 == 'v3q1' {
+ds_list_add(g_dlg, "Henry I'm a shipwright.")
+ds_list_add(g_dlg, "g Really? Our ship could use some repairs --")
+ds_list_add(g_dlg, "Henry Don't care. I'm going out of business!")
+ds_list_add(g_dlg, "Henry See, this bastard Dufont is stealing all my customers. His prices are just criminal.")
+ds_list_add(g_dlg, "Henry You're pirates, right?")
+ds_list_add(g_dlg, "l Well, um...")
+ds_list_add(g_dlg, "Henry Look, go and kill him for me, will you? Sink his ship.")
+ds_list_add(g_dlg, "g Do we have to?")
+ds_list_add(g_dlg, "Henry He sails this stupid-looking ship near here with yellow sails. You can't miss it.")
+ds_list_add(g_dlg, "Henry Take him out, and I'll sail with you for a bit. I need to drum up some overseas trade anyway, this place is dead.")
+
+ds_list_add(g_townMarkers, 'ship_spawn5')
+}
+
+else if argument0 == 'ship_spawn5_defeated' {
+ds_list_add(g_dlg, "Henry All right! Nice work, guys.")
+ds_list_add(g_dlg, "l Where did you come from?")
+ds_list_add(g_dlg, "Henry I was on that ship as a stowaway! I always like to keep my enemies close.")
+ds_list_add(g_dlg, "Henry Truth to be told, I was trying to sink it myself, but then you came along. Thanks for the help.")
+ds_list_add(g_dlg, "Henry With Dufont gone, I can corner the market on secondhand repairs on the eastern seaboard!")
+ds_list_add(g_dlg, "Henry Like I promised though, I'll help you out for a little bit first.")
+
+ds_list_add(g_dlg, "blankperson (Henry has joined you. Although he lacks the necessary materials to repair your ship at sea, he can help prevent your ship from taking damage to begin with.)")
+
+g_shipArmor = .8
 }
 
 //------ Town 4 unlocked ------
@@ -452,6 +504,7 @@ ds_list_add(g_dlg, "l So where did Priest -- our grandfather -- go off to?")
 ds_list_add(g_dlg, "Tavern-master He took off a week ago for Phrain, a small spit of a city on the edge of the Lycian sea. The ship's name is the Mirella. It's traveling with a fleet of rug traders or some crap.")
 ds_list_add(g_dlg, "l Thanks for your help. Here's a little something for your time.")
 ds_list_add(g_dlg, "Tavern-master Good luck finding your grandfather.")
+ds_list_add(g_dlg, "Tavern-master And be careful out there. There have been a lot of Navy vessels on the rampage lately, attacking merchant ships with only the slighest provocation.")
 ds_list_add(g_dlg, "l Should we head off immediately?")
 ds_list_add(g_dlg, "g Maybe. I've been talking with the locals, and there's this haunted old castle a few miles east of here that's rumored to have some treasure.")
 ds_list_add(g_dlg, "l Might be worth a look.")
@@ -461,6 +514,7 @@ ds_list_add(g_dlg, "l Might be worth a look.")
 ds_list_add(g_dlg, "showmsg Phrain has now been unlocked.")
 
 g_town3Unlocked = true
+g_moreWarships = true
 }
 
 else if argument0 == 't3a1' {
@@ -675,8 +729,6 @@ ds_list_add(g_dlg, "showmsg Sail northwest to The Cape of Lost Hope.")
 g_finalIslandUnlocked = true
 ds_list_add(g_townMarkers, 'boss_ship_intro')
 }
-
-//TODO intermediary stuff
 
 else if argument0 == 'boss_ship_intro' {
 g_msgTextCached = ''

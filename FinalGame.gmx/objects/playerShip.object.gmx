@@ -394,11 +394,11 @@ g_shipLastPortY = g_dungeon2Y
 g_shipLastPortDir = g_dungeon2Dir
 
 if not g_bossShipBeaten {
-    g_townId = 'finalShipBoss'
+    //g_townId = 'finalShipBoss'
     room_goto(rm_final_ship_boss)
 }
 else {
-    g_townId = 'dungeon2'
+    //g_townId = 'dungeon2'
     room_goto(rm_cave)
 }
 </string>
@@ -426,7 +426,7 @@ else {
             <string>g_shipLastPortX = g_dungeon1X
 g_shipLastPortY = g_dungeon1Y
 g_shipLastPortDir = g_dungeon1Dir
-g_townId = 'dungeon1'
+//g_townId = 'dungeon1'
 room_goto(rm_dungeon_test2)
 </string>
           </argument>

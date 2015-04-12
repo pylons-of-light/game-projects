@@ -29,3 +29,10 @@ if g_shipwreckUnlocked {
     new.direction = 75
     new.image_angle = new.direction
 }
+
+//Dufont's ship
+if ds_list_find_index(g_townMarkers, 'ship_spawn5') != -1 {
+    var new = instance_create(g_town3X-550, g_town3Y+200, specialShip5);
+    new.direction = 200
+    new.image_angle = new.direction
+}

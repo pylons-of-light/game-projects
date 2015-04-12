@@ -38,8 +38,8 @@ bHostile = true
 bFleeing = false
 bDead = false
 
-//TODO uncomment
 shipHealth = SHIP_HEALTH_MAX * 1.6
+//TODO remove
 //shipHealth = SHIP_HEALTH_MAX / 10
 
 dealCannonDamage = SHIP_HEALTH_MAX / 10
@@ -223,7 +223,7 @@ if bDying {
 NpcShipAdjustImageAndSpeed(realDir)
 
 if bHostile {
-    TryNpcShipAdjacentFire()
+    TryNpcShipFullFire()
 }
 </string>
           </argument>

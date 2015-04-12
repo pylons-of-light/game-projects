@@ -80,11 +80,6 @@ if file_exists("rains") {
     g_shipDir = g_town3Dir
     */
     /*
-    g_shipX = g_dungeon2X
-    g_shipY = g_dungeon2Y
-    g_shipDir = g_dungeon2Dir
-    */
-    /*
     g_shipX = g_dungeon1X
     g_shipY = g_dungeon1Y
     g_shipDir = g_dungeon1Dir
@@ -95,7 +90,18 @@ if file_exists("rains") {
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 't1a1'))
     room_goto(rm_town)
     */
-    //room_goto(rm_ocean)
+    
+    g_shipX = g_dungeon2X
+    g_shipY = g_dungeon2Y
+    g_shipDir = g_dungeon2Dir
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'boss_ship_intro'))
+    
+    
+    g_shipX = g_town3X
+    g_shipY = g_town3Y
+    g_shipDir = g_town3Dir
+    
+    room_goto(rm_ocean)
 }
 else {
     //Remove dungeon auto-dialogues

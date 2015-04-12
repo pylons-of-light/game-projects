@@ -226,7 +226,8 @@ g_showFirstShipDeathMsg = false
 g_firstTimeInOcean = true
 g_firstTimeWarped = true
 
-globalvar g_firstTimeNearBright, g_beatFinalBoss;
+globalvar g_moreWarships, g_firstTimeNearBright, g_beatFinalBoss;
+g_moreWarships = false
 g_firstTimeNearBright = true
 g_beatFinalBoss = false
 

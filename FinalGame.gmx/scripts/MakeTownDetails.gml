@@ -70,6 +70,7 @@ else if townId == 'town2' {
     
     //Markers
     TryNpcMarker('t2n1', 166, 342)
+    TryImportantMarker('t2q1', 700, 315)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -104,6 +105,7 @@ else if townId == 'town3' {
     //Markers
     TryNpcMarker('t3n1', 470, 460)
     TryNpcMarker('t3n2', 98, 414)
+    TryImportantMarker('t3q1', 870, 475)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -129,6 +131,7 @@ else if townId == 'town3Tavern' {
     TryNpcMarker('v3n1', 920, 345)
     TryImportantMarker('v3i1', 588, 409)
     TryImportantMarker('v3i2', 547, 250)
+    TryImportantMarker('v3q1', 165, 365)
 }
 
 else if townId == 'town4' {

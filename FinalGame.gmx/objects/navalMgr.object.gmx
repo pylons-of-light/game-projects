@@ -69,10 +69,21 @@ var totalShips = merchantCount + warshipCount;
 
 if totalShips &lt; 40 {
     var type;
-    if merchantCount &lt;= warshipCount
-        type = merchantShip;
-    else
-        type = warship;
+    
+    if g_moreWarships {
+        //Create equal numbers of merchant ships and warships
+        if merchantCount &lt;= warshipCount
+            type = merchantShip
+        else
+            type = warship
+    }
+    else {
+        //Create more merchant ships than warships
+        if merchantCount &lt; warshipCount + 15
+            type = merchantShip
+        else
+            type = warship
+    }
     
     var viewLeft = view_xview[0] - HALF_SHIP;
     var viewRight = view_xview[0] + view_wview[0] + HALF_SHIP;
@@ -104,8 +115,10 @@ if totalShips &lt; 40 {
     
     alarm[0] = room_speed * .1
 }
-else
+else {
     alarm[0] = room_speed * 8
+    //show_message(string(merchantCount) + " " + string(warshipCount))
+}
 </string>
           </argument>
         </arguments>
