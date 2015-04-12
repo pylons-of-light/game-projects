@@ -53,6 +53,9 @@ gold = 5000
 
 //Manual override
 direction = 350
+
+if g_finalCinematic
+    instance_destroy()
 </string>
           </argument>
         </arguments>

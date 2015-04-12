@@ -226,6 +226,10 @@ g_showFirstShipDeathMsg = false
 g_firstTimeInOcean = true
 g_firstTimeWarped = true
 
+globalvar g_firstTimeNearBright, g_beatFinalBoss;
+g_firstTimeNearBright = true
+g_beatFinalBoss = false
+
 globalvar g_bCrashedReefs;
 g_bCrashedReefs = false
 

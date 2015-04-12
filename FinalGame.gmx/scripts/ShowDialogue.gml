@@ -682,29 +682,35 @@ else if argument0 == 'boss_ship_intro' {
 g_msgTextCached = ''
 
 ds_list_add(g_dlg, "Bright Lucy! What are you doing on board my ship?")
-ds_list_add(g_dlg, "goto title")   //TODO remove
 ds_list_add(g_dlg, "lu Oh well. I guess you would have noticed eventually.")
-ds_list_add(g_dlg, "Bright What the hell are you doing?")
+ds_list_add(g_dlg, "Bright What the hell are you doing?!")
 ds_list_add(g_dlg, "lu Oh, I was just taking care of your cannons.")
-ds_list_add(g_dlg, "Bright You were what?")
+ds_list_add(g_dlg, "Bright You were what?!")
 ds_list_add(g_dlg, "lu Disabling them.")
 ds_list_add(g_dlg, "Bright I see. I guess you've grown sick of sharing treasure then.")
 ds_list_add(g_dlg, "lu With you, yeah. Sorry. After what you did to Priest, it's just too dangerous. I've got to take care of you before you take care of me, you know?")
-ds_list_add(g_dlg, "Bright Well, it's not like I wasn't planning on killing you eventually. Now die!")
+ds_list_add(g_dlg, "Bright It's not like I wasn't planning on killing you eventually.")
+ds_list_add(g_dlg, "Bright Now die!")
 ds_list_add(g_dlg, "g What's going on over there?")
-ds_list_add(g_dlg, "l It looks like Lucy's disabling Bright's cannons. But she must have been disrupted.")
-ds_list_add(g_dlg, "l Only about half of those cannons are out of commision, and that ship is gigantic. It's still going to be a dangerous battle. Stay low. We're going in!")
+ds_list_add(g_dlg, "l I heard an explosion... it must have been Lucy disabling Bright's cannons. But where's her ship?")
+ds_list_add(g_dlg, "g And she didn't finish, either. Only about half of those cannons are out of commision.")
+ds_list_add(g_dlg, "l This is going to be dangerous. Stay low. We're going in!")
+//ds_list_add(g_dlg, "l It looks like Lucy's disabling Bright's cannons. But she must have been disrupted.")
+//ds_list_add(g_dlg, "l Only about half of those cannons are out of commision, and that ship is gigantic. It's still going to be a dangerous battle. Stay low. We're going in!")
 }
 
 else if argument0 == 'boss_ship_defeated' {
 ds_list_add(g_dlg, "lu Well, that worked out pretty well.")
 ds_list_add(g_dlg, "g Lucy! What happened to you?")
 ds_list_add(g_dlg, "lu I jumped overboard. So did Robin. He already has a residual force inside these caves, so we've still got a bit of fighting left to do.")
-ds_list_add(g_dlg, "l Where's the entrance?")
-ds_list_add(g_dlg, "lu It's right over there. Hidden in those rocks, you see?")
+ds_list_add(g_dlg, "l Where's the entrance? And where's your ship?")
+ds_list_add(g_dlg, "lu My ship? Good question. I'm wondering that myself.")
+ds_list_add(g_dlg, "lu The cave entrance is right over there. Hidden in those rocks, you see?")
 ds_list_add(g_dlg, "l No.")
 ds_list_add(g_dlg, "lu I'll show you. Follow me.")
 ds_list_add(g_dlg, "goto cave")
+
+g_bossShipBeaten = true
 }
 
 else if argument0 == 'd2a1' {
@@ -716,19 +722,21 @@ ds_list_add(g_dlg, "l Come on. Let's fight our way through.")
 //TryAutoDialogue('final_cinematic', true)
 }
 
-//TODO trigger this
 else if argument0 == 'final_boss' {
-ds_list_add(g_dlg, "Bright Lucy! Found some new suckers to help you out already?")
-ds_list_add(g_dlg, "l So you're Robin Bright. We saw some of your work floating in the wreckage out by Saint Jace.")
-ds_list_add(g_dlg, "Bright What can I say? Priest bribed everyone on that ship to keep him hidden when he saw me coming. It's amazing what people will do with a little promise of gold. They'll hold back secrets, put their lives on the line for just a few nuggets of gold.")
-ds_list_add(g_dlg, "Bright And of course, once we had Priest, we couldn't leave any witnesses. We should have sunk the whole damn ship, but a Navy ship came up and we had to scuttle. I guess you found the aftereffects.")
-ds_list_add(g_dlg, "Bright Unfortunately, this treasure belongs to me. I'm the one who stole it. And I'll have your lives as payment for destroying my ship.")
-ds_list_add(g_dlg, "l This is it. Be careful, everyone!")
+ds_list_add(g_dlg, "Bright Lucy! Found some new suckers to help you already?")
+ds_list_add(g_dlg, "l So you're Robin Bright.")
+ds_list_add(g_dlg, "Bright Unfortunately, this treasure belongs to me.")
+ds_list_add(g_dlg, "Bright And I'll have the lives of you bilge rats and that traitorous bitch as payment for destroying my ship!")
+//ds_list_add(g_dlg, "Bright What can I say? Priest bribed everyone on that ship to keep him hidden when he saw me coming. It's amazing what people will do with a little promise of gold. They'll hold back secrets, put their lives on the line for just a few nuggets of gold.")
+//ds_list_add(g_dlg, "Bright And of course, once we had Priest, we couldn't leave any witnesses. We should have sunk the whole damn ship, but a Navy ship came up and we had to scuttle. I guess you found the aftereffects.")
+//ds_list_add(g_dlg, "Bright Unfortunately, this treasure belongs to me. I'm the one who stole it. And I'll have your lives as payment for destroying my ship.")
+//ds_list_add(g_dlg, "l This is it. Be careful, everyone!")
 }
 
-//TODO trigger this; preferably when in sight of the end of the dungeon
-//or maybe split it up, having half of it only display when you reach the end of the dungeon
-//and Bright is dead
+else if argument0 == 'final_boss_death' {
+ds_list_add(g_dlg, "Bright My... treasure...")
+}
+
 else if argument0 == 'final_cinematic' {
 ds_list_add(g_dlg, "l Everybody all right?")
 ds_list_add(g_dlg, "g Yes.")
@@ -747,21 +755,24 @@ ds_list_add(g_dlg, "lu It's not enough. Remember, I have to split my share with 
 ds_list_add(g_dlg, "l Well, let's start hauling this stuff back onto the ships.")
 g_finalCinematic = true
 ds_list_add(g_dlg, "goto final_ship_boss")
-ds_list_add(g_dlg, "lu It looks like our brief partnership has been profitable, although not quite as much as it could have been.")
+ds_list_add(g_dlg, "lu And here comes my ship! I'll kill them. Or at least, you can bet they're not getting a share of this treasure.")
+ds_list_add(g_dlg, "Second-in-command Sorry, Captain. We sprung a leak and had to make emergency repairs.")
+ds_list_add(g_dlg, "lu Sure you did.")
+ds_list_add(g_dlg, "lu Well, it looks like our brief partnership has been profitable, although not quite as much as it could have been.")
 ds_list_add(g_dlg, "lu What do you say to continuing that partnership?")
 ds_list_add(g_dlg, "l You mean, keep raiding a few ships together?")
 ds_list_add(g_dlg, "lu Sure. I don't have a partner anymore, and Robin and I always were more successful tackling merchant convoys as a group.")
 ds_list_add(g_dlg, "lu A few lucky strikes, and maybe one day we'll hit the same jackpot Robin's crew once did.")
 ds_list_add(g_dlg, "g All right, I'm game.")
 ds_list_add(g_dlg, "l Why not.")
-ds_list_add(g_dlg, "l Shall we meet back in Rubina in two days to reconnoiter? We have to pay Alan back, as well. At least then we'll be free of that debt.")
-ds_list_add(g_dlg, "l And maybe we can afford to outfit a bigger ship.")
+ds_list_add(g_dlg, "l Shall we meet back in Rubina in two days to reconnoiter? We have to pay Alan back, I guess. At least then we'll be free of that debt.")
+ds_list_add(g_dlg, "g And maybe we can afford to buy a bigger ship.")
 ds_list_add(g_dlg, "l I wouldn't mind being captain of a real ship of the line.")
 ds_list_add(g_dlg, "g And I'll be the navigator.")
 ds_list_add(g_dlg, "lu ...")
 ds_list_add(g_dlg, "lu Well, off they go.")
 ds_list_add(g_dlg, "lu Yeah, I think we'll be good partners.")
-ds_list_add(g_dlg, "Second-in-command Where to, captain? Rubina?")
+ds_list_add(g_dlg, "Second-in-command Where to, Captain? Rubina?")
 ds_list_add(g_dlg, "lu Not yet. We've got some digging to do first, at the island where Robin's old crew buried the other half of the treasure.")
 ds_list_add(g_dlg, "Second-in-command Do you think Lise and Grant will ever become suspicious?")
 ds_list_add(g_dlg, "lu You mean, that this treasure was only about half the size it should have been? No, I think they'll buy the exaggeration story. Pirates do love to exaggerate their exploits.")

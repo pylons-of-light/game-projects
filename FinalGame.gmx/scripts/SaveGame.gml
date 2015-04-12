@@ -66,6 +66,8 @@ ini_write_real('Events', 'g_firstTimeInOcean', g_firstTimeInOcean)
 ini_write_real('Events', 'g_firstTimeWarped', g_firstTimeWarped)
 ini_write_real('Events', 'g_bCrashedReefs', g_bCrashedReefs)
 ini_write_real('Events', 'g_firstTimeLoseSpecialShip1', g_firstTimeLoseSpecialShip1)
+ini_write_real('Events', 'g_firstTimeNearBright', g_firstTimeNearBright)
+ini_write_real('Events', 'g_beatFinalBoss', g_beatFinalBoss)
 
 ini_write_real('Paused', 'g_paused', g_paused)
 ini_write_real('Paused', 'g_pausedMusic', g_pausedMusic)

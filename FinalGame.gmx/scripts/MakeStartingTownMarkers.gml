@@ -4,6 +4,8 @@
 
 //Events
 ds_list_add(g_townMarkers, 'first_time_warped')
+ds_list_add(g_townMarkers, 'final_boss')
+ds_list_add(g_townMarkers, 'final_boss_death')
 
 //Ocean
 ds_list_add(g_townMarkers, 'oa1')

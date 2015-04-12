@@ -67,6 +67,8 @@ g_firstTimeInOcean = ini_read_real('Events', 'g_firstTimeInOcean', g_firstTimeIn
 g_firstTimeWarped = ini_read_real('Events', 'g_firstTimeWarped', g_firstTimeWarped)
 g_bCrashedReefs = ini_read_real('Events', 'g_bCrashedReefs', g_bCrashedReefs)
 g_firstTimeLoseSpecialShip1 = ini_read_real('Events', 'g_firstTimeLoseSpecialShip1', g_firstTimeLoseSpecialShip1)
+g_firstTimeNearBright = ini_read_real('Events', 'g_firstTimeNearBright', g_firstTimeNearBright)
+g_beatFinalBoss = ini_read_real('Events', 'g_beatFinalBoss', g_beatFinalBoss)
 
 g_paused = ini_read_real('Paused', 'g_paused', g_paused)
 g_pausedMusic = ini_read_real('Paused', 'g_pausedMusic', g_pausedMusic)
