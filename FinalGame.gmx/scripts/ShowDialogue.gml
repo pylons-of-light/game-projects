@@ -131,13 +131,7 @@ ds_list_add(g_dlg, "g She'll pay us? Okay.")
 ds_list_add(g_townMarkers, 't2q1')
 }
 
-else if argument0 == 'v3n1' {
-ds_list_add(g_dlg, "g Hey, have you seen a man named Frederick Priest?")
-ds_list_add(g_dlg, "Drunkard (Urp.)")
-ds_list_add(g_dlg, "l I think he's dead.")
-}
-
-else if argument0 == 'v3q1' {
+else if argument0 == 't3q2' {
 ds_list_add(g_dlg, "Henry I'm a shipwright.")
 ds_list_add(g_dlg, "g Really? Our ship could use some repairs --")
 ds_list_add(g_dlg, "Henry Don't care. I'm going out of business!")
@@ -163,6 +157,13 @@ ds_list_add(g_dlg, "Henry Like I promised though, I'll help you out for a little
 ds_list_add(g_dlg, "blankperson (Henry has joined you. Although he lacks the necessary materials to repair your ship at sea, he can help prevent your ship from taking damage to begin with.)")
 
 g_shipArmor = .8
+g_recruitedHenry = true
+}
+
+else if argument0 == 'v3n1' {
+ds_list_add(g_dlg, "g Hey, have you seen a man named Frederick Priest?")
+ds_list_add(g_dlg, "Drunkard (Urp.)")
+ds_list_add(g_dlg, "l I think he's dead.")
 }
 
 //------ Town 4 unlocked ------
@@ -489,6 +490,7 @@ else if argument0 == 'v5i1' {
 ds_list_add(g_dlg, "l A pint of grog, please, and some information.")
 ds_list_add(g_dlg, "Tavern-master Sure. The information's free. The pint will cost you.")
 ds_list_add(g_dlg, "g Two pints.")
+ds_list_add(g_dlg, "Betsy Nothing for me, thanks.")
 ds_list_add(g_dlg, "l We're looking for a man named Frederick Priest. He's an old sailor, mid-fifties or so.")
 ds_list_add(g_dlg, "Tavern-master Priest? You just missed him! He was in here not a week ago.")
 ds_list_add(g_dlg, "Tavern-master He's been here most nights for the last three years.")
@@ -505,6 +507,7 @@ ds_list_add(g_dlg, "Tavern-master He took off a week ago for Phrain, a small spi
 ds_list_add(g_dlg, "l Thanks for your help. Here's a little something for your time.")
 ds_list_add(g_dlg, "Tavern-master Good luck finding your grandfather.")
 ds_list_add(g_dlg, "Tavern-master And be careful out there. There have been a lot of Navy vessels on the rampage lately, attacking merchant ships with only the slighest provocation.")
+ds_list_add(g_dlg, "Betsy That sounds great. As if we didn't have enough to worry about already.")
 ds_list_add(g_dlg, "l Should we head off immediately?")
 ds_list_add(g_dlg, "g Maybe. I've been talking with the locals, and there's this haunted old castle a few miles east of here that's rumored to have some treasure.")
 ds_list_add(g_dlg, "l Might be worth a look.")
@@ -622,7 +625,8 @@ ds_list_add(g_dlg, "l Nothing...")
 ds_list_add(g_dlg, "l This is bad. No one's manning the deck. I don't see any crewmen. No one's in the crow's nest. No lookouts.")
 ds_list_add(g_dlg, "l I don't see anyone on the upper deck either.")
 ds_list_add(g_dlg, "g Do you want to go aboard?")
-ds_list_add(g_dlg, "l Have one of the crewmen take the tiller. We're both going.")
+ds_list_add(g_dlg, "l Have Betsy take the tiller. We're both going.")
+ds_list_add(g_dlg, "Betsy Be careful.")
 ds_list_add(g_dlg, "l ...")
 ds_list_add(g_dlg, "l Grant, stay back.")
 ds_list_add(g_dlg, "g What is it?")
@@ -713,6 +717,13 @@ ds_list_add(g_dlg, "g We need some chain shot.")
 ds_list_add(g_dlg, "l Yeah, a lot of it. We need to take down some rigging.")
 ds_list_add(g_dlg, "Jean That's expensive stuff. How much do you need?")
 ds_list_add(g_dlg, "l Enough to destroy a huge galleon.")
+
+if g_recruitedHenry {
+    ds_list_add(g_dlg, "Henry Basically, enough to knock it beyond all hope of repair.")
+    ds_list_add(g_dlg, "g Henry! You're not back on the ship?")
+    ds_list_add(g_dlg, "Henry This is a question of seaworthiness. This is my domain.")
+}
+
 ds_list_add(g_dlg, "Jean That'll be 10000 gold.")
 ds_list_add(g_dlg, "g (Sigh...)")
 ds_list_add(g_dlg, "Jean Okay, special price! I don't want Lucy coming after me. 5000 gold!")
@@ -746,6 +757,9 @@ ds_list_add(g_dlg, "Bright Now die!")
 ds_list_add(g_dlg, "g What's going on over there?")
 ds_list_add(g_dlg, "l I heard an explosion... it must have been Lucy disabling Bright's cannons. But where's her ship?")
 ds_list_add(g_dlg, "g And she didn't finish, either. Only about half of those cannons are out of commision.")
+if g_recruitedHenry
+    ds_list_add(g_dlg, "Henry Yeah, that thing looks pretty sturdy. My opinion, guys, you're screwed.")
+ds_list_add(g_dlg, "Betsy I'll go help man the cannons. I'll bake something special afterwards if we're still alive.")
 ds_list_add(g_dlg, "l This is going to be dangerous. Stay low. We're going in!")
 //ds_list_add(g_dlg, "l It looks like Lucy's disabling Bright's cannons. But she must have been disrupted.")
 //ds_list_add(g_dlg, "l Only about half of those cannons are out of commision, and that ship is gigantic. It's still going to be a dangerous battle. Stay low. We're going in!")
@@ -817,6 +831,13 @@ ds_list_add(g_dlg, "lu Sure. I don't have a partner anymore, and Robin and I alw
 ds_list_add(g_dlg, "lu A few lucky strikes, and maybe one day we'll hit the same jackpot Robin's crew once did.")
 ds_list_add(g_dlg, "g All right, I'm game.")
 ds_list_add(g_dlg, "l Why not.")
+
+ds_list_add(g_dlg, "Betsy Someone has to keep you lot from dying of scurvy.")
+if g_recruitedHenry {
+    ds_list_add(g_dlg, "Henry Suit yourselves, guys. I have a shipwright empire to establish. Drop by whenever your ship falls apart.")
+    ds_list_add(g_dlg, "Betsy Don't be silly, Henry. You're coming with us, like it or not!")
+}
+
 ds_list_add(g_dlg, "l Shall we meet back in Rubina in two days to reconnoiter? We have to pay Alan back, I guess. At least then we'll be free of that debt.")
 ds_list_add(g_dlg, "g And maybe we can afford to buy a bigger ship.")
 ds_list_add(g_dlg, "l I wouldn't mind being captain of a real ship of the line.")

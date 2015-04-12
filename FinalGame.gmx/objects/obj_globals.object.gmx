@@ -237,6 +237,9 @@ g_bCrashedReefs = false
 globalvar g_firstTimeLoseSpecialShip1;
 g_firstTimeLoseSpecialShip1 = true
 
+globalvar g_recruitedHenry;
+g_recruitedHenry = false
+
 //Room persistence
 globalvar g_paused, g_pausedMusic, g_resuming;
 g_paused = false
