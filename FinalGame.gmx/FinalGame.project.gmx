@@ -145,6 +145,7 @@
     <sprites name="portraits">
       <sprite>sprites\spr_lise</sprite>
       <sprite>sprites\spr_grant</sprite>
+      <sprite>sprites\spr_lucy</sprite>
     </sprites>
     <sprites name="title">
       <sprite>sprites\spr_titleStart</sprite>

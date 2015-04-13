@@ -106,7 +106,7 @@ else if townId == 'town3' {
     TryNpcMarker('t3n1', 470, 460)
     TryNpcMarker('t3n2', 98, 414)
     TryImportantMarker('t3q1', 870, 475)
-    TryImportantMarker('t3q2', 155, 375)
+    TryImportantMarker('t3q2', 175, 355)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
