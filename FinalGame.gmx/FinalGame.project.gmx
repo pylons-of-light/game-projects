@@ -10,6 +10,7 @@
     <sound>sound\sound_sword1</sound>
     <sound>sound\sound_sword2</sound>
     <sound>sound\sound_thump1</sound>
+    <sound>sound\sound_explosion</sound>
     <sound>sound\music_lostShip</sound>
     <sound>sound\music_stillWater</sound>
     <sound>sound\music_lostAndForgotten</sound>
@@ -239,6 +240,9 @@
     <script>scripts\SaveGame.gml</script>
     <script>scripts\LoadGame.gml</script>
     <script>scripts\MobFade.gml</script>
+    <script>scripts\PlayMusic.gml</script>
+    <script>scripts\PlayRelevantMusic.gml</script>
+    <script>scripts\ScriptEndOpeningCinematic.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>

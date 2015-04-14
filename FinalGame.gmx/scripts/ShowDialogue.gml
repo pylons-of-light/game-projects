@@ -271,6 +271,7 @@ ds_list_add(g_dlg, "l Yeah, me too.")
 ds_list_add(g_dlg, "l All right then. No time like the present.")
 ds_list_add(g_dlg, "l Alan, I think we'll accept your little offer, on one condition. We want a good boat. We want to pick it out ourselves.")
 ds_list_add(g_dlg, "Alan Deal. But there's only one ship to choose from. It's sitting right outside in the bay.")
+ds_list_add(g_dlg, "script ScriptEndOpeningCinematic")
 }
 
 else if argument0 == 't1a1' {
@@ -616,6 +617,7 @@ g_shipwreckUnlocked = true
 
 else if argument0 == 'ship_examine_wreck' {
 g_msgTextCached = ''
+ds_list_add(g_dlg, "playmusic music_nightCreeper")
 ds_list_add(g_dlg, "l Look there. Do you see what I see?")
 ds_list_add(g_dlg, "g It's a ship.")
 ds_list_add(g_dlg, "l Not just any ship. Look at the masthead. That's the Mirella. Of all things! It was sitting here this entire time.")
@@ -650,6 +652,7 @@ ds_list_add(g_dlg, "l Yeah, I could tell that there was something about her. She
 ds_list_add(g_dlg, "g Do you think she'll still be there? It'll be a week before we can get back to Phrain.")
 ds_list_add(g_dlg, "l It's worth a try. Anyway, we have no other leads to go on. Everyone's dead, and Priest is gone.")
 ds_list_add(g_dlg, "l By the looks of this place, the other ships traveling with Priest were blown to bits.")
+ds_list_add(g_dlg, "script PlayRelevantMusic")
 
 ds_list_add(g_townMarkers, 't3a2')
 }
@@ -668,7 +671,9 @@ ds_list_add(g_dlg, "lu It was Robin's idea. Oh, but you don't know who Robin is,
 ds_list_add(g_dlg, "goto town3Tavern")
 
 ds_list_add(g_dlg, "l Wait, so who are you really?")
+
 ds_list_add(g_dlg, "lu Me? I'm just a poor sailor trying to make ends meet, through piracy. Just like you two.")
+ds_list_add(g_dlg, "playmusic music_callOfPolarStar")   //TODO maybe fiddle around with this and make it work before the room transition
 ds_list_add(g_dlg, "g What? But we don't --")
 ds_list_add(g_dlg, "lu I recognize the look. And I've heard enough for me to make an educated guess.")
 ds_list_add(g_dlg, "lu Last week, a young pair of pirates -- probably brother and sister, or maybe a dysfunctional relationship -- raided a ship outside of Brax belonging to one Captain John Saintalmain.")
@@ -692,7 +697,7 @@ ds_list_add(g_dlg, "lu I think we could have quite a useful partnership. I know 
 ds_list_add(g_dlg, "lu And, now that we have the information from Priest -- who did not live through questioning, unfortunately, while you guys were off checking out that wreck by Saint Jace -- we have the full location of the treasure.")
 ds_list_add(g_dlg, "g Wait, you know where it is?")
 ds_list_add(g_dlg, "lu Oh, yes. And Robin does too. He already took his ship off this morning to go and sail for it. I'm about to leave myself.")
-ds_list_add(g_dlg, "l Wait, so... what do you want to do with us.")
+ds_list_add(g_dlg, "l Wait, so... what do you want to do with us?")
 ds_list_add(g_dlg, "lu Oh, that's quite simple, really. You see, as I've said, Robin can't be trusted. He's a selfish man, and a violent one, as you've seen. I'm a full captain now. I control the second vessel in his little pirate fleet of two ships.")
 ds_list_add(g_dlg, "lu Something tells me he won't want to split a million pounds in gold and jewels piecewise. He'll want it all. And as captain of a single ship, he gets a sizeable percentage.")
 ds_list_add(g_dlg, "lu Sure, he has to share a little bit with his crew, at least the ones he doesn't kill, but having another captain taking part of the spoils is probably not part of his plan. So I'm thinking he doesn't intend for me to get any of that treasure.")
@@ -704,6 +709,7 @@ ds_list_add(g_dlg, "lu Now, what do you say? Interested?")
 ds_list_add(g_dlg, "l Yes. Yes, we're very interested.")
 ds_list_add(g_dlg, "lu All right. Rubina's a little out of the way. I can't afford to waste a second. Go there, and talk to Jean Martell, the weapons master. Tell him you're looking for a very special brand of chain shot. He'll know what you mean.")
 ds_list_add(g_dlg, "lu Afterwards, open this packet. You'll find the coordinates written in there. Don't bother coming without the chain shot. We'll lose without it.")
+ds_list_add(g_dlg, "script PlayRelevantMusic")
 
 ds_list_add(g_townMarkers, 't1m1')
 }

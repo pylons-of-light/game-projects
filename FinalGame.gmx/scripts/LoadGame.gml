@@ -59,6 +59,7 @@ g_msgTextCached = ini_read_string('Misc', 'g_msgTextCached', g_msgTextCached)
 
 g_shipwreckUnlocked = ini_read_real('Events', 'g_shipwreckUnlocked', g_shipwreckUnlocked)
 g_shipwreckExamined = ini_read_real('Events', 'g_shipwreckExamined', g_shipwreckExamined)
+g_openingCinematic = ini_read_real('Events', 'g_openingCinematic', g_openingCinematic)
 g_finalCinematic = ini_read_real('Events', 'g_finalCinematic', g_finalCinematic)
 g_bossShipBeaten = ini_read_real('Events', 'g_bossShipBeaten', g_bossShipBeaten)
 g_firstShipDeath = ini_read_real('Events', 'g_firstShipDeath', g_firstShipDeath)
@@ -71,6 +72,8 @@ g_recruitedHenry = ini_read_real('Events', 'g_recruitedHenry', g_recruitedHenry)
 g_moreWarships = ini_read_real('Events', 'g_moreWarships', g_moreWarships)
 g_firstTimeNearBright = ini_read_real('Events', 'g_firstTimeNearBright', g_firstTimeNearBright)
 g_beatFinalBoss = ini_read_real('Events', 'g_beatFinalBoss', g_beatFinalBoss)
+
+g_music = ini_read_real('Misc', 'g_music', g_music)
 
 g_paused = ini_read_real('Paused', 'g_paused', g_paused)
 g_pausedMusic = ini_read_real('Paused', 'g_pausedMusic', g_pausedMusic)

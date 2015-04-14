@@ -56,6 +56,7 @@ if file_exists("rains") {
     g_town2Unlocked = true
     g_town3Unlocked = true
     g_town5Unlocked = true
+    g_shipwreckUnlocked = true
     
     g_finalIslandUnlocked = true
     ds_list_add(g_townMarkers, 'boss_ship_intro')
@@ -101,7 +102,7 @@ if file_exists("rains") {
     g_shipY = g_town3Y
     g_shipDir = g_town3Dir
     
-    room_goto(rm_ocean)
+    //room_goto(rm_ocean)
 }
 else {
     //Remove dungeon auto-dialogues
@@ -130,6 +131,16 @@ if g_hitNewGameButton {
 
 if g_paused {
     instance_create(400, 460, titleNewGameButton)
+}
+
+if not sound_isplaying(music_lostShip) and not sound_isplaying(music_stillWater) {
+    //PlayMusic(choose(music_lostShip, music_stillWater))
+    
+    var music = choose(music_lostShip, music_stillWater);
+    
+    sound_stop_all()
+    sound_play(music)
+    sound_loop(music)
 }
 </string>
           </argument>

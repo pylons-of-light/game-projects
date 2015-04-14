@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>PlayRelevantMusic()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
@@ -32,12 +55,11 @@
     g_resuming = false
     
     if g_pausedMusic != -1 {
-        if not sound_isplaying(g_pausedMusic) {
-            sound_stop_all()
-            sound_play(g_pausedMusic)
-            sound_loop(g_pausedMusic)
-        }
+        PlayMusic(g_pausedMusic)
     }
+    
+    //TODO probably remove
+    //PlayRelevantMusic()
     
     g_pausedMusic = -1
 }
@@ -58,8 +80,29 @@ else {
             show_message('that is odd')*/
     }
 }
-
-if keyboard_check_pressed(vk_f11) {
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check_pressed(vk_f11) {
     if window_get_fullscreen() {
         window_set_fullscreen(false)
     }
@@ -67,6 +110,20 @@ if keyboard_check_pressed(vk_f11) {
         window_set_fullscreen(true)
     }
 }
+
+/*
+if g_removingMusic != -1 {
+    if g_removingMusicVolume &gt; 0 {
+        g_removingMusicVolume -= .02
+        sound_volume(g_removingMusic, g_removingMusicVolume)
+    }
+    else {
+        sound_stop(g_removingMusic)
+        sound_volume(g_removingMusic, 1)
+        sound_loop(music)   //Loop current music, which GameMaker wouldn't let us do while playing the other MP3 file
+    }
+}
+*/
 </string>
           </argument>
         </arguments>
@@ -94,8 +151,10 @@ g_paused = true
 g_pausedRoom = room
 g_resuming = false
 
-//TODORIGHTHERE set to current music
-g_pausedMusic = -1
+//TODO probably remove
+//g_pausedMusic = -1
+
+g_pausedMusic = g_music
 
 room_goto(rm_title)
 </string>

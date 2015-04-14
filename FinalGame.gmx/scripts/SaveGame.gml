@@ -12,6 +12,8 @@ g_msgText
 g_msgAlpha
 g_bMsgDisplayed
 g_resuming
+g_removingMusic
+g_removingMusicVolume
 */
 
 ini_open('save.ini')
@@ -58,6 +60,7 @@ ini_write_string('Misc', 'g_msgTextCached', g_msgTextCached)
 
 ini_write_real('Events', 'g_shipwreckUnlocked', g_shipwreckUnlocked)
 ini_write_real('Events', 'g_shipwreckExamined', g_shipwreckExamined)
+ini_write_real('Events', 'g_openingCinematic', g_openingCinematic)
 ini_write_real('Events', 'g_finalCinematic', g_finalCinematic)
 ini_write_real('Events', 'g_bossShipBeaten', g_bossShipBeaten)
 ini_write_real('Events', 'g_firstShipDeath', g_firstShipDeath)
@@ -70,6 +73,8 @@ ini_write_real('Events', 'g_recruitedHenry', g_recruitedHenry)
 ini_write_real('Events', 'g_moreWarships', g_moreWarships)
 ini_write_real('Events', 'g_firstTimeNearBright', g_firstTimeNearBright)
 ini_write_real('Events', 'g_beatFinalBoss', g_beatFinalBoss)
+
+ini_write_real('Misc', 'g_music', g_music)
 
 ini_write_real('Paused', 'g_paused', g_paused)
 ini_write_real('Paused', 'g_pausedMusic', g_pausedMusic)

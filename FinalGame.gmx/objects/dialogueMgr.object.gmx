@@ -176,11 +176,42 @@ if not ds_list_empty(g_dlg) {
             }
             else if speaker == 'showmsg' {
                 g_msgText = string_copy(g_dlg[|0], 9, string_length(g_dlg[|0]) - 8)
-                ds_list_delete(g_dlg, 0)
                 g_msgAlpha = 0
                 g_bMsgDisplayed = false
                 g_msgTextCached = g_msgText
                 alarm[1] = room_speed * 5
+                
+                ds_list_delete(g_dlg, 0)
+                speaker = ''
+                alarm[0] = 1
+                exit
+            }
+            else if speaker == 'script' {
+                var data = string_copy(g_dlg[|0], 8, string_length(g_dlg[|0]) - 7);
+                var scriptIndex = asset_get_index(data);
+                
+                if scriptIndex != -1 {
+                    script_execute(scriptIndex)
+                }
+                else
+                    show_error("Unable to find script '" + data + "'", false)
+                
+                ds_list_delete(g_dlg, 0)
+                speaker = ''
+                alarm[0] = 1
+                exit
+            }
+            else if speaker == 'playmusic' {
+                var data = string_copy(g_dlg[|0], 11, string_length(g_dlg[|0]) - 10);
+                var musicIndex = asset_get_index(data);
+                
+                if musicIndex != -1 {
+                    PlayMusic(musicIndex)
+                }
+                else
+                    show_error("Unable to find music '" + data + "'", false)
+                
+                ds_list_delete(g_dlg, 0)
                 speaker = ''
                 alarm[0] = 1
                 exit
