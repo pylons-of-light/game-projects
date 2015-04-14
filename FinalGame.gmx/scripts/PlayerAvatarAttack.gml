@@ -30,4 +30,6 @@ with obj_player{
         yOffset = other.tempYOffset;
         sprite_index = other.attackSprite;
     }
+    
+    sound_play(sound_sword1)
 }

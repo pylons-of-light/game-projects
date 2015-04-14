@@ -97,3 +97,5 @@ cb4.alarm[0] = cbFlyTime
 
 lastFiredTime = current_time
 bTurningToFire = false   //Do this regardless of whether we were actually turning to fire or not.
+
+sound_play(sound_cannon2)

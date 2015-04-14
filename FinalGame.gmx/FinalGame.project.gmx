@@ -4,7 +4,24 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sound_cannon1</sound>
+    <sound>sound\sound_cannon2</sound>
+    <sound>sound\sound_sword1</sound>
+    <sound>sound\sound_sword2</sound>
+    <sound>sound\sound_thump1</sound>
+    <sound>sound\music_lostShip</sound>
+    <sound>sound\music_stillWater</sound>
+    <sound>sound\music_lostAndForgotten</sound>
+    <sound>sound\music_morningOfWarHorn</sound>
+    <sound>sound\music_nightCreeper</sound>
+    <sound>sound\music_walkAlongWire</sound>
+    <sound>sound\music_reflectionAbsoluteWorld</sound>
+    <sound>sound\music_mexicanLoveAffair</sound>
+    <sound>sound\music_callOfPolarStar</sound>
+    <sound>sound\music_toBalagopalanGanapathy</sound>
+    <sound>sound\music_secretOfLife</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="town">
       <sprites name="bg">

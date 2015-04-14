@@ -10,5 +10,11 @@ with argument0
         canAttack = false
         alarm[1] = room_speed * attackSpeed
         PlayerTakeDamage(attackDamage)
+        
+        var objName = object_get_name(object_index);
+        if objName == 'obj_mob_skeleton'
+            sound_play(sound_thump1)
+        else
+            sound_play(sound_sword2)
     }
 }

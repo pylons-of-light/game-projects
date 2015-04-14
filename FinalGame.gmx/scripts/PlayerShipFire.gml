@@ -58,3 +58,5 @@ cb3.damage = dealCannonDamage
 cb3.alarm[0] = cbFlyTime
 
 lastFiredTime = current_time
+
+sound_play(sound_cannon1)
