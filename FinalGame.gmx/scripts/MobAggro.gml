@@ -19,7 +19,7 @@ with argument0
     }
     else
     {
-        if(distance_to_object(obj_player) >= aggroRange * 3)
+        if(distance_to_object(obj_player) > aggroRange)
         {
             //lose aggro
             aggro = false
@@ -29,7 +29,16 @@ with argument0
         
         if(distance_to_object(obj_player) > attackRange)
         {
-            MobFollow(self)
+            var dirToOther = point_direction(x, y, obj_player.x, obj_player.y);
+            var xOffsetToOther = lengthdir_x(10, dirToOther);
+            var yOffsetToOther = lengthdir_y(10, dirToOther);
+            
+            //TODO maybe change this to obj_collider
+            if not place_meeting(x, y, obj_player_collider)
+                MobFollow(self)
+            else {
+                //TODO?
+            }
         }
         else if(distance_to_object(obj_player) <= attackRange)
         {

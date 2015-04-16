@@ -6,5 +6,5 @@ with argument0
     image_speed = mobImageSpeed
     
     //move towards player
-    var moved = mp_potential_step(obj_player.x, obj_player.y, runSpeed, false)
+    var moved = mp_potential_step_object(obj_player.x, obj_player.y, runSpeed, obj_collider)
 }
