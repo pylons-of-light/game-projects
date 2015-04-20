@@ -164,10 +164,10 @@ if not bTurningToFire {
     nearestCb = instance_nearest(x, y, cannonball)
     if nearestCb != noone {
         if bFleeing {
-            if not (nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100)
+            if not (nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 80)
                 bFleeing = false
         }
-        else if nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 100 and random(1000) &lt;= 25 {
+        else if nearestCb.sourceShip != id and distance_to_object(nearestCb) &lt; 80 and random(1000) &lt;= 25 {
             bFleeing = true
             alarm[3] = room_speed * 1   //Stop fleeing in a bit.
         }

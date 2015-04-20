@@ -19,7 +19,8 @@ else if argument0 == 'reef_crash' {
 
 else if argument0 == 'first_ship_death' {
     ds_list_add(g_dlg, "l We lost some gold in that battle.")
-    ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
+    //TODO SHIPWRIGHT
+    //ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
 }
 
 else if argument0 == 'first_time_warped' {
@@ -554,6 +555,10 @@ ds_list_add(g_dlg, "Tavern-master And there's a bit of time pressure involved, y
 ds_list_add(g_dlg, "g Maybe.")
 ds_list_add(g_dlg, "Tavern-master Well, 2000 gold.")
 
+ds_list_add(g_dlg, "l Out of the question.")
+ds_list_add(g_dlg, "Tavern-master Heh, your loss.")
+ds_list_add(g_dlg, "g Let's keep asking people.")
+/*
 //TODO merchant dialogue
 
 ds_list_add(g_dlg, "Tavern-master I haven't seen him.")
@@ -574,7 +579,7 @@ ds_list_add(g_dlg, "g That kind of worked, I guess.")
 ds_list_add(g_dlg, "l What was that, our new routine? You go in there and play the optimistic, one-eyed, " + + '"' + "give all our gold away" + '"' + " person, and I get it back?")
 ds_list_add(g_dlg, "g That wasn't exactly my intention, but yeah, I guess so.")
 ds_list_add(g_dlg, "l Well, let's keep asking people. Hopefully they won't all be assholes like that guy.")
-
+*/
 ds_list_add(g_townMarkers, 'v3i2')
 //Note that this is an exact duplicate of the normal thing in MakeTownDetails.
 TryImportantMarker('v3i2', 547, 250)
@@ -596,9 +601,9 @@ ds_list_add(g_dlg, "l Look, we just got done playing that game.")
 ds_list_add(g_dlg, "lu I know, I overheard. But the difference is, I actually know where this ship is.")
 ds_list_add(g_dlg, "lu I'm a sporting sort, though. Tell you what. I'll flip this coin. Call it. If you're right, I'll tell you for free. If not -- 2000 gold.")
 ds_list_add(g_dlg, "g All right. Heads.")
-ds_list_add(g_dlg, "lu Sorry.")
-ds_list_add(g_dlg, "g Dammit!")
-ds_list_add(g_dlg, "l Fine, here you go. Now, where is this ship?")
+ds_list_add(g_dlg, "l Sorry.")
+ds_list_add(g_dlg, "lu Dammit! Okay, fine. Guess I gotta be nice.")
+ds_list_add(g_dlg, "l Now, where is this ship?")
 ds_list_add(g_dlg, "lu Well, a couple days ago, I heard a report from a couple fishermen who had been trying their luck out by Saint Jace.")
 ds_list_add(g_dlg, "lu They spent the entire week hauling around the waters around the prison, looking for catch.")
 ds_list_add(g_dlg, "lu For two days straight, they saw this ship, just sitting there in open water, buffeted around by the waves. Not doing anything, not going anywhere.")
@@ -703,15 +708,26 @@ ds_list_add(g_dlg, "lu Something tells me he won't want to split a million pound
 ds_list_add(g_dlg, "lu Sure, he has to share a little bit with his crew, at least the ones he doesn't kill, but having another captain taking part of the spoils is probably not part of his plan. So I'm thinking he doesn't intend for me to get any of that treasure.")
 ds_list_add(g_dlg, "lu I don't like to brag, but I kind of have all the trump cards here. I know where the treasure is, and you don't. But I'm willing to propose a deal.")
 ds_list_add(g_dlg, "lu I get half, you guys get half. In exchange for helping me defeat Robin. I have some access to his ship. I can disable or partly sabotage his cannons.")
-ds_list_add(g_dlg, "lu But I need you guys, in your fast little vessel, to help disable the ship's rigging. For that, I'll need a special kind of chain shot. They actually sell it in Rubina.")
+//ds_list_add(g_dlg, "lu But I need you guys, in your fast little vessel, to help disable the ship's rigging. For that, I'll need a special kind of chain shot. They actually sell it in Rubina.")
 ds_list_add(g_dlg, "lu Two ships stand a much better chance against his flagship than one does. And I need an ally to disable his rigging while I disable his cannons.")
 ds_list_add(g_dlg, "lu Now, what do you say? Interested?")
 ds_list_add(g_dlg, "l Yes. Yes, we're very interested.")
+ds_list_add(g_dlg, "lu All right. There's an island where I'd like you to meet me.")
+ds_list_add(g_dlg, "lu It's called The Cape of Lost Hope. To get there from here... you pretty much sail as far northwest as you can go.")
+/*
 ds_list_add(g_dlg, "lu All right. Rubina's a little out of the way. I can't afford to waste a second. Go there, and talk to Jean Martell, the weapons master. Tell him you're looking for a very special brand of chain shot. He'll know what you mean.")
 ds_list_add(g_dlg, "lu Afterwards, open this packet. You'll find the coordinates written in there. Don't bother coming without the chain shot. We'll lose without it.")
+*/
 ds_list_add(g_dlg, "script PlayRelevantMusic")
 
-ds_list_add(g_townMarkers, 't1m1')
+//TODO enable
+//ds_list_add(g_townMarkers, 't1m1')
+
+//TODO remove I guess
+ds_list_add(g_dlg, "showmsg Sail northwest to The Cape of Lost Hope.")
+
+g_finalIslandUnlocked = true
+ds_list_add(g_townMarkers, 'boss_ship_intro')
 }
 
 else if argument0 == 't1m1' {
