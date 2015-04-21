@@ -60,7 +60,7 @@ yOffset = 235
             <kind>1</kind>
             <string>if bFading {
     if image_alpha &gt; 0
-        image_alpha -= .03
+        image_alpha -= .04
     else {
         if bClicked
             ChoiceYesResult(questionId)
@@ -73,13 +73,18 @@ else {
         image_alpha += .03
     if image_alpha &gt; 1
         image_alpha = 1
+    
+    if position_meeting(mouse_x, mouse_y, id)
+        image_blend = make_colour_hsv(55, 255, 155)
+    else
+        image_blend = c_white
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -129,9 +134,11 @@ if instance_exists(choiceNo) {
 var drawY = view_yview[0]+yOffset;
 draw_sprite(spr_dialogueBox, 0, drawX, drawY)
 
-draw_set_alpha(image_alpha)
-draw_sprite(sprite_index, 0, x, y)
-draw_set_alpha(1)
+//draw_set_alpha(image_alpha)
+//draw_sprite(sprite_index, 0, x, y)
+//draw_set_alpha(1)
+
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 </string>
           </argument>
         </arguments>

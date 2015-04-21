@@ -56,7 +56,7 @@ bClicked = false
             <kind>1</kind>
             <string>if bFading {
     if image_alpha &gt; 0
-        image_alpha -= .03
+        image_alpha -= .04
     else {
         if bClicked
             ChoiceNoResult(questionId)
@@ -69,13 +69,18 @@ else {
         image_alpha += .03
     if image_alpha &gt; 1
         image_alpha = 1
+    
+    if position_meeting(mouse_x, mouse_y, id)
+        image_blend = make_colour_hsv(255, 255, 155)
+    else
+        image_blend = c_white
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>

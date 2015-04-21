@@ -42,6 +42,7 @@ ds_list_add(g_townMarkers, 'v3i1')
 
 //Town 4
 ds_list_add(g_townMarkers, 't4a1')
+ds_list_add(g_townMarkers, 't4m1')
 
 //Town 5
 ds_list_add(g_townMarkers, 't5a1')
@@ -52,6 +53,7 @@ ds_list_add(g_townMarkers, 't5s')
 //Tavern
 ds_list_add(g_townMarkers, 'v5n1')
 ds_list_add(g_townMarkers, 'v5i1')
+ds_list_add(g_townMarkers, 'v5m1')
 
 //Dungeons
 ds_list_add(g_townMarkers, 'd1a1')

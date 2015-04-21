@@ -1,6 +1,5 @@
 //Show dialogue sequence
-//(All dialogue is stored in this script, except for 'yesno' result dialogue, which is stored in
-//ChoiceYesResult and ChoiceNoResult.)
+//(All dialogue is stored in this script.)
 //Arguments: dialogue id (aka marker id)
 
 with dialogueMgr {
@@ -19,7 +18,7 @@ else
 }
 
 else if argument0 == 't1s_yes' {
-ds_list_add(g_dlg, "g Okay, fine.")   //TODO remove
+//ds_list_add(g_dlg, "g Okay, fine.")   //TODO remove
 g_gold -= g_shipwrightBasePrice
 g_shipHealth = SHIP_HEALTH_MAX
 }
@@ -64,6 +63,67 @@ g_gold -= g_shipwrightBasePrice*1.5
 g_shipHealth = SHIP_HEALTH_MAX
 }
 
+else if argument0 == 't4m1' {
+ds_list_add(g_dlg, "l What are you doing out here all by yourself?")
+ds_list_add(g_dlg, "Merchant ...Want a sword?")
+ds_list_add(g_dlg, "g A sword?")
+ds_list_add(g_dlg, "Merchant Yeah, cheap! Only 5000 gold.")
+ds_list_add(g_dlg, "g 5000 fucking gold?!")
+ds_list_add(g_dlg, "Merchant Yeah! Real cheap! Save your life, man.")
+ds_list_add(g_dlg, "l I don't think I can justify that kind of wasteful spending.")
+ds_list_add(g_dlg, "g I'm kinda tempted.")
+ds_list_add(g_dlg, "l Now, hold on. Just say we had more money than we knew what to do with. We would save it, put it away so we wouldn't have to keep risking our lives every day to get more gold.")
+ds_list_add(g_dlg, "g But that's hardly the pirate way, is it? The pirate way is to get obscene amounts of gold and then throw them all away.")
+ds_list_add(g_dlg, "l I won't be a party to this.")
+if g_gold < 5000 {
+    ds_list_add(g_dlg, "g Yes! We'll buy it.")
+    ds_list_add(g_dlg, "Merchant Sigh... you can't afford it.")
+}
+else {
+    ds_list_add(g_dlg, "yesno t4m1")
+}
+}
+
+else if argument0 == 't4m1_yes' {
+ds_list_add(g_dlg, "g Here you go. 5000 gold.")
+ds_list_add(g_dlg, "Merchant You will NOT regret this.")
+ds_list_add(g_dlg, "l I regret it already.")
+g_gold -= 5000
+g_weaponLevel += 1
+RemoveMarker('t4m1')
+}
+
+else if argument0 == 't4m1_no' {
+ds_list_add(g_dlg, "l What if I just take that sword from your lifeless corpse?")
+ds_list_add(g_dlg, "Merchant Aaagh! Run away!")
+}
+
+else if argument0 == 'v5m1' {
+if g_gold < 2000 {
+    ds_list_add(g_dlg, "Trader Hey, do you have any money?")
+    ds_list_add(g_dlg, "l Not really, no.")
+    ds_list_add(g_dlg, "Trader That's too bad. If you had 2000 gold, I'd have a sweet offer for you.")
+}
+else {
+    ds_list_add(g_dlg, "Trader Interested in some heavyset clothing? It'll protect you in the heat of combat, or just when going for a swim. 2000 gold.")
+    ds_list_add(g_dlg, "l 2000?! That's outrageous!")
+    ds_list_add(g_dlg, "Trader Sorry. I can't let it go for a farthing less. Are you interested?")
+    ds_list_add(g_dlg, "yesno v5m1")
+}
+}
+
+else if argument0 == 'v5m1_yes' {
+ds_list_add(g_dlg, "l I guess I could use some better swimming clothes.")
+ds_list_add(g_dlg, "Trader A wise choice!")
+g_gold -= 2000
+g_armorLevel += 1
+RemoveMarker('v5m1')
+}
+
+else if argument0 == 'v5m1_no' {
+ds_list_add(g_dlg, "g Sorry, I think I'd rather spend it on drink and women.")
+ds_list_add(g_dlg, "Trader Your loss.")
+}
 //--------------------------
 //------ Misc. events ------
 //--------------------------

@@ -141,6 +141,7 @@ else if townId == 'town4' {
     //Portals
     
     //Markers
+    TryMerchantMarker('t4m1', 844, 579)
     
     //Auto-dialogue
     TryAutoDialogue('t4a1', true)
@@ -187,6 +188,7 @@ else if townId == 'town5Tavern' {
     //Markers
     TryNpcMarker('v5n1', 900, 333)
     TryImportantMarker('v5i1', 516, 469)
+    TryMerchantMarker('v5m1', 640, 264)
 }
 
 else
