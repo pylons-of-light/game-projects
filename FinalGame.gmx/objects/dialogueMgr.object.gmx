@@ -314,7 +314,7 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if current_time - g_lastChangedRoomTime &gt; 200 and room != rm_final_ship_boss {
+            <string>if keyboard_check(vk_control) and current_time - g_lastChangedRoomTime &gt; 200 and room != rm_final_ship_boss {
     g_lastChangedRoomTime = current_time
     room_goto_next()
 }
@@ -340,7 +340,7 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if current_time - g_lastChangedRoomTime &gt; 200 and room != rm_title {
+            <string>if keyboard_check(vk_control) and current_time - g_lastChangedRoomTime &gt; 200 and room != rm_cave {
     g_lastChangedRoomTime = current_time
     room_goto_previous()
 }

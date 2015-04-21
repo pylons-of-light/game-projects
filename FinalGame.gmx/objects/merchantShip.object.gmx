@@ -40,6 +40,16 @@ bHostile = false
 shipHealth = SHIP_HEALTH_MAX * .75
 dealCannonDamage = SHIP_HEALTH_MAX / 12
 gold = 10 * irandom_range(10, 50)
+
+//Occasionally, create a weak ship
+if random(1) &lt;= .35 {
+    maxSpeed = .7
+    mySpeed = maxSpeed / 4
+    shipHealth = SHIP_HEALTH_MAX * .5
+    dealCannonDamage = SHIP_HEALTH_MAX / 8
+    gold = 10 * irandom_range(8, 35)
+    //image_blend = make_colour_hsv(155, 205, 255)
+}
 </string>
           </argument>
         </arguments>
