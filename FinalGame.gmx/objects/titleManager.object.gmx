@@ -88,10 +88,9 @@ if file_exists("rains") {
     */
     //TODO for merchant tests
     
-    g_townId = 'town1'
+    g_townId = 'town4'
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 't1a1'))
-    room_goto(rm_town)
-    
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 't4a1'))
     
     g_shipX = g_dungeon2X
     g_shipY = g_dungeon2Y
@@ -99,11 +98,16 @@ if file_exists("rains") {
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'boss_ship_intro'))
     
     
-    g_shipX = g_town1X
-    g_shipY = g_town1Y
-    g_shipDir = g_town1Dir
+    g_shipX = g_town4X
+    g_shipY = g_town4Y
+    g_shipDir = g_town4Dir
+    
+    g_gold = 20000
+    g_gold = 1900
     
     //room_goto(rm_ocean)
+    
+    room_goto(rm_town)
 }
 else {
     //Remove dungeon auto-dialogues

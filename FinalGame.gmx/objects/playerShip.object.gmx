@@ -124,8 +124,12 @@ alarm[0] = recoverTime
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if g_shipHealth &lt; SHIP_HEALTH_MAX
-    g_shipHealth = min(g_shipHealth + 1.5, SHIP_HEALTH_MAX)
+            <string>if g_shipHealth &lt; SHIP_HEALTH_MAX {
+    if g_recruitedHenry
+        g_shipHealth = min(g_shipHealth + 2, SHIP_HEALTH_MAX)
+    else
+        g_shipHealth = min(g_shipHealth + 1.5, SHIP_HEALTH_MAX)
+}
 
 alarm[0] = recoverTime
 </string>

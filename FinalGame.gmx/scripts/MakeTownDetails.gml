@@ -134,7 +134,7 @@ else if townId == 'town3Tavern' {
     //Markers
     TryNpcMarker('v3n1', 920, 345)
     TryImportantMarker('v3i1', 588, 409)
-    TryImportantMarker('v3i2', 547, 250)
+    TryImportantMarker('v3i2', 547, 300)
 }
 
 else if townId == 'town4' {

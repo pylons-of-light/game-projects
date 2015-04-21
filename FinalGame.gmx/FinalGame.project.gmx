@@ -214,6 +214,7 @@
     <script>scripts\TryAutoDialogue.gml</script>
     <script>scripts\TryGoldGoalDialogue.gml</script>
     <script>scripts\RemoveMarker.gml</script>
+    <script>scripts\RemoveActiveMarker.gml</script>
     <script>scripts\AutoPlayMarker.gml</script>
     <script>scripts\GetTownSprite.gml</script>
     <script>scripts\GetTownMask.gml</script>

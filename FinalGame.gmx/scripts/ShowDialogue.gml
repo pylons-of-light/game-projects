@@ -1,5 +1,6 @@
 //Show dialogue sequence
 //(All dialogue is stored in this script.)
+//(Note that a non-remove marker exception for 'v3i1' is made in townMarker's left-click event.)
 //Arguments: dialogue id (aka marker id)
 
 with dialogueMgr {
@@ -18,7 +19,6 @@ else
 }
 
 else if argument0 == 't1s_yes' {
-//ds_list_add(g_dlg, "g Okay, fine.")   //TODO remove
 g_gold -= g_shipwrightBasePrice
 g_shipHealth = SHIP_HEALTH_MAX
 }
@@ -90,7 +90,7 @@ ds_list_add(g_dlg, "Merchant You will NOT regret this.")
 ds_list_add(g_dlg, "l I regret it already.")
 g_gold -= 5000
 g_weaponLevel += 1
-RemoveMarker('t4m1')
+RemoveActiveMarker('t4m1')
 }
 
 else if argument0 == 't4m1_no' {
@@ -107,23 +107,24 @@ if g_gold < 2000 {
 else {
     ds_list_add(g_dlg, "Trader Interested in some heavyset clothing? It'll protect you in the heat of combat, or just when going for a swim. 2000 gold.")
     ds_list_add(g_dlg, "l 2000?! That's outrageous!")
-    ds_list_add(g_dlg, "Trader Sorry. I can't let it go for a farthing less. Are you interested?")
+    ds_list_add(g_dlg, "Trader I can't let it go for a farthing less. Are you interested?")
     ds_list_add(g_dlg, "yesno v5m1")
 }
 }
 
 else if argument0 == 'v5m1_yes' {
 ds_list_add(g_dlg, "l I guess I could use some better swimming clothes.")
-ds_list_add(g_dlg, "Trader A wise choice!")
+ds_list_add(g_dlg, "Trader You can even wear them in battle!")
 g_gold -= 2000
-g_armorLevel += 1
-RemoveMarker('v5m1')
+g_armorLevel -= .25
+RemoveActiveMarker('v5m1')
 }
 
 else if argument0 == 'v5m1_no' {
 ds_list_add(g_dlg, "g Sorry, I think I'd rather spend it on drink and women.")
 ds_list_add(g_dlg, "Trader Your loss.")
 }
+
 //--------------------------
 //------ Misc. events ------
 //--------------------------
@@ -138,7 +139,6 @@ ds_list_add(g_dlg, "g How about we NOT crash into things?")
 
 else if argument0 == 'first_ship_death' {
 ds_list_add(g_dlg, "l We lost some gold in that battle.")
-//TODO SHIPWRIGHT - DONE
 ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
 }
 
@@ -274,7 +274,7 @@ ds_list_add(g_dlg, "Henry Truth to be told, I was trying to sink it myself, but 
 ds_list_add(g_dlg, "Henry With Dufont gone, I can corner the market on secondhand repairs on the eastern seaboard!")
 ds_list_add(g_dlg, "Henry Like I promised though, I'll help you out for a little bit first.")
 
-ds_list_add(g_dlg, "blankperson (Henry has joined you. Although he lacks the necessary materials to repair your ship at sea, he can help prevent your ship from taking damage to begin with.)")
+ds_list_add(g_dlg, "blankperson (Henry has joined you. He can perform accelerated ship repairs at sea, and bulk up your ship's defenses to reduce cannonball damage.)")
 
 g_shipArmor = .8
 g_recruitedHenry = true
@@ -675,34 +675,49 @@ ds_list_add(g_dlg, "Tavern-master And there's a bit of time pressure involved, y
 ds_list_add(g_dlg, "g Maybe.")
 ds_list_add(g_dlg, "Tavern-master Well, 2000 gold.")
 
-ds_list_add(g_dlg, "l Out of the question.")
-ds_list_add(g_dlg, "Tavern-master Heh, your loss.")
-ds_list_add(g_dlg, "g Let's keep asking people.")
-/*
-//TODO merchant dialogue
+if g_gold < 2000 {
+    ds_list_add(g_dlg, "g We... don't actually have 2000 gold.")
+    ds_list_add(g_dlg, "Tavern-master Come back when you do.")
+    ds_list_add(g_dlg, "showmsg Collect 2000 gold for the tavern-master.")
+}
+else {
+    //ds_list_add(g_dlg, "l Out of the question.")
+    //ds_list_add(g_dlg, "Tavern-master Heh, your loss.")
+    //ds_list_add(g_dlg, "g Let's keep asking people.")
+    ds_list_add(g_dlg, "yesno v3i1")
+}
+}
 
+else if argument0 == 'v3i1_yes' {
+ds_list_add(g_dlg, "l All right, here's your 2000 gold. Where's Priest?")
 ds_list_add(g_dlg, "Tavern-master I haven't seen him.")
 ds_list_add(g_dlg, "g You what?!")
 ds_list_add(g_dlg, "Tavern-master Haven't seen him, sorry.")
-ds_list_add(g_dlg, "g And you made us -- give us our money back!")
-ds_list_add(g_dlg, "Tavern-master Now, hold on. I can tell you something. There was a couple in there the other day, asking for Frederick Priest. Just like you are.")
+ds_list_add(g_dlg, "g And you made us give you all that -- give us our money back!")
+ds_list_add(g_dlg, "Tavern-master Hold on. I can tell you something. There was a couple in here the other day, asking for Frederick Priest. Just like you are.")
 ds_list_add(g_dlg, "g We already know about that. It was the same situation in Brax.")
 ds_list_add(g_dlg, "Tavern-master You've got yourself quite a wild goose chase here, eh?")
 ds_list_add(g_dlg, "l Give us our gold, now.")
-ds_list_add(g_dlg, "Tavern-master Now now, a deal's a deal.")
-ds_list_add(g_dlg, "l Yes. And the deal was, you provide information on the whereabouts of Mr. Priest, which you have not done. We know where he isn't, but we don't know where he is.")
-ds_list_add(g_dlg, "l Gold. Now.")
-ds_list_add(g_dlg, "Tavern-master All right all right, no hard feelings. I'll keep 30 gold for my time and expenses.")
-ds_list_add(g_dlg, "l Fine. Grant, we're leaving.")
+ds_list_add(g_dlg, "Tavern-master A deal's a deal.")
+ds_list_add(g_dlg, "l Here's a deal. Give us our gold back, or I'll drag you back to my ship and turn you into shark feed.")
+ds_list_add(g_dlg, "Tavern-master Okay, sure, no problem! Here you go.")
+ds_list_add(g_dlg, "l Thanks. Grant, we're leaving.")
 ds_list_add(g_dlg, "g ...")
-ds_list_add(g_dlg, "g That kind of worked, I guess.")
-ds_list_add(g_dlg, "l What was that, our new routine? You go in there and play the optimistic, one-eyed, " + + '"' + "give all our gold away" + '"' + " person, and I get it back?")
-ds_list_add(g_dlg, "g That wasn't exactly my intention, but yeah, I guess so.")
-ds_list_add(g_dlg, "l Well, let's keep asking people. Hopefully they won't all be assholes like that guy.")
-*/
+//ds_list_add(g_dlg, "g That kind of worked, I guess.")
+//ds_list_add(g_dlg, "l What was that, our new routine? You go in there and play the optimistic, one-eyed, " + + '"' + "give all our gold away" + '"' + " person, and I get it back?")
+//ds_list_add(g_dlg, "g That wasn't exactly my intention, but yeah, I guess so.")
+ds_list_add(g_dlg, "l Let's keep asking people. Hopefully they won't all be assholes like that guy.")
+ds_list_add(g_dlg, "g Hey, who's that girl who just walked in?")
+
+RemoveActiveMarker('v3i1')
 ds_list_add(g_townMarkers, 'v3i2')
 //Note that this is an exact duplicate of the normal thing in MakeTownDetails.
-TryImportantMarker('v3i2', 547, 250)
+TryImportantMarker('v3i2', 547, 300)
+}
+
+else if argument0 == 'v3i1_no' {
+ds_list_add(g_dlg, "l I would rather eat this money than let you have it.")
+ds_list_add(g_dlg, "Tavern-master Suit yourself.")
 }
 
 else if argument0 == 'v3i2' {
@@ -721,10 +736,10 @@ ds_list_add(g_dlg, "l Look, we just got done playing that game.")
 ds_list_add(g_dlg, "lu I know, I overheard. But the difference is, I actually know where this ship is.")
 ds_list_add(g_dlg, "lu I'm a sporting sort, though. Tell you what. I'll flip this coin. Call it. If you're right, I'll tell you for free. If not -- 2000 gold.")
 ds_list_add(g_dlg, "g All right. Heads.")
+ds_list_add(g_dlg, "lu ...")
 ds_list_add(g_dlg, "l Sorry.")
-ds_list_add(g_dlg, "lu Dammit! Okay, fine. Guess I gotta be nice.")
-ds_list_add(g_dlg, "l Now, where is this ship?")
-ds_list_add(g_dlg, "lu Well, a couple days ago, I heard a report from a couple fishermen who had been trying their luck out by Saint Jace.")
+ds_list_add(g_dlg, "lu Dammit! Okay, fine.")
+ds_list_add(g_dlg, "lu A couple days ago, I heard a report from a couple fishermen who had been trying their luck out by Saint Jace.")
 ds_list_add(g_dlg, "lu They spent the entire week hauling around the waters around the prison, looking for catch.")
 ds_list_add(g_dlg, "lu For two days straight, they saw this ship, just sitting there in open water, buffeted around by the waves. Not doing anything, not going anywhere.")
 ds_list_add(g_dlg, "lu Her name was the Marilla.")
@@ -802,31 +817,39 @@ ds_list_add(g_dlg, "lu Me? I'm just a poor sailor trying to make ends meet, thro
 ds_list_add(g_dlg, "playmusic music_callOfPolarStar")   //TODO maybe fiddle around with this and make it work before the room transition
 ds_list_add(g_dlg, "g What? But we don't --")
 ds_list_add(g_dlg, "lu I recognize the look. And I've heard enough for me to make an educated guess.")
-ds_list_add(g_dlg, "lu Last week, a young pair of pirates -- probably brother and sister, or maybe a dysfunctional relationship -- raided a ship outside of Brax belonging to one Captain John Saintalmain.")
-ds_list_add(g_dlg, "lu Saintalmain was in prison some years back with Maury Baxter. Baxter, Priest, and Robin -- Robin Bright -- all used to be shipmates together, about twenty years ago.")
+//ds_list_add(g_dlg, "lu Last week, a young pair of pirates -- probably brother and sister, or maybe a dysfunctional relationship -- raided a ship outside of Brax belonging to one Captain John Saintalmain.")
+//ds_list_add(g_dlg, "lu Saintalmain was in prison some years back with Maury Baxter. Baxter, Priest, and Robin -- Robin Bright -- all used to be shipmates together, about twenty years ago.")
+ds_list_add(g_dlg, "lu Last week, a young pair of pirates -- probably brother and sister, or maybe a dysfunctional relationship -- raided a ship outside of Brax and picked up the diary of a pirate called Maury Baxter.")
+ds_list_add(g_dlg, "lu Baxter, Priest, and Robin -- Robin Bright -- all used to be shipmates together, about twenty years ago.")
 ds_list_add(g_dlg, "lu They struck it lucky, hid the goods until they could find a reliable buyer, and went off on their own ways, planning to meet again a few months later.")
-ds_list_add(g_dlg, "lu Then everything went wrong. Priest got arrested for unrelated crimes. The captain, a man named Wentsworth, who was the only one who knew the full coordinates, died of a sudden illness.")
-ds_list_add(g_dlg, "lu They'd buried the treasure on an island, out in the middle of nowhere. The only man who knew the exact location, except by sight, was the captain.")
-ds_list_add(g_dlg, "lu For safety's sake, he gave the latitude to Baxter and Bright, and the longitude to Priest and some other shipmate who died in a battle not long afterwards. Then the captain passed away himself. So no one really knows where it's buried.")
-ds_list_add(g_dlg, "lu The idea was that only as a team would the crew be able to retrieve the treasure. They didn't really trust each other too much, you know? You have to be able to trust the people you work with.")
+ds_list_add(g_dlg, "lu Then everything went wrong. Priest got arrested for being an idiot. The captain, a man named Wentsworth, who was the only one who knew the full coordinates, died of a sudden illness.")
+ds_list_add(g_dlg, "lu The crew had buried the treasure on an island, out in the middle of nowhere. Brilliant, eh?")
+ds_list_add(g_dlg, "lu The only man who knew the exact location of the island, except by sight, was the captain.")
+ds_list_add(g_dlg, "lu For safety's sake, he gave the latitude to Bright (probably while Baxter was eavesdropping), and the longitude to Priest. Then the captain died of dysentery or something. So no one really knows where the treasure is buried.")
+ds_list_add(g_dlg, "lu The idea was that only as a team would the crew be able to retrieve the treasure. They didn't really trust each other too much, you know?")
+ds_list_add(g_dlg, "lu You have to be able to trust the people you work with.")
 ds_list_add(g_dlg, "lu That's why I'd like to work with you two.")
 ds_list_add(g_dlg, "l Work with us?")
-ds_list_add(g_dlg, "lu Yes. You see, I've already proven that I can be trusted. In exchange for a little bit of gold, of course. You have to look out for self interest.")
-ds_list_add(g_dlg, "lu A person who looks out for themselves is a person who can be relied on. Robin can't be trusted, that much is clear. Not after what he did to the crew on that poor merchant ship.")
+ds_list_add(g_dlg, "lu Yes. I've already proven that I can be trusted. Remember that coin toss?")
+ds_list_add(g_dlg, "lu A person who looks out for themselves is a person who can be relied on. Robin can't be trusted.")
 ds_list_add(g_dlg, "lu I joined up with Robin about five years back. He's been on the lookout for Priest too. Always has been, all these years.")
-ds_list_add(g_dlg, "lu And lo and behold, just a couple weeks back, we hear a rumor that he's been hiding out in Brax all this time -- under an assumed name, 'cause he figured no one cared anymore. He carelessly started using his real identity.")
-ds_list_add(g_dlg, "lu But Robin has a long memory. I'm guessing your merchant ship captain did as well. It's an interesting twist of fate, us both ending up with the same information at about the same time like this.")
-ds_list_add(g_dlg, "l So, you want to work together?")
-ds_list_add(g_dlg, "lu Yes. I think that could work out very well. I know a little bit about the two of you. You're not regarded as ruthless or particularly untrustworthy pirates. If anything, you seem to have conducted yourselves rather well.")
-ds_list_add(g_dlg, "lu You did a stint, of course, and your younger brother escaped. I think I can rely on you to look out for his welfare, and I can rely on myself to look out for mine.")
-ds_list_add(g_dlg, "lu I think we could have quite a useful partnership. I know Robin's number. I know the latitude of the treasure. He didn't want me to know, but I found it out a long time ago.")
-ds_list_add(g_dlg, "lu And, now that we have the information from Priest -- who did not live through questioning, unfortunately, while you guys were off checking out that wreck by Saint Jace -- we have the full location of the treasure.")
+//ds_list_add(g_dlg, "lu And lo and behold, just a couple weeks back, we hear a rumor that he's been hiding out in Brax all this time -- under an assumed name, 'cause he figured no one cared anymore. He carelessly started using his real identity.")
+//ds_list_add(g_dlg, "lu But Robin has a long memory. I'm guessing your merchant ship captain did as well. It's an interesting twist of fate, us both ending up with the same information at about the same time like this.")
+//ds_list_add(g_dlg, "l So, you want to work together?")
+//ds_list_add(g_dlg, "lu Yes. I think that could work out very well. I know a little bit about the two of you. You're not regarded as ruthless or particularly untrustworthy pirates. If anything, you seem to have conducted yourselves rather well.")
+//ds_list_add(g_dlg, "lu You did a stint, of course, and your younger brother escaped. I think I can rely on you to look out for his welfare, and I can rely on myself to look out for mine.")
+//ds_list_add(g_dlg, "lu I think we could have quite a useful partnership. I know Robin's number. I know the latitude of the treasure. He didn't want me to know, but I found it out a long time ago.")
+//ds_list_add(g_dlg, "lu And, now that we have the information from Priest -- who did not live through questioning, unfortunately, while you guys were off checking out that wreck by Saint Jace -- we have the full location of the treasure.")
+//ds_list_add(g_dlg, "lu He spent years looking for Priest. Just a couple weeks back, he picked up a tip -- about the same time you did, I'm guessing -- and he went into full frenzy mode.")
+ds_list_add(g_dlg, "lu Just a couple weeks back, Robin picked up a tip that Priest was in Brax, and he went into full frenzy mode.")
+ds_list_add(g_dlg, "lu And, now that we have the information from Priest -- who did not live through questioning, unfortunately, while you guys were wasting time out by Saint Jace -- we have the full location of the treasure.")
 ds_list_add(g_dlg, "g Wait, you know where it is?")
 ds_list_add(g_dlg, "lu Oh, yes. And Robin does too. He already took his ship off this morning to go and sail for it. I'm about to leave myself.")
 ds_list_add(g_dlg, "l Wait, so... what do you want to do with us?")
-ds_list_add(g_dlg, "lu Oh, that's quite simple, really. You see, as I've said, Robin can't be trusted. He's a selfish man, and a violent one, as you've seen. I'm a full captain now. I control the second vessel in his little pirate fleet of two ships.")
-ds_list_add(g_dlg, "lu Something tells me he won't want to split a million pounds in gold and jewels piecewise. He'll want it all. And as captain of a single ship, he gets a sizeable percentage.")
-ds_list_add(g_dlg, "lu Sure, he has to share a little bit with his crew, at least the ones he doesn't kill, but having another captain taking part of the spoils is probably not part of his plan. So I'm thinking he doesn't intend for me to get any of that treasure.")
+//ds_list_add(g_dlg, "lu Oh, that's quite simple, really. You see, as I've said, Robin can't be trusted. He's a selfish man, and a violent one, as you've seen. I'm a full captain now. I control the second vessel in his little pirate fleet of two ships.")
+ds_list_add(g_dlg, "lu As I've said, Robin can't be trusted. He's a selfish, violent thug. I doubt he'll want to share that gigantic treasure with his co-captain.")
+//ds_list_add(g_dlg, "lu Something tells me he won't want to split a million pounds in gold and jewels piecewise. He'll want it all. And as captain of a single ship, he gets a sizeable percentage.")
+//ds_list_add(g_dlg, "lu Sure, he has to share a little bit with his crew, at least the ones he doesn't kill, but having another captain taking part of the spoils is probably not part of his plan. So I'm thinking he doesn't intend for me to get any of that treasure.")
 ds_list_add(g_dlg, "lu I don't like to brag, but I kind of have all the trump cards here. I know where the treasure is, and you don't. But I'm willing to propose a deal.")
 ds_list_add(g_dlg, "lu I get half, you guys get half. In exchange for helping me defeat Robin. I have some access to his ship. I can disable or partly sabotage his cannons.")
 //ds_list_add(g_dlg, "lu But I need you guys, in your fast little vessel, to help disable the ship's rigging. For that, I'll need a special kind of chain shot. They actually sell it in Rubina.")
@@ -835,6 +858,7 @@ ds_list_add(g_dlg, "lu Now, what do you say? Interested?")
 ds_list_add(g_dlg, "l Yes. Yes, we're very interested.")
 ds_list_add(g_dlg, "lu All right. There's an island where I'd like you to meet me.")
 ds_list_add(g_dlg, "lu It's called The Cape of Lost Hope. To get there from here... you pretty much sail as far northwest as you can go.")
+ds_list_add(g_dlg, "lu That's where Robin is. That's where this will all end. Make sure you're ready for battle.")
 /*
 ds_list_add(g_dlg, "lu All right. Rubina's a little out of the way. I can't afford to waste a second. Go there, and talk to Jean Martell, the weapons master. Tell him you're looking for a very special brand of chain shot. He'll know what you mean.")
 ds_list_add(g_dlg, "lu Afterwards, open this packet. You'll find the coordinates written in there. Don't bother coming without the chain shot. We'll lose without it.")
@@ -851,6 +875,7 @@ g_finalIslandUnlocked = true
 ds_list_add(g_townMarkers, 'boss_ship_intro')
 }
 
+//TODO: Reenable. This is disabled for now.
 else if argument0 == 't1m1' {
 ds_list_add(g_dlg, "l You're Jean Martell?")
 ds_list_add(g_dlg, "Jean Who are you?")
@@ -894,12 +919,12 @@ ds_list_add(g_dlg, "lu Oh, I was just taking care of your cannons.")
 ds_list_add(g_dlg, "Bright You were what?!")
 ds_list_add(g_dlg, "lu Disabling them.")
 ds_list_add(g_dlg, "Bright I see. I guess you've grown sick of sharing treasure then.")
-ds_list_add(g_dlg, "lu With you, yeah. Sorry. After what you did to Priest, it's just too dangerous. I've got to take care of you before you take care of me, you know?")
-ds_list_add(g_dlg, "Bright It's not like I wasn't planning on killing you eventually.")
+ds_list_add(g_dlg, "lu Yeah. I was going to sneak some dynamite into your coffee, but your cook keeps one tight kitchen.")
+ds_list_add(g_dlg, "Bright ... It's not like I wasn't planning on killing you eventually.")
 ds_list_add(g_dlg, "Bright Now die!")
 ds_list_add(g_dlg, "g What's going on over there?")
 ds_list_add(g_dlg, "l I heard an explosion... it must have been Lucy disabling Bright's cannons. But where's her ship?")
-ds_list_add(g_dlg, "g And she didn't finish, either. Only about half of those cannons are out of commision.")
+ds_list_add(g_dlg, "g Beats me. She didn't finish, either. Only about half of those cannons are out of commision.")
 if g_recruitedHenry
     ds_list_add(g_dlg, "Henry Yeah, that thing looks pretty sturdy. My opinion, guys, you're screwed.")
 ds_list_add(g_dlg, "Betsy I'll go help man the cannons. I'll bake something special afterwards if we're still alive.")
@@ -913,7 +938,7 @@ ds_list_add(g_dlg, "lu Well, that worked out pretty well.")
 ds_list_add(g_dlg, "g Lucy! What happened to you?")
 ds_list_add(g_dlg, "lu I jumped overboard. So did Robin. He already has a residual force inside these caves, so we've still got a bit of fighting left to do.")
 ds_list_add(g_dlg, "l Where's the entrance? And where's your ship?")
-ds_list_add(g_dlg, "lu My ship? Good question. I'm wondering that myself.")
+ds_list_add(g_dlg, "lu My ship? That's a damn good question.")
 ds_list_add(g_dlg, "lu The cave entrance is right over there. Hidden in those rocks, you see?")
 ds_list_add(g_dlg, "l No.")
 ds_list_add(g_dlg, "lu I'll show you. Follow me.")

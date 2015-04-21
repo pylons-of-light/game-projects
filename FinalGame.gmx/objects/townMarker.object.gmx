@@ -114,7 +114,9 @@ else if image_alpha &lt; 1 and bFadeIn {
             <string>if townMgr.bMoveReady and not dialogueMgr.bVisible and not instance_exists(tutorialMgr)
    and not instance_exists(choiceYes) and not bDeleting and dialogueId != '' {
     var objName = object_get_name(object_index);
-    var bShouldDelete = objName != 'townMerchantMarker' and objName != 'townShipwrightMarker';
+    
+    var bShouldDelete = objName != 'townMerchantMarker' and objName != 'townShipwrightMarker'
+        and dialogueId != 'v3i1';
     
     if bShouldDelete {
         //Delete NPC marker from town marker list
