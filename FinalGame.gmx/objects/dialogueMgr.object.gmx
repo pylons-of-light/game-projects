@@ -216,6 +216,20 @@ if not ds_list_empty(g_dlg) {
                 alarm[0] = 1
                 exit
             }
+            else if speaker == 'yesno' {
+                var data = string_copy(g_dlg[|0], 7, string_length(g_dlg[|0]) - 6);
+                
+                var yes = instance_create(300, 362, choiceYes);
+                var no = instance_create(568, 362, choiceNo);
+                yes.questionId = data
+                no.questionId = data
+                
+                //TODO probably don't delete this yet, or at least replace it with something else.
+                ds_list_delete(g_dlg, 0)
+                speaker = ''
+                alarm[0] = 1
+                exit
+            }
             else if speaker == 'blankperson'
                 speaker = ''
             else if speaker == 'l' or speaker == 'L'

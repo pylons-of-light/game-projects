@@ -201,12 +201,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\ShowDialogue.gml</script>
+    <script>scripts\ChoiceYesResult.gml</script>
+    <script>scripts\ChoiceNoResult.gml</script>
     <script>scripts\MakeStartingTownMarkers.gml</script>
     <script>scripts\MakeTownDetails.gml</script>
     <script>scripts\MakeOceanDetails.gml</script>
     <script>scripts\MakeDungeonDetails.gml</script>
     <script>scripts\TryNpcMarker.gml</script>
     <script>scripts\TryImportantMarker.gml</script>
+    <script>scripts\TryMerchantMarker.gml</script>
+    <script>scripts\TryShipwrightMarker.gml</script>
     <script>scripts\TryAutoDialogue.gml</script>
     <script>scripts\TryGoldGoalDialogue.gml</script>
     <script>scripts\RemoveMarker.gml</script>
@@ -358,6 +362,8 @@
     <object>objects\controlsImg</object>
     <object>objects\creditsImg</object>
     <object>objects\gameEndFadeOut</object>
+    <object>objects\choiceYes</object>
+    <object>objects\choiceNo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_first</room>

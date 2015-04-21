@@ -75,6 +75,7 @@ ini_write_real('Events', 'g_firstTimeNearBright', g_firstTimeNearBright)
 ini_write_real('Events', 'g_beatFinalBoss', g_beatFinalBoss)
 
 ini_write_real('Misc', 'g_music', g_music)
+ini_write_real('Misc', 'g_shipwrightBasePrice', g_shipwrightBasePrice)
 
 ini_write_real('Paused', 'g_paused', g_paused)
 ini_write_real('Paused', 'g_pausedMusic', g_pausedMusic)

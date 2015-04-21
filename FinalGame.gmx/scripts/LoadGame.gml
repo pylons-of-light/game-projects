@@ -74,6 +74,7 @@ g_firstTimeNearBright = ini_read_real('Events', 'g_firstTimeNearBright', g_first
 g_beatFinalBoss = ini_read_real('Events', 'g_beatFinalBoss', g_beatFinalBoss)
 
 g_music = ini_read_real('Misc', 'g_music', g_music)
+g_shipwrightBasePrice = ini_read_real('Misc', 'g_shipwrightBasePrice', g_shipwrightBasePrice)
 
 g_paused = ini_read_real('Paused', 'g_paused', g_paused)
 g_pausedMusic = ini_read_real('Paused', 'g_pausedMusic', g_pausedMusic)

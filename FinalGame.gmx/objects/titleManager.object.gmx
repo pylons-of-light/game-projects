@@ -44,7 +44,7 @@ g_town5Unlocked = true
 */
 
 //if true {
-if file_exists("rainsREMOVED") {
+if file_exists("rains") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
@@ -87,11 +87,11 @@ if file_exists("rainsREMOVED") {
     g_shipDir = g_dungeon1Dir
     */
     //TODO for merchant tests
-    /*
+    
     g_townId = 'town1'
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 't1a1'))
     room_goto(rm_town)
-    */
+    
     
     g_shipX = g_dungeon2X
     g_shipY = g_dungeon2Y
@@ -99,9 +99,9 @@ if file_exists("rainsREMOVED") {
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'boss_ship_intro'))
     
     
-    g_shipX = g_town3X
-    g_shipY = g_town3Y
-    g_shipDir = g_town3Dir
+    g_shipX = g_town1X
+    g_shipY = g_town1Y
+    g_shipDir = g_town1Dir
     
     //room_goto(rm_ocean)
 }

@@ -1,33 +1,92 @@
 //Show dialogue sequence
-//(All dialogue is stored in this script)
+//(All dialogue is stored in this script, except for 'yesno' result dialogue, which is stored in
+//ChoiceYesResult and ChoiceNoResult.)
 //Arguments: dialogue id (aka marker id)
 
 with dialogueMgr {
 bUsable = true
 
 //--------------------------
+//------ Merchants etc -----
+//--------------------------
+
+if argument0 == 't1s' {
+ds_list_add(g_dlg, "Shipwright I can repair your ship for " + string(g_shipwrightBasePrice) +  " gold.")
+if g_gold < g_shipwrightBasePrice
+    ds_list_add(g_dlg, "g Can't afford it, sorry.")
+else
+    ds_list_add(g_dlg, "yesno t1s")
+}
+
+else if argument0 == 't1s_yes' {
+ds_list_add(g_dlg, "g Okay, fine.")   //TODO remove
+g_gold -= g_shipwrightBasePrice
+g_shipHealth = SHIP_HEALTH_MAX
+}
+
+else if argument0 == 't2s' {
+ds_list_add(g_dlg, "Shipwright Need your ship fixed? " + string(g_shipwrightBasePrice*1.5) +  " gold.")
+if g_gold < g_shipwrightBasePrice*1.5
+    ds_list_add(g_dlg, "l Now, if we just had any money...")
+else
+    ds_list_add(g_dlg, "yesno t2s")
+}
+
+else if argument0 == 't2s_yes' {
+g_gold -= g_shipwrightBasePrice*1.5
+g_shipHealth = SHIP_HEALTH_MAX
+}
+
+else if argument0 == 't3s' {
+if g_gold < g_shipwrightBasePrice*2
+    ds_list_add(g_dlg, "Shipwright If you had any money, I could offer to fix your ship.")
+else {
+    ds_list_add(g_dlg, "Shipwright For " + string(g_shipwrightBasePrice*2) +  " gold, I can repair your ship.")
+    ds_list_add(g_dlg, "yesno t3s")
+}
+}
+
+else if argument0 == 't3s_yes' {
+g_gold -= g_shipwrightBasePrice*2
+g_shipHealth = SHIP_HEALTH_MAX
+}
+
+else if argument0 == 't5s' {
+ds_list_add(g_dlg, "Shipwright Want me to repair your ship? It'll be " + string(g_shipwrightBasePrice*1.5) +  " gold.")
+if g_gold < g_shipwrightBasePrice*1.5
+    ds_list_add(g_dlg, "l We're broke.")
+else
+    ds_list_add(g_dlg, "yesno t5s")
+}
+
+else if argument0 == 't5s_yes' {
+g_gold -= g_shipwrightBasePrice*1.5
+g_shipHealth = SHIP_HEALTH_MAX
+}
+
+//--------------------------
 //------ Misc. events ------
 //--------------------------
 
-if argument0 == 'msg_text_cached' {
-    ds_list_add(g_dlg, "showmsg " + g_msgTextCached)
+else if argument0 == 'msg_text_cached' {
+ds_list_add(g_dlg, "showmsg " + g_msgTextCached)
 }
 
 else if argument0 == 'reef_crash' {
-    ds_list_add(g_dlg, "g How about we NOT crash into things?")
+ds_list_add(g_dlg, "g How about we NOT crash into things?")
 }
 
 else if argument0 == 'first_ship_death' {
-    ds_list_add(g_dlg, "l We lost some gold in that battle.")
-    //TODO SHIPWRIGHT
-    //ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
+ds_list_add(g_dlg, "l We lost some gold in that battle.")
+//TODO SHIPWRIGHT - DONE
+ds_list_add(g_dlg, "l It might be better to get a shipwright in some harbor to fix the ship up between fights.")
 }
 
 else if argument0 == 'first_time_warped' {
-    ds_list_add(g_dlg, "g What the hell just happened?")
-    ds_list_add(g_dlg, "l It looks like we just... warped, when we stepped on that tile.")
-    ds_list_add(g_dlg, "g This is black magic!")
-    ds_list_add(g_dlg, "l Let's look around for more of these tiles.")
+ds_list_add(g_dlg, "g What the hell just happened?")
+ds_list_add(g_dlg, "l It looks like we just... warped, when we stepped on that tile.")
+ds_list_add(g_dlg, "g This is black magic!")
+ds_list_add(g_dlg, "l Let's look around for more of these tiles.")
 }
 
 //----------------------------
@@ -474,6 +533,7 @@ ds_list_add(g_dlg, "l You know, maybe it is time to celebrate. Fine, just one. B
 ds_list_add(g_dlg, "showmsg Tabriel has now been unlocked.")
 
 g_town5Unlocked = true
+g_shipwrightBasePrice = 20   //Increase the base price of shipwrights
 }
 
 else if argument0 == 't5a1' {
@@ -618,6 +678,7 @@ ds_list_add(g_dlg, "l Let's go to the sea near Saint Jace. It'll take a while to
 ds_list_add(g_dlg, "showmsg Locate the wreckage southwest of Saint Jace.")
 
 g_shipwreckUnlocked = true
+g_shipwrightBasePrice = 30   //Increase the base price of shipwrights
 }
 
 else if argument0 == 'ship_examine_wreck' {

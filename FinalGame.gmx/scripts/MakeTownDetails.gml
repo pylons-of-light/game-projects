@@ -26,6 +26,7 @@ if townId == 'town1' {
     //Markers
     TryNpcMarker('t1n1', 370, 390)
     TryNpcMarker('t1n2', 720, 350)
+    TryShipwrightMarker('t1s', 590, 410)
     
     //Auto-dialogue
     TryAutoDialogue('t1a1', true)
@@ -71,6 +72,7 @@ else if townId == 'town2' {
     //Markers
     TryNpcMarker('t2n1', 166, 342)
     TryImportantMarker('t2q1', 700, 315)
+    TryShipwrightMarker('t2s', 488, 137)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -107,6 +109,7 @@ else if townId == 'town3' {
     TryNpcMarker('t3n2', 98, 414)
     TryImportantMarker('t3q1', 870, 475)
     TryImportantMarker('t3q2', 175, 355)
+    TryShipwrightMarker('t3s', 69, 577)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)
@@ -160,6 +163,7 @@ else if townId == 'town5' {
     TryNpcMarker('t5n1', 269, 489)
     TryNpcMarker('t5n2', 335, 258)
     TryImportantMarker('t5q1', 506, 499)
+    TryShipwrightMarker('t5s', 893, 324)
     
     //Back button
     new = instance_create(backButtonXPos, backButtonYPos, townBackButton)

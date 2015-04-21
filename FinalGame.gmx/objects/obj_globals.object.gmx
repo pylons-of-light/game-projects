@@ -244,6 +244,9 @@ g_recruitedHenry = false
 globalvar g_music;
 g_music = -1
 
+globalvar g_shipwrightBasePrice;
+g_shipwrightBasePrice = 10
+
 //Room persistence
 globalvar g_paused, g_pausedMusic, g_resuming;
 g_paused = false
