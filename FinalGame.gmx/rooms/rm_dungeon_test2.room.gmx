@@ -1183,7 +1183,7 @@
     <instance objName="obj_mob_skeleton" x="1312" y="1312" name="inst_F645D363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mob_skeleton" x="1024" y="96" name="inst_DB09C4C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mob_skeleton" x="1408" y="512" name="inst_65F07C3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mob_skeleton" x="1440" y="1888" name="inst_E34B2468" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="potionDrop" x="928" y="1600" name="inst_086BB929" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport7" x="1376" y="128" name="inst_4BC8B0E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport7_land" x="544" y="1792" name="inst_20D32C2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="treasureChest2" x="1472" y="288" name="inst_A2128798" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1226,7 +1226,11 @@
     <instance objName="obj_player_collider" x="1600" y="672" name="inst_23485C4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_celing" x="1600" y="672" name="inst_92F2A448" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mob_skeleton" x="1664" y="960" name="inst_DD9F1B76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="potionDrop" x="928" y="1600" name="inst_086BB929" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="potionDrop" x="1280" y="928" name="inst_4DDD55D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="potionDrop" x="864" y="1600" name="inst_000B3031" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="potionDrop" x="864" y="480" name="inst_51504EC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="potionDrop" x="128" y="992" name="inst_83CABC8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_collider" x="672" y="1088" name="inst_52C87192" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="br_dungeon_items" x="1856" y="0" w="32" h="32" xo="0" yo="576" id="10010114" name="inst_965476D3" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -5525,6 +5529,7 @@
     <tile bgName="background1" x="224" y="0" w="32" h="32" xo="576" yo="96" id="10010321" name="inst_566BD3B3" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="224" y="32" w="32" h="32" xo="576" yo="128" id="10010322" name="inst_DFFEFCAE" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background1" x="160" y="0" w="32" h="32" xo="192" yo="128" id="10010324" name="inst_7CB99D22" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="br_dungeon_items" x="672" y="1088" w="32" h="32" xo="1952" yo="352" id="10010361" name="inst_52231886" depth="5" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background5" x="1664" y="704" w="32" h="32" xo="32" yo="896" id="10010168" name="inst_D37CFAF6" depth="-30" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background5" x="1664" y="1120" w="32" h="32" xo="32" yo="896" id="10010169" name="inst_4139F052" depth="-30" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="background5" x="1856" y="704" w="32" h="32" xo="32" yo="896" id="10010170" name="inst_F39BDB26" depth="-30" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

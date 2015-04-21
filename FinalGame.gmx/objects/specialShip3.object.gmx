@@ -40,7 +40,7 @@ bHostile = true
 bFleeing = false
 bDead = false
 
-shipHealth = SHIP_HEALTH_MAX * 4
+shipHealth = SHIP_HEALTH_MAX * 2.5
 //TODO remove
 //shipHealth = SHIP_HEALTH_MAX / 10
 

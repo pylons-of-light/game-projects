@@ -44,7 +44,7 @@ g_town5Unlocked = true
 */
 
 //if true {
-if file_exists("rains") {
+if file_exists("rainsREMOVED") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     

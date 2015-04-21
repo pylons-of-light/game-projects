@@ -42,7 +42,7 @@ bTurningToFire = false
 
 shipHealth = SHIP_HEALTH_MAX * 1
 dealCannonDamage = SHIP_HEALTH_MAX / 12
-gold = 10 * irandom_range(5, 30)
+gold = 10 * irandom_range(15, 40)
 </string>
           </argument>
         </arguments>

@@ -31,9 +31,9 @@ maxHp = 4
 hp = 4
 attackRange = 10
 
-aggroRange = 400
+aggroRange = 350
 
-runSpeed = 2.4
+runSpeed = 2.3
 
 sprWalkRight = spr_pirateRight
 sprWalkLeft = spr_pirateLeft
