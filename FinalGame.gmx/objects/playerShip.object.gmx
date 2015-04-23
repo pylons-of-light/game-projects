@@ -377,6 +377,8 @@ direction += median(one, two, three)   //Adjust the direction based on the image
     ShowDialogue('ship_examine_wreck')
     g_shipwreckExamined = true
 }
+
+ShipCollide()
 </string>
           </argument>
         </arguments>
