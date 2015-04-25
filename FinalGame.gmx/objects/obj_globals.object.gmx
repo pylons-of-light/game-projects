@@ -92,6 +92,10 @@ POTION_DROP_RATE = .25
 POTION_X_OFFSET = 16   //For drop position, use this as an offset from the NPC's x position
 POTION_Y_OFFSET = 19   //Same for y position
 
+globalvar FAST_ROOM_SPEED, SLOW_ROOM_SPEED;
+FAST_ROOM_SPEED = 50
+SLOW_ROOM_SPEED = 35
+
 
 //--- Port details (for the place to put the ship when it leaves a port)
 
@@ -190,7 +194,7 @@ g_armorLevel = 1   //Damage multiplier; this number will go down as armor grows 
 
 //Global stats for player ship; subject to change
 globalvar g_shipMaxSpeed, g_cbFireDelay, g_shipArmor;
-g_shipMaxSpeed = 4
+g_shipMaxSpeed = 3.5
 g_cbFireDelay = 1000
 g_shipArmor = 1.0   //Damage multiplier; this number will go down as armor grows stronger
 

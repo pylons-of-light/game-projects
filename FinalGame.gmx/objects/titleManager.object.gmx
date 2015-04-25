@@ -52,7 +52,7 @@ if file_exists("rainsREMOVED") {
     //g_firstTimeWarped = false
     
     //TODO remove
-    //g_shipMaxSpeed -= CREW_SPEED_BOOST
+    g_shipMaxSpeed += CREW_SPEED_BOOST
     
     g_town2Unlocked = true
     g_town3Unlocked = true
