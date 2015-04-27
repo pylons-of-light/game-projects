@@ -163,6 +163,8 @@ else {
     else if room_speed &gt; useRoomSpeed
         room_speed -= 1
 }
+else
+    room_speed = FAST_ROOM_SPEED
 </string>
           </argument>
         </arguments>
