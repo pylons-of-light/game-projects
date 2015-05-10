@@ -54,9 +54,6 @@
     <sprite>sprites\spr_slashDown</sprite>
     <sprite>sprites\spr_thunder</sprite>
     <sprite>sprites\spr_thunderOrigSize</sprite>
-    <sprite>sprites\spr_newGame</sprite>
-    <sprite>sprites\spr_saveGame</sprite>
-    <sprite>sprites\spr_loadGame</sprite>
     <sprite>sprites\btn_NewGame</sprite>
     <sprite>sprites\btn_Reap</sprite>
     <sprite>sprites\btn_Exit</sprite>
