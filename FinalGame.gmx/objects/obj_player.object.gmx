@@ -40,6 +40,8 @@ hp = 10
 dead = false
 
 g_avatarAttacking = false
+
+lastAttackTime = current_time - RAPIER_ATTACK_DELAY
 </string>
           </argument>
         </arguments>
@@ -70,6 +72,7 @@ if(g_avatarAttacking == false)
 else
 {
     speed = 0;
+    image_speed = 0;
 }
 </string>
           </argument>

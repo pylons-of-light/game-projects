@@ -70,8 +70,8 @@ if file_exists("rains") {
     //ds_list_add(g_townMarkers, 'ship_spawn1')
     ds_list_add(g_townMarkers, 'v1i1')
     
-    //ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
-    //ds_list_delete(g_townMarke2rs, ds_list_find_index(g_townMarkers, 'd2a1'))
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd1a1'))
+    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'd2a1'))
     
     //room_goto(rm_town)
     //room_goto(rm_ocean)
@@ -106,7 +106,7 @@ if file_exists("rains") {
     g_gold = 1900
     
     //room_goto(rm_ocean)
-    room_goto(rm_final_ship_boss)
+    room_goto(rm_cave)
     
     //room_goto(rm_town)
 }

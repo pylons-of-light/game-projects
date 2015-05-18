@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = .9
+            <string>if sprite_index == spr_attackLeft or sprite_index == spr_attackRight
+    image_speed = .6;
+if sprite_index == spr_attackDown
+    image_speed = 1
+else
+    image_speed = .9;
 g_avatarAttacking = true;
 </string>
           </argument>
@@ -84,8 +89,8 @@ g_avatarAttacking = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
-g_avatarAttacking = false;
+            <string>g_avatarAttacking = false;
+instance_destroy();
 </string>
           </argument>
         </arguments>

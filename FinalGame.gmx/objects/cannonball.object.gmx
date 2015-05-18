@@ -91,6 +91,7 @@ else {
     
     if sourceShip == instance_nearest(x, y, playerShip) {
         other.bHostile = true
+        //Note that this will set this ship to be non-hostile even if they are a permanently hostile ship! As such, any such ship should not set bHostile=false on their alarm[0] event.
         other.alarm[0] = room_speed * 10
     }
     

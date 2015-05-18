@@ -125,7 +125,7 @@ if g_finalCinematic
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bHostile = false
+            <string>//bHostile = false
 </string>
           </argument>
         </arguments>

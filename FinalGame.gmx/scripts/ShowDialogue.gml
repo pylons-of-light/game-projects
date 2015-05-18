@@ -337,6 +337,7 @@ ds_list_add(g_dlg, "Drunkard I hear there's a skilled shipwright in Phrain who's
 else if argument0 == 'd1a1' {
 ds_list_add(g_dlg, "l This looks like fun.")
 ds_list_add(g_dlg, "g You go first.")
+ds_list_add(g_dlg, "g If you see anything that looks dangerous, hit it and run!")
 }
 
 

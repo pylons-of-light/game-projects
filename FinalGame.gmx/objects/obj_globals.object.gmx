@@ -96,6 +96,9 @@ globalvar FAST_ROOM_SPEED, SLOW_ROOM_SPEED;
 FAST_ROOM_SPEED = 50
 SLOW_ROOM_SPEED = 35
 
+globalvar RAPIER_ATTACK_DELAY;
+RAPIER_ATTACK_DELAY = 400
+
 
 //--- Port details (for the place to put the ship when it leaves a port)
 

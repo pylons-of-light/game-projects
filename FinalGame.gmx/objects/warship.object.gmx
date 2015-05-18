@@ -111,8 +111,8 @@ gold = 10 * irandom_range(15, 40)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bHostile = false
-bTurningToFire = false
+            <string>//bHostile = false
+//bTurningToFire = false
 </string>
           </argument>
         </arguments>

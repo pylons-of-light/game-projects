@@ -121,6 +121,10 @@
       <sprite>sprites\spr_attackDown</sprite>
       <sprite>sprites\spr_attackLeft</sprite>
       <sprite>sprites\spr_attackRight</sprite>
+      <sprite>sprites\attackUpOriginal</sprite>
+      <sprite>sprites\attackDownOriginal</sprite>
+      <sprite>sprites\attackLeftOriginal</sprite>
+      <sprite>sprites\attackRightOriginal</sprite>
       <sprite>sprites\spr_floorTorch</sprite>
       <sprite>sprites\spr_treasureChest1</sprite>
       <sprite>sprites\spr_treasureChest2</sprite>
@@ -223,8 +227,6 @@
     <script>scripts\PlayerShipMove.gml</script>
     <script>scripts\PlayerShipFire.gml</script>
     <script>scripts\ShipCollide.gml</script>
-    <script>scripts\PlayerAvatarAttack.gml</script>
-    <script>scripts\PlayerAvatarMove.gml</script>
     <script>scripts\TryNpcShipAdjacentFire.gml</script>
     <script>scripts\TryNpcShipFullFire.gml</script>
     <script>scripts\TryBossShipFire.gml</script>
@@ -232,15 +234,17 @@
     <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
     <script>scripts\NpcShipBossAdjustImageAndSpeed.gml</script>
     <script>scripts\DieLoseGold.gml</script>
+    <script>scripts\PlayerAvatarAttack.gml</script>
+    <script>scripts\PlayerAvatarMove.gml</script>
+    <script>scripts\PlayerTakeDamage.gml</script>
+    <script>scripts\PlayerAvatarDie.gml</script>
     <script>scripts\MobMoveWander.gml</script>
     <script>scripts\SetMobWanderLocation.gml</script>
     <script>scripts\SetMobSprite.gml</script>
     <script>scripts\MobAggro.gml</script>
     <script>scripts\MobFollow.gml</script>
     <script>scripts\MobAttack.gml</script>
-    <script>scripts\PlayerTakeDamage.gml</script>
     <script>scripts\SetMobAvoidWall.gml</script>
-    <script>scripts\PlayerAvatarDie.gml</script>
     <script>scripts\RestartGame.gml</script>
     <script>scripts\SaveGame.gml</script>
     <script>scripts\LoadGame.gml</script>
@@ -260,6 +264,7 @@
     <object>objects\setupMgr</object>
     <object>objects\obj_globals</object>
     <object>objects\titleManager</object>
+    <object>objects\introMgr</object>
     <object>objects\gameMgr</object>
     <object>objects\dialogueMgr</object>
     <object>objects\tutorialMgr</object>
@@ -369,6 +374,7 @@
   <rooms name="rooms">
     <room>rooms\rm_first</room>
     <room>rooms\rm_title</room>
+    <room>rooms\rm_intro</room>
     <room>rooms\rm_cave</room>
     <room>rooms\rm_dungeon_test2</room>
     <room>rooms\rm_dungeon_test1</room>
