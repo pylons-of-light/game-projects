@@ -68,6 +68,29 @@ if frame mod updateFrameFreq == 0 {
         image_angle = tempAngle
     }
     else {
+        diffMetric = dirDifference
+        //show_message(string(image_angle) + " " + string(realDir))
+        if image_angle < realDir {
+            if not bAdjustDir
+                tempAngle = image_angle + diffMetric
+            else {
+                tempAngle = image_angle - diffMetric
+            }
+        }
+        else {
+            if not bAdjustDir
+                tempAngle = image_angle - diffMetric
+            else
+                tempAngle = image_angle + diffMetric
+        }
+        
+        if tempAngle < 0
+            tempAngle += 360
+        if tempAngle >= 360
+            tempAngle -= 360
+        image_angle = tempAngle
+    }
+    /*else {
         if bAdjustDir {
             var smaller = min(image_angle, realDir) + 360;
             var larger = max(image_angle, realDir);
@@ -75,5 +98,5 @@ if frame mod updateFrameFreq == 0 {
         }
         else
             image_angle = (image_angle + realDir) / 2;
-    }
+    }*/
 }

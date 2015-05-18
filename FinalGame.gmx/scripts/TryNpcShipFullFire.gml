@@ -7,14 +7,16 @@ if distance_to_object(playerShip) > 1600 {   //TODO: Totally arbitrary number. M
     exit
 }
 
+var shipDir = image_angle
+
 var nearest, aimDir, left, right;
 nearest = instance_nearest(x, y, playerShip)
 aimDir = point_direction(x, y, nearest.x, nearest.y)
 
-left = direction - 90
+left = shipDir - 90
 if left < 0
     left += 360
-right = direction + 90
+right = shipDir + 90
 if right >= 360
     right -= 360
 
@@ -26,11 +28,12 @@ var rightDiff = abs(aimDir - right)
 if rightDiff > 180
     rightDiff = 360 - rightDiff
 
-var straightDiff = abs(aimDir - direction)
+var straightDiff = abs(aimDir - shipDir)
 if straightDiff > 180
     straightDiff = 360 - straightDiff
 
 var cb1Dir, cb3Dir;
+var bStraight = false
 
 if leftDiff < 10 and leftDiff < rightDiff {
     aimDir = left
@@ -44,31 +47,41 @@ else if rightDiff < 10 and rightDiff < leftDiff {
     cb3Dir = aimDir + 5
     //exit   //TODO REMOVE
 }
-else if straightDiff < 10 {
-    aimDir = direction
+else if straightDiff < 10 and random(1) < .1 {
+    bStraight = true
+    aimDir = shipDir
     cb1Dir = aimDir + 5
     cb3Dir = aimDir - 5
 }
 else
     exit
 
-//show_message(string(direction) + " " + string(left) + " " + string(right))
+//show_message(string(shipDir) + " " + string(left) + " " + string(right))
 
-cb1 = instance_create(x + lengthdir_x(25, direction), y + lengthdir_y(25, direction), cannonball)
+if bStraight
+    cb1 = instance_create(x + lengthdir_x(50, shipDir+30), y + lengthdir_y(50, shipDir+30), cannonball)
+else
+    cb1 = instance_create(x + lengthdir_x(25, shipDir), y + lengthdir_y(25, shipDir), cannonball)
 cb1.direction = cb1Dir
 cb1.speed = cbSpeed
 cb1.sourceShip = id
 cb1.damage = dealCannonDamage
 cb1.alarm[0] = cbFlyTime
 
-cb2 = instance_create(x, y, cannonball)
+if bStraight
+    cb2 = instance_create(x + lengthdir_x(50, shipDir), y + lengthdir_y(50, shipDir), cannonball)
+else
+    cb2 = instance_create(x, y, cannonball)
 cb2.direction = aimDir
 cb2.speed = cbSpeed
 cb2.sourceShip = id
 cb2.damage = dealCannonDamage
 cb2.alarm[0] = cbFlyTime
 
-cb3 = instance_create(x + lengthdir_x(25, direction-180), y + lengthdir_y(25, direction-180), cannonball)
+if bStraight
+    cb3 = instance_create(x + lengthdir_x(50, shipDir-30), y + lengthdir_y(50, shipDir-30), cannonball)
+else
+    cb3 = instance_create(x + lengthdir_x(25, shipDir-180), y + lengthdir_y(25, shipDir-180), cannonball)
 cb3.direction = cb3Dir
 cb3.speed = cbSpeed
 cb3.sourceShip = id

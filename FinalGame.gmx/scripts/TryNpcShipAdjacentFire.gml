@@ -7,14 +7,16 @@ if distance_to_object(playerShip) > 1600 {   //TODO: Totally arbitrary number. M
     exit
 }
 
+var shipDir = image_angle
+
 var nearest, aimDir, left, right;
 nearest = instance_nearest(x, y, playerShip)
 aimDir = point_direction(x, y, nearest.x, nearest.y)
 
-left = direction - 90
+left = shipDir - 90
 if left < 0
     left += 360
-right = direction + 90
+right = shipDir + 90
 if right >= 360
     right -= 360
 
@@ -41,9 +43,9 @@ else if rightDiff < 10 and rightDiff < leftDiff {
 else
     exit
 
-//show_message(string(direction) + " " + string(left) + " " + string(right))
+//show_message(string(shipDir) + " " + string(left) + " " + string(right))
 
-cb1 = instance_create(x + lengthdir_x(25, direction), y + lengthdir_y(25, direction), cannonball)
+cb1 = instance_create(x + lengthdir_x(25, shipDir), y + lengthdir_y(25, shipDir), cannonball)
 cb1.direction = cb1Dir
 cb1.speed = cbSpeed
 cb1.sourceShip = id
@@ -57,7 +59,7 @@ cb2.sourceShip = id
 cb2.damage = dealCannonDamage
 cb2.alarm[0] = cbFlyTime
 
-cb3 = instance_create(x + lengthdir_x(25, direction-180), y + lengthdir_y(25, direction-180), cannonball)
+cb3 = instance_create(x + lengthdir_x(25, shipDir-180), y + lengthdir_y(25, shipDir-180), cannonball)
 cb3.direction = cb3Dir
 cb3.speed = cbSpeed
 cb3.sourceShip = id

@@ -44,7 +44,7 @@ g_town5Unlocked = true
 */
 
 //if true {
-if file_exists("rainsREMOVED") {
+if file_exists("rains") {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
@@ -106,8 +106,9 @@ if file_exists("rainsREMOVED") {
     g_gold = 1900
     
     //room_goto(rm_ocean)
+    room_goto(rm_final_ship_boss)
     
-    room_goto(rm_town)
+    //room_goto(rm_town)
 }
 else {
     //Remove dungeon auto-dialogues

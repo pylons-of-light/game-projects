@@ -231,7 +231,8 @@ if bHostile {
     }
 }
 */
-TryNpcShipAdjacentFire()
+//TryNpcShipAdjacentFire()
+TryNpcShipFullFire()
 
 NpcShipAdjustImageAndSpeed(realDir)
 </string>
