@@ -100,6 +100,9 @@ DIALOGUE_ROOM_SPEED = 35
 globalvar RAPIER_ATTACK_DELAY;
 RAPIER_ATTACK_DELAY = 400
 
+globalvar SPEECH_DELAY;
+SPEECH_DELAY = 10;
+
 
 //--- Port details (for the place to put the ship when it leaves a port)
 

@@ -44,7 +44,7 @@ g_town5Unlocked = true
 */
 
 //if true {
-if file_exists("rains") and false {
+if file_exists("rains") and true {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
@@ -64,7 +64,7 @@ if file_exists("rains") and false {
     
     ds_list_add(g_townMarkers, 't3a2')
     
-    ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'oa1'))
+    //ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'oa1'))
     
     //ds_list_add(g_townMarkers, 'gold_goal1')
     //ds_list_add(g_townMarkers, 'ship_spawn1')
@@ -97,7 +97,6 @@ if file_exists("rains") and false {
     g_shipDir = g_dungeon2Dir
     ds_list_delete(g_townMarkers, ds_list_find_index(g_townMarkers, 'boss_ship_intro'))
     
-    
     g_shipX = g_town4X
     g_shipY = g_town4Y
     g_shipDir = g_town4Dir
@@ -105,10 +104,11 @@ if file_exists("rains") and false {
     g_gold = 20000
     g_gold = 1900
     
+    g_townId = 'town1Tavern'
     //room_goto(rm_ocean)
-    //room_goto(rm_town)
+    room_goto(rm_town)
     //room_goto(rm_cave)
-    room_goto(rm_intro)
+    //room_goto(rm_intro)
 }
 else {
     //Remove dungeon auto-dialogues

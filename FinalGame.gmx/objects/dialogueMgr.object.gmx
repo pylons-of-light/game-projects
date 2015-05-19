@@ -51,7 +51,9 @@ g_bMsgDisplayed = false
 
 //TODO uncomment; the 1 is temporary. Maybe.
 //alarmTime = room_speed / 20
-alarmTime = 1
+defaultAlarmTime = 1
+alarmTime = defaultAlarmTime
+bSpeechDelayed = false
 
 if g_lastChangedRoomTime != 0
     g_lastChangedRoomTime = current_time
@@ -133,8 +135,15 @@ else {
 if ds_list_find_index(g_removePersistenceFrom, room) != -1 and room_persistent
     exit
 
+if bSpeechDelayed {
+    alarmTime = defaultAlarmTime
+    bSpeechDelayed = false
+}
+
 if not ds_list_empty(g_dlg) {
     if bNewPage = true {
+        alarmTime = defaultAlarmTime
+        
         var pos = string_pos(' ', g_dlg[|0]);
         if pos == -1
             speaker = '?'
@@ -250,8 +259,30 @@ if not ds_list_empty(g_dlg) {
         bNewPage = false
     }
     if string_length(g_dlg[|0]) &gt; 0 {
-        text += string_char_at(g_dlg[|0], 0)
+        var char = string_char_at(g_dlg[|0], 0);
         g_dlg[|0] = string_copy(g_dlg[|0], 2, string_length(g_dlg[|0])-1)
+        
+        //TODO maybe someday: Make these things backslashable.
+        if char == '@' {
+            alarmTime = SPEECH_DELAY
+            bSpeechDelayed = true
+        }
+        else if char == '%' {
+            if string_length(g_dlg[|0]) &gt; 0 {
+                var nextChar = string_char_at(g_dlg[|0], 0);
+                
+                if ord(nextChar) &gt;= ord('0') and ord(nextChar) &lt;= ord('9') {
+                    g_dlg[|0] = string_copy(g_dlg[|0], 2, string_length(g_dlg[|0])-1)
+                    alarmTime = real(nextChar)
+                }
+                else
+                    alarmTime = defaultAlarmTime
+            }
+            else
+                alarmTime = defaultAlarmTime
+        }
+        else
+            text += char
         
         alarm[0] = alarmTime
     }

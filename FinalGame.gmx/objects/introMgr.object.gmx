@@ -200,8 +200,8 @@ if bText2Fading {
 if alpha &gt; 0 {
     draw_set_alpha(alpha)
     
-    var drawX = room_width / 2
-    var drawY = room_height / 2 - 50
+    var drawX = room_width / 2;
+    var drawY = room_height / 2 - 50;
     
     if bText1
         drawX -= 190

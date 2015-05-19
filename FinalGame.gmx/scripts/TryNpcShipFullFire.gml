@@ -7,7 +7,7 @@ if distance_to_object(playerShip) > 1600 {   //TODO: Totally arbitrary number. M
     exit
 }
 
-var shipDir = image_angle
+var shipDir = image_angle;
 
 var nearest, aimDir, left, right;
 nearest = instance_nearest(x, y, playerShip)
