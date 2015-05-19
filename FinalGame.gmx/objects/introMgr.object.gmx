@@ -32,7 +32,7 @@ text2 = "...where a young woman, dressed in sailor garb,#  lies slumped over a t
 
 text = ''
 
-alarmTime = 1.5
+alarmTime = 2
 alarm[0] = alarmTime
 
 bText1 = true
