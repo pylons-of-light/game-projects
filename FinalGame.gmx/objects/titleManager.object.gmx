@@ -44,7 +44,7 @@ g_town5Unlocked = true
 */
 
 //if true {
-if file_exists("rains") {
+if file_exists("rains") and true {
     //TODO remove; the actual starting townId should be 'town1Tavern'
     //g_townId = 'town1'
     
@@ -106,9 +106,9 @@ if file_exists("rains") {
     g_gold = 1900
     
     //room_goto(rm_ocean)
-    room_goto(rm_cave)
-    
     //room_goto(rm_town)
+    //room_goto(rm_cave)
+    room_goto(rm_intro)
 }
 else {
     //Remove dungeon auto-dialogues
@@ -132,7 +132,7 @@ if g_hitNewGameButton {
     g_pausedRoom = -1
     g_pausedMusic = -1
     g_resuming = false
-    room_goto(rm_town)   //Restart the game
+    room_goto(rm_intro)   //Restart the game
 }
 
 if g_paused {
@@ -190,7 +190,7 @@ if mouse_check_button_pressed(mb_left) {
             g_pausedMusic = -1
             g_resuming = false
             
-            room_goto(rm_town)   //Start the game
+            room_goto(rm_intro)   //Start the game
         }
         else {
             g_resuming = true

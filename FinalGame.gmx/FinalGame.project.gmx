@@ -224,31 +224,35 @@
     <script>scripts\GetTownMask.gml</script>
     <script>scripts\GetPortrait.gml</script>
     <script>scripts\ParagraphedText.gml</script>
-    <script>scripts\PlayerShipMove.gml</script>
-    <script>scripts\PlayerShipFire.gml</script>
-    <script>scripts\ShipCollide.gml</script>
-    <script>scripts\TryNpcShipAdjacentFire.gml</script>
-    <script>scripts\TryNpcShipFullFire.gml</script>
-    <script>scripts\TryBossShipFire.gml</script>
-    <script>scripts\SetRandomShipDestination.gml</script>
-    <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
-    <script>scripts\NpcShipBossAdjustImageAndSpeed.gml</script>
+    <scripts name="naval">
+      <script>scripts\PlayerShipMove.gml</script>
+      <script>scripts\PlayerShipFire.gml</script>
+      <script>scripts\ShipCollide.gml</script>
+      <script>scripts\TryNpcShipAdjacentFire.gml</script>
+      <script>scripts\TryNpcShipFullFire.gml</script>
+      <script>scripts\TryBossShipFire.gml</script>
+      <script>scripts\SetRandomShipDestination.gml</script>
+      <script>scripts\NpcShipAdjustImageAndSpeed.gml</script>
+      <script>scripts\NpcShipBossAdjustImageAndSpeed.gml</script>
+    </scripts>
+    <scripts name="dungeon">
+      <script>scripts\PlayerAvatarAttack.gml</script>
+      <script>scripts\PlayerAvatarMove.gml</script>
+      <script>scripts\PlayerTakeDamage.gml</script>
+      <script>scripts\PlayerAvatarDie.gml</script>
+      <script>scripts\MobMoveWander.gml</script>
+      <script>scripts\SetMobSprite.gml</script>
+      <script>scripts\SetMobWanderLocation.gml</script>
+      <script>scripts\MobAggro.gml</script>
+      <script>scripts\MobFollow.gml</script>
+      <script>scripts\MobAttack.gml</script>
+      <script>scripts\MobFade.gml</script>
+      <script>scripts\SetMobAvoidWall.gml</script>
+    </scripts>
     <script>scripts\DieLoseGold.gml</script>
-    <script>scripts\PlayerAvatarAttack.gml</script>
-    <script>scripts\PlayerAvatarMove.gml</script>
-    <script>scripts\PlayerTakeDamage.gml</script>
-    <script>scripts\PlayerAvatarDie.gml</script>
-    <script>scripts\MobMoveWander.gml</script>
-    <script>scripts\SetMobWanderLocation.gml</script>
-    <script>scripts\SetMobSprite.gml</script>
-    <script>scripts\MobAggro.gml</script>
-    <script>scripts\MobFollow.gml</script>
-    <script>scripts\MobAttack.gml</script>
-    <script>scripts\SetMobAvoidWall.gml</script>
     <script>scripts\RestartGame.gml</script>
     <script>scripts\SaveGame.gml</script>
     <script>scripts\LoadGame.gml</script>
-    <script>scripts\MobFade.gml</script>
     <script>scripts\PlayMusic.gml</script>
     <script>scripts\PlayRelevantMusic.gml</script>
     <script>scripts\ScriptEndOpeningCinematic.gml</script>
