@@ -43,7 +43,7 @@ shipHealth = SHIP_HEALTH_MAX * 1.6
 //shipHealth = SHIP_HEALTH_MAX / 10
 
 dealCannonDamage = SHIP_HEALTH_MAX / 10
-gold = 2000
+gold = 1000
 </string>
           </argument>
         </arguments>

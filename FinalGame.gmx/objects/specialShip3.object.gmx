@@ -50,7 +50,7 @@ cbSpeed = 6
 cbFireDelay = 600
 
 dealCannonDamage = SHIP_HEALTH_MAX / 10
-gold = 3000
+gold = 2000
 
 //Manual override
 direction = 350
