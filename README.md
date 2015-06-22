@@ -1,3 +1,3 @@
-Various games worked on with a small team in Spring 2015 at The College of Saint Rose.
+Various games developed with a small team at The College of Saint Rose in Spring 2015.
 
 Developers: Rains Jordan, Kevin Viglucci, Justin Stoddard, Yaqing Xie
